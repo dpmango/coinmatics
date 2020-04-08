@@ -12,24 +12,38 @@ button
   position: relative
   text-align: center
   cursor: pointer
-  transition: all $transitionSpeed $ease
+  transition: all .25s $ease
   &:focus, &:active
     outline: none
   &--block
     display: block
     width: 100%
 
-  &-example
+  &-ghost
+    // please use paddings instead of line-height to control btn height
+    background: transparent
+    border: 1px solid $colorPrimary
+    padding: 10px 32px
+    font-family: $monsterFont
+    font-weight: 600
+    font-size: 14px
+    line-height: calc(18 / 14)
+    color: $colorPrimary
+    border-radius: 8px
+    &:hover
+      border-color: $colorPrimaryHover
+      color: $colorPrimaryHover
+
+  &-primary
     // please use paddings instead of line-height to control btn height
     background: $colorPrimary
-    font-size: 20px
-    padding: 15px 30px
+    border: 1px solid transparent
+    padding: 10px 32px
+    font-family: $monsterFont
+    font-weight: 600
+    font-size: 14px
+    line-height: calc(18 / 14)
     color: white
-    transition: .25s $ease
-    transform-origin: center bottom
-    box-shadow: none
-    will-change: box-shadow, transform
+    border-radius: 8px
     &:hover
-      transform: scale(1.05) translateY(-5px)
-      background: rgba($colorPrimary, .9)
-      box-shadow: 0 15px 10px -15px rgba($fontColor, .4)
+      background-color: #00F6B2
