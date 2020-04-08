@@ -1,1 +1,30 @@
 // HERO
+.hero
+  &__wrapper
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    min-height: 100vh
+    padding: 126px 0 42px
+    margin: -10px
+  &__content, &__image
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__content
+    flex: 0 0 $col6
+    max-width: $col6
+  &__content-wrapper
+    max-width: 516px
+    .h1-title
+      margin-top: 0
+      margin-bottom: 24px
+    .p-main
+      margin: 24px 0 32px 0
+  &__image
+    flex: 0 0 $col6
+    max-width: $col6
+    svg
+      width: 100%
+      overflow: visible
