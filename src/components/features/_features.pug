@@ -1,0 +1,54 @@
+mixin featureCard(card)
+  // feature-card
+  .feature-card
+    .feature-card__icon
+      +svgColor(card.icon)
+    .feature-card__content
+      .h5-title= card.title
+      .p-small.c-gray= card.desc
+
+// FEATURES
+.features
+  .container
+    .features__head(data-aos="fade-up")
+      h4.h4-title.c-light Copy Trading
+      h2.h2-title Platform Features
+      p.p-main Repeat their succes or become one of sucessful trade masters
+
+    .features__wrapper
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'passive-income',
+          title: 'Passive Income on Steroids',
+          desc: 'Enjoy the profits of active crypto trading while slaking off'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'diversification',
+          title: 'Diversification',
+          desc: 'Allocate funds across traders with different strategies'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'manageable-risks',
+          title: 'Fully Manageable Risks',
+          desc: 'Customize your risk level for each following trader'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'safety',
+          title: 'Totally Secure',
+          desc: 'The service works without acces to the exchange account and funds'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'portfolio',
+          title: 'Synced Potfolio',
+          desc: 'Align assets with the trader’s account in one click'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'skin-in-game',
+          title: 'Skin in The Game',
+          desc: 'A trader risks his funds providing trades for copy'
+        })
