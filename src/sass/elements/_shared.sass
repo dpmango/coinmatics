@@ -51,11 +51,14 @@
 // section-head
 .section-head
   text-align: center
+  max-width: 566px
+  margin-left: auto
+  margin-right: auto
   .h4-title
     margin: 0 0 16px
-  .h2-title
+  .h2-title, .h3-title
     margin: 0.5em 0
-  .h2-title, .h4-title
+  .h2-title, .h4-title, .h3-title
     &:first-child
       margin-top: 0
     &:last-child
@@ -64,3 +67,39 @@
     margin-top: 24px
   &--left
     text-align: left
+    max-width: 100%
+    margin-left: 0
+    margin-right: 0
+
+
+// accardeon
+.accardeon
+  &__element
+    color: $colorPrimary
+    &:first-child
+      margin-top: -8px
+    &:hover
+      color: white
+    &.is-active
+      color: white
+      .accardeon__title
+        .ico
+          transform: rotate(180deg)
+  &__toggler
+    position: relative
+    cursor: pointer
+    padding: 8px 0px 8px 0px
+    transition: color .25s $ease
+  &__title
+    display: flex
+    align-items: center
+    .ico
+      margin-left: auto
+      font-size: 6px
+      transition: transform .25s $ease
+      will-change: transform
+      transform-style: preserve-3d
+      backface-visibility: hidden
+  &__content
+    display: none
+    padding: 4px 30px 12px 0px

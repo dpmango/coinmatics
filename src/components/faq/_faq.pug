@@ -1,0 +1,31 @@
+// FAQ
+.faq
+  .container.container--8
+    .faq__head.section-head(data-aos="fade-up")
+      h4.h4-title.c-light Service Information
+      h2.h2-title Frequently Asked <br/>Questions
+
+    // list
+    .faq__list
+      -
+        var list = [
+          "What is Coinmatics?",
+          "How it works?",
+          "What is Copytrading?",
+          "How to start trading with us?",
+          "Is it expensive to use Coinmatics?",
+          "How can I become a trader?",
+          "What is Copytrading?",
+          "What is Coinmatics?",
+          "How it works?",
+          "How to start trading with us?"
+        ]
+      each item in list
+        .faq__col(data-aos="fade-up")
+          a(href="#").faq__item
+            .faq__item-name
+              .p-main= item
+              +svgMono('arrow-right')
+
+    .faq__cta(data-aos="fade-up")
+      a(href='#').btn.btn-primary.btn--xl View All Information

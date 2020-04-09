@@ -14,8 +14,8 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production",
-    "surge": "surge --project ./dist --domain khmelevskoy.surge.sh",
-    "deploy": "gulp build --production && surge --project ./dist --domain khmelevskoy.surge.sh"
+    "surge": "surge --project ./dist --domain coinmatics.surge.sh",
+    "deploy": "gulp build --production && surge --project ./dist --domain coinmatics.surge.sh"
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
@@ -70,6 +70,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
+    "gulp-prettify": "^0.5.0",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",

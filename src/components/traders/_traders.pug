@@ -9,7 +9,7 @@
         h4.h4-title Our Top Traders
         p.p-main.c-gray Repeat their succes or become one of sucessful trade masters
 
-      .traders__card
+      .traders__card(data-aos="fade-up")
         // trader-card
         .trader-card
           .trader-card__slider.swiper-container.js-swiper-traders(data-swiper-group-id="1")
@@ -17,8 +17,8 @@
               each slide in [1,2,3,4,5]
                 .swiper-slide.trader-card__main
                   .trader-card__avatar
-                    .scaler(data-ar="1:1")
-                      img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderImage@2x.jpg 2x')
+                    .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar_2x.jpg)")
+                      img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderAvatar@2x.jpg 2x')
                   .trader-card__content
                     .trader-card__name.h3-title GuRaM_GE
                     .trader-card__info-grid
@@ -64,7 +64,7 @@
                   .h6-title VIP Trader Club
                   .p-small Total Profit +34.4%
 
-      .traders__cta
+      .traders__cta(data-aos="fade-up")
         a(href="#").btn.btn-ghost.btn--xl View all 235 traders
 
   .traders__waves.bg-waves.bg-waves--bottom

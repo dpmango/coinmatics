@@ -1,0 +1,52 @@
+// TRADERS START
+.trstart
+  // banner (top)
+  .trstart__banner
+    .container
+      .trstart__head.section-head(data-aos="fade-up")
+        h4.h4-title.c-light Are you a trader?
+        h2.h2-title Start to Earn With Copytrading
+        p.p-main.c-light Just sign up as a trader in our system, get subscribers and receive additional profit from your subscribers deals. You will decide by yourself what profit amount you will get.
+        a(href="#").btn.btn-ghost.btn-ghost--b0.btn--xl Learn more
+
+      .trstart__banner-image(data-aos="fade")
+        include ../../icons/svg-inline/illustration_trstart.svg
+  // tools (bottom)
+  .trstart__waves.bg-waves.bg-null
+    include ../../icons/svg-inline/waves-trstart-top.svg
+
+  .trstart__tools
+    .container
+      .trstart__head.section-head(data-aos="fade-up")
+        h3.h3-title Trade With Our Tools
+      .trstart__tools-wrapper
+        .trstart__tools-content(data-aos="fade-right")
+          // accardeon
+          .trstart__accardeon.accardeon.js-accardeon
+            // accardeon__element (active)
+            .accardeon__element.is-active
+              .accardeon__toggler
+                .accardeon__title
+                  .h5-title Investment Portfolio
+                  +svgMono('arrow-down')
+              .accardeon__content(style="display: block")
+                p.p-small.c-gray Настройте мгновенные оповещения для отслеживания колебаний валютных пар. После настройки параметров вы получаете своевременные уведомления о выгодных сделках через Telegram-канал. Доступны биржи Bittrex, Poloniex, Bitstamp, Bitfinex, Binance, а также большинство криптовалютных пар.
+            each element in ["Сrypto Arbitration", "Notification Center", "Analytics", "Market Research Tool"]
+              // accardeon__element
+              .accardeon__element
+                .accardeon__toggler
+                  .accardeon__title
+                    .h5-title= element
+                    +svgMono('arrow-down')
+                .accardeon__content
+                  p.p-small.c-gray Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        .trstart__tools-image(data-aos="fade-left")
+          img(js-lazy data-src='img/tools_macbook.png' data-srcset='img/tools_macbook@2x.png 2x')
+
+      // cta
+      .trstart__tools-cta(data-aos="fade-up")
+        a(href="#").btn.btn-primary.btn--xl Start Trade
+
+  .trstart__waves.bg-waves.bg-waves--bottom
+    include ../../icons/svg-inline/waves-trstart-bottom.svg

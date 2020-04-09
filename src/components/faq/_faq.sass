@@ -1,0 +1,41 @@
+// FAQ
+.faq
+  margin: 160px 0 144px
+  &__head
+    //
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin: 48px -28px 64px
+  &__col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 0px 28px
+    flex: 0 0 50%
+    max-width: 50%
+    &:last-child, &:nth-last-child(2)
+      .faq__item
+        border-bottom: 0
+  &__item
+    display: block
+    padding: 19px 12px 18px 4px
+    border-bottom: 1px solid #E7EBF4
+    color: $colorGray
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimaryHover
+      .ico
+        transform: translate(5px,0)
+  &__item-name
+    display: flex
+    align-items: center
+    .ico
+      font-size: 9px
+      margin-left: auto
+      color: $colorPrimary
+      transition: .25s $ease
+      will-change: transform
+
+  &__cta
+    text-align: center

@@ -1,0 +1,56 @@
+// INTEGRATIONS
+.integrations
+  margin: 120px 0 160px
+  &__wrapper, &__grid
+    display: flex
+    flex-wrap: wrap
+    margin: -10px
+  &__wrapper
+    align-items: center
+  &__left, &__right, &__grid-col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    flex: 0 0 50%
+    max-width: 50%
+    padding: 10px
+  &__grid-col
+    display: flex
+    flex-direction: column
+  &__left
+    padding-left: 30px
+  &__right-wrapper
+    padding-left: 20px
+    padding-right: 20px
+
+
+// .integration-card
+.integration-card
+  position: relative
+  flex: 1 0 auto
+  min-height: 145px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 16px 16px 16px 24px
+  background: #0E1F4F
+  border-radius: 16px
+  box-shadow: 0px 0px 20px rgba(0, 45, 163, 0.1)
+  transition: .25s $ease
+  &--disabled
+    background: #FFFFFF
+    box-shadow: 0px 0px 20px rgba(0, 45, 163, 0.1)
+  &__image
+    flex: 0 0 auto
+    text-align: center
+    img
+      max-width: 100%
+  &__tag
+    position: absolute
+    top: 16px
+    right: 0
+    z-index: 2
+    background: #BEC7DF
+    color: white
+    border-radius: 7px 0px 0px 7px
+    padding: 7px 14px

@@ -45,6 +45,36 @@
           $(this).toggleClass('is-active');
           $('.demo-grid').fadeToggle();
         });
+
+      // accardeon
+      _document.on('click', '.js-accardeon .accardeon__toggler', function(e) {
+        var $title = $(this);
+        var $element = $title.parent();
+        var $content = $element.find('.accardeon__content');
+
+        // clear previous active element(s)
+        var $siblings = $element.siblings();
+        if ($siblings.length > 0) {
+          $siblings.each(function(i, element) {
+            var $element = $(element);
+            var $content = $element.find('.accardeon__content');
+
+            if ($element.is('.is-active')) {
+              $element.removeClass('is-active');
+              $content.slideUp();
+            }
+          });
+        }
+
+        // target current element
+        if ($element.is('.is-active')) {
+          $element.removeClass('is-active');
+          $content.slideUp();
+        } else {
+          $element.addClass('is-active');
+          $content.slideDown();
+        }
+      });
     },
     destroy: function() {
       // ... code ...
