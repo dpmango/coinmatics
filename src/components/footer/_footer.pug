@@ -1,6 +1,107 @@
 // FOOTER :: START
 footer.footer
+  .footer__waves.bg-waves
+    include ../../icons/svg-inline/waves-footer.svg
+
   .container
-    .footer__wrapper
+    // top
+    .footer__top
+      .footer__top-wrapper
+        .footer__subscribe-labels
+          .h3-title Stay in touch!
+          .p-small.c-gray Subscribe to our newsletter to receive our last news and updates. No spam, we promise.
+        .footer__subscribe-cta
+          a(href="#").btn.btn-primary.btn--xl Subscribe Newsletter
+    // middle
+    .footer__middle
+      .footer__middle-wrapper
+        .footer__contacts
+          .p-small.c-gray Feel free to contact us
+          a(href="mailto:hello@coinmatics.com").footer__contacts-email hello@coinmatics.com
+          ul.footer__socials
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-instagram')
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-facebook')
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-twitter')
+        .footer__menus
+          .footer__menus-wrapper
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray Copytrading
+              ul.footer__menu
+                li
+                  a(href="#") About
+                li
+                  a(href="#") Top Traders
+                li
+                  a(href="#") Signals
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray Traders
+              ul.footer__menu
+                li
+                  a(href="#") Investment Portfolio
+                li
+                  a(href="#") Сrypto Arbitration
+                li
+                  a(href="#") Notification Center
+                li
+                  a(href="#") Analytics
+                li
+                  a(href="#") Market Research Tool
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray Company
+              ul.footer__menu
+                li
+                  a(href="#") About Us
+                li
+                  a(href="#") Careers
+                li
+                  a(href="#") Contacts
+                li
+                  a(href="#") Privacy Policy
+                li
+                  a(href="#") Terms of Use
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray Support
+              ul.footer__menu
+                li
+                  a(href="#") FAQ
+                li
+                  a(href="#") Ask a Question
+                li
+                  a(href="#") Uptime & Status
+                li
+                  a(href="#") Product Board
+    // bottom
+    .footer__bottom
+      .footer__bottom-wrapper
+        .footer__bottom-left
+          .footer__logo.logo.logo--white
+            .logo__icon
+              +svgColor('logo-sign-white')
+            .logo__name Coinmatics
+            .logo__tag
+              +svgColor('logo-beta')
+          .p-small.c-gray ©2020, All Rights Reserved
+
+        .footer__bottom-right
+          .footer__lang
+            .footer__lang-label.p-small.c-gray Change language to
+            a(href="#").footer__lang-selector
+              .footer__lang-icon
+                +svgColor('lang-rus')
+              .p-small Рус
+
+
+
+
 
 // FOOTER :: END
