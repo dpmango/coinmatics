@@ -6,9 +6,9 @@ APP.Plugins = APP.Plugins || {};
 APP.Components = APP.Components || {};
 
 // force scroll to top on initial load
-window.onbeforeunload = function() {
-  window.scrollTo(0, 0);
-};
+// window.onbeforeunload = function() {
+//   window.scrollTo(0, 0);
+// };
 
 // shorthand operators
 var _window = $(window);

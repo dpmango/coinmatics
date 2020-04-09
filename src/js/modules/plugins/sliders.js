@@ -47,55 +47,40 @@
     initSwipers: function() {
       var $page = $('.page').last();
 
-      // PDP gallery (initialization as a group)
-      // gallery main is dependand on thumbs
-      var haveGalleryThumbs = $page.find('.js-pdpGallery-thumbs').length > 0;
-      var haveGalleryMain = $page.find('.js-pdpGallery-main').length > 0;
-      if (haveGalleryThumbs && haveGalleryMain) {
-        var selector = '.js-pdpGallery-thumbs:not(.swiper-container-initialized)';
+      // TRADERS gallery (initialization as a group)
+      // TRADERS main is dependand on thumbs
+      var haveTradersThumbs = $page.find('.js-swiper-traders-thumbs').length > 0;
+      var haveTradersMain = $page.find('.js-swiper-traders').length > 0;
+      if (haveTradersThumbs && haveTradersMain) {
+        var selector = '.js-swiper-traders-thumbs:not(.swiper-container-initialized)';
         var $thumbs = $page.find(selector);
-        // if ($thumbs.length === 0) return;
 
         $thumbs.each(function(i, thumb) {
           var id = $(thumb).data('swiper-group-id');
           new Swiper(thumb, {
-            slideToClickedSlide: false,
-            preventClicks: false,
-            preventClicksPropagation: false,
             watchOverflow: true,
             setWrapperSize: false,
-            spaceBetween: 5,
             slidesPerView: 'auto',
             normalizeSlideIndex: true,
-            direction: 'vertical',
             on: {
               init: function() {
-                initGallerySwiper(id, this);
+                initTradersSwiper(id, this);
               },
             },
           });
         });
       }
 
-      function initGallerySwiper(id, thumbsInstance) {
-        // PDP main
-        var selector = `.js-pdpGallery-main[data-swiper-group-id="${id}"]`;
+      function initTradersSwiper(id, thumbsInstance) {
+        // Traders main
+        var selector = `.js-swiper-traders[data-swiper-group-id="${id}"]`;
         if ($page.find(selector).length > 0) {
           new Swiper(selector, {
             loop: true,
             watchOverflow: true,
             setWrapperSize: false,
-            initialSlide: 0,
-            spaceBetween: 5,
-            centeredSlides: true,
             slidesPerView: 'auto',
             normalizeSlideIndex: false,
-            freeMode: false,
-            pagination: {
-              el: '.swiper-pagination',
-              type: 'bullets',
-              clickable: true,
-            },
             thumbs: {
               swiper: thumbsInstance,
             },

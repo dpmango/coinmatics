@@ -1,0 +1,106 @@
+// FEATURES
+.traders
+  margin-top: -28px
+  background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%);
+  color: white
+  &__container
+    padding: 24px 0
+  &__card
+    margin: 48px 0 32px
+    padding-left: 24px
+    padding-right: 24px
+  &__cta
+    margin-top: 32px
+    text-align: center
+
+
+// trader-card
+.trader-card
+  background: #13265C
+  border-radius: 32px
+  &__main
+    padding: 48px
+    display: flex
+    // slide instance
+  &__avatar
+    position: relative
+    z-index: 1
+    flex: 0 0 254px
+    border-radius: 20px
+    overflow: hidden
+  &__content
+    flex: 0 0 265px
+    padding-left: 40px
+  &__name
+    margin-bottom: 20px
+    margin-top: 8px
+  &__info-grid
+    display: flex
+    flex-wrap: wrap
+    margin: -10px
+  &__info-col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+    flex: 0 0 50%
+    max-width: 50%
+    &--full
+      flex-basis: 100%
+      max-width: 100%
+    .h4-title
+      margin-top: 8px
+
+  &__chart
+    flex: 1 1 auto
+    padding-left: 48px
+    padding-top: 16px
+
+  &__chart-stats
+    display: flex
+    .h6-title
+      flex: 0 0 auto
+      margin-left: auto
+      text-align: right
+  &__chart-graph
+    margin-top: 24px
+
+  // nav
+  &__nav
+    padding: 22px 38px
+    background: $colorBg
+    border-bottom-left-radius: 32px
+    border-bottom-right-radius: 32px
+  &__nav-element
+    // slide instance
+    position: relative
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    flex: 0 0 20%
+    max-width: 20%
+    color: $colorPrimary
+    padding: 10px 10px 10px 24px
+    cursor: pointer
+    transition: .25s $ease
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 10px
+      bottom: 10px
+      left: 10px
+      width: 2px
+      background: currentColor
+      opacity: 0
+      transition: opacity .25s $ease
+    &:hover
+      color: $colorPrimaryHover
+      &::before
+        opacity: 1
+    &.swiper-slide-thumb-active
+      color: white
+      &::before
+        opacity: 1
+    .p-small
+      margin-top: 2px
