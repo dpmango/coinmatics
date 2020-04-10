@@ -2,7 +2,7 @@ ProjectTitle: Coinmatics
 
 PageList:
   - file: homepage.html
-    ready: 70
+    ready: 75
   - file: page.html
     ready: 0
   - file: ui.html

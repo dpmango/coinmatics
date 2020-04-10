@@ -15,6 +15,19 @@
     max-width: $col4
     margin-bottom: 52px
 
++r($xl)
+  .features
+    &__col
+      flex-basis: 50%
+      max-width: 50%
+
++r($md)
+  .features
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      margin-bottom: 36px
+
 
 // feature-card
 .feature-card
@@ -29,3 +42,12 @@
     padding-right: 12px
     .p-small
       margin-top: 4px
+
++r($md)
+  .feature-card
+    display: block
+    text-align: center
+    &__content
+      margin-top: 20px
+      padding-left: 0
+      padding-right: 0

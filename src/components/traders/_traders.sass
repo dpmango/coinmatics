@@ -13,6 +13,16 @@
     margin-top: 32px
     text-align: center
 
++r($xl)
+  .traders
+    &__content
+      padding: 48px 0 16px
+
++r($md)
+  .traders
+    &__card
+      padding-left: 0
+      padding-right: 0
 
 // trader-card
 .trader-card
@@ -68,7 +78,8 @@
   // nav
   &__nav
     padding: 22px 38px
-    background: $colorBg
+    // background: $colorBg, .3
+    background: #0F2050
     border-bottom-left-radius: 32px
     border-bottom-right-radius: 32px
   &__nav-element
@@ -104,3 +115,18 @@
         opacity: 1
     .p-small
       margin-top: 2px
+
++r($xl)
+  .trader-card
+    &__main
+      flex-wrap: wrap
+    &__content
+      flex-basis: calc(100% - 254px)
+    &__chart
+      flex: 0 0 100%
+      padding-left: 0
+      padding-top: 42px
+
+    &__nav-element
+      flex-basis: $col4
+      max-width: $col4
