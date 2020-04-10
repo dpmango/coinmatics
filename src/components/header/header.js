@@ -30,7 +30,7 @@
         this.listenResize();
       }
 
-      this.closeMobileMenu();
+      this.closeMobileNavi();
       this.setMenuClass();
       this.controlHeaderClass();
     },
@@ -44,8 +44,8 @@
         bottomPoint: headerHeight,
       };
     },
-    closeMobileMenu: function() {
-      $('[js-hamburger]').removeClass('is-active');
+    closeMobileNavi: function() {
+      $('.js-hamburger').removeClass('is-active');
       $('.mobile-navi').removeClass('is-active');
 
       APP.Plugins.ScrollBlock.enableScroll();
@@ -92,18 +92,29 @@
       });
     },
     clickListeners: function() {
-      // hamburger
-      _document.on('click', '[js-hamburger]', function() {
-        $(this).toggleClass('is-active');
-        $('.mobile-navi').toggleClass('is-active');
-
-        if ($(this).is('.is-active')) {
-          APP.Plugins.ScrollBlock.disableScroll();
-        } else {
-          APP.Plugins.ScrollBlock.enableScroll();
-        }
-      });
       var _this = this;
+
+      // hamburger & mobile navi
+      _document
+        .on('click', '.js-hamburger', function() {
+          $(this).toggleClass('is-active');
+          $('.mobile-navi').toggleClass('is-active');
+
+          if ($(this).is('.is-active')) {
+            APP.Plugins.ScrollBlock.disableScroll();
+          } else {
+            APP.Plugins.ScrollBlock.enableScroll();
+          }
+        })
+        .on('click', function(e) {
+          var $target = $(e.target);
+          var isNotHeader = $target.closest('.header').length === 0;
+          var isNotScroller = $target.closest('.mobile-navi__scroller').length === 0;
+
+          if (isNotHeader && isNotScroller) {
+            _this.closeMobileNavi();
+          }
+        });
 
       // megamenu
       _document
@@ -218,7 +229,7 @@
             transform: 'translate3d(0,' + reverseNormalized + '%,0)',
           });
 
-          this.makeHeaderVisible();
+          // this.makeHeaderVisible();
           $('body').removeClass(this.data.classes.bodyFixed);
           _header.container.removeClass(this.data.classes.fixedClass);
         }

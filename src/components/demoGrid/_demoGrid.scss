@@ -22,13 +22,26 @@
   }
 }
 
+@include r($xl) {
+  .demo-grid {
+    .col {
+      flex-basis: 12.5%;
+      max-width: 12.5% !important;
+
+      &:nth-child(n + 9) {
+        display: none;
+      }
+    }
+  }
+}
+
 @include r($md) {
   .demo-grid {
     .col {
-      flex-basis: $col2;
-      max-width: $col2 !important;
+      flex-basis: 50%;
+      max-width: 50% !important;
 
-      &:nth-child(n + 7) {
+      &:nth-child(n + 3) {
         display: none;
       }
     }

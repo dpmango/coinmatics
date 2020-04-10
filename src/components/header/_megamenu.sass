@@ -8,7 +8,7 @@
   height: calc(100% - 84px)
   display: flex
   flex-direction: column
-  background: rgba(white, .3)
+  background: rgba(#13265C, .34)
   opacity: 0
   letter-spacing: 0em
   pointer-events: none
@@ -26,7 +26,6 @@
     box-shadow: 0px 4px 12px rgba(14, 31, 80, 0.04)
     overflow-y: auto
     -webkit-overflow-scrolling: touch
-
   &__grid
     display: flex
     flex-wrap: wrap
@@ -38,38 +37,7 @@
     flex: 0 0 $col4
     max-width: $col4
     padding: 10px
-  &__nav
-    display: flex
-    transition: color .25s $ease
-    &:hover
-      color: $colorPrimaryHover
-      .megamenu__nav-content .p-mini
-        color: $colorPrimaryHover
-      .megamenu__nav-icon
-        svg[class^="ico ico-color"]
-          opacity: 0
-        svg[class^="ico ico-mono"]
-          opacity: 1
 
-  &__nav-icon
-    position: relative
-    flex: 0 0 56px
-    font-size: 0
-    .ico
-      position: absolute
-      top: 0
-      left: 0
-      font-size: 56px
-      transition: opacity .25s $ease
-    svg[class^="ico ico-mono"]
-      opacity: 0
-  &__nav-content
-    padding-left: 20px
-    max-width: 277px
-    .p-mini
-      margin-top: 4px
-      color: $colorGray
-      transition: color .25s $ease
 
 
 body.is-header-fixed

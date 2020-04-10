@@ -7,8 +7,8 @@
   z-index: 9
   background: white
   will-change: transform
-  backface-visibility: hidden
-  transform-style: preserve-3d
+  // backface-visibility: hidden
+  // transform-style: preserve-3d
   &__wrapper
     display: flex
     align-items: center
@@ -52,7 +52,7 @@
 
   &__hamburger
     display: none
-    padding-left: 20px
+    padding-left: 14px
 
   &.is-fixed
     // should be normalized to -100% scroll at this point
@@ -72,20 +72,29 @@
     transform: translate3d(0,-100%,0) !important
 
 
-+r($lg)
++r($xl)
   .header
-    &__cta
+    > .container
+      padding-left: 32px
+      padding-right: 20px
+    &__wrapper
+      padding-bottom: 20px
+    &__menu
       display: none
+    &__cta
+      margin-left: auto
+    &__hamburger
+      display: block
 
 +r($md)
   .header
-    &__menu
+    > .container
+      padding-left: 20px
+      padding-right: 20px
+    &__wrapper
+      padding-top: 14px
+      padding-bottom: 14px
+    &__cta
       display: none
     &__hamburger
       margin-left: auto
-      display: block
-
-+r($sm)
-  .header
-    &__logo
-      font-size: 30px

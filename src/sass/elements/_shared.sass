@@ -103,3 +103,50 @@
   &__content
     display: none
     padding: 4px 30px 12px 0px
+
+
+// .menu-nav
+.menu-nav
+  display: flex
+  transition: color .25s $ease
+  &__icon
+    position: relative
+    flex: 0 0 56px
+    height: 56px
+    font-size: 0
+    .ico
+      position: absolute
+      top: 0
+      left: 0
+      font-size: 56px
+      transition: opacity .25s $ease
+    svg[class^="ico ico-mono"]
+      opacity: 0
+  &__content
+    padding-left: 20px
+    max-width: 277px
+    .p-mini
+      margin-top: 4px
+      color: $colorGray
+      transition: color .25s $ease
+  &:hover
+    color: $colorPrimaryHover
+    .menu-nav__content .p-mini
+      color: $colorPrimaryHover
+    .menu-nav__icon
+      svg[class^="ico ico-color"]
+        opacity: 0
+      svg[class^="ico ico-mono"]
+        opacity: 1
+
++r($md)
+  .menu-nav
+    &__icon
+      flex-basis: 24px
+      height: 24px
+      .ico
+        font-size: 24px
+    &__content
+      padding-left: 12px
+      .p-mini
+        display: none
