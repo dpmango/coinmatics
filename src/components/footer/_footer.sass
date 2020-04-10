@@ -27,14 +27,14 @@
   &__subscribe-labels
     flex: 1 1 auto
     .p-small
-      margin-top: 2px
+      margin-top: 4px
   &__subscribe-cta
     flex: 0 0 auto
     margin-left: auto
 
   // middle
   &__middle
-    padding: 52px 0 32px
+    padding: 48px 0 32px
   &__middle-wrapper
     display: flex
     flex-wrap: wrap
@@ -78,6 +78,7 @@
     max-width: $col8
   &__menus-wrapper
     display: flex
+    flex-wrap: wrap
     margin: -10px
   &__menu-col
     flex: 0 0 $col3
@@ -112,6 +113,7 @@
     max-width: $col4
     align-self: flex-end
   &__logo
+    flex: 0 0 auto
     margin-bottom: 12px
   &__lang
     display: flex
@@ -137,3 +139,95 @@
     overflow: hidden
     .ico
       font-size: 16px
+
++r($xl)
+  .footer
+    padding-bottom: 56px
+    &__middle
+      padding-top: 32px
+    &__contacts
+      flex-basis: 100%
+      max-width: 100%
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+    &__contacts-main
+      padding-right: 20px
+    &__menus
+      flex-basis: 100%
+      max-width: 100%
+      margin-top: 24px
+    &__socials
+      margin: -8px -8px -8px auto
+
+    // bottom
+    &__bottom-wrapper
+      align-items: center
+    &__bottom-left
+      display: flex
+      align-items: center
+    &__logo
+      margin-bottom: 0
+      padding-right: 20px
+    &__bottom-right
+      align-self: center
+    &__lang
+      margin-top: 4px
+
++r($md)
+  .footer
+    padding-bottom: 40px
+    text-align: center
+    &__top
+      padding: 40px 0
+    &__top-wrapper
+      flex-wrap: wrap
+    &__subscribe-labels
+      flex: 0 0 100%
+      max-width: 100%
+      .p-small
+        margin-top: 16px
+    &__subscribe-cta
+      flex: 0 0 100%
+      max-width: 100%
+      margin-left: 0
+      margin-top: 4px
+
+    // middle
+    &__middle
+      padding-bottom: 24px
+    &__contacts-main
+      flex: 0 0 100%
+      max-width: 100%
+      padding-right: 0
+    &__socials
+      margin: 16px 0 -8px
+      flex: 0 0 100%
+      max-width: 100%
+      justify-content: center
+    &__menu-col
+      flex-basis: 50%
+      max-width: 50%
+
+    // bottom
+    &__bottom-left
+      flex-basis: 100%
+      max-width: 100%
+      display: block
+    &__logo
+      padding-right: 0px
+      justify-content: center
+      margin-bottom: 20px
+    &__bottom-right
+      flex-basis: 100%
+      max-width: 100%
+      align-self: center
+    &__lang
+      margin-top: 20px
+      justify-content: center
+
++r($sm)
+  .footer
+    &__menu-col
+      flex-basis: 100%
+      max-width: 100%
