@@ -41,12 +41,38 @@
     // transform: translateX(-50%)
     width: 100%
     height: 100%
-    bottom: -2px
+    bottom: -2.5px
     overflow: visible
   &--bottom
     svg
       bottom: auto
-      top: -2px
+      top: -2.5px
+      transform: rotate(180deg)
+  &--blue
+    .bg-waves
+      &__l-1
+        fill: #0C2F8B
+      &__l-2
+        fill: #17378C
+      &__l-3
+        fill: #0E1F50
+  &--dark
+    .bg-waves
+      &__l-1
+        fill: #0C2F8B
+      &__l-2
+        fill: #17378C
+      &__l-3
+        fill: #041133
+  &--gray
+    .bg-waves
+      &__l-1
+        fill: #F6F7FB
+      &__l-2
+        fill: #EEF1F6
+      &__l-3
+        fill: #FAFBFD
+
 
 // section-head
 .section-head
