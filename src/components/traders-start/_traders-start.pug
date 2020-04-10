@@ -11,10 +11,12 @@
 
       .trstart__banner-image(data-aos="fade")
         include ../../icons/svg-inline/illustration_trstart.svg
-  // tools (bottom)
+
+  // separator
   .trstart__waves.bg-waves.bg-null
     include ../../icons/svg-inline/waves-trstart-top.svg
 
+  // tools (bottom)
   .trstart__tools
     .container
       .trstart__head.section-head(data-aos="fade-up")
@@ -22,7 +24,7 @@
       .trstart__tools-wrapper
         .trstart__tools-content(data-aos="fade-right")
           // accardeon
-          .trstart__accardeon.accardeon.js-accardeon
+          .trstart__accardeon.accardeon.js-accardeon(data-image-selector=".trstart__tools-images")
             // accardeon__element (active)
             .accardeon__element.is-active
               .accardeon__toggler
@@ -30,19 +32,38 @@
                   .h5-title Investment Portfolio
                   +svgMono('arrow-down')
               .accardeon__content(style="display: block")
+                .trstart__tools-image.trstart__tools-image--mobile(data-teleport-target="trstart-image-1")
                 p.p-small.c-gray Настройте мгновенные оповещения для отслеживания колебаний валютных пар. После настройки параметров вы получаете своевременные уведомления о выгодных сделках через Telegram-канал. Доступны биржи Bittrex, Poloniex, Bitstamp, Bitfinex, Binance, а также большинство криптовалютных пар.
-            each element in ["Сrypto Arbitration", "Notification Center", "Analytics", "Market Research Tool"]
+            -
+              var list = [
+                {title: "Сrypto Arbitration", image: "trstart-image-2"},
+                {title: "Notification Center", image: "trstart-image-3"},
+                {title: "Analytics", image: "trstart-image-4"},
+                {title: "Market Research Tool", image: "trstart-image-5"}
+              ]
+            each element in list
               // accardeon__element
               .accardeon__element
                 .accardeon__toggler
                   .accardeon__title
-                    .h5-title= element
+                    .h5-title= element.title
                     +svgMono('arrow-down')
                 .accardeon__content
+                  .trstart__tools-image.trstart__tools-image--mobile(data-teleport-target=element.image)
+                    // teleport
                   p.p-small.c-gray Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-        .trstart__tools-image(data-aos="fade-left")
-          img(js-lazy data-src='img/tools_macbook.png' data-srcset='img/tools_macbook@2x.png 2x')
+        .trstart__tools-images(data-aos="fade-left")
+          .trstart__tools-image.js-teleport(style="display: block" data-accardeon-tab="1" data-teleport-condition="<1200" data-teleport-to="trstart-image-1")
+            img(src='img/tools_macbook.png' srcset='img/tools_macbook@2x.png 2x')
+          .trstart__tools-image.js-teleport(data-accardeon-tab="2" data-teleport-condition="<1200" data-teleport-to="trstart-image-2")
+            img(src='img/tools_macbook.png' srcset='img/tools_macbook@2x.png 2x')
+          .trstart__tools-image.js-teleport(data-accardeon-tab="3" data-teleport-condition="<1200" data-teleport-to="trstart-image-3")
+            img(src='img/tools_macbook.png' srcset='img/tools_macbook@2x.png 2x')
+          .trstart__tools-image.js-teleport(data-accardeon-tab="4" data-teleport-condition="<1200" data-teleport-to="trstart-image-4")
+            img(src='img/tools_macbook.png' srcset='img/tools_macbook@2x.png 2x')
+          .trstart__tools-image.js-teleport(data-accardeon-tab="5" data-teleport-condition="<1200" data-teleport-to="trstart-image-5")
+            img(src='img/tools_macbook.png' srcset='img/tools_macbook@2x.png 2x')
 
       // cta
       .trstart__tools-cta(data-aos="fade-up")

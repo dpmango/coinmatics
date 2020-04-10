@@ -15,6 +15,7 @@
       max-width: 100%
       overflow: visible
 
+  // tools
   &__tools
     padding: 136px 0 88px
     background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%)
@@ -23,7 +24,7 @@
     flex-wrap: wrap
     margin: -10px
     padding: 72px 0 24px
-  &__tools-content, &__tools-image
+  &__tools-content, &__tools-images
     width: 100%
     min-width: 1px
     min-height: 0
@@ -35,18 +36,31 @@
     padding-left: 38px
     padding-right: 52px
   &__tools-image
+    display: none
     font-size: 0
     text-align: center
     img
       max-width: 100%
+    &--mobile
+      display: none
+      max-width: 530px
+      margin-left: auto
+      margin-right: auto
+    &.is-active
+      display: block
   &__tools-cta
     text-align: center
 
 +r($xl)
   .trstart
-    &__tools-content, &__tools-image
+    &__tools-content
       flex-basis: 100%
       max-width: 100%
+    &__tools-images
+      display: none
+    &__tools-image
+      &--mobile
+        display: block
     &__accardeon
       padding-left: 0
       padding-right: 0

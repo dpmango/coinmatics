@@ -66,6 +66,17 @@
           });
         }
 
+        // related images
+        var imageSelector = $title.closest('.js-accardeon').data('image-selector');
+        if (imageSelector) {
+          var $images = $(imageSelector);
+          var index = $element.index() + 1;
+          var $targetImage = $(`${imageSelector} [data-accardeon-tab='${index}']`);
+
+          $targetImage.siblings().hide();
+          $targetImage.fadeIn(250);
+        }
+
         // target current element
         if ($element.is('.is-active')) {
           $element.removeClass('is-active');
