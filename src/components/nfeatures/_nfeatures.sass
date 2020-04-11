@@ -1,0 +1,62 @@
+// PLATFORM PERFORMANCE
+.nfeatures
+  margin: 64px 0 48px
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    margin: 38px -10px -10px
+  &__col
+    display: flex
+    flex-direction: column
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+    flex: 0 0 $col4
+    max-width: $col4
+  &__card
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    text-align: center
+    padding-left: 8px
+    padding-right: 8px
+    .h1-title
+      margin-bottom: 24px
+    .h4-title
+      margin-bottom: 12px
+  &__card-pointer
+    margin-top: auto
+    padding-top: 24px
+    font-size: 0
+    min-height: 116px
+    color: $colorPrimary
+    .ico
+      font-size: 75px
+    .ico-mono-pointer-long
+      font-size: 92px
+
++r($xl)
+  .nfeatures
+    margin: 32px 0 40px
+
++r($md)
+  .nfeatures
+    margin: 24px 0 40px
+    &__wrapper
+      margin-top: 30px
+      margin-bottom: -30px
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      margin-bottom: 20px
+    &__card
+      padding-left: 0
+      padding-right: 0
+      .h1-title
+        margin-bottom: 16px
+      .h4-title
+        margin-bottom: 4px
+    &__card-pointer
+      display: none
+      min-height: 1px

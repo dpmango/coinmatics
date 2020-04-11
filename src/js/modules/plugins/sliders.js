@@ -60,12 +60,17 @@
           new Swiper(thumb, {
             watchOverflow: true,
             setWrapperSize: false,
-            slidesPerView: 'auto',
+            slidesPerView: 3,
             normalizeSlideIndex: true,
             slideToClickedSlide: true,
             on: {
               init: function() {
                 initTradersSwiper(id, this);
+              },
+            },
+            breakpoints: {
+              1201: {
+                slidesPerView: 5,
               },
             },
           });
@@ -77,7 +82,7 @@
         var selector = `.js-swiper-traders[data-swiper-group-id="${id}"]`;
         if ($page.find(selector).length > 0) {
           new Swiper(selector, {
-            loop: true,
+            loop: false,
             watchOverflow: true,
             setWrapperSize: false,
             slidesPerView: 'auto',

@@ -17,16 +17,25 @@
 
 +r($xl)
   .features
+    margin: 112px 0 112px
     &__col
       flex-basis: 50%
       max-width: 50%
 
 +r($md)
   .features
+    margin: 64px 0 64px
+    &__wrapper
+      align-items: flex-start
+      margin: 38px -10px -38px
+    &__col
+      margin-bottom: 36px
+
++r($sm)
+  .features
     &__col
       flex-basis: 100%
       max-width: 100%
-      margin-bottom: 36px
 
 
 // feature-card
@@ -43,6 +52,12 @@
     .p-small
       margin-top: 4px
 
++r($xl)
+  .feature-card
+    &__content
+      padding-left: 20px
+      padding-right: 0
+
 +r($md)
   .feature-card
     display: block
@@ -51,3 +66,6 @@
       margin-top: 20px
       padding-left: 0
       padding-right: 0
+      // max-width: 320px
+      // margin-left: auto
+      // margin-right: auto
