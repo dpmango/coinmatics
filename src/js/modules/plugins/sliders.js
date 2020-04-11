@@ -62,6 +62,7 @@
             setWrapperSize: false,
             slidesPerView: 'auto',
             normalizeSlideIndex: true,
+            slideToClickedSlide: true,
             on: {
               init: function() {
                 initTradersSwiper(id, this);
@@ -81,8 +82,16 @@
             setWrapperSize: false,
             slidesPerView: 'auto',
             normalizeSlideIndex: false,
+            spaceBetween: 4,
+            centeredSlides: true,
+            autoHeight: true,
             thumbs: {
               swiper: thumbsInstance,
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              type: 'bullets',
+              clickable: true,
             },
           });
         }

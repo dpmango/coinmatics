@@ -67,7 +67,7 @@
       });
 
       // re-init sliders and other components
-      // APP.Plugins.Sliders.reinit();
+      APP.Plugins.Sliders.update();
     },
   };
 })(jQuery, window.APP);

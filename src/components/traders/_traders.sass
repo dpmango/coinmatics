@@ -15,19 +15,31 @@
 
 +r($xl)
   .traders
-    &__content
-      padding: 48px 0 16px
+    &__container
+      padding: 48px 0 24px
+    &__card
+      margin: 40px 0 32px
+      padding-left: 0
+      padding-right: 0
 
 +r($md)
   .traders
+    &__container
+      padding: 32px 0 24px
     &__card
-      padding-left: 0
-      padding-right: 0
+      margin: 24px 0 24px
+    &__cta
+      margin-top: 24px
+
+
 
 // trader-card
 .trader-card
   background: #13265C
   border-radius: 32px
+  &__slider
+    .swiper-pagination
+      display: none
   &__main
     padding: 48px
     display: flex
@@ -35,6 +47,7 @@
   &__avatar
     position: relative
     z-index: 1
+    align-self: flex-start
     flex: 0 0 254px
     border-radius: 20px
     overflow: hidden
@@ -48,6 +61,8 @@
     display: flex
     flex-wrap: wrap
     margin: -10px
+    &--mobile
+      display: none
   &__info-col
     width: 100%
     min-width: 1px
@@ -127,7 +142,47 @@
       flex: 0 0 100%
       padding-left: 0
       padding-top: 42px
-
     &__nav-element
       flex-basis: $col4
       max-width: $col4
+
++r($md)
+  .trader-card
+    background: transparent
+    border-radius: 0px
+    &__slider
+      padding-bottom: 30px
+      margin-left: -20px
+      margin-right: -20px
+      .swiper-pagination
+        display: flex
+    &__main
+      background: #13265C
+      flex-basis: calc(100% - 32px)
+      border-radius: 24px
+      padding: 40px
+    &__avatar
+      flex-basis: 80px
+      border-radius: 12px
+    &__content
+      padding-left: 16px
+      flex-basis: calc(100% - 80px)
+    &__name
+      margin-bottom: 4px
+      margin-top: 8px
+    &__info-grid
+      &--desktop
+        display: none
+      &--mobile
+        display: flex
+        margin-top: 10px
+    &__info-col
+      .h4-title
+        margin-top: 4px
+    &__chart
+      padding-top: 24px
+    &__chart-graph
+      margin-top: 12px
+
+    &__nav
+      display: none

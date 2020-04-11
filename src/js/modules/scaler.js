@@ -14,6 +14,7 @@
       var $images = $('.page')
         .last()
         .find('.js-scaler');
+
       if ($images.length > 0) {
         $images.each(function(i, img) {
           var $img = $(img);
@@ -26,7 +27,7 @@
             mobileArPercent = (mobileArPx.slice(0, -2) / imgWidth) * 100 + '%';
           }
           // save mobile ar value in %
-          $img.attr('data-ar-mobile', mobileArPercent);
+          $img.attr('data-ar-desktop', mobileArPercent);
         });
       }
     },
@@ -44,11 +45,11 @@
           var $img = $(img);
           var mobileAr = $img.data('ar-576');
           var tabletAr = $img.data('ar-768');
-          var desktopAr = $img.data('ar-992');
-          var initialAr = $img.data('ar-mobile');
+          var desktopAr = $img.data('ar-1200');
+          var initialAr = $img.data('ar-desktop');
 
           if (mobileAr) {
-            if (wWidth > 575) {
+            if (wWidth <= 576) {
               $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(mobileAr) });
             } else {
               $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(initialAr) });
@@ -56,7 +57,7 @@
           }
 
           if (tabletAr) {
-            if (wWidth > 768) {
+            if (wWidth <= 767) {
               $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(tabletAr) });
             } else {
               $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(initialAr) });
@@ -64,7 +65,7 @@
           }
 
           if (desktopAr) {
-            if (wWidth > 991) {
+            if (wWidth <= 1200) {
               $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(desktopAr) });
             } else {
               $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(initialAr) });

@@ -12,40 +12,56 @@
       .traders__card(data-aos="fade-up")
         // trader-card
         .trader-card
-          .trader-card__slider.swiper-container.js-swiper-traders(data-swiper-group-id="1")
+          .trader-card__slider.swiper-container.swiper-nav-bullets.js-swiper-traders(data-swiper-group-id="1")
             .swiper-wrapper
-              each slide in [1,2,3,4,5]
+              each slide, idx in ["GuRaM_GE", "Walter Bulls", "Cryptor Bot", "Gloria Warren", "VIP Trader Club"]
                 .swiper-slide.trader-card__main
                   .trader-card__avatar
                     .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar_2x.jpg)")
                       img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderAvatar@2x.jpg 2x')
                   // content
                   .trader-card__content
-                    .trader-card__name.h3-title GuRaM_GE
+                    .trader-card__name.h3-title.h5-title-md= slide
                     .trader-card__info-grid
                       .trader-card__info-col.trader-card__info-col--full
-                        .h6-title.c-gray Total Profit
-                        .h4-title +40.1%
+                        .p-small.c-gray Total Profit
+                        .h4-title.h6-title-md +40.1%
+                    .trader-card__info-grid.trader-card__info-grid--desktop.js-teleport(data-teleport-condition="<767" data-teleport-to="traders_"+idx+"_info")
                       .trader-card__info-col
-                        .h6-title.c-gray Rating
-                        .h4-title 9.0
+                        .p-small.c-gray Rating
+                        .h4-title.h6-title-md 9.0
                       .trader-card__info-col
-                        .h6-title.c-gray Avg. Signals
-                        .h4-title 1136
+                        .p-small.c-gray Avg. Signals
+                        .h4-title.h6-title-md 1136
                       .trader-card__info-col
-                        .h6-title.c-gray Avg. Profit
-                        .h4-title +44.42%
+                        .p-small.c-gray Avg. Profit
+                        .h4-title.h6-title-md +44.42%
                       .trader-card__info-col
-                        .h6-title.c-gray Risk Level
-                        .h4-title Risky
+                        .p-small.c-gray Risk Level
+                        .h4-title.h6-title-md Risky
                   // chart
                   .trader-card__chart
                     .trader-card__chart-stats
                       .p-small.c-gray Last Week Profit Graph
                       .h6-title.c-primary +5.6%
                     .trader-card__chart-graph
-                      .scaler.is-bg-hidden(data-ar="21:9")
-                        img(js-lazy data-src='img/traderChart.png' data-srcset='img/traderChart@2x.png 2x')
+                      .scaler.is-bg-hidden.js-scaler(data-ar-1200="192/577" style="padding-bottom: " + (192/457) * 100 + "%;")
+                        picture(
+                          js-lazy
+                          alt=""
+                          data-src='img/traderChart.png')
+                          data-src(
+                          media="(min-width: 1201px)"
+                          srcset='img/traderChart.jpg 1x, img/traderChart@2x.png 2x')
+                          data-src(
+                          media="(min-width: 0px)"
+                          srcset='img/traderChart_768.png 1x, img/traderChart_768@2x.png 2x')
+
+                        //- img(js-lazy data-src='img/traderChart.png' data-srcset='img/traderChart@2x.png 2x')
+                    .trader-card__info-grid.trader-card__info-grid--mobile(data-teleport-target="traders_"+idx+"_info")
+
+            .swiper-pagination
+
           // nav
           .trader-card__nav
             .swiper-container.js-swiper-traders-thumbs(data-swiper-group-id="1")
