@@ -1,7 +1,11 @@
 .mobile-navi
   display: none
-  position: fixed 0
-  z-index: 10
+  position: fixed
+  top: 80px
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 8
   background: rgba(#13265C, .34)
   // display: flex
   flex-direction: column
@@ -15,7 +19,7 @@
     width: 90%
     max-width: 656px
     margin-left: auto
-    padding: 80px
+    padding: 48px 80px 80px
     background: white
     overflow-y: auto
     -webkit-overflow-scrolling: touch
@@ -56,6 +60,7 @@
 +r($md)
   .mobile-navi
     display: flex
+    top: 64px
     &__scroller
       padding: 32px 32px 24px
       width: 85%
@@ -70,3 +75,8 @@
         margin-top: 12px
     &__cta-mobile
       display: block
+
+body.is-header-fixed
+  .mobile-navi
+    top: 64px
+
