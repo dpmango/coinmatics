@@ -1,3 +1,11 @@
 @import 'core';
 @import 'easing';
 @import 'animations';
+
+body.is-ie {
+  [data-aos] {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: none !important;
+  }
+}

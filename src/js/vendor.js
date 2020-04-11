@@ -5,7 +5,7 @@ import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
 import objectFitImages from 'object-fit-images/dist/ofi.es-modules.js';
 import Swiper from 'swiper/js/swiper.esm.bundle';
 import magnificPopup from 'magnific-popup';
-import AOS from 'aos';
+import AOS from 'aos/dist/aos.js';
 import validate from 'jquery-validation';
 import mask from 'jquery-mask-plugin';
 import selectric from 'jquery-selectric';
