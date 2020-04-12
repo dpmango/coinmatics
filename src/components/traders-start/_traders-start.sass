@@ -8,11 +8,13 @@
     padding: 144px 0 0
   &__banner-image
     margin-top: 88px
-    margin-bottom: -40px
+    margin-bottom: -42px
+    padding-left: 20px
+    padding-right: 20px
     font-size: 0
     text-align: center
     img, svg
-      max-width: 100%
+      width: 100%
       overflow: visible
 
   // tools
@@ -53,6 +55,19 @@
 
 +r($xl)
   .trstart
+    &__banner
+      padding: 112px 0 0
+    &__banner-image
+      margin-top: 88px
+      margin-bottom: -32px
+      padding-left: 0
+      padding-right: 0
+
+    // tools
+    &__tools
+      padding: 88px 0
+    &__tools-wrapper
+      padding: 64px 0 40px
     &__tools-content
       flex-basis: 100%
       max-width: 100%
@@ -64,3 +79,19 @@
     &__accardeon
       padding-left: 0
       padding-right: 0
+      max-width: 672px
+      margin-left: auto
+      margin-right: auto
+
++r($md)
+  .trstart
+    &__banner
+      padding: 64px 0 0
+    &__banner-image
+      margin-top: 72px
+      margin-bottom: -16px
+    // tools
+    &__tools
+      padding: 56px 0
+    &__tools-wrapper
+      padding: 40px 0 32px
