@@ -2,6 +2,9 @@
 .integrations
   .container
     .integrations__wrapper
+      .integrations__mobile-head
+        .section-head(data-teleport-target="integrations-head")
+
       .integrations__left
         .integrations__grid
           .integrations__grid-col(data-aos="fade-up")
@@ -28,11 +31,12 @@
                 img(js-lazy data-src='img/logo-poloniex@2x.png' data-srcset='img/logo-poloniex@2x.png 2x')
               .integration-card__tag.p-mini Soon
 
-      .integrations__right(data-aos="fade-left")
+      .integrations__right(data-aos="fade-up")
         .integrations__right-wrapper
           .integrations__head.section-head.section-head--left
-            h4.h4-title.c-light Integrations
-            h2.h2-title Available Exchanges
+            .js-teleport(data-teleport-condition="<1200" data-teleport-to="integrations-head")
+              h4.h4-title.c-light Integrations
+              h2.h2-title.h3-title-md Available Exchanges
             p.p-main.c-gray We suport only Binance accounts now, but in the nearest future we’re planing to add other pupular platforms.
             p.p-main.c-gray <a href="#">Get notified</a> when the new exanges become able.
             a(href="#").btn.btn-primary.btn--xl Integrate Exchange

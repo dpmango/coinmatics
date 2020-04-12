@@ -22,27 +22,58 @@
   &__right-wrapper
     padding-left: 20px
     padding-right: 20px
+  &__head
+    .h2-title:last-child
+      margin-bottom: 0.5em
+  &__mobile-head
+    display: none
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    flex: 0 0 100%
+    max-width: 100%
+    padding: 10px 0px
 
 +r($xl)
   .integrations
-    // margin: 120px 0 160px
+    margin: 112px 0 144px
+    &__wrapper
+      max-width: 500px
+      margin-left: auto
+      margin-right: auto
     &__left, &__right
       flex-basis: 100%
       max-width: 100%
-    &__left
-      padding-left: 10px
+      padding-left: 0
+      padding-right: 0
     &__right-wrapper
       padding-left: 0
       padding-right: 0
       .section-head
         text-align: center
+        .btn
+          margin-top: 40px
+    &__grid
+      margin: 40px -4px 24px
     &__grid-col
       flex-basis: 25%
       max-width: 25%
+      padding: 4px
+    &__mobile-head
+      display: block
 
 +r($md)
   .integrations
-    // margin: 120px 0 160px
+    margin: 64px 0 64px
+    &__right-wrapper
+      .section-head
+        .btn
+          margin-top: 32px
+
++r($sm)
+  .integrations
+    &__grid
+      margin: 8px -4px 8px
     &__grid-col
       flex-basis: 50%
       max-width: 50%
@@ -78,3 +109,15 @@
     color: white
     border-radius: 7px 0px 0px 7px
     padding: 7px 14px
+
++r($xl)
+  .integration-card
+    min-height: 136px
+    padding: 8px
+    &__tag
+      padding: 5px 10px
+
++r($sm)
+  .integration-card
+    min-height: 154px
+    padding: 10px
