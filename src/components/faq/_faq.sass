@@ -36,17 +36,23 @@
       color: $colorPrimary
       transition: .25s $ease
       will-change: transform
+    .p-main
+      padding-right: 12px
   &__cta
     text-align: center
 
 +r($xl)
   .faq
-    // margin: 160px 0 144px
+    margin: 144px 0 120px
+    &__list
+      margin-top: 40px
+      margin-bottom: 40px
 
 +r($md)
   .faq
+    margin: 64px 0
     &__list
-      margin: 24px -10px 24px
+      margin: 20px -10px 24px
     &__col
       flex-basis: 100%
       max-width: 100%
