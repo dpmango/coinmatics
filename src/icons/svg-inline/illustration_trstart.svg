@@ -105,7 +105,7 @@
               </g>
             </g>
             <g id="bbl-et-3" opacity="0.4" transform="translate(949.000000, 43.000000)">
-              <g class="js-rellax" data-rellax-speed="0.75">
+              <g class="js-rellax" data-rellax-speed="0.25">
                 <g id="Group" fill="#18DCA6" fill-rule="nonzero">
                     <path d="M31.492,15.655 C31.492,24.3009 24.483,31.3099 15.837,31.3099 C7.191,31.3099 0.182,24.3009 0.182,15.655 C0.182,7.009 7.191,0 15.837,0 C24.483,0 31.492,7.009 31.492,15.655 Z" id="Path"></path>
                 </g>

@@ -3,6 +3,9 @@
 //////////
 (function($, APP) {
   APP.Plugins.Rellax = {
+    data: {
+      rellax: undefined,
+    },
     init: function() {
       var rellax = new Rellax('.js-rellax', {
         // speed: -2,
@@ -11,6 +14,34 @@
         round: true,
         vertical: true,
         horizontal: false,
+      });
+
+      this.data.rellax = rellax;
+    },
+    destroy: function() {
+      this.data.rellax.destroy();
+      this.data.rellax = undefined;
+    },
+    freeze: function() {
+      var $rellax = $('.js-rellax');
+      if ($rellax.length === 0) return;
+
+      $rellax.each(function(i, el) {
+        var $el = $(el);
+        // var matrixTransform = $el.css('transform').split(',')[5];
+        // var translate = matrixTransform.substring(0, matrixTransform.length - 1);
+        // $el.css('margin-top', translate);
+        $el.addClass('frozen');
+      });
+    },
+    unfreeze: function() {
+      var $rellax = $('.js-rellax');
+      if ($rellax.length === 0) return;
+
+      $rellax.each(function(i, el) {
+        var $el = $(el);
+        // $el.css('margin-top', 0);
+        $el.removeClass('frozen');
       });
     },
   };

@@ -48,11 +48,13 @@
           $('body').addClass('body-m-lock');
         }
       } else {
+        APP.Plugins.Rellax.freeze();
         this.data.lastForBodyLock = _window.scrollTop();
         this.data.blocked = true;
         $('.page__content').css({
           'margin-top': '-' + this.data.lastForBodyLock + 'px',
         });
+
         this.fillScrollbarGap();
         $('body').addClass('body-lock');
       }
@@ -72,6 +74,7 @@
         this.data.direction = 'up';
         $('body').removeClass('body-m-lock');
       } else {
+        APP.Plugins.Rellax.unfreeze();
         this.data.blocked = false;
         this.data.direction = 'up'; // keeps header
         $('.page__content').css({
