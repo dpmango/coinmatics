@@ -18,8 +18,8 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
-// import Rellax from 'rellax';
-import lax from 'lax.js';
+import Rellax from 'rellax';
+// import lax from 'lax.js';
 
 // uncomment plugins you want to use (from /js/__extras folder)
 
@@ -56,7 +56,7 @@ window.throttle = throttle;
 window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
-// window.Rellax = Rellax;
+window.Rellax = Rellax;
 window.lax = lax;
 
 // window.scrollMonitor = scrollMonitor;
