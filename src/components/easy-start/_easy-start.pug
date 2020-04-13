@@ -9,9 +9,10 @@
         .easy-start__content-wrapper
           .section-head.section-head--left(data-aos="fade-up")
             h4.h4-title.c-light Easy Start
-            h2.h2-title Simple as one, two, three
+            h2.h2-title.h3-title-md Simple as one, two, three
             p.p-main It’s never been easier to trade like a real professional trader. Just few steps.
-            a(href="#").btn.btn-primary Start Earning
+            .js-teleport(data-teleport-condition="<1200" data-teleport-to="easy-start-cta")
+              a(href="#").btn.btn-primary Start Earning
       .easy-start__steps
         .easy-start__steps-wrapper
           .easy-start__steps-col(data-aos="fade-up")
@@ -38,3 +39,5 @@
               .es-card__content
                 .es-card__number 3
                 .p-small Track your gains in comfortable way
+
+      .easy-start__cta-mobile(data-aos="fade-up" data-teleport-target="easy-start-cta")
