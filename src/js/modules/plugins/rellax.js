@@ -17,6 +17,15 @@
       });
 
       this.data.rellax = rellax;
+
+      // lax.setup(); // init
+
+      // const updateLax = () => {
+      //   lax.update(window.scrollY);
+      //   window.requestAnimationFrame(updateLax);
+      // };
+
+      // window.requestAnimationFrame(updateLax);
     },
     destroy: function() {
       this.data.rellax.destroy();

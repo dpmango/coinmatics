@@ -1,14 +1,14 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import svg4everybody from 'svg4everybody';
 import picturefill from 'picturefill';
 import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
 import objectFitImages from 'object-fit-images/dist/ofi.es-modules.js';
 import Swiper from 'swiper/js/swiper.esm.bundle';
-import magnificPopup from 'magnific-popup';
+// import magnificPopup from 'magnific-popup';
 import AOS from 'aos/dist/aos.js';
-import validate from 'jquery-validation';
-import mask from 'jquery-mask-plugin';
-import selectric from 'jquery-selectric';
+// import validate from 'jquery-validation';
+// import mask from 'jquery-mask-plugin';
+// import selectric from 'jquery-selectric';
 import Barba from 'barba.js';
 import Lazy from 'jquery-lazy';
 import LazyAV from 'jquery-lazy/plugins/jquery.lazy.av.min.js';
@@ -18,7 +18,8 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
-import Rellax from 'rellax';
+// import Rellax from 'rellax';
+import lax from 'lax.js';
 
 // uncomment plugins you want to use (from /js/__extras folder)
 
@@ -34,18 +35,18 @@ import Rellax from 'rellax';
 
 // expose imports to window to use in app.js
 // (jquery is exposed in expose-loader)
-// window.jQuery = $;
-// window.$ = $;
+window.jQuery = $;
+window.$ = $;
 window.svg4everybody = svg4everybody;
 window.picturefill = picturefill;
 window.objectFitImages = objectFitImages;
 window.viewportUnitsBuggyfill = viewportUnitsBuggyfill;
 window.Swiper = Swiper;
-window.magnificPopup = magnificPopup;
+// window.magnificPopup = magnificPopup;
 window.AOS = AOS;
-window.validate = validate;
-window.mask = mask;
-window.selectric = selectric;
+// window.validate = validate;
+// window.mask = mask;
+// window.selectric = selectric;
 window.Barba = Barba;
 window.Lazy = Lazy;
 window.ScrollToPlugin = ScrollToPlugin;
@@ -55,7 +56,8 @@ window.throttle = throttle;
 window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
-window.Rellax = Rellax;
+// window.Rellax = Rellax;
+window.lax = lax;
 
 // window.scrollMonitor = scrollMonitor;
 // window.sharer = sharer;
