@@ -42,17 +42,24 @@
       display: none
   &__main
     padding: 48px
+    min-width: 1px
     display: flex
     // slide instance
   &__avatar
     position: relative
     z-index: 1
     align-self: flex-start
+    width: 100%
+    min-width: 1px
+    min-height: 0
     flex: 0 0 254px
+    max-width: 254px
     border-radius: 20px
     overflow: hidden
   &__content
     flex: 0 0 265px
+    min-width: 1px
+    min-height: 0
     padding-left: 40px
   &__name
     margin-bottom: 20px
@@ -79,6 +86,7 @@
   &__chart
     flex: 1 1 auto
     min-width: 1px
+    min-height: 0
     padding-left: 48px
     padding-top: 16px
 
@@ -163,6 +171,7 @@
       padding: 40px
     &__avatar
       flex-basis: 80px
+      max-width: 80px
       border-radius: 12px
     &__content
       padding-left: 16px
@@ -186,3 +195,35 @@
 
     &__nav
       display: none
+
+.is-ie
+  .trader-card
+    &__main
+      padding-left: 0
+      padding-right: 0
+    &__avatar
+      margin-left: 48px
+    &__chart
+      margin-right: 48px
+
++r($xl)
+  .is-ie
+    .trader-card
+      &__chart
+        width: calc(100% - 96px)
+        flex-basis: calc(100% - 96px)
+        padding-left: 48px
+
++r($md)
+  .is-ie
+    .trader-card
+      &__avatar
+        margin-left: 40px
+      &__content
+        padding-left: 40px
+      &__chart
+        width: calc(100% - 80px)
+        flex-basis: calc(100% - 80px)
+        margin-right: 40px
+        margin-left: 0
+        padding-left: 40px

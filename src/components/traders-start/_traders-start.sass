@@ -16,6 +16,8 @@
     img, svg
       width: 100%
       overflow: visible
+    img
+      display: none
 
   // tools
   &__tools
@@ -95,3 +97,11 @@
       padding: 56px 0
     &__tools-wrapper
       padding: 40px 0 32px
+
+.is-ie
+  .trstart
+    &__banner-image
+      svg
+        display: none
+      img
+        display: block
