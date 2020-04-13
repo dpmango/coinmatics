@@ -61,6 +61,7 @@
       }
       $('.js-megamenu-trigger a').removeClass('is-active');
       $('.js-megamenu').removeClass('is-active');
+      $('body').removeClass('is-megamenu-active');
     },
     closeMegaMenuByTarget: function($target) {
       var _this = this;
@@ -88,6 +89,7 @@
             // APP.Dev.LogOnScreen.showLog('disabling megamenu scroll');
             APP.Plugins.ScrollBlock.disableScroll();
           }
+          $('body').addClass('is-megamenu-active');
         }
       });
     },
@@ -208,7 +210,7 @@
         if (scroll.blocked) return;
 
         // hide megamenu when started scrolling
-        this.closeMegaMenu();
+        // this.closeMegaMenu();
 
         if (scroll.y > _header.bottomPoint) {
           $('body').addClass(this.data.classes.bodyFixed);
@@ -272,7 +274,8 @@
       // for mouse hovers and not mobile devices
       if (isMouse && !isMobile) {
         // 150ms pause if hover till going further
-        APP.Components.Header.data.timer = setTimeout(callback, 150);
+        // APP.Components.Header.data.timer = setTimeout(callback, 150);
+        callback();
       } else {
         callback();
       }

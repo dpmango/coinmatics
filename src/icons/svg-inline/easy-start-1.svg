@@ -24,12 +24,12 @@
 <rect x="105.342" y="24.1584" width="18.3158" height="19.3222" fill="#18DCA6"/>
 </g>
 <g filter="url(#fiilter_es12_d)">
-  <g id="ill-esb-1-1" class="js-rellax" data-rellax-speed="1">
+  <g id="ill-esb-1-1" class="js-rellax" data-rellax-speed="0.25">
     <rect x="30" y="14.2197" width="26" height="22.1538" rx="5" fill="white"/>
   </g>
 </g>
 <g filter="url(#fiilter_es13_d)">
-  <g id="ill-esb-1-2" class="js-rellax" data-rellax-speed="1">
+  <g id="ill-esb-1-2" class="js-rellax" data-rellax-speed="0.25">
     <rect x="90" y="74.3516" width="31" height="26.3736" rx="5" fill="white"/>
   </g>
 </g>

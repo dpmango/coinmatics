@@ -1,22 +1,23 @@
 // megamenu
 .megamenu
   position: fixed
-  top: 84px
-  z-index: 8
+  top: 83px
+  z-index: 10
   left: 0
   right: 0
-  height: calc(100% - 84px)
+  height: calc(100% - 83px)
   display: flex
   flex-direction: column
-  background: rgba(#13265C, .34)
+  // background: rgba(#13265C, .34)
   opacity: 0
   letter-spacing: 0em
   pointer-events: none
   will-change: opacity
-  transition: .25s $ease
+  transition: .25s .15s $ease
   &.is-active
     opacity: 1
     pointer-events: all
+    transition: .15s $ease
   &__scroller
     flex: 0 1 auto
     min-height: 1px
@@ -29,14 +30,16 @@
   &__grid
     display: flex
     flex-wrap: wrap
-    margin: 64px -10px 100px
+    margin: 34px -30px 70px
   &__col
     width: 100%
     min-width: 1px
     min-height: 0
     flex: 0 0 $col4
     max-width: $col4
-    padding: 10px
+    padding: 0px
+    .menu-nav
+      padding: 40px
 
 
 +r($xl)

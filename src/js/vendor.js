@@ -57,7 +57,7 @@ window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
 window.Rellax = Rellax;
-window.lax = lax;
+// window.lax = lax;
 
 // window.scrollMonitor = scrollMonitor;
 // window.sharer = sharer;

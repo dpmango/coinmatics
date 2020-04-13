@@ -90,6 +90,11 @@
             spaceBetween: 4,
             centeredSlides: true,
             autoHeight: true,
+            effect: 'fade',
+            fadeEffect: {
+              crossFade: true,
+            },
+            simulateTouch: false,
             thumbs: {
               swiper: thumbsInstance,
             },
