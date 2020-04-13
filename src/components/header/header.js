@@ -116,6 +116,9 @@
           if (isNotHeader && isNotScroller) {
             _this.closeMobileNavi();
           }
+        })
+        .on('click', '.js-close-mobile-navi', function(e) {
+          _this.closeMobileNavi();
         });
 
       // megamenu

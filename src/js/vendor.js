@@ -22,6 +22,7 @@ import scrollMonitor from 'scrollmonitor';
 import { CountUp } from 'countup.js';
 import Rellax from 'rellax';
 import Parallax from 'parallax-js';
+import Chart from 'chart.js';
 // import lax from 'lax.js';
 
 // uncomment plugins you want to use (from /js/__extras folder)
@@ -62,6 +63,7 @@ window.scrollMonitor = scrollMonitor;
 window.CountUp = CountUp;
 window.Rellax = Rellax;
 window.Parallax = Parallax;
+window.Chart = Chart;
 // window.lax = lax;
 
 // window.sharer = sharer;

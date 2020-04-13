@@ -10,7 +10,7 @@
       $parallax.each(function(idx, parallax) {
         var $el = parallax;
         var parallaxInstance = new Parallax(parallax);
-        $el.addClass('is-parallax-attached');
+        // $el.addClass('is-parallax-attached');
       });
     },
   };

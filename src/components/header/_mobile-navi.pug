@@ -2,6 +2,18 @@
 // MOBILE NAVI
 .mobile-navi
   .mobile-navi__scroller
+    .mobile-navi__head
+      a(href="homepage.html").header__logo.logo
+        .logo__icon
+          +svgColor('logo-sign')
+        .logo__name Coinmatics
+        .logo__tag
+          +svgColor('logo-beta')
+      .header__hamburger.js-close-mobile-navi
+        .hamburger.hamburger--squeeze.is-active
+          .hamburger-box
+            .hamburger-inner
+
     // section
     .mobile-navi__section
       .h6-title.p-mini-md.c-gray For Investors
