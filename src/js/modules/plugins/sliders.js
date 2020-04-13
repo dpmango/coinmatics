@@ -81,29 +81,40 @@
         // Traders main
         var selector = `.js-swiper-traders[data-swiper-group-id="${id}"]`;
         if ($page.find(selector).length > 0) {
-          new Swiper(selector, {
+          var options = {
             loop: false,
             watchOverflow: true,
             setWrapperSize: false,
             slidesPerView: 'auto',
             normalizeSlideIndex: false,
-            spaceBetween: 4,
             centeredSlides: true,
             autoHeight: true,
-            effect: 'fade',
-            fadeEffect: {
-              crossFade: true,
-            },
-            simulateTouch: false,
-            thumbs: {
-              swiper: thumbsInstance,
-            },
             pagination: {
               el: '.swiper-pagination',
               type: 'bullets',
               clickable: true,
             },
-          });
+          };
+
+          if (window.innerWidth <= 767) {
+            options = $.extend(options, {
+              spaceBetween: 4,
+            });
+          } else {
+            options = $.extend(options, {
+              effect: 'fade',
+              fadeEffect: {
+                crossFade: true,
+              },
+              simulateTouch: false,
+              thumbs: {
+                swiper: thumbsInstance,
+              },
+            });
+          }
+
+          // initial initialization
+          new Swiper(selector, options);
         }
       }
     },
