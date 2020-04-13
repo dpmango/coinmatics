@@ -72,7 +72,9 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       // APP.Plugins.Validations.init();
       APP.Plugins.LegacySupport.fixImages();
       APP.Plugins.Rellax.init();
-      APP.Plugins.ScalerDesktop.init(fromPjax);
+      APP.Plugins.Parallax.init(fromPjax);
+      APP.Plugins.ScrollMonitor.init(fromPjax);
+      APP.Plugins.Scaler.init(fromPjax);
 
       // APP.Plugins.Ymaps.init();
 

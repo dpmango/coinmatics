@@ -2,7 +2,7 @@
 // Scaler Desktop
 //////////
 (function($, APP) {
-  APP.Plugins.ScalerDesktop = {
+  APP.Plugins.Scaler = {
     init: function(fromPjax) {
       this.getScaler();
       this.setScaler();
@@ -50,25 +50,25 @@
 
           if (mobileAr) {
             if (wWidth <= 576) {
-              $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(mobileAr) });
+              $img.css({ 'padding-bottom': APP.Plugins.Scaler.setAr(mobileAr) });
             } else {
-              $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(initialAr) });
+              $img.css({ 'padding-bottom': APP.Plugins.Scaler.setAr(initialAr) });
             }
           }
 
           if (tabletAr) {
             if (wWidth <= 767) {
-              $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(tabletAr) });
+              $img.css({ 'padding-bottom': APP.Plugins.Scaler.setAr(tabletAr) });
             } else {
-              $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(initialAr) });
+              $img.css({ 'padding-bottom': APP.Plugins.Scaler.setAr(initialAr) });
             }
           }
 
           if (desktopAr) {
             if (wWidth <= 1200) {
-              $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(desktopAr) });
+              $img.css({ 'padding-bottom': APP.Plugins.Scaler.setAr(desktopAr) });
             } else {
-              $img.css({ 'padding-bottom': APP.Plugins.ScalerDesktop.setAr(initialAr) });
+              $img.css({ 'padding-bottom': APP.Plugins.Scaler.setAr(initialAr) });
             }
           }
         });

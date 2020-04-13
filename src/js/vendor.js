@@ -18,12 +18,14 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
+import scrollMonitor from 'scrollmonitor';
+import { CountUp } from 'countup.js';
 import Rellax from 'rellax';
+import Parallax from 'parallax-js';
 // import lax from 'lax.js';
 
 // uncomment plugins you want to use (from /js/__extras folder)
 
-// import scrollMonitor from 'scrollmonitor';
 // import sharer from 'sharer.js';
 // import ClipboardJS from 'clipboard';
 // import PhotoSwipe from 'photoswipe';
@@ -56,10 +58,12 @@ window.throttle = throttle;
 window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
+window.scrollMonitor = scrollMonitor;
+window.CountUp = CountUp;
 window.Rellax = Rellax;
+window.Parallax = Parallax;
 // window.lax = lax;
 
-// window.scrollMonitor = scrollMonitor;
 // window.sharer = sharer;
 // window.ClipboardJS = ClipboardJS;
 // window.PhotoSwipe = PhotoSwipe;
