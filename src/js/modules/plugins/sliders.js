@@ -45,6 +45,7 @@
       _window.on('resize', debounce(this.initResponsiveSwipers.bind(this), 200));
     },
     initSwipers: function() {
+      var _this = this;
       var $page = $('.page').last();
 
       // TRADERS gallery (initialization as a group)
@@ -81,41 +82,57 @@
         // Traders main
         var selector = `.js-swiper-traders[data-swiper-group-id="${id}"]`;
         if ($page.find(selector).length > 0) {
-          var options = {
-            loop: false,
-            watchOverflow: true,
-            setWrapperSize: false,
-            slidesPerView: 'auto',
-            normalizeSlideIndex: false,
-            centeredSlides: true,
-            autoHeight: true,
-            pagination: {
-              el: '.swiper-pagination',
-              type: 'bullets',
-              clickable: true,
-            },
-          };
-
-          if (window.innerWidth <= 767) {
-            options = $.extend(options, {
-              spaceBetween: 4,
-            });
-          } else {
-            options = $.extend(options, {
-              effect: 'fade',
-              fadeEffect: {
-                crossFade: true,
-              },
-              simulateTouch: false,
-              thumbs: {
-                swiper: thumbsInstance,
-              },
-            });
-          }
-
-          // initial initialization
-          new Swiper(selector, options);
+          tradersSwiperRouter(selector, thumbsInstance);
+          // _window.on(
+          //   'resize',
+          //   debounce(function() {
+          //     tradersSwiperRouter(selector, thumbsInstance);
+          //   }, 200)
+          // );
         }
+      }
+
+      function tradersSwiperRouter(selector, thumbsInstance) {
+        var options = {
+          loop: false,
+          watchOverflow: true,
+          setWrapperSize: false,
+          slidesPerView: 'auto',
+          normalizeSlideIndex: false,
+          centeredSlides: true,
+          autoHeight: true,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+          },
+          thumbs: {
+            swiper: thumbsInstance,
+          },
+        };
+
+        if (window.innerWidth <= 767) {
+          options = $.extend(options, {
+            spaceBetween: 4,
+          });
+        } else {
+          options = $.extend(options, {
+            effect: 'fade',
+            fadeEffect: {
+              crossFade: true,
+            },
+            // simulateTouch: false,
+          });
+        }
+
+        // initial initialization
+        // var instance = $(selector)[0].swiper;
+        // var cond = instance ? (instance.destroyed ? false : true) : false;
+
+        // if (cond) {
+        //   instance.destroy(true, true);
+        // }
+        new Swiper(selector, options);
       }
     },
     initSwiperDataTree: function() {
