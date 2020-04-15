@@ -1,0 +1,115 @@
+.trader-card
+  .trader-card__slider.swiper-container.swiper-nav-bullets.js-swiper-traders(data-swiper-group-id="1")
+    .swiper-wrapper
+      -
+        var list = [
+          {name: "GuRaM_GE", isFirst: true},
+          {name: "Walter Bulls", seed: true},
+          {name: "Cryptor Bot", seed: true},
+          {name: "Gloria Warren", seed: true},
+          {name: "VIP Trader Club", seed: true}
+        ]
+      each slide, idx in list
+        .swiper-slide.trader-card__main
+          .trader-card__avatar
+            .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar_2x.jpg)")
+              img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderAvatar@2x.jpg 2x')
+          // content
+          .trader-card__content
+            .trader-card__name.h3-title.h5-title-md= slide.name
+            .trader-card__info-grid
+              .trader-card__info-col.trader-card__info-col--full
+                .p-small.c-gray Total Profit
+                .h4-title.h6-title-md +40.1%
+            .trader-card__info-grid.trader-card__info-grid--desktop.js-teleport(data-teleport-condition="<767" data-teleport-to="traders_"+idx+"_info")
+              .trader-card__info-col
+                .p-small.c-gray Rating
+                .h4-title.h6-title-md 9.0
+              .trader-card__info-col
+                .p-small.c-gray Avg. Signals
+                .h4-title.h6-title-md 1136
+              .trader-card__info-col
+                .p-small.c-gray Avg. Profit
+                .h4-title.h6-title-md +44.42%
+              .trader-card__info-col
+                .p-small.c-gray Risk Level
+                .h4-title.h6-title-md Risky
+          // chart
+          .trader-card__chart
+            .trader-card__chart-stats
+              .p-small.c-gray Last Week Profit Graph
+              .h6-title.c-primary +5.6%
+            .trader-card__chart-graph
+              -
+                var values = [
+                  3.5, 4.2, 4,
+                  4.3, 3.2, 3.8,
+                  3.4, 3.7, 4,
+                  -0.1, -3, -3.2,
+                  -3, -0.2, 1,
+                  1.5, 2.5, 3.2,
+                  2.8, 3.6, 4.5
+                ]
+
+              -
+                var labels = [
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17
+                ]
+
+              -
+                var valattr = slide.seed ? 'seed' : values
+
+              if slide.isFirst
+                canvas.js-chart-scroll.js-chart(
+                  data-group-labels="3"
+                  data-values=valattr
+                  data-labels=labels
+                )
+              else
+                canvas.js-chart(
+                  data-group-labels="3"
+                  data-values=valattr
+                  data-labels=labels
+                )
+              //- .scaler.is-bg-hidden.js-scaler(data-ar-1200="192/577" style="padding-bottom: " + (192/457) * 100 + "%;")
+              //-   picture(
+              //-     js-lazy
+              //-     alt=""
+              //-     data-src='img/traderChart.png')
+              //-     data-src(
+              //-     media="(min-width: 1201px)"
+              //-     srcset='img/traderChart.png 1x, img/traderChart@2x.png 2x')
+              //-     data-src(
+              //-     media="(min-width: 0px)"
+              //-     srcset='img/traderChart_768.png 1x, img/traderChart_768@2x.png 2x')
+
+                //- img(js-lazy data-src='img/traderChart.png' data-srcset='img/traderChart@2x.png 2x')
+            .trader-card__info-grid.trader-card__info-grid--mobile(data-teleport-target="traders_"+idx+"_info")
+
+    .swiper-pagination
+
+  // nav
+  .trader-card__nav
+    .swiper-container.js-swiper-traders-thumbs(data-swiper-group-id="1")
+      .swiper-wrapper
+        .swiper-slide.trader-card__nav-element.is-active
+          .h6-title GuRaM_GE
+          .p-small Total Profit +40.1%
+        .swiper-slide.trader-card__nav-element
+          .h6-title Walter Bulls
+          .p-small Total Profit +38.4%
+        .swiper-slide.trader-card__nav-element
+          .h6-title Cryptor Bot
+          .p-small Total Profit +36.2%
+        .swiper-slide.trader-card__nav-element
+          .h6-title Gloria Warren
+          .p-small Total Profit +35.6%
+        .swiper-slide.trader-card__nav-element
+          .h6-title VIP Trader Club
+          .p-small Total Profit +34.4%

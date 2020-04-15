@@ -4,7 +4,7 @@ PageList:
   - file: homepage.html
     ready: 100
   - file: investors.html
-    ready: 40
+    ready: 80
   - file: traders.html
     ready: 40
   - file: ui.html

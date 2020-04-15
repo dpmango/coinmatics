@@ -1,0 +1,53 @@
+// REG CTA
+.reg-cta
+  margin-bottom: 160px
+  &__holder
+    background: #FAFBFD
+    border-radius: 12px
+    padding: 72px 96px
+  &__wrapper
+    display: flex
+    align-items: center
+    margin: -10px
+  &__content, &__btn
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__content
+    flex: 1 1 auto
+    .h3-title
+      margin: 0
+    .p-small
+      margin-top: 4px
+      margin-bottom: 0
+  &__btn
+    flex: 0 0 auto
+
++r($xl)
+  .reg-cta
+    margin-bottom: 96px
+    &__holder
+      padding-left: 88px
+      padding-right: 88px
+
++r($md)
+  .reg-cta
+    margin-bottom: 64px
+    &__holder
+      padding-left: 32px
+      padding-right: 32px
+    &__wrapper
+      flex-wrap: wrap
+    &__content, &__btn
+      width: 100%
+      flex: 0 0 100%
+    &__content
+      text-align: center
+      .p-small
+        margin-top: 16px
+    &__btn
+      text-align: center
+      margin-top: 12px
+      .btn
+        width: 100%
+        max-width: 216px
