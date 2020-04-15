@@ -4,6 +4,8 @@
 (function($, APP) {
   APP.Plugins.Parallax = {
     init: function(fromPjax) {
+      if (APP.Browser().data.isIe) return;
+
       var $parallax = $('.js-parallax:not(.is-parallax-attached)');
       if ($parallax.length === 0) return;
 
