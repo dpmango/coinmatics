@@ -34,6 +34,7 @@
   font-size: 0
   svg
     position: relative
+    z-index: 1
     // position: absolute
     // left: 50%
     // bottom: 0
@@ -42,7 +43,19 @@
     width: 100vw
     height: 133px
     bottom: -1px
+    backface-visibility: hidden
     // overflow: visible
+  &::after
+    // border-like fix
+    display: inline-block
+    content: ' '
+    position: absolute
+    z-index: 3
+    left: 0
+    right: 0
+    bottom: -2px
+    height: 5px
+    pointer-events: none
   &--short
     svg
       height: 70px
@@ -51,6 +64,9 @@
       bottom: auto
       top: -1px
       transform: rotate(180deg)
+    &::after
+      bottom: auto
+      top: -2px
   &--blue
     .bg-waves
       &__l-1
@@ -59,6 +75,9 @@
         fill: #17378C
       &__l-3
         fill: #0E1F50
+    &::after
+      background: #0E1F50
+
   &--dark
     .bg-waves
       &__l-1
@@ -67,6 +86,8 @@
         fill: #17378C
       &__l-3
         fill: #041133
+    &::after
+      background: #041133
   &--gray
     .bg-waves
       &__l-1
@@ -77,6 +98,8 @@
         opacity: 1
       &__l-3
         fill: #FAFBFD
+    &::after
+      background: #FAFBFD
 
 +r($xl)
   .bg-waves
