@@ -148,8 +148,8 @@
                 // },
               },
               gridLines: {
-                color: 'rgba(117, 128, 159, 0.2)',
-                zeroLineColor: 'rgba(117, 128, 159, 0.2)',
+                color: 'rgba(117, 128, 159, 0.1)',
+                zeroLineColor: 'rgba(117, 128, 159, 0.1)',
                 drawBorder: false,
               },
             },
@@ -202,7 +202,8 @@
             ctx.shadowOffsetX = 0;
             ctx.shadowOffsetY = 0;
             ctx.shadowColor = 'rgba(24, 220, 166, 0.56)';
-            ctx.shadowBlur = 8 * pxRatio;
+            // ctx.shadowBlur = 8 * pxRatio;
+            ctx.shadowBlur = 4;
             _stroke.apply(this, arguments);
             ctx.restore();
           };
