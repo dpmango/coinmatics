@@ -200,10 +200,17 @@
           gradient.addColorStop(1, '#AF4052');
 
           // shadow blur
-          ctx.shadowOffsetX = 0;
-          ctx.shadowOffsetY = 0;
-          ctx.shadowColor = 'rgba(24, 220, 166, 0.56)';
-          ctx.shadowBlur = 8;
+          let _stroke = ctx.stroke;
+          var pxRatio = this.chart.chart.currentDevicePixelRatio;
+          ctx.stroke = function() {
+            ctx.save();
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.shadowColor = 'rgba(24, 220, 166, 0.56)';
+            ctx.shadowBlur = 8 * pxRatio;
+            _stroke.apply(this, arguments);
+            ctx.restore();
+          };
 
           this.chart.data.datasets[0].borderColor = gradient;
 
