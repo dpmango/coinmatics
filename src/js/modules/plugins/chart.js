@@ -134,6 +134,11 @@
             {
               display: true,
               ticks: {
+                fontColor: '#75809F',
+                fontFamily: "'Montserrat Alternates', sans-serif",
+                fontSize: 10,
+                fontStyle: '600',
+                padding: 5,
                 // to much callbacks, moved to pre-init transform
                 // alt - afterTickToLabelConversion
                 // callback: function(dataLabel, index) {
@@ -155,16 +160,6 @@
             },
           ],
         },
-        // layout
-        layout: {},
-        // plugins
-        // plugins: {
-        //   deferred: {
-        //     xOffset: 1,
-        //     yOffset: '10%',
-        //     delay: 500,
-        //   },
-        // },
       };
 
       // initialize
