@@ -13,6 +13,21 @@ function normalize(value, fromMin, fromMax, toMin, toMax) {
   return normalized;
 }
 
+// random
+window._seed = Date.now();
+
+function random(min, max) {
+  var seed = window._seed;
+  min = min === undefined ? 0 : min;
+  max = max === undefined ? 1 : max;
+  window._seed = (seed * 9301 + 49297) % 233280;
+  return min + (window._seed / 233280) * (max - min);
+}
+
+function seedRandom() {
+  return Math.round(random(-4, 8));
+}
+
 // get window width (not to forget about ie, win, scrollbars, etc)
 function getWindowWidth() {
   return window.innerWidth;

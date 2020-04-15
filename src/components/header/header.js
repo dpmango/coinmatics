@@ -277,8 +277,8 @@
       // for mouse hovers and not mobile devices
       if (isMouse && !isMobile) {
         // 150ms pause if hover till going further
-        // APP.Components.Header.data.timer = setTimeout(callback, 150);
-        callback();
+        APP.Components.Header.data.timer = setTimeout(callback, 150);
+        // callback();
       } else {
         callback();
       }

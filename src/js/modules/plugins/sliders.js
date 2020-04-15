@@ -132,7 +132,12 @@
         // if (cond) {
         //   instance.destroy(true, true);
         // }
-        new Swiper(selector, options);
+        var swiper = new Swiper(selector, options);
+        swiper.on('slideChange', function() {
+          var $curSlide = $(swiper.slides[swiper.realIndex]);
+          var $chart = $curSlide.find('.js-chart');
+          APP.Plugins.Chart.renderChart($chart);
+        });
       }
     },
     initSwiperDataTree: function() {

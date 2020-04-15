@@ -98,7 +98,11 @@
       margin-left: auto
       text-align: right
   &__chart-graph
+    position: relative
+    height: 192px
     margin-top: 24px
+    // canvas
+    //   height: 192px
 
   // nav
   &__nav
@@ -194,9 +198,18 @@
       padding-top: 24px
     &__chart-graph
       margin-top: 12px
+      height: 140px
 
     &__nav
       display: none
+
++r($sm)
+  .trader-card
+    &__chart-graph
+      height: 78px
+      margin-left: -10px
+      margin-right: -10px
+
 
 .is-ie
   .trader-card

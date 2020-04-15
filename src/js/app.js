@@ -75,7 +75,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Plugins.Parallax.init(fromPjax);
       APP.Plugins.ScrollMonitor.init(fromPjax);
       APP.Plugins.Scaler.init(fromPjax);
-      APP.Plugins.Chart.init();
+      APP.Plugins.Chart.init(fromPjax);
 
       // APP.Plugins.Ymaps.init();
 

@@ -17,12 +17,14 @@ import TweenMax from 'gsap/TweenMax';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
+import nth from 'lodash/nth';
 import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
 import scrollMonitor from 'scrollmonitor';
 import { CountUp } from 'countup.js';
 import Rellax from 'rellax';
 import Parallax from 'parallax-js';
 import Chart from 'chart.js';
+// import pluginDeferred from 'chartjs-plugin-deferred';
 // import lax from 'lax.js';
 
 // uncomment plugins you want to use (from /js/__extras folder)
