@@ -15,11 +15,13 @@
       $countups.each(function(i, el) {
         var $el = $(el);
         var elWatcher = scrollMonitor.create($el);
-        $el.addClass('is-countup-attached');
+
         elWatcher.enterViewport(
           throttle(
             function() {
               // $(el).addClass(animatedClass);
+              if ($el.is('.is-countup-attached')) return;
+
               var endVal = parseFloat($el.text().replace(',', '.'), 10);
               var options = {
                 decimalPlaces: 1, // default is 0
@@ -31,6 +33,7 @@
               var countup = new CountUp(el, endVal, options);
               if (!countup.error) {
                 countup.start();
+                $el.addClass('is-countup-attached');
               } else {
                 // eslint-disable-next-line no-console
                 console.error(countup.error);
