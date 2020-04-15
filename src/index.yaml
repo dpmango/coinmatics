@@ -6,6 +6,6 @@ PageList:
   - file: investors.html
     ready: 80
   - file: traders.html
-    ready: 40
+    ready: 80
   - file: ui.html
     ready: 10

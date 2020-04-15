@@ -1,14 +1,15 @@
 ---
-title: Traders
+title: 3. Traders
 ---
 extends shared/_layout
 block content
 
   include ../components/page-title/_traders
-  //- include ../components/traders/_traders
-  include ../components/features/_features
-  //- include ../components/nfeatures/_nfeatures
-  include ../components/easy-start/_easy-start
+  include ../components/traders/_traders-only-about
+  include ../components/features/_features--traders
+  include ../components/b-story/_b-story
+  include ../components/easy-start/_easy-start-2
   include ../components/traders-start/_traders-tools-only
   include ../components/integrations/_integrations
-  include ../components/faq/_faq
+  include ../components/faq/_faq-no-cta
+  include ../components/reg-cta/_reg-cta

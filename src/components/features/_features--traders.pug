@@ -1,0 +1,54 @@
+mixin featureCard(card)
+  // feature-card
+  .feature-card
+    .feature-card__icon
+      +svgColor(card.icon)
+    .feature-card__content
+      .h5-title= card.title
+      .p-small.c-gray= card.desc
+
+// FEATURES
+.features
+  .container
+    .features__head.section-head(data-aos="fade-up")
+      h4.h4-title.c-light Why Coinmatics
+      h2.h2-title.h3-title-md Trader Features
+      p.p-main.c-gray Repeat their succes or become one of sucessful trade masters
+
+    .features__wrapper
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'profile-promotion',
+          title: 'Profile Promotion',
+          desc: 'Enjoy the profits of active crypto trading while slaking off'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'technological-advantage',
+          title: 'Technological advantage',
+          desc: 'Allocate funds across traders with different strategies'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'manageable-risks',
+          title: 'Stable Payments',
+          desc: 'Customize your risk level for each following trader'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'safety',
+          title: 'Safety',
+          desc: 'The service works without acces to the exchange account and funds'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'transparency',
+          title: 'Transparency',
+          desc: 'Align assets with the trader’s account in one click'
+        })
+      .features__col(data-aos="fade-up")
+        +featureCard({
+          icon: 'no-ico',
+          title: 'No Reputational Cost',
+          desc: 'A trader risks his funds providing trades for copy'
+        })

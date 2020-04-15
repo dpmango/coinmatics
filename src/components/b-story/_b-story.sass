@@ -1,0 +1,63 @@
+// B story
+.b-story
+  margin: 104px 0 224px
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: -10px
+
+  &__left, &__right
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__left
+    flex: 0 0 $col7
+    max-width: $col7
+  &__left-wrapper
+    padding-right: 40px
+    .section-head .btn
+      margin-top: 32px
+  &__right
+    flex: 0 0 $col5
+    max-width: $col5
+  &__image
+    text-align: center
+    img
+      max-width: 100%
+
++r($xl)
+  .b-story
+    margin: 80px 0 160px
+    &__wrapper
+      align-items: flex-start
+    &__left, &__right
+      flex-basis: 50%
+      max-width: 50%
+    &__left-wrapper
+      padding-right: 0
+      .section-head
+        .btn
+          margin-top: 24px
+
++r($md)
+  .b-story
+    margin: 40px 0 88px
+    &__left, &__right
+      flex-basis: 100%
+      max-width: 100%
+    &__left
+      order: 2
+    &__right
+      order: 1
+    &__image
+      padding-left: 12px
+      padding-right: 12px
+      max-width: 320px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 28px
+    &__left-wrapper
+      .section-head
+        text-align: center

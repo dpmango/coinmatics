@@ -31,8 +31,7 @@
     padding: 10px
     flex: 0 0 $col4
     max-width: $col4
-  &__cta-mobile
-    display: none
+  &__cta-mobile, &__cta
     width: 100%
     min-width: 1px
     min-height: 0
@@ -40,6 +39,19 @@
     flex: 0 0 100%
     max-width: 100%
     text-align: center
+  &__cta-mobile
+    display: none
+
+  // modifiers
+  &__wrapper--collapsed
+    padding-top: 64px
+    .easy-start
+      &__content, &__steps
+        flex-basis: 100%
+        max-width: 100%
+      &__steps
+        margin-top: 44px
+        margin-bottom: 44px
 
 +r($xl)
   .easy-start
@@ -62,6 +74,17 @@
       padding-right: 24px
     &__cta-mobile
       display: block
+    &__wrapper--collapsed
+      padding-bottom: 112px
+      .easy-start
+        &__steps
+          margin-bottom: 52px
+        &__steps-wrapper
+          margin: -10px
+          max-width: calc(100% + 20px)
+        &__steps-col
+          padding-left: 10px
+          padding-right: 10px
 
 +r($md)
   .easy-start
@@ -81,6 +104,20 @@
       &:nth-child(even)
         padding-left: 0
         padding-right: 12px
+    &__wrapper--collapsed
+      padding-bottom: 64px
+      .easy-start
+        &__steps
+          margin-bottom: 28px
+        &__steps-wrapper
+          margin: -10px auto
+          max-width: 320px
+        &__steps-col
+          padding-left: 0px
+          padding-right: 0px
+          margin-bottom: 36px
+          &:last-child
+            margin-bottom: 0
 
 // .es-card
 .es-card
@@ -93,6 +130,8 @@
     display: flex
     align-items: center
     margin-top: 18px
+    .h6-tille br
+      display: none
     .p-small
       padding-left: 8px
   &__number
@@ -100,6 +139,38 @@
     font-weight: 700
     font-size: 40px
     line-height: 119.68%
+  &--line
+    display: flex
+    .es-card
+      &__image
+        flex: 0 0 auto
+      &__content
+        display: block
+        padding-left: 12px
+        margin-top: 16px
+        .h6-title
+          margin-bottom: 8px
+        .p-small
+          padding-left: 0
+
++r($xl)
+  .es-card
+    &__content
+      .h6-tille br
+        display: block
+    &--line
+      flex-wrap: wrap
+      .es-card
+        &__image, &__content
+          width: 100%
+          min-width: 1px
+          flex: 0 0 100%
+          max-width: 100%
+          text-align: center
+        &__content
+          padding-left: 0
+          margin-top: 24px
+
 
 +r($md)
   .es-card
@@ -115,6 +186,11 @@
       .p-small
         padding-left: 0
         margin-top: 4px
+    &--line
+      .es-card
+        &__content
+          padding-left: 20px
+          padding-right: 20px
 
   .easy-start__steps-col:nth-child(odd)
     .es-card
