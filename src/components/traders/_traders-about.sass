@@ -35,3 +35,40 @@
     img, svg
       width: 100%
       overflow: visible
+
++r($xl)
+  .traders-about
+    padding: 48px 0
+    &__image, &__content
+      flex-basis: 100%
+      max-width: 100%
+    &__content
+      order: 1
+      .section-head
+        max-width: 500px
+        margin-left: auto
+        margin-right: auto
+        text-align: center
+        .h2-title
+          margin-bottom: 24px
+    &__content-wrapper
+      max-width: 100%
+      padding-left: 0
+    &__image
+      margin-top: 52px
+      order: 2
+      text-align: center
+      svg, img
+        width: 100%
+        max-width: 475px
+    &__bg-coins
+      display: none
+
++r($md)
+  .traders-about
+    padding: 48px 0
+    &__content
+      .h2-title
+        margin-bottom: 16px
+    &__image
+      margin-top: 20px
