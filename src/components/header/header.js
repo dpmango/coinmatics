@@ -31,6 +31,7 @@
       }
 
       this.closeMobileNavi();
+      this.closeMegaMenu();
       this.setMenuClass();
       this.controlHeaderClass();
     },

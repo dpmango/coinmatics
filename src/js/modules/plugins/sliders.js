@@ -109,6 +109,13 @@
           thumbs: {
             swiper: thumbsInstance,
           },
+          on: {
+            slideChange: function() {
+              var $curSlide = $(this.slides[this.realIndex]);
+              var $chart = $curSlide.find('.js-chart');
+              APP.Plugins.Chart.renderChart($chart);
+            },
+          },
         };
 
         if (window.innerWidth <= 767) {
@@ -133,11 +140,11 @@
         //   instance.destroy(true, true);
         // }
         var swiper = new Swiper(selector, options);
-        swiper.on('slideChange', function() {
-          var $curSlide = $(swiper.slides[swiper.realIndex]);
-          var $chart = $curSlide.find('.js-chart');
-          APP.Plugins.Chart.renderChart($chart);
-        });
+        // swiper.on('slideChange', function() {
+        //   var $curSlide = $(swiper.slides[swiper.realIndex]);
+        //   var $chart = $curSlide.find('.js-chart');
+        //   APP.Plugins.Chart.renderChart($chart);
+        // });
       }
     },
     initSwiperDataTree: function() {

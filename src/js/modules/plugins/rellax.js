@@ -27,6 +27,11 @@
 
       // window.requestAnimationFrame(updateLax);
     },
+    update: function() {
+      if (this.data.rellax) {
+        this.data.rellax.refresh();
+      }
+    },
     destroy: function() {
       this.data.rellax.destroy();
       this.data.rellax = undefined;
