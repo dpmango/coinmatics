@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "start": "gulp",
+    "start-prod": "gulp --production",
     "build": "gulp build --production",
     "surge": "surge --project ./dist --domain coinmatics.surge.sh",
     "deploy": "gulp build --production && surge --project ./dist --domain coinmatics.surge.sh"
