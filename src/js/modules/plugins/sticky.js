@@ -5,7 +5,6 @@
   APP.Plugins.Sticky = {
     init: function(fromPjax) {
       this.initStickyKit();
-      this.initCustomSticky();
       if (!fromPjax) {
         this.listenResize();
       }
@@ -33,38 +32,15 @@
             $sticky.stick_in_parent({
               // eslint-disable-next-line camelcase
               offset_top: dataOffsetTop,
-              // eslint-disable-next-line camelcase
-              // inner_scrolling: false,
             });
             $sticky.addClass('is-sticky-attached');
           }
-          // $sticky.trigger('sticky_kit:recalc');
         } else {
           if ($sticky.is('.is-sticky-attached')) {
             // console.log('detaching sticky kit');
             $sticky.trigger('sticky_kit:detach');
             $sticky.removeClass('is-sticky-attached');
           }
-        }
-      });
-    },
-    initCustomSticky: function() {
-      var $stickyNav = $('.page')
-        .last()
-        .find('.js-sticky-nav');
-      if ($stickyNav.length === 0) return;
-
-      _window.on('scroll', function() {
-        // get scroll params from blocker function
-        var scroll = APP.Plugins.ScrollBlock.getData();
-        if (scroll.blocked) return;
-        var stickyTop = $stickyNav.offset().top;
-        var headerOffset = APP.Components.Header.data.header.headerHeight;
-
-        if (scroll.y > stickyTop - headerOffset) {
-          $stickyNav.addClass('is-sticky');
-        } else {
-          $stickyNav.removeClass('is-sticky');
         }
       });
     },

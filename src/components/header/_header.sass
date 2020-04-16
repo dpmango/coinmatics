@@ -9,6 +9,7 @@
   will-change: transform
   // backface-visibility: hidden
   // transform-style: preserve-3d
+  transition: background .1s $ease
   &__wrapper
     display: flex
     align-items: center
@@ -17,6 +18,8 @@
   &__logo
     flex: 0 0 auto
     padding-right: 24px
+    .logo--white
+      display: none
 
   &__menu
     flex: 0 1 auto
@@ -59,7 +62,7 @@
     // should be normalized to -100% scroll at this point
     position: fixed
     transform: translate3d(0,-100%,0) !important
-    transition: transform .25s $ease
+    transition: transform .25s $ease, background .1s $ease
     border: 1px solid rgba($colorBg, 0.05)
     .header__wrapper
       padding-top: 12px
@@ -69,13 +72,36 @@
     transform: translate3d(0,0,0) !important
 
   &.is-transitioning
-    transition: transform .25s $ease
+    transition: transform .25s $ease, background .1s $ease
     transform: translate3d(0,-100%,0) !important
+
+  &[data-modifier="dark-background"]
+    background: transparent
+    .header
+      &__logo .logo
+        display: none
+      &__logo .logo--white
+        display: flex
+      &__menu
+        li
+          color: white
 
 body.is-megamenu-active
   .header
     transform: translate3d(0,0,0) !important
-    border-color: transparent
+
+body.is-megamenu-active, body.is-header-fixed
+  .header[data-modifier="dark-background"]
+    background: white
+    .header
+      &__logo
+        .logo
+          display: flex
+        .logo--white
+          display: none
+      &__menu
+        li
+          color: $colorBg
 
 
 +r($xl)

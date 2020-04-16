@@ -86,6 +86,42 @@
           $content.slideDown();
         }
       });
+
+      // tabs
+      _document.on('click', '.js-tabs a', function(e) {
+        var $link = $(this);
+        var $li = $link.parent();
+        var $container = $link.closest('.js-tabs');
+        var targetTabId = $link.data('target-tab');
+        var $targetTab = $('.js-tab-content[data-tab="' + targetTabId + '"]');
+
+        if ($targetTab.length === 0) return;
+
+        var $siblingTabs = $targetTab.siblings();
+        var $siblingLis = $li.siblings();
+        // toggle classes
+        // TODO - alternative class toggler .('is-active');
+        $li.addClass('is-active');
+        $siblingLis.removeClass('is-active');
+
+        $siblingTabs.hide();
+        $targetTab.fadeIn(250);
+
+        // scroll if tab is past scrolled offset
+        if ($container.data('with-scrolltop') !== undefined) {
+          var dataScrollOffset = $container.data('scroll-offset')
+            ? parseInt($container.data('scroll-offset'), 10)
+            : 0;
+
+          var topTarget = $targetTab.offset().top - dataScrollOffset;
+          if (APP.Plugins.ScrollBlock.getData().y > topTarget) {
+            TweenLite.to(window, 1, {
+              scrollTo: { y: topTarget, autoKill: false },
+              ease: easingSwing,
+            });
+          }
+        }
+      });
     },
     destroy: function() {
       // ... code ...

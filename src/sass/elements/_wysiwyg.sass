@@ -1,0 +1,52 @@
+// wysiwyg
+.wysiwyg
+  h1, h2, h3, h4, h5, h6
+    &:first-child
+      margin-top: 0
+
+  h1, h2, h3, h4
+    font-family: $monsterFont
+    font-weight: 700
+
+  h5, h6
+    font-family: $monsterFont
+    font-weight: 600
+
+  h1
+    font-size: 48px
+    line-height: (52 / 48)
+
+  h2
+    font-size: 32px
+    line-height: calc(38 / 32)
+
+  h3
+    font-size: 24px
+    line-height: calc(28 / 24)
+
+  h4
+    margin: 56px 0 40px
+    font-size: 18px
+    line-height: calc(22 / 18)
+
+  h5
+    font-size: 16px
+    line-height: (20 / 16)
+
+  h6
+    font-size: 14px
+    line-height: (18 / 14)
+
+  // paragraphs
+  p
+    margin: 0
+    font-size: 14px
+    line-height: (19 / 14)
+    color: $colorGray
+    + p
+      margin-top: 1.375em
+    a
+      color: $colorPrimary
+      transition: color .25s $ease
+      &:hover
+        color: $colorPrimaryHover

@@ -1,7 +1,10 @@
 // Page title
 .page-title
+  position: relative
   margin: 236px 0 184px
   &__head
+    position: relative
+    z-index: 2
     text-align: center
     // max-width: 566px ?
     margin-left: auto
@@ -15,6 +18,22 @@
         margin-bottom: 0
     .btn
       margin-top: 24px
+  &__bg-coins
+    position: absolute
+    z-index: 1
+    bottom: 94px
+    left: 50%
+    transform: translateX(-50%)
+    svg, img
+      overflow: visible
+
+  &--dark
+    margin: 0
+    color: white
+    // background: linear-gradient(180deg, #0E1F50 0%, #041133 100%);
+    background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%);
+    .page-title__head
+      padding: 180px 0 112px
 
 +r($xl)
   .page-title
@@ -25,6 +44,8 @@
         margin-bottom: 24px
       .btn
         margin-top: 40px
+    &__bg-coins
+      display: none
 
 +r($md)
   .page-title

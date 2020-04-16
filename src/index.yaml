@@ -7,5 +7,9 @@ PageList:
     ready: 90
   - file: traders.html
     ready: 90
+  - file: faq.html
+    ready: 50
+  - file: legal.html
+    ready: 50
   - file: ui.html
     ready: 10

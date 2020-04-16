@@ -7,12 +7,19 @@ header.header
           .hamburger-box
             .hamburger-inner
 
-      a(href="homepage.html").header__logo.logo
-        .logo__icon
-          +svgColor('logo-sign')
-        .logo__name Coinmatics
-        .logo__tag
-          +svgColor('logo-beta')
+      a(href="homepage.html").header__logo
+        .logo
+          .logo__icon
+            +svgColor('logo-sign')
+          .logo__name Coinmatics
+          .logo__tag
+            +svgColor('logo-beta')
+        .logo.logo--white
+          .logo__icon
+            +svgColor('logo-sign-white')
+          .logo__name Coinmatics
+          .logo__tag
+            +svgColor('logo-beta')
       ul.header__menu.js-megamenu-trigger
         li
           a(href="#" data-for="1")

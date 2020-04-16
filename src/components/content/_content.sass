@@ -1,0 +1,72 @@
+// Content
+.content
+  margin: 120px 0 96px
+  &__section
+    margin: 72px 0
+  &__section-title
+    margin-bottom: 20px
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    margin: -10px
+  &__sidebar, &__text-section
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__sidebar
+    flex: 0 0 $col3
+    max-width: $col3
+  &__sidebar-wrapper
+
+  &__sidebar-tabs
+    margin: 6px 0
+    list-style: none
+    padding: 0
+    li
+      display: block
+      margin-left: 15px
+      &.is-active
+        a
+          color: $colorPrimary
+          &::after
+            opacity: 1
+            transform: translate(0px, -50%)
+    a
+      position: relative
+      display: inline-block
+      padding: 10px
+      color: $colorLight
+      transition: .25s $ease
+      &:hover
+        color: $colorPrimaryHover
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 0
+        top: 50%
+        size: 2px 20px
+        background: $colorPrimary
+        border-radius: 8px
+        opacity: 0
+        transform: translate(-5px, -50%)
+        pointer-events: none
+        transition: .25s $ease
+
+  &__text-section
+    flex: 0 0 $col8
+    max-width: $col8
+
+
++r($xl)
+  .content
+    margin: 72px 0 56px
+    &__section
+      margin: 48px 0
+
++r($md)
+  .content
+    margin: 48px 0 40px
+    &__section
+      margin: 40px 0
