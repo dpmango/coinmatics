@@ -18,6 +18,8 @@
     img, svg
       width: 100%
       overflow: visible
+    img
+      display: none
   &__content
     position: relative
     z-index: 4
@@ -61,6 +63,8 @@
       svg, img
         width: 100%
         max-width: 475px
+        margin-left: auto
+        margin-right: auto
     &__bg-coins
       display: none
 
@@ -72,3 +76,11 @@
         margin-bottom: 16px
     &__image
       margin-top: 20px
+
+.is-ie
+  .traders-about
+    &__image
+      svg
+        display: none
+      img
+        display: block

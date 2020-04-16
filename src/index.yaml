@@ -4,8 +4,8 @@ PageList:
   - file: homepage.html
     ready: 100
   - file: investors.html
-    ready: 80
+    ready: 90
   - file: traders.html
-    ready: 80
+    ready: 90
   - file: ui.html
     ready: 10
