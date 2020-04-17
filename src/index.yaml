@@ -8,8 +8,8 @@ PageList:
   - file: traders.html
     ready: 90
   - file: faq.html
-    ready: 80
+    ready: 90
   - file: legal.html
-    ready: 80
+    ready: 90
   - file: ui.html
     ready: 10

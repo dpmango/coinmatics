@@ -19,107 +19,115 @@ mixin accardeonElement(element)
         a.h3-title(href="#" data-target-tab="tab-2") Для трейдеров
 
     // accardeon on mobile
-    //- .accardeon.accardeon--tabs-xl.accardeon--bg-white.js-accardeon
-    //-   .accardeon__element.is-active
-    //-     .accardeon__toggler
-    //-       .accardeon__title
-    //-         .h6-title Terms and Conditions
-    //-         +svgMono('arrow-down')
-    // tab content
-    .js-tab-content(data-tab="tab-1" style="display: block")
-      // section (1)
-      .content__section(data-aos="fade-up")
-        .content__section-title.h6-title.c-light Безопасность
-        // accardeon
-        .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-          // accardeon__element (active)
-          .accardeon__element.is-active
-            .accardeon__toggler
-              .accardeon__title
-                .h6-title Рискую ли я потерять свои средства, подключившись к вашей платформе?
-                +svgMono('arrow-down')
-            .accardeon__content.accardeon__content--no-img(style="display: block")
-              p.p-small.c-gray Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода.
-          // accardeon__element
-          .accardeon__element
-            .accardeon__toggler
-              .accardeon__title
-                .h6-title Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?
-                +svgMono('arrow-down')
-            .accardeon__content.accardeon__content--no-img
-              p.p-small.c-gray Значимость этих проблем настолько очевидна, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Таким образом новая модель организационной деятельности позволяет оценить значение соответствующий условий активизации.
+    .accardeon.accardeon--tabs-md.accardeon--bg-white.js-accardeon
+      .accardeon__element.is-active
+        .accardeon__toggler
+          .accardeon__title
+            .h4-title Для подписчиков
+            +svgMono('arrow-down')
+        .accardeon__content.accardeon__content--main(style="display: block")
+          // tab content
+          .js-tab-content(data-tab="tab-1" style="display: block")
+            // section (1)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h6-title.c-light Безопасность
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                // accardeon__element (active)
+                .accardeon__element.is-active
+                  .accardeon__toggler
+                    .accardeon__title
+                      .h6-title Рискую ли я потерять свои средства, подключившись к вашей платформе?
+                      +svgMono('arrow-down')
+                  .accardeon__content.accardeon__content--no-img(style="display: block")
+                    p.p-small.c-gray Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода.
+                // accardeon__element
+                .accardeon__element
+                  .accardeon__toggler
+                    .accardeon__title
+                      .h6-title Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?
+                      +svgMono('arrow-down')
+                  .accardeon__content.accardeon__content--no-img
+                    p.p-small.c-gray Значимость этих проблем настолько очевидна, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Таким образом новая модель организационной деятельности позволяет оценить значение соответствующий условий активизации.
 
-      // section (2)
-      .content__section(data-aos="fade-up")
-        .content__section-title.h6-title.c-light Подключение, выбор трейдера
-        // accardeon
-        .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-          -
-            var list = [
-              {title: "Какие биржи вы поддерживаете?"},
-              {title: "Кто такие трейдеры?"},
-              {title: "Какие варианты копитрейдинга у вас есть?"},
-              {title: "Как формируется рейтинг трейдерской эффективности"},
-              {title: "Как мне выбрать трейдера для копирования?"},
-            ]
-          each element in list
-            +accardeonElement(element)
+            // section (2)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h6-title.c-light Подключение, выбор трейдера
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                -
+                  var list = [
+                    {title: "Какие биржи вы поддерживаете?"},
+                    {title: "Кто такие трейдеры?"},
+                    {title: "Какие варианты копитрейдинга у вас есть?"},
+                    {title: "Как формируется рейтинг трейдерской эффективности"},
+                    {title: "Как мне выбрать трейдера для копирования?"},
+                  ]
+                each element in list
+                  +accardeonElement(element)
 
-      // section (3)
-      .content__section(data-aos="fade-up")
-        .content__section-title.h6-title.c-light Вопросы по оплате
-        // accardeon
-        .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-          -
-            var list = [
-              {title: "Какую сумму нужно иметь на биржевом кошельке для начала копитрейдинга?"},
-              {title: "Как рассчитывается комиссия?"},
-              {title: "Как происходит оплата за подписки?"},
-              {title: "С какой регулярностью происходит оплата?"},
-              {title: "Может ли измениться цена уже существующей подписки?"},
-              {title: "Есть ли какая-то дополнительная (абонентская) плата за копитрейдинг?"},
-              {title: "Как я могу отменить подписку? Что для этого нужно сделать?"},
-              {title: "Может ли трейдер закрыть доступ к повторению его сделок?"},
-            ]
-          each element in list
-            +accardeonElement(element)
+            // section (3)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h6-title.c-light Вопросы по оплате
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                -
+                  var list = [
+                    {title: "Какую сумму нужно иметь на биржевом кошельке для начала копитрейдинга?"},
+                    {title: "Как рассчитывается комиссия?"},
+                    {title: "Как происходит оплата за подписки?"},
+                    {title: "С какой регулярностью происходит оплата?"},
+                    {title: "Может ли измениться цена уже существующей подписки?"},
+                    {title: "Есть ли какая-то дополнительная (абонентская) плата за копитрейдинг?"},
+                    {title: "Как я могу отменить подписку? Что для этого нужно сделать?"},
+                    {title: "Может ли трейдер закрыть доступ к повторению его сделок?"},
+                  ]
+                each element in list
+                  +accardeonElement(element)
 
-      // section (4)
-      .content__section(data-aos="fade-up")
-        .content__section-title.h6-title.c-light Подключение, выбор трейдера
-        // accardeon
-        .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-          -
-            var list = [
-              {title: "Что такое автовыравнивание? Зачем оно нужно и как работает?"},
-              {title: "С какой скоростью совершается повтор сделок?"},
-              {title: "Я научился торговать и сам хочу стать трейдером. Что для этого нужно сделать?"},
-              {title: "Могу ли я сначала подписаться на трейдера, а потом сам зарегистрироваться как трейдер и раздавать сигналы этого трейдера?"},
-            ]
-          each element in list
-            +accardeonElement(element)
+            // section (4)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h6-title.c-light Подключение, выбор трейдера
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                -
+                  var list = [
+                    {title: "Что такое автовыравнивание? Зачем оно нужно и как работает?"},
+                    {title: "С какой скоростью совершается повтор сделок?"},
+                    {title: "Я научился торговать и сам хочу стать трейдером. Что для этого нужно сделать?"},
+                    {title: "Могу ли я сначала подписаться на трейдера, а потом сам зарегистрироваться как трейдер и раздавать сигналы этого трейдера?"},
+                  ]
+                each element in list
+                  +accardeonElement(element)
 
+      // accardeon element
+      .accardeon__element
+        .accardeon__toggler
+          .accardeon__title
+            .h4-title Для трейдеров
+            +svgMono('arrow-down')
+        .accardeon__content.accardeon__content--main
 
-    // tab content
-    .js-tab-content(data-tab="tab-2")
-      // section (1)
-      .content__section(data-aos="fade-up")
-        .content__section-title.h6-title.c-light Безопасность
-        // accardeon
-        .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-          // accardeon__element (active)
-          .accardeon__element.is-active
-            .accardeon__toggler
-              .accardeon__title
-                .h6-title Рискую ли я потерять свои средства, подключившись к вашей платформе?
-                +svgMono('arrow-down')
-            .accardeon__content.accardeon__content--no-img(style="display: block")
-              p.p-small.c-gray Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода.
-          // accardeon__element
-          .accardeon__element
-            .accardeon__toggler
-              .accardeon__title
-                .h6-title Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?
-                +svgMono('arrow-down')
-            .accardeon__content.accardeon__content--no-img
-              p.p-small.c-gray Значимость этих проблем настолько очевидна, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Таким образом новая модель организационной деятельности позволяет оценить значение соответствующий условий активизации.
+          // tab content
+          .js-tab-content(data-tab="tab-2")
+            // section (1)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h6-title.c-light Безопасность
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                // accardeon__element (active)
+                .accardeon__element.is-active
+                  .accardeon__toggler
+                    .accardeon__title
+                      .h6-title Рискую ли я потерять свои средства, подключившись к вашей платформе?
+                      +svgMono('arrow-down')
+                  .accardeon__content.accardeon__content--no-img(style="display: block")
+                    p.p-small.c-gray Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода.
+                // accardeon__element
+                .accardeon__element
+                  .accardeon__toggler
+                    .accardeon__title
+                      .h6-title Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?
+                      +svgMono('arrow-down')
+                  .accardeon__content.accardeon__content--no-img
+                    p.p-small.c-gray Значимость этих проблем настолько очевидна, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Таким образом новая модель организационной деятельности позволяет оценить значение соответствующий условий активизации.
