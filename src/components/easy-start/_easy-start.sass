@@ -130,8 +130,6 @@
     display: flex
     align-items: center
     margin-top: 18px
-    .h6-tille br
-      display: none
     .p-small
       padding-left: 8px
   &__number
@@ -150,14 +148,13 @@
         margin-top: 16px
         .h6-title
           margin-bottom: 8px
+          br
+            display: none
         .p-small
           padding-left: 0
 
 +r($xl)
   .es-card
-    &__content
-      .h6-tille br
-        display: block
     &--line
       flex-wrap: wrap
       .es-card
@@ -170,7 +167,8 @@
         &__content
           padding-left: 0
           margin-top: 24px
-
+          .h6-title br
+            display: block
 
 +r($md)
   .es-card
