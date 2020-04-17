@@ -18,8 +18,9 @@
   &__logo
     flex: 0 0 auto
     padding-right: 24px
-    .logo--white
-      display: none
+    .logo__icon
+      .ico-color-logo-sign-white
+        display: none
 
   &__menu
     flex: 0 1 auto
@@ -63,7 +64,7 @@
     position: fixed
     transform: translate3d(0,-100%,0) !important
     transition: transform .25s $ease, background .1s $ease
-    border: 1px solid rgba($colorBg, 0.05)
+    border-bottom: 1px solid rgba($colorBg, 0.05)
     .header__wrapper
       padding-top: 12px
       padding-bottom: 12px
@@ -78,10 +79,14 @@
   &[data-modifier="dark-background"]
     background: transparent
     .header
-      &__logo .logo
-        display: none
-      &__logo .logo--white
-        display: flex
+      &__logo
+        .logo
+          color: white
+        .logo__icon
+          .ico-color-logo-sign
+            display: none
+          .ico-color-logo-sign-white
+            display: block
       &__menu
         li
           color: white
@@ -96,9 +101,12 @@ body.is-megamenu-active, body.is-header-fixed
     .header
       &__logo
         .logo
-          display: flex
-        .logo--white
-          display: none
+          color: #000
+        .logo__icon
+          .ico-color-logo-sign
+            display: block
+          .ico-color-logo-sign-white
+            display: none
       &__menu
         li
           color: $colorBg
