@@ -175,40 +175,42 @@
       Chart.defaults.RedNegativeLine = Chart.helpers.clone(Chart.defaults.line);
       Chart.controllers.RedNegativeLine = Chart.controllers.line.extend({
         update: function() {
-          // get the min and max values
-          var min = Math.min.apply(null, this.chart.data.datasets[0].data);
-          var max = Math.max.apply(null, this.chart.data.datasets[0].data);
-          var yScale = this.getScaleForId(this.getDataset().yAxisID);
+          try {
+            // get the min and max values
+            var min = Math.min.apply(null, this.chart.data.datasets[0].data);
+            var max = Math.max.apply(null, this.chart.data.datasets[0].data);
+            var yScale = this.getScaleForId(this.getDataset().yAxisID);
 
-          // figure out the pixels for these and the value 0
-          var top = yScale.getPixelForValue(max);
-          var zero = yScale.getPixelForValue(0);
-          var bottom = yScale.getPixelForValue(min);
+            // figure out the pixels for these and the value 0
+            var top = yScale.getPixelForValue(max);
+            var zero = yScale.getPixelForValue(0);
+            var bottom = yScale.getPixelForValue(min);
 
-          // build a gradient that switches color at the 0 point
-          var ctx = this.chart.chart.ctx;
-          var gradient = ctx.createLinearGradient(0, top, 0, bottom);
-          var ratio = Math.min((zero - top) / (bottom - top), 1);
-          gradient.addColorStop(0, '#18DCA6');
-          gradient.addColorStop(ratio, '#18DCA6');
-          gradient.addColorStop(ratio, '#AF4052');
-          gradient.addColorStop(1, '#AF4052');
+            // build a gradient that switches color at the 0 point
+            var ctx = this.chart.chart.ctx;
+            var gradient = ctx.createLinearGradient(0, top, 0, bottom);
+            var ratio = Math.min((zero - top) / (bottom - top), 1);
+            gradient.addColorStop(0, '#18DCA6');
+            gradient.addColorStop(ratio, '#18DCA6');
+            gradient.addColorStop(ratio, '#AF4052');
+            gradient.addColorStop(1, '#AF4052');
 
-          // shadow blur
-          let _stroke = ctx.stroke;
-          var pxRatio = this.chart.chart.currentDevicePixelRatio;
-          ctx.stroke = function() {
-            ctx.save();
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
-            ctx.shadowColor = 'rgba(24, 220, 166, 0.56)';
-            // ctx.shadowBlur = 8 * pxRatio;
-            ctx.shadowBlur = 4;
-            _stroke.apply(this, arguments);
-            ctx.restore();
-          };
+            // shadow blur
+            let _stroke = ctx.stroke;
+            var pxRatio = this.chart.chart.currentDevicePixelRatio;
+            ctx.stroke = function() {
+              ctx.save();
+              ctx.shadowOffsetX = 0;
+              ctx.shadowOffsetY = 0;
+              ctx.shadowColor = 'rgba(24, 220, 166, 0.56)';
+              // ctx.shadowBlur = 8 * pxRatio;
+              ctx.shadowBlur = 4;
+              _stroke.apply(this, arguments);
+              ctx.restore();
+            };
 
-          this.chart.data.datasets[0].borderColor = gradient;
+            this.chart.data.datasets[0].borderColor = gradient;
+          } catch (e) {}
 
           return Chart.controllers.line.prototype.update.apply(this, arguments);
         },

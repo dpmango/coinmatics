@@ -97,10 +97,9 @@
 
         if ($targetTab.length === 0) return;
 
-        var $siblingTabs = $targetTab.siblings();
+        var $siblingTabs = $('.js-tab-content:not([data-tab="' + targetTabId + '"])');
         var $siblingLis = $li.siblings();
-        // toggle classes
-        // TODO - alternative class toggler .('is-active');
+
         $li.addClass('is-active');
         $siblingLis.removeClass('is-active');
 

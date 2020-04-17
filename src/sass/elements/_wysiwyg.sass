@@ -17,6 +17,7 @@
     line-height: (52 / 48)
 
   h2
+    margin: 40px 0
     font-size: 32px
     line-height: calc(38 / 32)
 
@@ -41,12 +42,40 @@
   p
     margin: 0
     font-size: 14px
-    line-height: (19 / 14)
+    line-height: (20 / 14)
     color: $colorGray
     + p
       margin-top: 1.375em
     a
       color: $colorPrimary
+      overflow-wrap: break-word
+      word-wrap: break-word
+      -ms-word-break: break-all
+      word-break: break-all
+      word-break: break-word
+      -ms-hyphens: auto
+      -moz-hyphens: auto
+      -webkit-hyphens: auto
+      hyphens: auto
       transition: color .25s $ease
       &:hover
         color: $colorPrimaryHover
+
+
++r($xl)
+  .wysiwyg
+    h2
+      margin: 32px 0
+    h4
+      margin: 40px 0 24px
+
++r($md)
+  .wysiwyg
+    h2
+      margin: 24px 0
+      font-size: 24px
+      line-height: calc(28 / 24)
+    h4
+      margin: 32px 0 16px
+      font-size: 16px
+      line-height: (20 / 16)

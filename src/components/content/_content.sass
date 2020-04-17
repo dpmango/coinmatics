@@ -4,7 +4,7 @@
   &__section
     margin: 72px 0
   &__section-title
-    margin-bottom: 20px
+    margin-bottom: 28px
   &__wrapper
     display: flex
     flex-wrap: wrap
@@ -20,12 +20,11 @@
   &__sidebar-wrapper
 
   &__sidebar-tabs
-    margin: 6px 0
+    margin: 0px 0
     list-style: none
     padding: 0
     li
       display: block
-      margin-left: 15px
       &.is-active
         a
           color: $colorPrimary
@@ -53,6 +52,26 @@
         transform: translate(-5px, -50%)
         pointer-events: none
         transition: .25s $ease
+  &__section-tabs
+    margin: 0 -10px
+    list-style: none
+    padding: 0
+    display: flex
+    flex-wrap: wrap
+    li
+      display: block
+      margin-right: 12px
+      &:last-child
+        margin-right: 0
+      &.is-active
+        a
+          color: $fontColor
+    a
+      padding: 10px
+      color: $colorPrimary
+      transition: .25s $ease
+      &:hover
+        color: $colorPrimaryHover
 
   &__text-section
     flex: 0 0 $col8
@@ -64,9 +83,35 @@
     margin: 72px 0 56px
     &__section
       margin: 48px 0
+    &__sidebar
+      display: none
+    &__text-section
+      flex-basis: 75%
+      max-width: 75%
+      margin-left: 12.5%
+      margin-right: 12.5%
+
++r($lg)
+  .content
+    &__section
+      padding-left: 16px
+      padding-right: 16px
+    &__section-tabs
+      padding-left: 16px
+      padding-right: 16px
+    &__text-section
+      flex-basis: 100%
+      max-width: 100%
+      margin-left: 0
+      margin-right: 0
+      padding-left: 26px
+      padding-right: 26px
 
 +r($md)
   .content
     margin: 48px 0 40px
     &__section
       margin: 40px 0
+    &__text-section
+      padding-left: 14px
+      padding-right: 14px

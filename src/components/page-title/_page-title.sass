@@ -24,6 +24,7 @@
     bottom: 94px
     left: 50%
     transform: translateX(-50%)
+    pointer-events: none
     svg, img
       overflow: visible
 
@@ -46,6 +47,11 @@
         margin-top: 40px
     &__bg-coins
       display: none
+    &--dark
+      margin: 0
+      .page-title__head
+        padding-bottom: 120px
+
 
 +r($md)
   .page-title
@@ -55,3 +61,7 @@
         margin-bottom: 16px
       .btn
         margin-top: 24px
+    &--dark
+      margin: 0
+      .page-title__head
+        padding: 120px 0 88px
