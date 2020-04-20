@@ -8,6 +8,7 @@
     init: function() {
       // this.localize();
       this.localizeEn();
+      this.customMethods();
       this.validateFormsConstructor();
       this.validateFormsCustom();
     },
@@ -68,6 +69,21 @@
         },
       },
     },
+    customMethods: function() {
+      $.validator.addMethod(
+        'laxEmail',
+        function(value, element) {
+          // allow any non-whitespace characters as the host part
+          return (
+            this.optional(element) ||
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+              value
+            )
+          );
+        },
+        'Email format must be like name@site.com'
+      );
+    },
     localize: function() {
       /*
        * Translated default messages for the jQuery validation plugin.
@@ -119,6 +135,11 @@
             email: {
               required: true,
               email: true,
+              laxEmail: true,
+            },
+            subs_email: {
+              required: true,
+              laxEmail: true,
             },
             phone: _this.data.masks.phone,
           },
