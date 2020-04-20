@@ -18,9 +18,11 @@
     .h3-title
       margin: 0
     .p-small
-      margin-top: 4px
+      margin-top: 12px
       margin-bottom: 0
-  &__btn
+    .btn
+      margin-top: 16px
+  &__image
     flex: 0 0 auto
 
 +r($xl)
@@ -38,16 +40,20 @@
       padding-right: 32px
     &__wrapper
       flex-wrap: wrap
-    &__content, &__btn
+    &__content, &__image
       width: 100%
       flex: 0 0 100%
     &__content
+      order: 2
       text-align: center
       .p-small
         margin-top: 16px
-    &__btn
-      text-align: center
-      margin-top: 12px
       .btn
         width: 100%
         max-width: 216px
+        margin-top: 32px
+    &__image
+      order: 1
+      text-align: center
+      margin-bottom: 0px
+
