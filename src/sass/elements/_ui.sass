@@ -10,25 +10,67 @@
     margin-bottom: 10px
 
 // for input or textarea element
-.ui-input
+.ui-input input
   -webkit-appearance: none
   display: block
   width: 100%
-  background: white
-  font-family: $systemFont
-  color: $colorGray
-  border: 1px solid $borderColor
-  border-radius: 4px
-  padding: 12px 15px
-  &.has-error
-    color: $colorRed
-    &::placeholder
-      color: rgba($colorRed, .5)
+  background: #FAFBFD
+  font-family: $baseFont
+  color: $fontColor
+  border: 1px solid #E7EBF4
+  border-radius: 8px
+  padding: 14px 20px
+  transition: border .25s $ease, background .25s $ease
+  &[disabled], &.disabled
+    color: $colorGray
+  &::placeholder
+    color: $colorGray
+  &:focus, &:active
+    border-color: #CFD5E4
+  // &.has-error
+  //   color: $colorRed
+  //   &::placeholder
+  //     color: rgba($colorRed, .5)
 
 .ui-input textarea
   resize: vertical
 
 
+// validation error
+.ui-input__validation
+  display: block
+  margin-top: 12px
+  font-size: 14px
+  line-height: (19 / 14)
+  color: $colorRed
+  &::before
+    display: inline-block
+    content: ' '
+    size: 2px 16px
+    transform: translateY(2px)
+    margin-right: 6px
+    background: currentColor
+    vertical-align: center
+
+// groups
+.ui-group-row-btn
+  position: relative
+  .ui-input input
+    paddin-right: 100px
+  .btn
+    position: absolute
+    top: 0
+    right: 0
+
++r($sm)
+  .ui-group-row-btn
+    position: static
+    .ui-input input
+      padding-right: 20px
+    .btn
+      position: static
+      margin-top: 8px
+      width: 100%
 
 /* Checkbox
 .ui-checkbox

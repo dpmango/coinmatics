@@ -12,7 +12,6 @@
       blocked: false,
       direction: undefined,
       lastForScrollDir: 0,
-      lastForBodyLock: 0,
       fillGapMethod: 'padding',
       scrolllDisabled: false,
     },
@@ -20,70 +19,51 @@
       return this.data;
     },
     fillScrollbarGap: function() {
-      this.fillGapTarget($('.header').get(0));
+      // this.fillGapTarget($('.header').get(0));
       this.fillGapTarget(document.body);
     },
     unfillScrollbarGap: function() {
-      this.unfillGapTarget($('.header').get(0));
+      // this.unfillGapTarget($('.header').get(0));
       this.unfillGapTarget(document.body);
     },
     disableScroll: function() {
       // prevent double lock
       if ($('body').is('.body-lock') || $('body').is('.body-m-lock')) return;
       if (this.data.scrolllDisabled) return;
+      // which elements are scrollable when scroll is locked?
+      var $blockers = $('.blocker');
 
-      if (APP.Browser().data.isMobile) {
-        // which elements are scrollable when scroll is locked?
-        var $blockers = $('.blocker, .megamenu__scroller, .mobile-navi__scroller');
-
-        if ($blockers.length > 0) {
-          $blockers.each(function(i, el) {
-            // disableBodyScroll(el);
-            // lock(el);
-            disablePageScroll(el);
-          });
-          this.data.scrolllDisabled = true;
-          this.data.blocked = true;
-          // APP.Dev.LogOnScreen.showLog('disablePageScroll (scoped)');
-          $('body').addClass('body-m-lock');
-        }
-      } else {
-        APP.Plugins.Rellax.freeze();
-        this.data.lastForBodyLock = _window.scrollTop();
-        this.data.blocked = true;
-        $('.page__content').css({
-          'margin-top': '-' + this.data.lastForBodyLock + 'px',
+      if ($blockers.length > 0) {
+        $blockers.each(function(i, el) {
+          disablePageScroll(el);
         });
-
-        this.fillScrollbarGap();
-        $('body').addClass('body-lock');
+        this.data.scrolllDisabled = true;
+        this.data.blocked = true;
+        // console.log('disabling scroll', $blockers);
+        if (APP.Browser().data.isMobile) {
+          $('body').addClass('body-m-lock');
+        } else {
+          // this.fillScrollbarGap();
+          $('body').addClass('body-lock');
+        }
       }
     },
 
     enableScroll: function(target) {
-      // console.log('enable', this.data.lastForBodyLock);
       if ($('.blocker').length) return;
       var _this = this;
 
+      clearQueueScrollLocks();
+      enablePageScroll();
+      this.data.scrolllDisabled = false;
+      this.data.blocked = false;
+      this.data.direction = 'up';
+      // console.log('enabling scroll');
       if (APP.Browser().data.isMobile) {
-        // APP.Dev.LogOnScreen.showLog('enablePageScroll');
-        clearQueueScrollLocks();
-        enablePageScroll();
-        this.data.scrolllDisabled = false;
-        this.data.blocked = false;
-        this.data.direction = 'up';
         $('body').removeClass('body-m-lock');
       } else {
-        APP.Plugins.Rellax.unfreeze();
-        this.data.blocked = false;
-        this.data.direction = 'up'; // keeps header
-        $('.page__content').css({
-          'margin-top': '-' + 0 + 'px',
-        });
-
-        this.unfillScrollbarGap();
+        // this.unfillScrollbarGap();
         $('body').removeClass('body-lock');
-        _window.scrollTop(this.data.lastForBodyLock);
       }
     },
     getWindowScroll: function() {
@@ -94,7 +74,6 @@
       this.data.direction = wScroll > this.data.lastForScrollDir ? 'down' : 'up';
 
       this.data.lastForScrollDir = wScroll <= 0 ? 0 : wScroll;
-      this.data.lastForBodyLock = wScroll;
     },
     listenScroll: function() {
       _window.on('scroll', this.getWindowScroll.bind(this));

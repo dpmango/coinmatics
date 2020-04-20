@@ -1,0 +1,67 @@
+// POPUP DIALOG
+.popup-dialog
+  position: relative
+  display: block
+  background: white
+  border-radius: 12px
+  padding: 0px 0px
+  text-align: left
+  max-width: 618px
+  margin: 0px auto
+  overflow: hidden
+  &--narrow
+    max-width: 350px
+  &__close
+    position: absolute
+    right: 0
+    top: 0
+    display: block
+    padding: 10px
+    top: 10px
+    right: 10px
+    size: auto
+    line-height: normal
+    font-size: 0
+    cursor: pointer
+    color: $colorPrimary
+    opacity: 1
+    transition: color .25s $ease
+    .ico
+      font-size: 24px
+      pointer-events: none
+    &:hover
+      color: $colorRed
+
+  &__wrapper
+    padding: 64px
+  &__head
+    margin-bottom: 24px
+  &__form
+    margin-top: 24px
+  &__terms
+    margin-top: 16px
+  &__content
+    .btn
+      margin-top: 24px
+
++r($md)
+  .popup-dialog
+    max-width: 560px
+
++r($sm)
+  .popup-dialog
+    max-width: 100%
+    margin: 8px
+    &__wrapper
+      padding: 64px 32px 40px
+    &__head
+      text-align: center
+    &__form, &__terms
+      max-width: 320px
+      margin-left: auto
+      margin-right: auto
+    &__form
+      margin-top: 20px
+    &__terms
+      margin-top: 24px
+      text-align: center

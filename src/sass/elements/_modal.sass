@@ -10,55 +10,40 @@ html.mfp-helper
     height: 100%
     -webkit-transform: translateZ(0)
 
-#small-dialog
-  background: white
-  padding: 20px 30px
-  text-align: left
-  max-width: 600px
-  margin: 40px auto
-  position: relative
 
+  // Sahred animation styles
+.fade-zoom, .slide-right
+  background: rgba(#13265C, 0)
+  &.mfp-ready
+    background: rgba(#13265C, .34)
+  &.mfp-removing
+    background: rgba(#13265C, 0)
 
-// Fade-zoom animation for first dialog
-
-.popup-buble
+// Fade zoom animation
+.fade-zoom
   .popup-dialog
     opacity: 0
     transition: all 0.2s ease-in-out
-    transform: scale(0.8)
+    transform: scale(0.9)
   &.mfp-ready .popup-dialog
     opacity: 1
     transform: scale(1)
   &.mfp-removing .popup-dialog
-    transform: scale(0.8)
+    transform: scale(0.9)
     opacity: 0
-  &.mfp-bg
-    background: $colorGreen
-    opacity: 0
-    transition: opacity 0.3s $ease
-  &.mfp-ready.mfp-bg
+
+// Slide in animation
+.slide-right
+  .popup-dialog
     opacity: 1
-  &.mfp-removing.mfp-bg
-    opacity: 0
-
-
-
-// Fade-move animation
-.my-mfp-slide-bottom
-  .zoom-anim-dialog
-    opacity: 0
-    transition: all 0.2s ease-out
-    transform: translateY(-20px) perspective(600px) rotateX(10deg)
-  &.mfp-ready .zoom-anim-dialog
+    transition: all 0.3s ease-in-out
+    will-change: transform
+    backface-visibility: hidden
+    transform-style: preserve-3d
+    transform: translate3d(100%,0,0)
+  &.mfp-ready .popup-dialog
     opacity: 1
-    transform: translateY(0) perspective(600px) rotateX(0)
-  &.mfp-removing .zoom-anim-dialog
-    opacity: 0
-    transform: translateY(-10px) perspective(600px) rotateX(10deg)
-  &.mfp-bg
-    opacity: 0
-    transition: opacity 0.3s ease-out
-  &.mfp-ready.mfp-bg
-    opacity: 0.8
-  &.mfp-removing.mfp-bg
-    opacity: 0
+    transform: translate3d(0,0,0)
+  &.mfp-removing .popup-dialog
+    opacity: 1
+    transform: translate3d(100%,0,0)

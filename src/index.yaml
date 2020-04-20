@@ -4,12 +4,12 @@ PageList:
   - file: homepage.html
     ready: 100
   - file: investors.html
-    ready: 90
+    ready: 100
   - file: traders.html
-    ready: 90
+    ready: 100
   - file: faq.html
-    ready: 90
+    ready: 100
   - file: legal.html
-    ready: 90
+    ready: 100
   - file: ui.html
     ready: 10

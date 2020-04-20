@@ -3,47 +3,82 @@
 //////////
 (function($, APP) {
   APP.Plugins.Modals = {
-    init: function() {
-      var startWindowScroll = 0;
-      $('[js-popup]').magnificPopup({
-        type: 'inline',
-        fixedContentPos: true,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'popup-buble',
-        callbacks: {
-          beforeOpen: function() {
-            startWindowScroll = _window.scrollTop();
-            // $('html').addClass('mfp-helper');
-          },
-          close: function() {
-            // $('html').removeClass('mfp-helper');
-            _window.scrollTop(startWindowScroll);
-          },
-        },
+    data: {
+      startWindowScroll: 0,
+      lastModal: undefined,
+    },
+    init: function(fromPjax) {
+      if (!fromPjax) {
+        this.clickListeners();
+        this.modalListeners();
+      }
+    },
+    modalListeners: function() {
+      var _this = this;
+
+      _document
+        .on($.modal.BEFORE_OPEN, function(event, modal) {
+          setTimeout(function() {
+            modal.$blocker.addClass('mfp-ready');
+          }, 50);
+        })
+        .on($.modal.OPEN, function(event, modal) {
+          _this.data.lastModal = modal;
+          APP.Plugins.ScrollBlock.disableScroll();
+
+          var $inputs = modal.$blocker.find('input');
+          if ($inputs.length > 0) {
+            $inputs.first().focus();
+          }
+        })
+        .on($.modal.BEFORE_CLOSE, function(event, modal) {
+          modal.$blocker.addClass('mfp-removing');
+        })
+        .on($.modal.CLOSE, function(event, modal) {
+          _this.data.lastModal = undefined;
+          APP.Plugins.ScrollBlock.enableScroll();
+        });
+    },
+    openModal: function(target) {
+      var $content = $(target);
+      var mainClass = $content.data('animation') ? $content.data('animation') : 'fade-zoom';
+
+      // prevent opening same modal
+      if (this.data.lastModal && this.data.lastModal.$elm.attr('id') === $content.attr('id')) {
+        return;
+      } else {
+        if ($.modal.isActive()) {
+          $.modal.close();
+          setTimeout(function() {
+            $content.modal({
+              blockerClass: `${mainClass} `,
+            });
+          }, 300);
+        } else {
+          $content.modal({
+            blockerClass: `${mainClass} `,
+          });
+        }
+      }
+    },
+    clickListeners: function() {
+      _document.on('click', '.js-popup', function(e) {
+        var $link = $(this);
+        var target = $link.attr('href');
+
+        APP.Plugins.Modals.openModal(target);
+
+        return false;
       });
 
-      $('[js-popup-gallery]').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        tLoading: 'Загрузка #%curr%...',
-        mainClass: 'popup-buble',
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-          preload: [0, 1],
-        },
-        image: {
-          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-        },
+      _document.on('click', '.js-close-popup, .mfp-close', function() {
+        $.modal.close();
       });
-    },
-    destroy: function() {
-      // ... code ...
+      _document.on('click', '.modal', function(e) {
+        if ($(e.target).closest('.popup-dialog').length === 0) {
+          $.modal.close();
+        }
+      });
     },
   };
 })(jQuery, window.APP);

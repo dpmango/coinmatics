@@ -1,9 +1,10 @@
 .test-page
   .content
     .container
-      //- div(style="margin: 50px 0")
-      //-   h2.h2-title(style="color: #18DCA6") Modals
-      //-   a(href="#pdp" js-popup).btn.btn-primary PDP modal
+      div(style="margin: 50px 0")
+        h2.h2-title(style="color: #18DCA6") Modals
+        a(href="#modalSubscribe").btn.btn-primary.js-popup Subscribe
+        a(href="#modalThanks").btn.btn-primary.js-popup Thanks modal
 
       div(style="margin: 50px 0")
         h2.h2-title(style="color: #18DCA6") Typography
@@ -28,6 +29,7 @@
             +svgMono('arrow-right')
             +svgMono('pointer-short')
             +svgMono('pointer-long')
+            +svgMono('close')
           .group
             +svgMono('nav-investors')
             +svgMono('nav-top-traders')

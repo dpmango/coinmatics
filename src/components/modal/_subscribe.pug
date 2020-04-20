@@ -1,0 +1,24 @@
+
+#modalSubscribe.modal
+  .popup-dialog
+    .popup-dialog__close.js-close-popup
+      +svgMono('close')
+
+    .popup-dialog__wrapper
+      .popup-dialog__head
+        .h3-title.h4-title-md Subscribe Our Newsletter
+
+      form.popup-dialog__form(action="#" data-success-function="sucessFormValid").js-validate-form
+        .ui-group-row-btn
+          .ui-input
+            input(type="email" name="subs_email" placeholder="Your email address" required)
+          button.btn.btn-primary(type="submit") Subscribe
+        .popup-dialog__terms
+          p.p-mini.c-gray By pressing the button, I agree to Coinmatic's <a href="legal.html">Terms of Service</a> and <a href="legal.html">Privacy Policy</a>.
+
+
+script.
+  function sucessFormValid(formData){
+    console.log(formData);
+    APP.Plugins.Modals.openModal("#modalThanks");
+  }

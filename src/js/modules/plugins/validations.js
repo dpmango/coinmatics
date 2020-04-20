@@ -6,7 +6,8 @@
 (function($, APP) {
   APP.Plugins.Validations = {
     init: function() {
-      this.localize();
+      // this.localize();
+      this.localizeEn();
       this.validateFormsConstructor();
       this.validateFormsCustom();
     },
@@ -42,23 +43,14 @@
       },
       validateSubmitHandler: function(form) {
         $(form).addClass('loading');
-        $.ajax({
-          type: 'POST',
-          url: $(form).attr('action'),
-          data: $(form).serialize(),
-          success: function(response) {
-            $(form).removeClass('loading');
-            var data = $.parseJSON(response);
-            if (data.status === 'success') {
-              // do something I can't test
-            } else {
-              $(form)
-                .find('[data-error]')
-                .html(data.message)
-                .show();
-            }
-          },
-        });
+        var formData = $(form).serialize();
+        var sucessFunction = $(form).data('success-function');
+        if (sucessFunction !== undefined) {
+          var x = eval(sucessFunction);
+          if (typeof x == 'function') {
+            x(formData);
+          }
+        }
       },
       masks: {
         phone: {
@@ -103,10 +95,15 @@
         min: $.validator.format('Пожалуйста, введите число, большее или равное {0}.'),
       });
     },
+    localizeEn: function() {
+      $.extend($.validator.messages, {
+        email: 'Email format must be like name@site.com',
+      });
+    },
     validateFormsConstructor: function() {
       var _this = this;
 
-      var $forms = $('[js-validate-form]:not(.is-validation-attached)');
+      var $forms = $('.js-validate-form:not(.is-validation-attached)');
       if ($forms.length === 0) return;
       // CONSTRUCTOR LIKE FIRST
       $forms.each(function(i, form) {
@@ -127,12 +124,15 @@
           },
           messages: {
             email: {
-              required: 'Заполните это поле',
-              email: 'Формат email неверен',
+              required: 'Email format must be like name@site.com',
+              email: 'Email format must be like name@site.com',
+            },
+            subs_email: {
+              required: 'Email format must be like name@site.com',
+              email: 'Email format must be like name@site.com',
             },
             phone: {
-              required: 'Заполните это поле',
-              minlength: 'Введите корректный телефон',
+              minlength: 'Phome form is invalid',
             },
           },
         };

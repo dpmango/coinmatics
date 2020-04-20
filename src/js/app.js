@@ -65,12 +65,12 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
     app.initPlugins = function(fromPjax) {
       APP.Plugins.Teleport.init();
       APP.Plugins.Sliders.init(fromPjax);
-      // APP.Plugins.Modals.init();
+      APP.Plugins.Modals.init(fromPjax);
       // APP.Plugins.Masks.init();
       // APP.Plugins.Selectric.init();
       APP.Plugins.LazyLoadImages.init();
       // APP.Plugins.TextareaAutoExpand.init();
-      // APP.Plugins.Validations.init();
+      APP.Plugins.Validations.init();
       APP.Plugins.LegacySupport.fixImages();
       APP.Plugins.Rellax.init();
       APP.Plugins.Parallax.init(fromPjax);
