@@ -33,22 +33,13 @@ mixin accardeonElement(element)
               .content__section-title.h6-title Безопасность
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-                // accardeon__element (active)
-                .accardeon__element.is-active
-                  .accardeon__toggler
-                    .accardeon__title
-                      .p-small Рискую ли я потерять свои средства, подключившись к вашей платформе?
-                      +svgMono('arrow-down')
-                  .accardeon__content.accardeon__content--no-img(style="display: block")
-                    p.p-small.c-gray Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода.
-                // accardeon__element
-                .accardeon__element
-                  .accardeon__toggler
-                    .accardeon__title
-                      .p-small Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?
-                      +svgMono('arrow-down')
-                  .accardeon__content.accardeon__content--no-img
-                    p.p-small.c-gray Значимость этих проблем настолько очевидна, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Таким образом новая модель организационной деятельности позволяет оценить значение соответствующий условий активизации.
+                -
+                  var list = [
+                    {title: "Рискую ли я потерять свои средства, подключившись к вашей платформе?"},
+                    {title: "Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?"},
+                  ]
+                each element in list
+                  +accardeonElement(element)
 
             // section (2)
             .content__section(data-aos="fade-up")
@@ -115,19 +106,10 @@ mixin accardeonElement(element)
               .content__section-title.h6-title Безопасность
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
-                // accardeon__element (active)
-                .accardeon__element.is-active
-                  .accardeon__toggler
-                    .accardeon__title
-                      .h6-title Рискую ли я потерять свои средства, подключившись к вашей платформе?
-                      +svgMono('arrow-down')
-                  .accardeon__content.accardeon__content--no-img(style="display: block")
-                    p.p-small.c-gray Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода.
-                // accardeon__element
-                .accardeon__element
-                  .accardeon__toggler
-                    .accardeon__title
-                      .h6-title Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?
-                      +svgMono('arrow-down')
-                  .accardeon__content.accardeon__content--no-img
-                    p.p-small.c-gray Значимость этих проблем настолько очевидна, что консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Таким образом новая модель организационной деятельности позволяет оценить значение соответствующий условий активизации.
+                -
+                  var list = [
+                    {title: "Рискую ли я потерять свои средства, подключившись к вашей платформе?"},
+                    {title: "Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?"},
+                  ]
+                each element in list
+                  +accardeonElement(element)
