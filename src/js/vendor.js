@@ -18,7 +18,12 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import nth from 'lodash/nth';
-import { disablePageScroll, enablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
+import {
+  disablePageScroll,
+  enablePageScroll,
+  clearQueueScrollLocks,
+  addFillGapSelector,
+} from 'scroll-lock';
 import scrollMonitor from 'scrollmonitor';
 import { CountUp } from 'countup.js';
 import Rellax from 'rellax';
@@ -60,6 +65,7 @@ window.throttle = throttle;
 window.disablePageScroll = disablePageScroll;
 window.enablePageScroll = enablePageScroll;
 window.clearQueueScrollLocks = clearQueueScrollLocks;
+window.addFillGapSelector = addFillGapSelector;
 window.scrollMonitor = scrollMonitor;
 window.CountUp = CountUp;
 window.Rellax = Rellax;

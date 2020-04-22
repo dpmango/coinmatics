@@ -33,6 +33,8 @@
       // which elements are scrollable when scroll is locked?
       var $blockers = $('.blocker');
 
+      addFillGapSelector('.header');
+
       if ($blockers.length > 0) {
         $blockers.each(function(i, el) {
           disablePageScroll(el);
