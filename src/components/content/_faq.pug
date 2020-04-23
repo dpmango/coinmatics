@@ -14,9 +14,9 @@ mixin accardeonElement(element)
     // tabs
     ul.content__section-tabs.js-tabs
       li.is-active
-        a.h3-title(href="#" data-target-tab="tab-1") Для подписчиков
+        a.h3-title(href="#" data-target-tab="tab-1")=t('faq.forSubscribers')
       li
-        a.h3-title(href="#" data-target-tab="tab-2") Для трейдеров
+        a.h3-title(href="#" data-target-tab="tab-2")=t('faq.forTraders')
 
     // accardeon on mobile
     .accardeon.accardeon--tabs-md.accardeon--bg-white.js-accardeon
