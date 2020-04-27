@@ -2,11 +2,11 @@
 .faq__accardeon.accardeon.accardeon--bg-white.js-accardeon(data-aos="fade-up")
   -
     var list = [
-      {title: "What is Coinmatics?"},
-      {title: "What is Copytrading?"},
-      {title: "Is it expensive to use Coinmatics?"},
-      {title: "What is Copytrading?"},
-      {title: "How it works?"},
+      {title: t('faq.forInvestorsList.firstTitle') , description: t('faq.forInvestorsList.firstDescription')},
+      {title: t('faq.forInvestorsList.secondTitle'), description: t('faq.forInvestorsList.secondDescription')},
+      {title: t('faq.forInvestorsList.thirdTitle'), description: t('faq.forInvestorsList.thirdDescription')},
+      {title: t('faq.forInvestorsList.fourthTitle'), description: t('faq.forInvestorsList.fourthDescription')},
+      {title: t('faq.forInvestorsList.fifthTitle'), description: t('faq.forInvestorsList.fifthDescription')},
     ]
   each element in list
     // accardeon__element
@@ -16,4 +16,4 @@
           .p-small= element.title
           +svgMono('arrow-down')
       .accardeon__content.accardeon__content--no-img
-        p.p-small.c-gray  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        p.p-small.c-gray= element.description

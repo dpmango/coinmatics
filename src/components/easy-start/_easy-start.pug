@@ -8,11 +8,11 @@
       .easy-start__content
         .easy-start__content-wrapper
           .section-head.section-head--left(data-aos="fade-up")
-            h4.h4-title.c-light Easy Start
-            h2.h2-title.h3-title-md Simple as one, two, three
-            p.p-main It’s never been easier to trade like a real professional trader. Just few steps.
+            h4.h4-title.c-light=t('easy-start.subtitle')
+            h2.h2-title.h3-title-md=t('easy-start.title')
+            p.p-main=t('easy-start.description')
             .js-teleport(data-teleport-condition="<1200" data-teleport-to="easy-start-cta")
-              a(href="#").btn.btn-primary Start Earning
+              a(href="#").btn.btn-primary=t('easy-start.button')
       .easy-start__steps
         .easy-start__steps-wrapper
           .easy-start__steps-col(data-aos="fade-up")
@@ -21,23 +21,23 @@
               .es-card__image
                 include ../../icons/svg-inline/easy-start-1.svg
               .es-card__content
-                .es-card__number 1
-                .p-small Connect your exchanges account
+                .es-card__number=t('easy-start.firstValue')
+                .p-small=t('easy-start.firstDescription')
           .easy-start__steps-col(data-aos="fade-up")
             // .es-card
             .es-card
               .es-card__image
                 include ../../icons/svg-inline/easy-start-2.svg
               .es-card__content
-                .es-card__number 2
-                .p-small Chose the best traders to follow
+                .es-card__number=t('easy-start.secondValue')
+                .p-small=t('easy-start.secondDescription')
           .easy-start__steps-col(data-aos="fade-up")
             // .es-card
             .es-card
               .es-card__image
                 include ../../icons/svg-inline/easy-start-3.svg
               .es-card__content
-                .es-card__number 3
-                .p-small Track your gains in comfortable way
+                .es-card__number=t('easy-start.thirdValue')
+                .p-small=t('easy-start.thirdDescription')
 
       .easy-start__cta-mobile(data-aos="fade-up" data-teleport-target="easy-start-cta")

@@ -2,27 +2,27 @@
 .nfeatures
   .container
     .nfeatures__head.section-head(data-aos="fade-up")
-      h4.h4-title.c-light Platform Performance
+      h4.h4-title.c-light=t('nfeatures.subtitle')
     .nfeatures__wrapper
       .nfeatures__col(data-aos="fade-up")
         .nfeatures__card
           .h1-title.c-primary <<span class="js-countup" data-start="1" data-duration="4" data-decimal=".">0.1</span> sec
-          .h4-title Lightning Fast
-          .p-main Time need to replicate the trade
+          .h4-title=t('nfeatures.firstPerfomanceTitle')
+          .p-main=t('nfeatures.firstPerfomanceDescription')
           .nfeatures__card-pointer
             +svgMono('pointer-short')
       .nfeatures__col(data-aos="fade-up")
         .nfeatures__card
           .h1-title.c-primary <span class="js-countup">99,2</span>%
-          .h4-title Solid Execution
-          .p-main Succes rate of copy trades
+          .h4-title=t('nfeatures.secondPerfomanceTitle')
+          .p-main=t('nfeatures.secondPerfomanceDescription')
           .nfeatures__card-pointer
             +svgMono('pointer-long')
       .nfeatures__col(data-aos="fade-up")
         .nfeatures__card
           .h1-title.c-primary <span class="js-countup">99,9</span>%
-          .h4-title Sustainability
-          .p-main Uptime of the service
+          .h4-title=t('nfeatures.thirdPerfomanceTitle')
+          .p-main=t('nfeatures.thirdPerfomanceDescription')
           .nfeatures__card-pointer
             +svgMono('pointer-short')
 

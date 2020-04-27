@@ -8,18 +8,18 @@ footer.footer
     .footer__top(data-aos="fade")
       .footer__top-wrapper
         .footer__subscribe-labels
-          .h3-title Stay in touch!
-          .p-small.c-gray Subscribe to our newsletter and stay updated on the latest changes and trading insights. No spam, we promise.
+          .h3-title=t('footer.title')
+          .p-small.c-gray=t('footer.subscribe')
         .footer__subscribe-cta
-          a(href="#modalSubscribe").btn.btn-primary.js-popup Yes, Sign Me Up!
+          a(href="#modalSubscribe").btn.btn-primary.js-popup=t('footer.signUp')
 
     // middle
     .footer__middle(data-aos="fade")
       .footer__middle-wrapper
         .footer__contacts
           .footer__contacts-main
-            .p-small.c-gray Feel free to contact us
-            a(href="mailto:hello@coinmatics.com").footer__contacts-email hello@coinmatics.com
+            .p-small.c-gray=t('footer.contactUs')
+            a(href="mailto:hello@coinmatics.com").footer__contacts-email=t('footer.contactUsEmail')
           ul.footer__socials
             li
               a(href="#" target="_blank")
@@ -37,48 +37,48 @@ footer.footer
           .footer__menus-wrapper
             // menu-col
             .footer__menu-col
-              .p-small.c-gray For Investors
+              .p-small.c-gray=t('footer.forInvestors')
               ul.footer__menu
                 li
-                  a(href="#") Copy Trading
+                  a(href="#")=t('footer.copyTrading')
                 li
-                  a(href="#") Top Traders
+                  a(href="#")=t('footer.topTraders')
                 li
-                  a(href="#") Trading Signals
+                  a(href="#")=t('footer.tradingSignals')
             // menu-col
             .footer__menu-col
-              .p-small.c-gray For Traders
+              .p-small.c-gray=t('footer.forTraders')
               ul.footer__menu
                 li
-                  a(href="#") Copy Trading
+                  a(href="#")=t('footer.copyTrading')
                 li
-                  a(href="#") Trading Tools
+                  a(href="#")=t('footer.tradingTools')
             // menu-col
             .footer__menu-col
-              .p-small.c-gray Company
+              .p-small.c-gray=t('footer.company')
               ul.footer__menu
                 li
-                  a(href="#") About Us
+                  a(href="#")=t('footer.aboutUs')
                 li
-                  a(href="#") Blog
+                  a(href="#")=t('footer.blog')
                 li
-                  a(href="#") Careers
+                  a(href="#")=t('footer.careers')
                 li
-                  a(href="legal.html") Legal Documents
+                  a(href="legal.html")=t('footer.legalDocuments')
                 li
-                  a(href="#") Contacts
+                  a(href="#")=t('footer.contacts')
             // menu-col
             .footer__menu-col
-              .p-small.c-gray Support
+              .p-small.c-gray=t('footer.support')
               ul.footer__menu
                 li
-                  a(href="#") FAQ
+                  a(href="#")=t('footer.faq')
                 li
-                  a(href="#") Live Chat
+                  a(href="#")=t('footer.liveChat')
                 li
-                  a(href="#") Uptime & Status
+                  a(href="#")=t('footer.uptimeAndStatus')
                 li
-                  a(href="#") Suggest a Feature
+                  a(href="#")=t('footer.suggestFeature')
     // bottom
     .footer__bottom
       .footer__bottom-wrapper
@@ -86,17 +86,17 @@ footer.footer
           .footer__logo.logo.logo--white
             .logo__icon
               +svgColor('logo-sign-white')
-            .logo__name Coinmatics
+            .logo__name=t('footer.logoName')
             .logo__tag
               +svgColor('logo-beta')
-          .p-small.c-gray ©2020, All Rights Reserved
+          .p-small.c-gray=t('footer.allRightsReserved')
 
         .footer__bottom-right
           .footer__lang
-            .footer__lang-label.p-small.c-gray Change language to
+            .footer__lang-label.p-small.c-gray=t('footer.changeLocale')
             a(href="#").footer__lang-selector
               .footer__lang-icon
                 +svgColor('lang-rus')
-              .p-small Рус
+              .p-small=t('footer.locale')
 
 // FOOTER :: END

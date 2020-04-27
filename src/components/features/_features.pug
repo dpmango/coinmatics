@@ -11,44 +11,44 @@ mixin featureCard(card)
 .features
   .container
     .features__head.section-head(data-aos="fade-up")
-      h4.h4-title.c-light Copy Trading
-      h2.h2-title.h3-title-md Platform Features
-      p.p-main.c-gray Repeat their succes or become one of sucessful trade masters
+      h4.h4-title.c-light=t('features.subtitle')
+      h2.h2-title.h3-title-md=t('features.title')
+      p.p-main.c-gray=t('features.description')
 
     .features__wrapper
       .features__col(data-aos="fade-up")
         +featureCard({
           icon: 'passive-income',
-          title: 'Passive Income on Steroids',
-          desc: 'Enjoy the profits of active crypto trading while slaking off'
+          title: t('features.firstTitle'),
+          desc: t('features.firstDescription')
         })
       .features__col(data-aos="fade-up")
         +featureCard({
           icon: 'diversification',
-          title: 'Diversification',
-          desc: 'Allocate funds across traders with different strategies'
+          title: t('features.secondTitle'),
+          desc: t('features.secondDescription')
         })
       .features__col(data-aos="fade-up")
         +featureCard({
           icon: 'manageable-risks',
-          title: 'Fully Manageable Risks',
-          desc: 'Customize your risk level for each following trader'
+          title: t('features.thirdTitle'),
+          desc: t('features.thirdDescription')
         })
       .features__col(data-aos="fade-up")
         +featureCard({
           icon: 'safety',
-          title: 'Totally Secure',
-          desc: 'The service works without acces to the exchange account and funds'
+          title: t('features.fourthTitle'),
+          desc: t('features.fourthDescription')
         })
       .features__col(data-aos="fade-up")
         +featureCard({
           icon: 'portfolio',
-          title: 'Synced Potfolio',
-          desc: 'Align assets with the trader’s account in one click'
+          title: t('features.fifthTitle'),
+          desc: t('features.fifthDescription')
         })
       .features__col(data-aos="fade-up")
         +featureCard({
           icon: 'skin-in-game',
-          title: 'Skin in The Game',
-          desc: 'A trader risks his funds providing trades for copy'
+          title: t('features.sixthTitle'),
+          desc: t('features.sixthDescription')
         })

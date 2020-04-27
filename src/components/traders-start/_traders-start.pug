@@ -4,10 +4,10 @@
   .trstart__banner
     .container
       .trstart__head.section-head(data-aos="fade-up")
-        h4.h4-title.c-light Are you a trader?
-        h2.h2-title.h3-title-md Start to Earn With Copytrading
-        p.p-main.c-light Just sign up as a trader in our system, get subscribers and receive additional profit from your subscribers deals. You will decide by yourself what profit amount you will get.
-        a(href="#").btn.btn-ghost.btn-ghost--b0 Learn more
+        h4.h4-title.c-light=t('traders-start.subtitle')
+        h2.h2-title.h3-title-md=t('traders-start.title')
+        p.p-main.c-light=t('traders-start.description')
+        a(href="#").btn.btn-ghost.btn-ghost--b0=t('traders-start.learnMore')
 
       .trstart__banner-image(data-aos="fade")
         include ../../icons/svg-inline/illustration_trstart.svg
@@ -21,13 +21,13 @@
   .trstart__tools
     .container
       .trstart__head.section-head(data-aos="fade-up")
-        h3.h3-title.h4-title-md Trade With Our Tools
+        h3.h3-title.h4-title-md=t('traders-start.toolsTitle')
 
       include partials/_tools
 
       // cta
       .trstart__tools-cta(data-aos="fade-up")
-        a(href="#").btn.btn-primary Start Trade
+        a(href="#").btn.btn-primary=t('traders-start.toolsButton')
 
   .trstart__waves.bg-waves.bg-waves--bottom.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg

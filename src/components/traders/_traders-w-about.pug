@@ -15,10 +15,9 @@
           .traders-about__content(data-aos="fade-up")
             .traders-about__content-wrapper
               .section-head.section-head--left
-                h4.h4-title.c-light About
-                h2.h2-title.h3-title-md How Does It Works
-                p.p-small.p-main-xl.p-small-md.c-gray Coinmatics is a technological platform uniting experienced crypto traders with the beginners for mutually beneficial cooperation. We offer open stats of any cryptocurrency trader, including a trade history and an overall efficiency.
-                p.p-small.p-main-xl.p-small-md.c-gray The information provides the traders with additional income from subscriptions, which depends on their performance level. To automate the process of copying trades, we’ve created the Auto-trading service that doesn’t require any actions. Get it started in two clicks!
+                //- h4.h4-title.c-light About
+                h2.h2-title.h3-title-md=t('traders-w-about.title')
+                p.p-small.p-main-xl.p-small-md.c-gray=t('traders-w-about.description')
           .traders-about__bg-coins
             include ../../icons/svg-inline/illustration_traders-about-coins.svg
 
@@ -26,15 +25,15 @@
   .traders__container
     .container
       .traders__head.section-head(data-aos="fade-up")
-        h4.h4-title Our Top Traders
-        p.p-main.c-gray Repeat their succes or become one of sucessful trade masters
+        h4.h4-title=t('traders-w-about.topTradersTitle')
+        p.p-main.c-gray=t('traders-w-about.topTradersDsc')
 
       .traders__card(data-aos="fade-up")
         // trader-card
         include partials/_trader-card
 
       .traders__cta(data-aos="fade-up")
-        a(href="#").btn.btn-ghost.btn-ghost--b0 View all 235 traders
+        a(href="#").btn.btn-ghost.btn-ghost--b0=t('traders-w-about.viewAll')
 
   .traders__waves.bg-waves.bg-waves--bottom.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg

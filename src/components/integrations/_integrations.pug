@@ -17,26 +17,28 @@
             .integration-card.integration-card--disabled
               .integration-card__image
                 img(js-lazy data-src='img/logo-bittrex@2x.png' data-srcset='img/logo-bittrex@2x.png 2x')
-              .integration-card__tag.p-mini Soon
+              .integration-card__tag.p-mini=t('integrations.soon')
           .integrations__grid-col(data-aos="fade-up")
             // .integration-card
             .integration-card.integration-card--disabled
               .integration-card__image
                 img(js-lazy data-src='img/logo-bitmex@2x.png' data-srcset='img/logo-bitmex@2x.png 2x')
-              .integration-card__tag.p-mini Soon
+              .integration-card__tag.p-mini=t('integrations.soon')
           .integrations__grid-col(data-aos="fade-up")
             // .integration-card
             .integration-card.integration-card--disabled
               .integration-card__image
                 img(js-lazy data-src='img/logo-poloniex@2x.png' data-srcset='img/logo-poloniex@2x.png 2x')
-              .integration-card__tag.p-mini Soon
+              .integration-card__tag.p-mini=t('integrations.soon')
 
       .integrations__right(data-aos="fade-up")
         .integrations__right-wrapper
           .integrations__head.section-head.section-head--left
             .js-teleport(data-teleport-condition="<1200" data-teleport-to="integrations-head")
-              h4.h4-title.c-light Integrations
-              h2.h2-title.h3-title-md Available Exchanges
-            p.p-main.c-gray We suport only Binance accounts now, but in the nearest future we’re planing to add other pupular platforms.
-            p.p-main.c-gray <a href="#">Get notified</a> when the new exanges become able.
-            a(href="#").btn.btn-primary Integrate Exchange
+              h4.h4-title.c-light=t('integrations.subtitle')
+              h2.h2-title.h3-title-md=t('integrations.title')
+            p.p-main.c-gray=t('integrations.descriptionStart')
+            p.p-main.c-gray
+              a(href="#")=t('integrations.descriptionLink')
+              span=` ${t('integrations.descriptionEnd')}`
+            a(href="#").btn.btn-primary=t('integrations.buttonText')

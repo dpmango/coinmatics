@@ -2,11 +2,13 @@
 .faq
   .container.container--8
     .faq__head.section-head(data-aos="fade-up")
-      h4.h4-title.c-light Service Information
-      h2.h2-title.h3-title-md Frequently Asked <br/>Questions
+      h4.h4-title.c-light=t('faq.subtitle')
+      h2.h2-title.h3-title-md=t('faq.titleStart')
+       br
+       span=t('faq.titleEnd')
 
     // list
     include partials/_list
 
     .faq__cta(data-aos="fade-up")
-      a(href='#').btn.btn-primary View All Information
+      a(href='#').btn.btn-primary=t('faq.button')

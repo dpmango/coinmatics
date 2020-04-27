@@ -6,17 +6,16 @@
       .accardeon__element.is-active
         .accardeon__toggler
           .accardeon__title
-            .h5-title Investment Portfolio
+            .h5-title=t('tools.fisrtTitle')
             +svgMono('arrow-down')
         .accardeon__content(style="display: block")
           .trstart__tools-image.trstart__tools-image--mobile(data-teleport-target="trstart-image-1")
-          p.p-small.c-gray Настройте мгновенные оповещения для отслеживания колебаний валютных пар. После настройки параметров вы получаете своевременные уведомления о выгодных сделках через Telegram-канал. Доступны биржи Bittrex, Poloniex, Bitstamp, Bitfinex, Binance, а также большинство криптовалютных пар.
+          p.p-small.c-gray=t('tools.firstDsc')
       -
         var list = [
-          {title: "Сrypto Arbitration", image: "trstart-image-2"},
-          {title: "Notification Center", image: "trstart-image-3"},
-          {title: "Analytics", image: "trstart-image-4"},
-          {title: "Market Research Tool", image: "trstart-image-5"}
+          {title: t('tools.secondTitle'), image: "trstart-image-2", description: t('tools.secondDsc')},
+          {title: t('tools.thirdTitle'), image: "trstart-image-3", description: t('tools.thirdDsc')},
+          {title: t('tools.fourthTitle'), image: "trstart-image-4", description: t('tools.fourthDsc')}
         ]
       each element in list
         // accardeon__element
@@ -28,7 +27,7 @@
           .accardeon__content
             .trstart__tools-image.trstart__tools-image--mobile(data-teleport-target=element.image)
               // teleport
-            p.p-small.c-gray Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            p.p-small.c-gray=element.description
 
   .trstart__tools-images(data-aos="fade-up")
     .trstart__tools-image.js-teleport(style="display: block" data-accardeon-tab="1" data-teleport-condition="<1200" data-teleport-to="trstart-image-1")

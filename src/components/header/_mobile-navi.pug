@@ -6,7 +6,7 @@
       a(href="homepage.html").header__logo.logo
         .logo__icon
           +svgColor('logo-sign')
-        .logo__name Coinmatics
+        .logo__name=t('mobile-navi.logoName')
         .logo__tag
           +svgColor('logo-beta')
       .header__hamburger.js-close-mobile-navi
@@ -16,69 +16,69 @@
 
     // section
     .mobile-navi__section
-      .h6-title.p-mini-md.c-gray For Investors
+      .h6-title.p-mini-md.c-gray=t('mobile-navi.forInvestors')
       .mobile-navi__list
         a(href="invetors.html").menu-nav
           .menu-nav__icon
             +svgColor('nav-investors')
             +svgMono('nav-investors')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md Copytrading for investors
-            .p-mini Passive income on Steroids
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.copyTradingForInvestorsTitle')
+            .p-mini=t('mobile-navi.copyTradingForInvestorsDsc')
         a(href="invetors.html").menu-nav
           .menu-nav__icon
             +svgColor('nav-top-traders')
             +svgMono('nav-top-traders')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md Discover Top Traders
-            .p-mini A wide range of profitable traders for you to follow
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.discoverTopTradersTitle')
+            .p-mini=t('mobile-navi.discoverTopTradersDsc')
         a(href="invetors.html").menu-nav
           .menu-nav__icon
             +svgColor('nav-signals')
             +svgMono('nav-signals')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md Free Trading Signals
-            .p-mini Telegram channel with free trading signals from our traders
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.freeTradingSignalsTitle')
+            .p-mini=t('mobile-navi.freeTradingSignalsDsc')
 
     // section
     .mobile-navi__section
-      .h6-title.p-mini-md.c-gray For Traders
+      .h6-title.p-mini-md.c-gray=t('mobile-navi.forTraders')
       .mobile-navi__list
         a(href="traders.html").menu-nav
           .menu-nav__icon
             +svgColor('nav-traders')
             +svgMono('nav-traders')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md Copytrading for Traders
-            .p-mini Gain more from your trades without increasing risks
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.copyTradingForTradersTitle')
+            .p-mini=t('mobile-navi.copyTradingForTradersDsc')
         a(href="traders.html").menu-nav
           .menu-nav__icon
             +svgColor('nav-traders-tools')
             +svgMono('nav-traders-tools')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md Free Market Research tools
-            .p-mini Enhance your decision process with our products
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.freeMarketResearchToolsTitle')
+            .p-mini=t('mobile-navi.freeMarketResearchToolsDsc')
 
     // section
     .mobile-navi__section
-      .h6-title.p-mini-md.c-gray Support
+      .h6-title.p-mini-md.c-gray=t('mobile-navi.support')
       .mobile-navi__list
         a(href="faq.html").menu-nav
           .menu-nav__icon
             +svgColor('nav-faq')
             +svgMono('nav-faq')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md FAQ
-            .p-mini Frequently Asked Questions
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.faqTitle')
+            .p-mini=t('mobile-navi.faqDsc')
         a(href="#").menu-nav
           .menu-nav__icon
             +svgColor('nav-ask-a-question')
             +svgMono('nav-ask-a-question')
           .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md Ask a Question
-            .p-mini We will be happy to answer any questions about our products
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.askQuestionTitle')
+            .p-mini=t('mobile-navi.askQuestionDsc')
 
     // section
     .mobile-navi__cta-mobile
-      a(href="#").btn.btn-ghost.btn--block.btn--small Log In
-      a(href="#").btn.btn-primary.btn--block.btn--small Get Started
+      a(href="#").btn.btn-ghost.btn--block.btn--small=t('mobile-navi.logIn')
+      a(href="#").btn.btn-primary.btn--block.btn--small=t('mobile-navi.getStarted')
