@@ -81,9 +81,9 @@
           if idx === 0
             .swiper-slide.trader-card__nav-element.is-active
               .h6-title=slide.name
-              .p-small Total Profit #{slide.totalProfit > 0 ? '+' : ''}#{slide.totalProfit || 0}%
+              .p-small #{t('trader-card.totalProfit')} #{slide.totalProfit > 0 ? '+' : ''}#{slide.totalProfit || 0}%
           else
             .swiper-slide.trader-card__nav-element
               .h6-title=slide.name
-              .p-small Total Profit #{slide.totalProfit || 0}%
+              .p-small #{t('trader-card.totalProfit')} #{slide.totalProfit || 0}%
 
