@@ -27,12 +27,12 @@
                 .h4-title.h6-title-md #{slide.avgProfit > 0 ? '+' : ''}#{slide.avgProfit}%
               .trader-card__info-col
                 .p-small.c-gray=t('trader-card.riskLevel')
-                .h4-title.h6-title-md #{slide.riskLevel}
+                .h4-title.h6-title-md #{t('trader-card.riskLevelList.' + slide.riskLevel)}
           // chart
           .trader-card__chart
             .trader-card__chart-stats
               .p-small.c-gray=t('trader-card.lastWeekProfitGraph')
-              - var lastProfit = slide.data.values[slide.data.values.length - 1]
+              - var lastProfit = slide.lastWeekProfit
               if lastProfit > 0
                 .h6-title.c-primary +#{lastProfit}%
               else
