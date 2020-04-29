@@ -1,4 +1,9 @@
 // FOOTER :: START
+- var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
+- var instagramHref = locale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
+- var twitterHref = locale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
+- var tradingToolsHref = path === '/homepage.html' || path === '/traders.html' ? '#tools' : '/traders.html#tools';
+- var blogHref = locale === 'ru' ? 'https://zen.yandex.ru/id/5d8885cf05fd9800ad37b63a' : 'https://medium.com/coinmatics';
 footer.footer
   .footer__waves.bg-waves.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg
@@ -22,16 +27,16 @@ footer.footer
             a(href="mailto:hello@coinmatics.com").footer__contacts-email=t('footer.contactUsEmail')
           ul.footer__socials
             li
-              a(href="#" target="_blank")
+              a(href=instagramHref target="_blank")
                 +svgMono('social-instagram')
             li
-              a(href="#" target="_blank")
+              a(href="https://www.facebook.com/coinmatics.io/" target="_blank")
                 +svgMono('social-facebook')
             li
-              a(href="#" target="_blank")
+              a(href=twitterHref target="_blank")
                 +svgMono('social-twitter')
             li
-              a(href="#" target="_blank")
+              a(href="https://medium.com/coinmatics" target="_blank")
                 +svgMono('social-medium')
         .footer__menus
           .footer__menus-wrapper
@@ -40,19 +45,19 @@ footer.footer
               .p-small.c-gray=t('footer.forInvestors')
               ul.footer__menu
                 li
-                  a(href="#")=t('footer.copyTrading')
+                  a(href="/investors.html")=t('footer.copyTrading')
                 li
-                  a(href="#")=t('footer.topTraders')
+                  a(href=panelCoinmaticsUrl + '/signin')=t('footer.topTraders')
                 li
-                  a(href="#")=t('footer.tradingSignals')
+                  a(href="https://t.me/coinmatics_signals")=t('footer.tradingSignals')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.forTraders')
               ul.footer__menu
                 li
-                  a(href="#")=t('footer.copyTrading')
+                  a(href="/traders.html")=t('footer.copyTrading')
                 li
-                  a(href="#")=t('footer.tradingTools')
+                  a(href=tradingToolsHref)=t('footer.tradingTools')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.company')
@@ -60,11 +65,11 @@ footer.footer
                 li
                   a(href="#")=t('footer.aboutUs')
                 li
-                  a(href="#")=t('footer.blog')
+                  a(href=blogHref target="_blank")=t('footer.blog')
                 li
-                  a(href="#")=t('footer.careers')
+                  a(href="https://www.linkedin.com/company/coinmatics/jobs/" target="_blank")=t('footer.careers')
                 li
-                  a(href="legal.html")=t('footer.legalDocuments')
+                  a(href="#")=t('footer.legalDocuments')
                 li
                   a(href="#")=t('footer.contacts')
             // menu-col
@@ -72,13 +77,13 @@ footer.footer
               .p-small.c-gray=t('footer.support')
               ul.footer__menu
                 li
-                  a(href="#")=t('footer.faq')
+                  a(href="/faq.html")=t('footer.faq')
                 li
                   a(href="#")=t('footer.liveChat')
                 li
-                  a(href="#")=t('footer.uptimeAndStatus')
+                  a(href="https://coinmatics.statuspage.io/" target="_blank")=t('footer.uptimeAndStatus')
                 li
-                  a(href="#")=t('footer.suggestFeature')
+                  a(href="https://portal.productboard.com/coinmatics/3-coinmatics" target="_blank")=t('footer.suggestFeature')
     // bottom
     .footer__bottom
       .footer__bottom-wrapper

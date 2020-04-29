@@ -1,4 +1,5 @@
 // HEADER :: START
+- var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
 header.header
   .container
     .header__wrapper
@@ -7,7 +8,7 @@ header.header
           .hamburger-box
             .hamburger-inner
 
-      a(href="homepage.html").header__logo
+      a(href="/homepage.html").header__logo
         .logo
           .logo__icon
             +svgColor('logo-sign')
@@ -30,6 +31,6 @@ header.header
             +svgMono('arrow-down')
 
       .header__cta
-        a(href="#").btn.btn-ghost.btn--small=t('header.logIn')
-        a(href="#").btn.btn-primary.btn--small=t('header.getStarted')
+        a(href=panelCoinmaticsUrl + '/signin').btn.btn-ghost.btn--small=t('header.logIn')
+        a(href=panelCoinmaticsUrl + '/signup').btn.btn-primary.btn--small=t('header.getStarted')
 
