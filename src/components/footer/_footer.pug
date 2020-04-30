@@ -2,7 +2,7 @@
 - var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
 - var instagramHref = locale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
 - var twitterHref = locale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
-- var tradingToolsHref = path === '/homepage.html' || path === '/traders.html' ? '#tools' : '/traders.html#tools';
+- var tradingToolsHref = path === '/' || path === '/traders' ? '#tools' : '/traders#tools';
 - var blogHref = locale === 'ru' ? 'https://zen.yandex.ru/id/5d8885cf05fd9800ad37b63a' : 'https://medium.com/coinmatics';
 footer.footer
   .footer__waves.bg-waves.bg-waves--dark
@@ -45,7 +45,7 @@ footer.footer
               .p-small.c-gray=t('footer.forInvestors')
               ul.footer__menu
                 li
-                  a(href="/investors.html")=t('footer.copyTrading')
+                  a(href="/investors")=t('footer.copyTrading')
                 li
                   a(href=panelCoinmaticsUrl + '/signin')=t('footer.topTraders')
                 li
@@ -55,7 +55,7 @@ footer.footer
               .p-small.c-gray=t('footer.forTraders')
               ul.footer__menu
                 li
-                  a(href="/traders.html")=t('footer.copyTrading')
+                  a(href="/traders")=t('footer.copyTrading')
                 li
                   a(href=tradingToolsHref)=t('footer.tradingTools')
             // menu-col
@@ -69,7 +69,7 @@ footer.footer
                 li
                   a(href="https://www.linkedin.com/company/coinmatics/jobs/" target="_blank")=t('footer.careers')
                 li
-                  a(href="#")=t('footer.legalDocuments')
+                  a(href="/legal")=t('footer.legalDocuments')
                 li
                   a(href="#")=t('footer.contacts')
             // menu-col
@@ -77,9 +77,9 @@ footer.footer
               .p-small.c-gray=t('footer.support')
               ul.footer__menu
                 li
-                  a(href="/faq.html")=t('footer.faq')
+                  a(href="/faq")=t('footer.faq')
                 li
-                  a(href="#")=t('footer.liveChat')
+                  a(href="#").show-intercom=t('footer.liveChat')
                 li
                   a(href="https://coinmatics.statuspage.io/" target="_blank")=t('footer.uptimeAndStatus')
                 li
@@ -99,7 +99,7 @@ footer.footer
         .footer__bottom-right
           .footer__lang
             .footer__lang-label.p-small.c-gray=t('footer.changeLocale')
-            a(href="#").footer__lang-selector
+            a(href=locale).change-locale.footer__lang-selector
               .footer__lang-icon
                 +svgColor('lang-rus')
               .p-small=t('footer.locale')

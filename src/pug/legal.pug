@@ -6,5 +6,8 @@ block content
   // header modifier
   div(js-header-class data-class="dark-background")
 
-  include ../components/page-title/_legal
-  include ../components/content/_legal
+    include ../components/page-title/_legal
+  if locale === 'ru'
+    include ../components/content/_legal-ru
+  else 
+    include ../components/content/_legal-en

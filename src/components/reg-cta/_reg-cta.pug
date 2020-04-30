@@ -1,4 +1,5 @@
 // REG CTA
+- var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
 .reg-cta
   .container.container--8
     .reg-cta__holder(data-aos="fade-up")
@@ -6,6 +7,6 @@
         .reg-cta__content
           h3.h3-title=t('reg-cta.title')
           p.p-small.c-gray=t('reg-cta.description')
-          a(href="#").btn.btn-primary=t('reg-cta.button')
+          a(href=panelCoinmaticsUrl + '/signup').btn.btn-primary=t('reg-cta.button')
         .reg-cta__image
           include ../../icons/svg-inline/illustration_reg-cta.svg

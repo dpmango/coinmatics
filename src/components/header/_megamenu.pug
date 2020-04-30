@@ -1,13 +1,13 @@
 
 // megamenu
 - var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
-- var toolsHref = path === '/homepage.html' || path === '/traders.html' ? '#tools' : '/traders.html#tools';
+- var toolsHref = path === '/' || path === '/traders' ? '#tools' : '/traders#tools';
 .megamenu.js-megamenu(data-id="1")
   .megamenu__scroller
     .container
       .megamenu__grid
         .megamenu__col
-          a(href="/investors.html").menu-nav
+          a(href="/investors").menu-nav
             .menu-nav__icon
               +svgColor('nav-investors')
               +svgMono('nav-investors')
@@ -37,7 +37,7 @@
     .container
       .megamenu__grid
         .megamenu__col
-          a(href="/traders.html").menu-nav
+          a(href="/traders").menu-nav
             .menu-nav__icon
               +svgColor('nav-traders')
               +svgMono('nav-traders')
@@ -59,7 +59,7 @@
     .container
       .megamenu__grid
         .megamenu__col
-          a(href="/faq.html").menu-nav
+          a(href="/faq").menu-nav
             .menu-nav__icon
               +svgColor('nav-faq')
               +svgMono('nav-faq')
@@ -67,7 +67,7 @@
               .h5-title=t('megamenu.faqTitle')
               .p-mini=t('megamenu.faqDsc')
         .megamenu__col
-          a(href="#").menu-nav
+          a(href="#").show-intercom.menu-nav
             .menu-nav__icon
               +svgColor('nav-ask-a-question')
               +svgMono('nav-ask-a-question')

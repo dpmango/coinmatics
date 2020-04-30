@@ -121,6 +121,21 @@
           }
         }
       });
+
+      // show intercom window
+      _document.on('click', '.show-intercom', function(e) {
+        e.preventDefault();
+        Intercom('show');
+      });
+
+      // change locale
+      _document.on('click', '.change-locale', function(e) {
+        var $link = $(this);
+        var currentLanguage = $link.attr('href');
+        var nextLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
+        console.log('change locale', nextLanguage);
+      });
+
     },
     destroy: function() {
       // ... code ...

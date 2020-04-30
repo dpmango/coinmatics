@@ -1,15 +1,16 @@
 // B story
+- var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
 .b-story
   .container
     .b-story__wrapper
       .b-story__left(data-aos="fade-up")
         .b-story__left-wrapper
           .b-story__head.section-head.section-head--left
-            h4.h4-title.c-light For successful traders
-            h2.h2-title.h3-title-md Have a positive Binance story ?
-            p.p-main.c-gray Подключите Binance аккаунт, и мы покажем, как выглядит ваша история доходности. Статистика будет доступна только вам, пока не сделаете её открытой.
-            p.p-main.c-gray Ваши успехи в трейдинге - объект инвестиций для наших пользователей.
-            a(href="#").btn.btn-primary Integrate Exchange
+            h4.h4-title.c-light=t('b-story.subtitle')
+            h2.h2-title.h3-title-md=t('b-story.title')
+            p.p-main.c-gray=t('b-story.firstParagraph')
+            p.p-main.c-gray=t('b-story.secondParagraph')
+            a(href=panelCoinmaticsUrl + '/signup').btn.btn-primary=t('b-story.button')
 
       .b-story__right(data-aos="fade-up")
         .b-story__image

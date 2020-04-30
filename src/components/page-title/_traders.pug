@@ -1,7 +1,8 @@
 // PAGE TITLE
+- var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
 .page-title
   .container
     .page-title__head(data-aos="fade-up")
-      h1.h1-title Coinmatics For Traders
-      p.p-main Get more out of your trading deals without increasing risks
-      a(href="#").btn.btn-primary Start Earning
+      h1.h1-title=t('traders-page.title')
+      p.p-main=t('traders-page.subtitle')
+      a(href=panelCoinmaticsUrl + '/signup').btn.btn-primary=t('traders-page.button')
