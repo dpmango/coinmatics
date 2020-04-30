@@ -8,7 +8,7 @@
       .popup-dialog__head
         .h3-title.h4-title-md Subscribe Our Newsletter
 
-      form.popup-dialog__form(action="/api/subscribe" method="POST" data-success-function="sucessFormValid").js-validate-form
+      form.popup-dialog__form(id="subscribeForm" data-success-function="isValid").js-validate-form
         .ui-group-row-btn
           .ui-input
             input(type="email" name="email" placeholder="Your email address" required)
@@ -18,18 +18,23 @@
 
 
 script.
-  function sucessFormValid(formData) {
-    const email = formData.split('=')[1];
-    console.log('formData', email);
+  document.getElementById("subscribeForm").onsubmit = function (e) {
+    e.preventDefault()
+  }
+  function isValid(formData) {
+    const email = formData.split('=')[1].replace(/\%40/, '@');
     fetch('/api/subscribe', {
       method: "POST",
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8'
+      },
       body: JSON.stringify({
         email
       })
     }).then(response => {
-      console.log('response', response);
       APP.Plugins.Modals.openModal("#modalThanks");
     }).catch(error => {
       console.error('error', error);
     })
   }
+
