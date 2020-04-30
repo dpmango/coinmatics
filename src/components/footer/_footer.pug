@@ -1,9 +1,10 @@
 // FOOTER :: START
+- var currentLocale = locale || '';
 - var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
-- var instagramHref = locale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
-- var twitterHref = locale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
-- var tradingToolsHref = path === '/' || path === '/traders' ? '#tools' : '/traders#tools';
-- var blogHref = locale === 'ru' ? 'https://zen.yandex.ru/id/5d8885cf05fd9800ad37b63a' : 'https://medium.com/coinmatics';
+- var instagramHref = currentLocale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
+- var twitterHref = currentLocale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
+- var tradingToolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
+- var blogHref = currentLocale === 'ru' ? 'https://zen.yandex.ru/id/5d8885cf05fd9800ad37b63a' : 'https://medium.com/coinmatics';
 footer.footer
   .footer__waves.bg-waves.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg
@@ -45,17 +46,17 @@ footer.footer
               .p-small.c-gray=t('footer.forInvestors')
               ul.footer__menu
                 li
-                  a(href="/investors")=t('footer.copyTrading')
+                  a(href=`/${currentLocale}/investors`)=t('footer.copyTrading')
                 li
                   a(href=panelCoinmaticsUrl + '/signin')=t('footer.topTraders')
                 li
-                  a(href="https://t.me/coinmatics_signals")=t('footer.tradingSignals')
+                  a(href="https://t.me/coinmatics_signals" target="_blank")=t('footer.tradingSignals')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.forTraders')
               ul.footer__menu
                 li
-                  a(href="/traders")=t('footer.copyTrading')
+                  a(href=`/${currentLocale}/traders`)=t('footer.copyTrading')
                 li
                   a(href=tradingToolsHref)=t('footer.tradingTools')
             // menu-col
@@ -63,21 +64,21 @@ footer.footer
               .p-small.c-gray=t('footer.company')
               ul.footer__menu
                 li
-                  a(href="#")=t('footer.aboutUs')
+                  a(href=panelCoinmaticsUrl + '/signup')=t('footer.aboutUs')
                 li
                   a(href=blogHref target="_blank")=t('footer.blog')
                 li
                   a(href="https://www.linkedin.com/company/coinmatics/jobs/" target="_blank")=t('footer.careers')
                 li
-                  a(href="/legal")=t('footer.legalDocuments')
+                  a(href=`/${currentLocale}/legal`)=t('footer.legalDocuments')
                 li
-                  a(href="#")=t('footer.contacts')
+                  a(href=panelCoinmaticsUrl + '/signup')=t('footer.contacts')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.support')
               ul.footer__menu
                 li
-                  a(href="/faq")=t('footer.faq')
+                  a(href=`/${currentLocale}/faq`)=t('footer.faq')
                 li
                   a(href="#").show-intercom=t('footer.liveChat')
                 li
@@ -99,9 +100,14 @@ footer.footer
         .footer__bottom-right
           .footer__lang
             .footer__lang-label.p-small.c-gray=t('footer.changeLocale')
-            a(href=locale).change-locale.footer__lang-selector
-              .footer__lang-icon
-                +svgColor('lang-rus')
-              .p-small=t('footer.locale')
+            a(href="#" data-locale=currentLocale data-path=path).change-locale.footer__lang-selector
+              if currentLocale === 'ru'
+                .footer__lang-icon
+                  +svgColor('lang-eng')
+                .p-small=t('footer.locale')
+              else
+                .footer__lang-icon
+                  +svgColor('lang-rus')
+                .p-small=t('footer.locale')
 
 // FOOTER :: END

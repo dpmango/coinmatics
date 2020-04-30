@@ -1,9 +1,12 @@
 
 // MOBILE NAVI
+- var currentLocale = locale || '';
+- var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
+- var toolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
 .mobile-navi
   .mobile-navi__scroller
     .mobile-navi__head
-      a(href="homepage").header__logo.logo
+      a(href=`/${currentLocale}/`).header__logo.logo
         .logo__icon
           +svgColor('logo-sign')
         .logo__name=t('mobile-navi.logoName')
@@ -18,21 +21,21 @@
     .mobile-navi__section
       .h6-title.p-mini-md.c-gray=t('mobile-navi.forInvestors')
       .mobile-navi__list
-        a(href="invetors").menu-nav
+        a(href=`/${currentLocale}/investors`).menu-nav
           .menu-nav__icon
             +svgColor('nav-investors')
             +svgMono('nav-investors')
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.copyTradingForInvestorsTitle')
             .p-mini=t('mobile-navi.copyTradingForInvestorsDsc')
-        a(href="invetors").menu-nav
+        a(href=panelCoinmaticsUrl + '/signup').menu-nav
           .menu-nav__icon
             +svgColor('nav-top-traders')
             +svgMono('nav-top-traders')
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.discoverTopTradersTitle')
             .p-mini=t('mobile-navi.discoverTopTradersDsc')
-        a(href="invetors").menu-nav
+        a(href="https://t.me/coinmatics_signals" target="_blank").menu-nav
           .menu-nav__icon
             +svgColor('nav-signals')
             +svgMono('nav-signals')
@@ -44,14 +47,14 @@
     .mobile-navi__section
       .h6-title.p-mini-md.c-gray=t('mobile-navi.forTraders')
       .mobile-navi__list
-        a(href="traders").menu-nav
+        a(href=`/${currentLocale}/traders`).menu-nav
           .menu-nav__icon
             +svgColor('nav-traders')
             +svgMono('nav-traders')
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.copyTradingForTradersTitle')
             .p-mini=t('mobile-navi.copyTradingForTradersDsc')
-        a(href="traders").menu-nav
+        a(href=toolsHref).menu-nav
           .menu-nav__icon
             +svgColor('nav-traders-tools')
             +svgMono('nav-traders-tools')
@@ -63,14 +66,14 @@
     .mobile-navi__section
       .h6-title.p-mini-md.c-gray=t('mobile-navi.support')
       .mobile-navi__list
-        a(href="faq").menu-nav
+        a(href=`/${currentLocale}/faq`).menu-nav
           .menu-nav__icon
             +svgColor('nav-faq')
             +svgMono('nav-faq')
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.faqTitle')
             .p-mini=t('mobile-navi.faqDsc')
-        a(href="#").menu-nav
+        a(href="#").show-intercom.menu-nav
           .menu-nav__icon
             +svgColor('nav-ask-a-question')
             +svgMono('nav-ask-a-question')
@@ -80,5 +83,5 @@
 
     // section
     .mobile-navi__cta-mobile
-      a(href="#").btn.btn-ghost.btn--block.btn--small=t('mobile-navi.logIn')
-      a(href="#").btn.btn-primary.btn--block.btn--small=t('mobile-navi.getStarted')
+      a(href=panelCoinmaticsUrl + '/signin').btn.btn-ghost.btn--block.btn--small=t('mobile-navi.logIn')
+      a(href=panelCoinmaticsUrl + '/signup').btn.btn-primary.btn--block.btn--small=t('mobile-navi.getStarted')

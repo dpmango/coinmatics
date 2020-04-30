@@ -1,5 +1,6 @@
 // TRADERS START
 - var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
+- var currentLocale = locale || '';
 .trstart
   // banner (top)
   .trstart__banner
@@ -8,7 +9,7 @@
         h4.h4-title.c-light=t('traders-start.subtitle')
         h2.h2-title.h3-title-md=t('traders-start.title')
         p.p-main.c-light=t('traders-start.description')
-        a(href="#").btn.btn-ghost.btn-ghost--b0=t('traders-start.learnMore')
+        a(href=`/${currentLocale}/traders`).btn.btn-ghost.btn-ghost--b0=t('traders-start.learnMore')
 
       .trstart__banner-image(data-aos="fade")
         include ../../icons/svg-inline/illustration_trstart.svg

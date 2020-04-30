@@ -1,4 +1,4 @@
-
+- var currentLocale = locale || '';
 #modalSubscribe.modal
   .popup-dialog
     .popup-dialog__close.js-close-popup
@@ -8,17 +8,28 @@
       .popup-dialog__head
         .h3-title.h4-title-md Subscribe Our Newsletter
 
-      form.popup-dialog__form(action="#" data-success-function="sucessFormValid").js-validate-form
+      form.popup-dialog__form(action="/api/subscribe" method="POST" data-success-function="sucessFormValid").js-validate-form
         .ui-group-row-btn
           .ui-input
-            input(type="email" name="subs_email" placeholder="Your email address" required)
+            input(type="email" name="email" placeholder="Your email address" required)
           button.btn.btn-primary(type="submit") Subscribe
         .popup-dialog__terms
-          p.p-mini.c-gray By pressing the button, I agree to Coinmatic's <a href="/legal">Terms of Service</a> and <a href="/legal">Privacy Policy</a>.
+          p.p-mini.c-gray By pressing the button, I agree to Coinmatic's <a href="/#{currentLocale}/legal">Terms of Service</a> and <a href="/#{currentLocale}/legal">Privacy Policy</a>.
 
 
 script.
-  function sucessFormValid(formData){
-    console.log(formData);
-    APP.Plugins.Modals.openModal("#modalThanks");
+  function sucessFormValid(formData) {
+    const email = formData.split('=')[1];
+    console.log('formData', email);
+    fetch('/api/subscribe', {
+      method: "POST",
+      body: JSON.stringify({
+        email
+      })
+    }).then(response => {
+      console.log('response', response);
+      APP.Plugins.Modals.openModal("#modalThanks");
+    }).catch(error => {
+      console.error('error', error);
+    })
   }

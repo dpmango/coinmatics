@@ -1,4 +1,5 @@
 // FAQ
+- var currentLocale = locale || '';
 .faq
   .container.container--8
     .faq__head.section-head(data-aos="fade-up")
@@ -11,4 +12,4 @@
     include partials/_list
 
     .faq__cta(data-aos="fade-up")
-      a(href='/faq').btn.btn-primary=t('faq.button')
+      a(href=`/${currentLocale}/faq`).btn.btn-primary=t('faq.button')

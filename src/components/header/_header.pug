@@ -1,5 +1,6 @@
 // HEADER :: START
 - var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
+- var currentLocale = locale || '';
 header.header
   .container
     .header__wrapper
@@ -8,7 +9,7 @@ header.header
           .hamburger-box
             .hamburger-inner
 
-      a(href="/homepage").header__logo
+      a(href=`/${currentLocale}/`).header__logo
         .logo
           .logo__icon
             +svgColor('logo-sign')

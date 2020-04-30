@@ -23,8 +23,8 @@
                 .p-small.c-gray=t('trader-card.avgSignals')
                 .h4-title.h6-title-md #{slide.avgSignals}
               .trader-card__info-col
-                .p-small.c-gray=t('trader-card.avgProfit')
-                .h4-title.h6-title-md #{slide.avgProfit > 0 ? '+' : ''}#{slide.avgProfit}%
+                .p-small.c-gray=t('trader-card.trackRecord')
+                .h4-title.h6-title-md #{slide.trackRecord > 0 ? '+' : ''}#{slide.trackRecord}%
               .trader-card__info-col
                 .p-small.c-gray=t('trader-card.riskLevel')
                 .h4-title.h6-title-md #{t('trader-card.riskLevelList.' + slide.riskLevel)}

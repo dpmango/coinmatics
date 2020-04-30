@@ -128,12 +128,19 @@
         Intercom('show');
       });
 
+
       // change locale
       _document.on('click', '.change-locale', function(e) {
+        e.preventDefault();
         var $link = $(this);
-        var currentLanguage = $link.attr('href');
-        var nextLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
-        console.log('change locale', nextLanguage);
+        var $locale = $link.data('locale');
+        var $path = $link.data('path');
+        var newLocale = $locale === 'ru' ? 'en' : 'ru';
+        var urlWithNewLocaleAndPath = `/${newLocale}${$path}`;
+
+        history.pushState(null, null, urlWithNewLocaleAndPath);
+        // перезагружаем страницу
+        history.go(0);
       });
 
     },

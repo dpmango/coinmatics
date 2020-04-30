@@ -1,13 +1,14 @@
 
 // megamenu
 - var panelCoinmaticsUrl = 'https://panel.coinmatics.io';
-- var toolsHref = path === '/' || path === '/traders' ? '#tools' : '/traders#tools';
+- var currentLocale = locale || '';
+- var toolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
 .megamenu.js-megamenu(data-id="1")
   .megamenu__scroller
     .container
       .megamenu__grid
         .megamenu__col
-          a(href="/investors").menu-nav
+          a(href=`/${currentLocale}/investors`).menu-nav
             .menu-nav__icon
               +svgColor('nav-investors')
               +svgMono('nav-investors')
@@ -23,7 +24,7 @@
               .h5-title=t('megamenu.discoverTopTradersTitle')
               .p-mini=t('megamenu.discoverTopTradersDsc')
         .megamenu__col
-          a(href="https://t.me/coinmatics_signals").menu-nav
+          a(href="https://t.me/coinmatics_signals" target="_blank").menu-nav
             .menu-nav__icon
               +svgColor('nav-signals')
               +svgMono('nav-signals')
@@ -37,7 +38,7 @@
     .container
       .megamenu__grid
         .megamenu__col
-          a(href="/traders").menu-nav
+          a(href=`/${currentLocale}/traders`).menu-nav
             .menu-nav__icon
               +svgColor('nav-traders')
               +svgMono('nav-traders')
@@ -59,7 +60,7 @@
     .container
       .megamenu__grid
         .megamenu__col
-          a(href="/faq").menu-nav
+          a(href=`/${currentLocale}/faq`).menu-nav
             .menu-nav__icon
               +svgColor('nav-faq')
               +svgMono('nav-faq')
