@@ -1,6 +1,12 @@
 extends shared/_layout
 block variables
   - var title = t('titles.homepage')
+  - var metaDescription = t('meta.homepage.description')
+  - var metaKeywords = t('meta.common.keywords')
+  - var opGraphImage = 'https://coinmatics.com/img/opgraph/main.png'
+  - var opGraphTitle = t('meta.homepage.opgraph.title')
+  - var opGraphDescription = t('meta.homepage.opgraph.description')
+
 block content
 
   include ../components/hero/_hero

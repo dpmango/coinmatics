@@ -1,5 +1,5 @@
-- var svgSpriteMono = 'img/sprite-mono.svg'
-- var svgSpriteColor = 'img/sprite-color.svg'
+- var svgSpriteMono = '/img/sprite-mono.svg'
+- var svgSpriteColor = '/img/sprite-color.svg'
 
 mixin svgMono(name, modClass)
   if modClass == undefined
@@ -8,7 +8,7 @@ mixin svgMono(name, modClass)
     - var modClass = ' ' + modClass
   svg(class="ico ico-mono-" + name + modClass)
     use(xlink:href= svgSpriteMono + '#ico-mono-' + name)
-      
+
 mixin svgColor(name, modClass)
   if modClass == undefined
     - var modClass = ''
