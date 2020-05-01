@@ -128,7 +128,6 @@
         Intercom('show');
       });
 
-
       // change locale
       _document.on('click', '.change-locale', function(e) {
         e.preventDefault();
@@ -136,13 +135,12 @@
         var $locale = $link.data('locale');
         var $path = $link.data('path');
         var newLocale = $locale === 'ru' ? 'en' : 'ru';
-        var urlWithNewLocaleAndPath = `/${newLocale}${$path}`;
-
-        history.pushState(null, null, urlWithNewLocaleAndPath);
+        var page = $path.split('/').pop();
+        var urlWithNewLocaleAndPage = `/${newLocale}/${page}`;
+        history.pushState(null, null, urlWithNewLocaleAndPage);
         // перезагружаем страницу
         history.go(0);
       });
-
     },
     destroy: function() {
       // ... code ...
