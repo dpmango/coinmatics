@@ -6,8 +6,8 @@
       each slide, idx in list
         .swiper-slide.trader-card__main
           .trader-card__avatar
-            .scaler(data-ar="1:1" style=`background-image: url('/img/${slide.avatarCode}-blur.jpg')`)
-              img(js-lazy data-src=`/img/${slide.avatarCode}.jpg` data-srcset=`/img/${slide.avatarCode}@2x.jpg`)
+            .scaler(data-ar="1:1" style=`background-image: url('/img/avatar/${slide.avatarCode}-blur.jpg')`)
+              img(js-lazy data-src=`/img/avatar/${slide.avatarCode}.jpg` data-srcset=`/img/avatar/${slide.avatarCode}@2x.jpg`)
           // content
           .trader-card__content
             .trader-card__name.h3-title.h5-title-md= slide.name
