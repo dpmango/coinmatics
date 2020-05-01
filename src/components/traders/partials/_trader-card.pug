@@ -6,8 +6,8 @@
       each slide, idx in list
         .swiper-slide.trader-card__main
           .trader-card__avatar
-            .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar_2x.jpg)")
-              img(js-lazy data-src='/img/traderAvatar.jpg' data-srcset='/img/traderAvatar@2x.jpg 2x')
+            .scaler(data-ar="1:1" style=`background-image: url('/img/${slide.avatarCode}-blur.jpg')`)
+              img(js-lazy data-src=`/img/${slide.avatarCode}.jpg` data-srcset=`/img/${slide.avatarCode}@2x.jpg`)
           // content
           .trader-card__content
             .trader-card__name.h3-title.h5-title-md= slide.name
