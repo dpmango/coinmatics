@@ -1,6 +1,12 @@
 extends shared/_layout
 block variables
   - var title = t('titles.ui')
+  - var opGraphDescription = t('meta.common.opgraph.description')
+  - var metaKeywords = t('meta.common.keywords')
+  - var opGraphImage = 'https://coinmatics.com/img/opgraph/main.png'
+  - var metaDescription = t('meta.common.description')
+  - var opGraphTitle = t('meta.common.opgraph.title')
+
 block content
 
   include ../components/development/test/_test

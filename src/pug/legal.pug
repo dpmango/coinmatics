@@ -1,6 +1,12 @@
 extends shared/_layout
 block variables
   - var title = t('titles.legal')
+  - var metaDescription = t('meta.legal.description')
+  - var metaKeywords = t('meta.common.keywords')
+  - var opGraphImage = 'https://coinmatics.com/img/opgraph/main.png'
+  - var opGraphTitle = t('meta.legal.opgraph.title')
+  - var opGraphDescription = t('meta.legal.opgraph.description')
+
 block content
 
   // header modifier
@@ -9,5 +15,5 @@ block content
     include ../components/page-title/_legal
   if locale === 'ru'
     include ../components/content/_legal-ru
-  else 
+  else
     include ../components/content/_legal-en
