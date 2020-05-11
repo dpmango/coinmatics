@@ -134,9 +134,11 @@
         var $link = $(this);
         var $locale = $link.data('locale');
         var $path = $link.data('path');
-        var newLocale = $locale === 'ru' ? 'en' : 'ru';
-        var page = $path.split('/').pop();
-        var urlWithNewLocaleAndPage = `/${newLocale}/${page}`;
+        var newLocale = `/${($locale === 'ru' ? 'en' : 'ru')}`;
+
+        const regexp = /^[/](ru|en|cn)/
+        var urlWithNewLocaleAndPage = $path === "/" ? newLocale : $path.replace(regexp, newLocale)
+        console.log('urlWithNewLocaleAndPage',urlWithNewLocaleAndPage)
         history.pushState(null, null, urlWithNewLocaleAndPage);
         // перезагружаем страницу
         history.go(0);
