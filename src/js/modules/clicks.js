@@ -44,6 +44,11 @@
         .on('click', '[js-show-grid]', function() {
           $(this).toggleClass('is-active');
           $('.demo-grid').fadeToggle();
+        })
+        // cookie cleaner
+        .on('click', '[js-clear-localstorage]', function() {
+          localStorage.removeItem('cookieAccepted');
+          APP.Components.Cookie.showCookie();
         });
 
       // accardeon

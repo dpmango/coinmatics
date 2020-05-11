@@ -73,3 +73,19 @@
     opacity: 0.5;
   }
 }
+
+[js-clear-localstorage] {
+  bottom: 5px;
+  color: $fontColor;
+  cursor: pointer;
+  font-size: 12px;
+  left: 20px;
+  position: fixed;
+  text-transform: uppercase;
+  transition: color 0.25s $ease;
+  z-index: 99;
+
+  &:hover {
+    color: $colorRed;
+  }
+}

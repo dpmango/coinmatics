@@ -1,0 +1,36 @@
+// COOKIE
+.cookie
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  color: white
+  background: $colorBgLight
+  transform: translate3d(0,-100%,0)
+  transition: transform .25s $ease
+  will-change: trasnform
+  pointer-events: none
+  &.is-visible
+    pointer-events: all
+    transform: translate3d(0,0,0)
+  &__wrapper
+    padding: 10px 16px
+    display: flex
+    align-items: center
+  &__text
+    flex: 1 1 auto
+    text-align: center
+    padding-right: 8px
+    padding-left: 20px
+  &__close
+    flex: 0 0 auto
+    margin-left: auto
+    font-size: 0
+    cursor: pointer
+    color: $colorPrimary
+    transition: color .25s $ease
+    .ico
+      font-size: 12px
+    &:hover
+      color: white

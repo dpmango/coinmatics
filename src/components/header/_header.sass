@@ -9,7 +9,7 @@
   will-change: transform
   // backface-visibility: hidden
   // transform-style: preserve-3d
-  transition: background .1s $ease
+  transition: background .1s $ease, top .25s $ease
   &__wrapper
     display: flex
     align-items: center
@@ -63,7 +63,7 @@
     // should be normalized to -100% scroll at this point
     position: fixed
     transform: translate3d(0,-100%,0) !important
-    transition: transform .25s $ease, background .1s $ease
+    transition: transform .25s $ease, background .1s $ease, top .25s $ease
     border-bottom: 1px solid rgba($colorBg, 0.05)
     .header__wrapper
       padding-top: 12px
@@ -73,8 +73,11 @@
     transform: translate3d(0,0,0) !important
 
   &.is-transitioning
-    transition: transform .25s $ease, background .1s $ease
+    transition: transform .25s $ease, background .1s $ease, top .25s $ease
     transform: translate3d(0,-100%,0) !important
+
+  &.is-cookie-spaced
+    top: 38px
 
   &[data-modifier="dark-background"]
     background: transparent
