@@ -1,8 +1,7 @@
 // PAGE TITLE
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 .page-title
   .container
     .page-title__head(data-aos="fade-up")
       h1.h1-title=t('traders-page.title')
       p.p-main=t('traders-page.subtitle')
-      a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).btn.btn-primary=t('traders-page.button')
+      a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary=t('traders-page.button')

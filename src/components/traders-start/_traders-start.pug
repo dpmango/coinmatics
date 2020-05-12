@@ -1,5 +1,4 @@
 // TRADERS START
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 - var currentLocale = locale || '';
 .trstart
   // banner (top)
@@ -29,7 +28,7 @@
 
       // cta
       .trstart__tools-cta(data-aos="fade-up")
-        a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).btn.btn-primary=t('traders-start.toolsButton')
+        a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary=t('traders-start.toolsButton')
 
   .trstart__waves.bg-waves.bg-waves--bottom.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg

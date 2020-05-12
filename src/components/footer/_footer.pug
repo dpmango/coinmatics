@@ -1,6 +1,5 @@
 // FOOTER :: START
 - var currentLocale = locale || '';
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 - var instagramHref = currentLocale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
 - var twitterHref = currentLocale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
 - var tradingToolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
@@ -48,7 +47,7 @@ footer.footer
                 li
                   a(href=`/${currentLocale}/investors`)=t('footer.copyTrading')
                 li
-                  a(href=panelCoinmaticsUrl + `/signin?l=${locale}`)=t('footer.topTraders')
+                  a(href=baseUrl + `/signin?l=${locale}`)=t('footer.topTraders')
                 li
                   a(href="https://t.me/coinmatics_signals" target="_blank")=t('footer.tradingSignals')
             // menu-col
@@ -64,7 +63,7 @@ footer.footer
               .p-small.c-gray=t('footer.company')
               ul.footer__menu
                 li
-                  a(href=panelCoinmaticsUrl + `/signup?l=${locale}`)=t('footer.aboutUs')
+                  a(href=baseUrl + `/signup?l=${locale}`)=t('footer.aboutUs')
                 li
                   a(href=blogHref target="_blank")=t('footer.blog')
                 li
@@ -72,7 +71,7 @@ footer.footer
                 li
                   a(href=`/${currentLocale}/legal`)=t('footer.legalDocuments')
                 li
-                  a(href=panelCoinmaticsUrl + `/signup?l=${locale}`)=t('footer.contacts')
+                  a(href=baseUrl + `/signup?l=${locale}`)=t('footer.contacts')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.support')

@@ -1,5 +1,4 @@
 // B story
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 .b-story
   .container
     .b-story__wrapper
@@ -10,7 +9,7 @@
             h2.h2-title.h3-title-md=t('b-story.title')
             p.p-main.c-gray=t('b-story.firstParagraph')
             p.p-main.c-gray=t('b-story.secondParagraph')
-            a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).btn.btn-primary=t('b-story.button')
+            a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary=t('b-story.button')
 
       .b-story__right(data-aos="fade-up")
         .b-story__image

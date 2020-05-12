@@ -1,5 +1,4 @@
 // INTEGRATIONS
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 .integrations
   .container
     .integrations__wrapper
@@ -42,4 +41,4 @@
             p.p-main.c-gray
               a(href="#modalSubscribe").js-popup=t('integrations.descriptionLink')
               span=` ${t('integrations.descriptionEnd')}`
-            a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).btn.btn-primary=t('integrations.buttonText')
+            a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary=t('integrations.buttonText')

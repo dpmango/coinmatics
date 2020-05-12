@@ -1,5 +1,4 @@
 // HEADER :: START
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 - var currentLocale = locale || '';
 header.header
   .container
@@ -32,6 +31,6 @@ header.header
             +svgMono('arrow-down')
 
       .header__cta
-        a(href=panelCoinmaticsUrl + `/signin?l=${locale}`).btn.btn-ghost.btn--small=t('header.logIn')
-        a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).btn.btn-primary.btn--small=t('header.getStarted')
+        a(href=baseUrl + `/signin?l=${locale}`).btn.btn-ghost.btn--small=t('header.logIn')
+        a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary.btn--small=t('header.getStarted')
 

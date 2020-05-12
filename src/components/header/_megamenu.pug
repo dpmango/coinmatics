@@ -1,6 +1,5 @@
 
 // megamenu
-- var panelCoinmaticsUrl = 'https://ucp.coinmatics.com';
 - var currentLocale = locale || '';
 - var toolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
 .megamenu.js-megamenu(data-id="1")
@@ -16,7 +15,7 @@
               .h5-title=t('megamenu.copyTradingForInvestorsTitle')
               .p-mini=t('megamenu.copyTradingForInvestorsDsc')
         .megamenu__col
-          a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).menu-nav
+          a(href=baseUrl + `/signup?l=${locale}`).menu-nav
             .menu-nav__icon
               +svgColor('nav-top-traders')
               +svgMono('nav-top-traders')
