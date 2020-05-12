@@ -32,6 +32,6 @@ header.header
             +svgMono('arrow-down')
 
       .header__cta
-        a(href=panelCoinmaticsUrl + '/signin').btn.btn-ghost.btn--small=t('header.logIn')
-        a(href=panelCoinmaticsUrl + '/signup').btn.btn-primary.btn--small=t('header.getStarted')
+        a(href=panelCoinmaticsUrl + `/signin?l=${locale}`).btn.btn-ghost.btn--small=t('header.logIn')
+        a(href=panelCoinmaticsUrl + `/signup?l=${locale}`).btn.btn-primary.btn--small=t('header.getStarted')
 

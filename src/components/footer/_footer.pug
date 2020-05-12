@@ -48,7 +48,7 @@ footer.footer
                 li
                   a(href=`/${currentLocale}/investors`)=t('footer.copyTrading')
                 li
-                  a(href=panelCoinmaticsUrl + '/signin')=t('footer.topTraders')
+                  a(href=panelCoinmaticsUrl + `/signin?l=${locale}`)=t('footer.topTraders')
                 li
                   a(href="https://t.me/coinmatics_signals" target="_blank")=t('footer.tradingSignals')
             // menu-col
@@ -64,7 +64,7 @@ footer.footer
               .p-small.c-gray=t('footer.company')
               ul.footer__menu
                 li
-                  a(href=panelCoinmaticsUrl + '/signup')=t('footer.aboutUs')
+                  a(href=panelCoinmaticsUrl + `/signup?l=${locale}`)=t('footer.aboutUs')
                 li
                   a(href=blogHref target="_blank")=t('footer.blog')
                 li
@@ -72,7 +72,7 @@ footer.footer
                 li
                   a(href=`/${currentLocale}/legal`)=t('footer.legalDocuments')
                 li
-                  a(href=panelCoinmaticsUrl + '/signup')=t('footer.contacts')
+                  a(href=panelCoinmaticsUrl + `/signup?l=${locale}`)=t('footer.contacts')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.support')
