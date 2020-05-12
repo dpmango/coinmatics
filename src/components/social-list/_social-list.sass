@@ -1,0 +1,56 @@
+// socials list
+.social-list
+  padding: 24px 0 160px
+  &__grid
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: 70px -10px -10px
+
+  &__col
+    width: 100%
+    flex: 0 0 $col3
+    max-width: $col3
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+
+  &__element
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $colorPrimary
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimaryHover
+  &__icon
+    font-size: 0
+    .ico
+      font-size: 40px
+  &__name
+    padding-left: 16px
+
+
++r($xl)
+  .social-list
+    padding: 16px 0 120px
+    &__grid
+      margin-top: 46px
+
++r($lg)
+  .social-list
+    &__element
+      flex-direction: column
+      text-align: center
+    &__name
+      padding-left: 0
+      margin-top: 20px
+
++r($sm)
+  .social-list
+    padding: 24px 0 52px
+    &__col
+      flex-basis: 50%
+      max-width: 50%
+    &__element
+      margin-bottom: 20px
