@@ -1,4 +1,5 @@
 - var currentLocale = locale || '';
+-var termsHref = `/${currentLocale}/legal`;
 #modalSubscribe.modal
   .popup-dialog
     .popup-dialog__close.js-close-popup
@@ -6,15 +7,18 @@
 
     .popup-dialog__wrapper
       .popup-dialog__head
-        .h3-title.h4-title-md Subscribe Our Newsletter
+        .h3-title.h4-title-md=t('modal-subscribe.title')
 
       form.popup-dialog__form(id="subscribeForm" data-success-function="isValid").js-validate-form
         .ui-group-row-btn
           .ui-input
-            input(type="email" name="email" placeholder="Your email address" required)
-          button.btn.btn-primary(type="submit") Subscribe
+            input(type="email" name="email" placeholder=t('modal-subscribe.placeholder') required)
+          button.btn.btn-primary(type="submit")=t('modal-subscribe.button')
         .popup-dialog__terms
-          p.p-mini.c-gray By pressing the button, I agree to Coinmatic's <a href="/#{currentLocale}/legal">Terms of Service</a> and <a href="/#{currentLocale}/legal">Privacy Policy</a>.
+          p.p-mini.c-gray=t('modal-subscribe.termsText')
+            a(href=termsHref)=t('modal-subscribe.terms')
+            span=t('modal-subscribe.and') 
+            a(href=termsHref)=t('modal-subscribe.privacyPolicy')
 
 
 script.
