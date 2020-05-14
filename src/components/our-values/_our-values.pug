@@ -1,0 +1,37 @@
+mixin listElement(icon, name)
+  li
+    +svgMono(icon)
+    span.h6-title= name
+
+// Our values
+.our-values
+  .container.container--8
+    .our-values__wrapper
+      .our-values__col(data-aos="fade-up")
+        .our-values__head
+          .h3-title Our Values
+          .p-small.c-gray Our success is not only due to the quality of our work; it's down to attitude, our approach and the way we treat our users.
+      .our-values__col(data-aos="fade-up")
+        .our-values__list-container
+          .h5-title What we do
+          ul.our-values__list.our-values__list--green
+            +listElement('check', 'World-class digital')
+            +listElement('check', 'Expect creativity')
+            +listElement('check', 'Hustle')
+            +listElement('check', 'Obsess over details')
+            +listElement('check', 'Value relationships')
+            +listElement('check', 'High-five')
+            +listElement('check', 'Make things, break things')
+            +listElement('check', 'Obsess over details')
+      .our-values__col(data-aos="fade-up")
+        .our-values__list-container
+          .h5-title What we don’t do
+          ul.our-values__list
+            +listElement('close', 'Work late/weekends')
+            +listElement('close', 'Have a sales team')
+            +listElement('close', 'Resist cake')
+            +listElement('close', 'Sacrifice quality for profit')
+            +listElement('close', 'Fax')
+            +listElement('close', 'Lose at Mario Kart')
+            +listElement('close', 'Work for free')
+            +listElement('close', 'Imposible deadlines')

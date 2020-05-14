@@ -1,0 +1,32 @@
+// gallery
+.gallery
+  padding: 100px 0 100px
+  &__head
+    text-align: center
+  &__slider
+    margin-top: 64px
+    .swiper-container
+      padding-bottom: 40px
+    .swiper-slide
+      width: 772px
+      max-width: 772px
+    .swiper-slide-active, .swiper-slide-duplicate-active
+      .gallery__image::after
+        opacity: 0
+  &__image
+    position: relative
+    z-index: 1
+    border-radius: 20px
+    overflow: hidden
+    font-size: 0
+    img, picture, video
+      width: 100%
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      background: rgba(white, .8)
+      opacity: 1
+      transition: opacity .25s $ease
+      will-change: opacity
+

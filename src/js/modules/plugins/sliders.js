@@ -146,6 +146,31 @@
         //   APP.Plugins.Chart.renderChart($chart);
         // });
       }
+
+      // gallery
+      function initGallerySwiper() {
+        var selector = '.js-swiper-gallery:not(.swiper-container-initialized)';
+        if ($(selector).length === 0) return;
+
+        new Swiper(selector, {
+          loop: true,
+          watchOverflow: true,
+          setWrapperSize: false,
+          spaceBetween: 20,
+          slidesPerView: 'auto',
+          normalizeSlideIndex: false,
+          centeredSlides: true,
+          autoHeight: true,
+          slideToClickedSlide: true,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+          },
+        });
+      }
+
+      initGallerySwiper();
     },
     initSwiperDataTree: function() {
       var productsSwiper = '.js-products-swiper';

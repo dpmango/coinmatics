@@ -1,0 +1,32 @@
+// RECENT NEWS
+mixin newsCard(card)
+  // news card
+  a(href="#").news-card
+    .news-card__image
+      .scaler(style="padding-bottom: "+(157/247) * 100 +"%; background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1589449167/Coinmatics/"+card.image+".jpg)")
+        img(js-lazy data-src='img/'+card.image+'.jpg' data-srcset='img/'+card.image+'@2x.jpg 2x')
+    .news-card__content
+      .h6-title= card.title
+
+.news
+  .container.container--8
+    .news__head(data-aos="fade-up")
+      .h3-title Recent News
+
+    .news__wrapper
+      .news__col(data-aos="fade-up")
+        +newsCard({image: 'news-1', title: 'Top 5 altcoins to make profits on in 2020'})
+      .news__col(data-aos="fade-up")
+        +newsCard({image: 'news-2', title: 'How to increase profit from trading using Coinmatics platform?'})
+      .news__col(data-aos="fade-up")
+        +newsCard({image: 'news-3', title: '5 Ways to Make Money on Crypto in 2020 With and Without Investments'})
+
+      .news__col(data-aos="fade-up")
+        +newsCard({image: 'news-4', title: 'Ticker Alerts, a notification system by Coinmatics. Try it for free!'})
+      .news__col(data-aos="fade-up")
+        +newsCard({image: 'news-5', title: 'A review of the strategy of Сoinmatic’s top trader. New features on Coinmatics site.'})
+      .news__col(data-aos="fade-up")
+        +newsCard({image: 'news-6', title: 'Coinmatics an instrument of audit and scam-connected risks protection'})
+
+    .news__cta
+      a(href="#").btn.btn-ghost.btn-ghost--b0 View All News in Our Blog

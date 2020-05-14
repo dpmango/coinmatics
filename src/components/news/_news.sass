@@ -1,0 +1,41 @@
+// news
+.news
+  padding: 100px 0 152px
+  &__head
+    text-align: center
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    margin: 46px -7px -38px
+  &__col
+    width: 100%
+    flex: 0 0 $col4
+    max-width: $col4
+    min-width: 1px
+    min-height: 0
+    padding: 10px 7px
+  &__cta
+    margin-top: 56px
+    text-align: center
+
+// news card
+.news-card
+  display: inline-block
+  margin-bottom: 28px
+  &__image
+    position: relative
+    z-index: 1
+    border-radius: 12px
+    overflow: hidden
+    .scaler
+      transition: transform .25s $ease
+      willc-change: transform
+      transform-origin: preserve-3d
+  &__content
+    margin-top: 16px
+    transition: color .25s $ease
+  &:hover
+    .news-card__image .scaler
+      transform: scale(1.03)
+    .news-card__content
+      color: $colorPrimaryHover

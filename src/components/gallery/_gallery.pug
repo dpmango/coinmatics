@@ -1,0 +1,15 @@
+// Gallery
+.gallery
+  .container
+    .gallery__head(data-aos="fade-up")
+      .h3-title Daily Routines in the Coinmatics Offices
+
+  .gallery__slider(data-aos="fade-up")
+    .swiper-container.swiper-nav-bullets.swiper-nav-bullets--large.js-swiper-gallery
+      .swiper-wrapper
+        each slide in [1,2,3,4,5]
+          .swiper-slide
+            .gallery__image
+              img(src='img/galleryImage.jpg' srcset='img/galleryImage@2x.jpg 2x')
+
+      .swiper-pagination
