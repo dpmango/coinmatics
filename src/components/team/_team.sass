@@ -19,6 +19,24 @@
     margin-top: 56px
     text-align: center
 
++r($md)
+  .team
+    padding: 56px 0
+    &__wrapper
+      margin-top: 38px
+      margin-bottom: -32px
+    &__col
+      flex-basis: $col4
+      max-width: $col4
+    &__cta
+      margin-top: 32px
+
++r($sm)
+  .team
+    &__col
+      flex-basis: 50%
+      max-width: 50%
+
 // team card
 .team-card
   margin-bottom: 20px
@@ -48,3 +66,9 @@
     padding-right: 10px
     .p-small
       margin-top: 4px
+
++r($md)
+  .team-card
+    margin-bottom: 12px
+    &__content
+      margin-top: 8px

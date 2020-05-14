@@ -30,3 +30,33 @@
       transition: opacity .25s $ease
       will-change: opacity
 
++r(868)
+  .gallery
+    &__slider
+      .swiper-slide
+        width: calc(100% - 96px)
+        max-width: calc(100% - 96px)
+
+
+
++r($md)
+  .gallery
+    padding: 56px 0
+    &__slider
+      margin-top: 40px
+      .swiper-slide
+        width: calc(100% - 40px)
+        max-width: calc(100% - 40px)
+
++r($sm)
+  // gallery
+  .gallery
+    &__slider
+      margin-left: -0px
+      margin-right: -0px
+      .swiper-slide
+        width: 100%
+        max-width: 100%
+
+    &__image
+      border-radius: 0px

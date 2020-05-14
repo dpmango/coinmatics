@@ -14,6 +14,6 @@ PageList:
   - file: contacts.html
     ready: 80
   - file: about.html
-    ready: 50
+    ready: 80
   - file: ui.html
     ready: 10

@@ -67,7 +67,10 @@
       margin: 0
       .page-title__head
         padding-bottom: 120px
-
+    &--more-height
+      .page-title__head
+        max-width: 772px
+        padding-bottom: 256px
 
 +r($md)
   .page-title
@@ -75,9 +78,17 @@
     &__head
       .h1-title
         margin-bottom: 16px
+      .h4-title + .h1-title
+        margin-top: 24px
       .btn
         margin-top: 24px
+    &__bg-waves
+      display: none
     &--dark
       margin: 0
       .page-title__head
         padding: 120px 0 88px
+    &--more-height
+      .page-title__head
+        max-width: 500px
+        padding: 160px 0 144px
