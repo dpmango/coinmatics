@@ -1,0 +1,26 @@
+// our story
+.our-story
+  padding: 220px 0
+  &__row
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin: -10px
+    + .our-story__row
+      margin-top: 70px
+  &__content, &__image
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__content
+    flex: 0 0 62.5%
+    max-width: 62.5%
+    &--pl40
+      padding-left: 50px
+  &__image
+    flex: 0 0 37.5%
+    max-width: 37.5%
+    text-align: center
+    img, picture, svg
+      max-width: 100%
