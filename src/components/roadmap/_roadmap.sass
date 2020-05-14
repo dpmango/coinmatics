@@ -1,0 +1,67 @@
+// ROADMAP
+.roadmap
+  &__holder
+    background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%);
+    color: white
+    padding: 168px 0 130px
+
+  &__timeline-scroller
+    margin-top: 144px
+    padding-bottom: 30px
+    overflow-x: auto
+    -webkit-overflow-scrolling: touch
+  &__timeline-content
+    padding-left: calc((100vw - 772px) / 2)
+
+.timeline
+  position: relative
+  display: flex
+  height: 204px
+  width: min-content
+  &__background
+    position: absolute
+    left: -14px
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    overflow: hidden
+    z-index: 1
+  &__col
+    position: relative
+    z-index: 3
+    display: flex
+    flex-direction: column
+    flex: 0 0 346px
+    width: 346px
+    min-width: 1px
+    &::after, &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      background: $colorPrimary
+    &::before
+      z-index: 3
+      left: 0
+      size: 10px
+      border-radius: 50%
+    &::after
+      left: 0
+      width: 100%
+      z-index: 2
+      height: 2px
+    &:last-child::after
+      display: none
+
+  &__heading
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    min-height: 51px
+    .p-small
+      margin-top: 12px
+  &__description
+    max-width: 270px
+    margin-top: auto
+    min-height: 38px
