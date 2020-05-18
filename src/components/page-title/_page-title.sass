@@ -2,9 +2,10 @@
 .page-title
   position: relative
   margin: 236px 0 184px
+  overflow: hidden
   &__head
     position: relative
-    z-index: 2
+    z-index: 3
     text-align: center
     // max-width: 566px ?
     margin-left: auto
@@ -16,18 +17,31 @@
         margin-top: 0
       &:last-child
         margin-bottom: 0
+    .h4-title + .h1-title
+      margin-top: 40px
     .btn
       margin-top: 24px
   &__bg-coins
     position: absolute
     z-index: 1
-    bottom: 94px
+    // bottom: 94px
+    top: 148px
     left: 50%
     transform: translateX(-50%)
     pointer-events: none
     svg, img
       overflow: visible
-
+  &__bg-waves
+    position: absolute
+    z-index: 2
+    top: 308px
+    left: -30px
+    right: -30px
+    pointer-events: none
+    svg, img
+      overflow: visible
+      width: 100%
+      height: 333px
   &--dark
     margin: 0
     color: white
@@ -35,6 +49,9 @@
     background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%);
     .page-title__head
       padding: 180px 0 112px
+  &--more-height
+    .page-title__head
+      padding: 340px 0 256px
 
 +r($xl)
   .page-title
@@ -51,7 +68,10 @@
       margin: 0
       .page-title__head
         padding-bottom: 120px
-
+    &--more-height
+      .page-title__head
+        max-width: 772px
+        padding-bottom: 256px
 
 +r($md)
   .page-title
@@ -59,9 +79,17 @@
     &__head
       .h1-title
         margin-bottom: 16px
+      .h4-title + .h1-title
+        margin-top: 24px
       .btn
         margin-top: 24px
+    &__bg-waves
+      display: none
     &--dark
       margin: 0
       .page-title__head
         padding: 120px 0 88px
+    &--more-height
+      .page-title__head
+        max-width: 500px
+        padding: 160px 0 144px

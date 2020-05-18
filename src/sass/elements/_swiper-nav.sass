@@ -29,3 +29,20 @@
       &::after
         background: $colorPrimary
 
+  &--large
+    .swiper-pagination
+      .swiper-pagination-bullet
+        &::after
+          size: 8px
+          border: 1px solid #E7EBF4
+          background: transparent
+        &:hover
+          &::after
+            background: #E7EBF4
+            border-color: #E7EBF4
+
+      .swiper-pagination-bullet-active
+        pointer-events: none
+        &::after
+          background: $colorPrimary
+          border-color: $colorPrimary

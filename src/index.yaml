@@ -11,5 +11,9 @@ PageList:
     ready: 100
   - file: legal.html
     ready: 100
+  - file: contacts.html
+    ready: 80
+  - file: about.html
+    ready: 80
   - file: ui.html
     ready: 10

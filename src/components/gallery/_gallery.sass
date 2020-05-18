@@ -1,0 +1,74 @@
+// gallery
+.gallery
+  padding: 100px 0 100px
+  &__head
+    text-align: center
+  &__slider
+    margin-top: 64px
+    .swiper-container
+      padding-bottom: 40px
+    .swiper-slide
+      width: 772px
+      max-width: 772px
+    .swiper-slide-active, .swiper-slide-duplicate-active
+      pointer-events: none
+      .gallery__image
+        opacity: 1
+        &::after
+          opacity: 0
+    .swiper-slide-prev
+      .gallery__image
+        &::after
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+
+  &__image
+    position: relative
+    z-index: 1
+    border-radius: 20px
+    overflow: hidden
+    font-size: 0
+    opacity: 0.1
+    cursor: pointer
+    transition: opacity .25s $ease
+    img, picture, video
+      width: 100%
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      background: linear-gradient(270deg, #FFFFFF 69.43%, rgba(255, 255, 255, 0.804878) 83.94%, rgba(255, 255, 255, 0) 100%)
+      transition: opacity .25s $ease
+      will-change: opacity
+    &:hover
+      opacity: 0.2
+
++r(868)
+  .gallery
+    &__slider
+      .swiper-slide
+        width: calc(100% - 96px)
+        max-width: calc(100% - 96px)
+
+
+
++r($md)
+  .gallery
+    padding: 56px 0
+    &__slider
+      margin-top: 40px
+      .swiper-slide
+        width: calc(100% - 40px)
+        max-width: calc(100% - 40px)
+
++r($sm)
+  // gallery
+  .gallery
+    &__slider
+      margin-left: -0px
+      margin-right: -0px
+      .swiper-slide
+        width: 100%
+        max-width: 100%
+
+    &__image
+      border-radius: 0px

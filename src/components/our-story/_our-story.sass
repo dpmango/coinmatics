@@ -1,0 +1,72 @@
+// our story
+.our-story
+  padding: 220px 0
+  &__row
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin: -10px
+    + .our-story__row
+      margin-top: 60px
+  &__content, &__image
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__content
+    flex: 0 0 62.5%
+    max-width: 62.5%
+    &--pl40
+      padding-left: 50px
+  &__image
+    flex: 0 0 37.5%
+    max-width: 37.5%
+    text-align: center
+    img, picture, svg
+      max-width: 100%
+
++r($xl)
+  .our-story
+    padding: 144px 0 152px
+
++r($lg)
+  .our-story
+    padding: 144px 0 152px
+    &__row
+      + .our-story__row
+        margin-top: 76px
+    &__content
+      flex-basis: 50%
+      max-width: 50%
+      padding-left: 34px
+      padding-right: 34px
+      &--pl40
+        padding-left: 34px
+    &__image
+      flex-basis: 50%
+      max-width: 50%
+      img, picture, svg
+        width: 100%
+
++r($md)
+  .our-story
+    padding: 80px 0
+    max-width: 540px
+    margin-left: auto
+    margin-right: auto
+    &__row
+      + .our-story__row
+        margin-top: 44px
+    &__content, &__image
+      flex-basis: 100%
+      max-width: 100%
+    &__content
+      order: 2
+      margin-top: 28px
+      padding-left: 22px
+      padding-right: 22px
+    &__image
+      order: 1
+      padding-left: 30px
+      padding-right: 30px
+

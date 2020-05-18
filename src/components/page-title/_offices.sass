@@ -1,0 +1,54 @@
+.offices
+  margin: 40px 0 96px
+  &__head
+    text-align: center
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    margin: 54px -10px -10px
+  &__col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    flex: 0 0 $col4
+    max-width: $col4
+    padding: 10px
+
+  &__element
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__icon
+    min-height: 56px
+    display: flex
+    align-items: center
+    font-size: 0
+    color: $colorPrimary
+    .ico
+      font-size: 19px
+    .ico-mono-map-point-big
+      font-size: 37px
+  &__content
+    margin-top: auto
+    padding-top: 20px
+    text-align: center
+    .h6-title + .h6-title
+      margin-top: 8px
+
++r($md)
+  .offices
+    margin: -40px 0 60px
+    &__wrapper
+      margin-top: 30px
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      &:last-child
+        margin-bottom: 0
+    &__element
+      margin-bottom: 20px
+    &__icon
+      display: none
+    &__content
+      padding-top: 0
+

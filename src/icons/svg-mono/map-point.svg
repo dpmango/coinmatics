@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="19px" viewBox="0 0 16 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>map-point</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="map-point" fill="#18DCA6">
+            <path d="M9.9534,14.1262 C11.5377,12.6479 13,10.473 13,7.32857 C13,5.1801 11.0144,3 8,3 C4.98561,3 3,5.1801 3,7.32857 C3,10.0094 4.40485,12.2039 6.1041,13.8759 C6.8107,14.5711 7.524,15.1299 8.1116,15.5419 C8.6571,15.1978 9.3079,14.7284 9.9534,14.1262 Z M8,19 C8,19 16,15.7429 16,7.32857 C16,3.28111 12.4183,0 8,0 C3.58172,0 0,3.28111 0,7.32857 C0,14.9286 8,19 8,19 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

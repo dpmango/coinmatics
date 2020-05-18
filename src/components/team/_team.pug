@@ -1,0 +1,39 @@
+mixin teamCard(card)
+  // news card
+  .team-card
+    .team-card__image
+      .team-card__image-wrapper
+        .scaler(style="padding-bottom: "+(199/157) * 100 +"%; background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1589449167/Coinmatics/"+card.image+".jpg)")
+          img(js-lazy data-src='img/'+card.image+'.jpg' data-srcset='img/'+card.image+'@2x.jpg 2x')
+    .team-card__content
+      .h5-title!= card.name
+      .p-small.c-gray= card.position
+
+// Team
+.team
+  .container.container--8
+    .team__head(data-aos="fade-up")
+      .h3-title Meet the Team
+
+    .team__wrapper
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-1', name: 'Darlene<br/>Steward', position: 'CEO'})
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-2', name: 'Gladys<br/>Fisher', position: 'COO'})
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-3', name: 'Leslie<br/>Pena', position: 'CFO'})
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-4', name: 'Eduardo<br/>Miles', position: 'CTO'})
+
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-5', name: 'Arlene<br/>Fox', position: 'CMO'})
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-6', name: 'Audrey<br/>Watson', position: 'CIO'})
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-7', name: 'Gloria<br/>Lane', position: 'CRO'})
+      .team__col(data-aos="fade-up")
+        +teamCard({image: 'team-8', name: 'Gregory <br/>Edwards', position: 'CAE'})
+
+
+    .news__cta(data-aos="fade-up")
+      a(href="#").btn.btn-primary Become a Part of Team
