@@ -32,19 +32,13 @@
     &__timeline-content
       padding-left: 32px
 
+
+// timeline
 .timeline
   position: relative
   display: flex
   height: 185px
   width: min-content
-  &__background
-    position: absolute
-    left: -14px
-    right: 0
-    top: 50%
-    transform: translateY(-50%)
-    overflow: hidden
-    z-index: 1
   &__col
     position: relative
     z-index: 3
@@ -72,7 +66,38 @@
       height: 2px
     &:last-child::after
       display: none
-
+    &:nth-child(3n + 1), &:nth-child(3n + 2)
+      .timeline__col-wrapper
+        &::before
+          display: block
+    &:nth-child(3n + 2)
+      .timeline__col-wrapper
+        &::after
+          display: block
+  &__col-wrapper
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    &::after, &::before
+      display: none
+      content: ' '
+      position: absolute
+      left: -14px
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      overflow: visible
+      z-index: 2
+      size: 1074px 123px
+      background-repeat: no-repeat
+      background-position: left center
+      background-size: contain
+    &::before
+      top: 48%
+      background-image: svg-load('../icons/svg-inline/timeline-bg-1.svg')
+    &::after
+      top: 53%
+      background-image: svg-load('../icons/svg-inline/timeline-bg-2.svg')
   &__heading
     display: flex
     flex-direction: column
