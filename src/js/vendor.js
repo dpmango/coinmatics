@@ -29,6 +29,7 @@ import { CountUp } from 'countup.js';
 import Rellax from 'rellax';
 import Parallax from 'parallax-js';
 import Chart from 'chart.js';
+import PerfectScrollbar from 'perfect-scrollbar';
 // import pluginDeferred from 'chartjs-plugin-deferred';
 // import lax from 'lax.js';
 
@@ -71,6 +72,7 @@ window.CountUp = CountUp;
 window.Rellax = Rellax;
 window.Parallax = Parallax;
 window.Chart = Chart;
+window.PerfectScrollbar = PerfectScrollbar;
 // window.lax = lax;
 
 // window.sharer = sharer;

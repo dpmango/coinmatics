@@ -37,6 +37,7 @@
     "lodash": "^4.17.14",
     "object-fit-images": "^3.2.4",
     "parallax-js": "^3.1.0",
+    "perfect-scrollbar": "^1.5.0",
     "photoswipe": "^4.1.3",
     "picturefill": "^3.0.3",
     "rellax": "^1.12.1",

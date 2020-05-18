@@ -6,13 +6,24 @@
     padding: 168px 0 130px
 
   &__timeline-scroller
+    position: relative
     margin-top: 144px
     padding-bottom: 30px
     overflow-x: auto
-    -webkit-overflow-scrolling: touch
+    pointer-events: none
+    -ms-overflow-style: none
+    &::-webkit-scrollbar
+      display: none
   &__timeline-content
     padding-left: calc((100vw - 772px) / 2)
 
+.is-mobile
+  .roadmap
+    &__timeline-scroller
+      pointer-events: all
+      -webkit-overflow-scrolling: touch
+      &::-webkit-scrollbar
+        display: block
 +r($xl)
   .roadmap
     &__holder
@@ -38,7 +49,10 @@
   position: relative
   display: flex
   height: 185px
-  width: min-content
+  width: 1730px
+  box-sizing: content-box
+  overflow: hidden
+  // width: min-content
   &__col
     position: relative
     z-index: 3
