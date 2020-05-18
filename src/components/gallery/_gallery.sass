@@ -11,24 +11,36 @@
       width: 772px
       max-width: 772px
     .swiper-slide-active, .swiper-slide-duplicate-active
-      .gallery__image::after
-        opacity: 0
+      pointer-events: none
+      .gallery__image
+        opacity: 1
+        &::after
+          opacity: 0
+    .swiper-slide-prev
+      .gallery__image
+        &::after
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+
   &__image
     position: relative
     z-index: 1
     border-radius: 20px
     overflow: hidden
     font-size: 0
+    opacity: 0.1
+    cursor: pointer
+    transition: opacity .25s $ease
     img, picture, video
       width: 100%
     &::after
       display: inline-block
       content: ' '
       position: absolute 0
-      background: rgba(white, .8)
-      opacity: 1
+      background: linear-gradient(270deg, #FFFFFF 69.43%, rgba(255, 255, 255, 0.804878) 83.94%, rgba(255, 255, 255, 0) 100%)
       transition: opacity .25s $ease
       will-change: opacity
+    &:hover
+      opacity: 0.2
 
 +r(868)
   .gallery
