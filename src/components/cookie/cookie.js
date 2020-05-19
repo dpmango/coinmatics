@@ -9,7 +9,7 @@
     },
     init: function(fromPjax) {
       this.getData();
-      this.showCookie();
+      // this.showCookie();
       if (!fromPjax) {
         this.clickListeners();
       }
