@@ -1,26 +1,29 @@
 // socials list
+- var currentLocale = locale || '';
+- var instagramHref = currentLocale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
+- var twitterHref = currentLocale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
 .social-list
   .container.container--8
     .social-list__head.section-head(data-aos="fade-up")
       h2.h3-title=t('social-list.title')
     .social-list__grid
       .social-list__col(data-aos="fade-up")
-        a(href="#" target="_blank").social-list__element
+        a(href=instagramHref target="_blank").social-list__element
           .social-list__icon
             +svgMono('social-instagram')
           .social-list__name.h6-title=t('social-list.instagram')
       .social-list__col(data-aos="fade-up")
-        a(href="#" target="_blank").social-list__element
+        a(href="https://www.facebook.com/coinmatics.io/" target="_blank").social-list__element
           .social-list__icon
             +svgMono('social-facebook')
           .social-list__name.h6-title=t('social-list.facebook')
       .social-list__col(data-aos="fade-up")
-        a(href="#" target="_blank").social-list__element
+        a(href=twitterHref target="_blank").social-list__element
           .social-list__icon
             +svgMono('social-twitter')
           .social-list__name.h6-title=t('social-list.twitter')
       .social-list__col(data-aos="fade-up")
-        a(href="#" target="_blank").social-list__element
+        a(href="https://medium.com/coinmatics" target="_blank").social-list__element
           .social-list__icon
             +svgMono('social-medium')
           .social-list__name.h6-title=t('social-list.medium')
