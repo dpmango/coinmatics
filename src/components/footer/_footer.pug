@@ -63,7 +63,7 @@ footer.footer
               .p-small.c-gray=t('footer.company')
               ul.footer__menu
                 li
-                  a(href=baseUrl + `/signup?l=${locale}`)=t('footer.aboutUs')
+                  a(href=`/${currentLocale}/contacts`)=t('footer.aboutUs')
                 li
                   a(href=blogHref target="_blank")=t('footer.blog')
                 li
@@ -71,7 +71,7 @@ footer.footer
                 li
                   a(href=`/${currentLocale}/legal`)=t('footer.legalDocuments')
                 li
-                  a(href=baseUrl + `/signup?l=${locale}`)=t('footer.contacts')
+                  a(href=`/${currentLocale}/contacts`)=t('footer.contacts')
             // menu-col
             .footer__menu-col
               .p-small.c-gray=t('footer.support')

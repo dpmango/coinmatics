@@ -11,7 +11,7 @@ mixin newsCard(card)
 .news
   .container.container--8
     .news__head(data-aos="fade-up")
-      .h3-title Recent News
+      .h3-title=t('news.title')
 
     .news__wrapper
       .news__col(data-aos="fade-up")
@@ -29,4 +29,4 @@ mixin newsCard(card)
         +newsCard({image: 'news-6', title: 'Coinmatics an instrument of audit and scam-connected risks protection'})
 
     .news__cta
-      a(href="#").btn.btn-ghost.btn-ghost--b0 View All News in Our Blog
+      a(href="#").btn.btn-ghost.btn-ghost--b0=t('news.viewAllNews')

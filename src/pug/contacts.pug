@@ -1,7 +1,12 @@
----
-title: 7. Contacts
----
 extends shared/_layout
+block variables
+  - var title = t('titles.contacts')
+  - var metaDescription = t('meta.contacts.description')
+  - var metaKeywords = t('meta.common.keywords')
+  - var opGraphImage = 'https://coinmatics.com/img/opgraph/main.png'
+  - var opGraphTitle = t('meta.contacts.opgraph.title')
+  - var opGraphDescription = t('meta.contacts.opgraph.description')
+
 block content
 
   // header modifier

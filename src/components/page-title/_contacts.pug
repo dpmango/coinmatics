@@ -4,35 +4,35 @@
     .page-title__bg-coins
       include ../../icons/svg-inline/coins-bg-page-title.svg
     .page-title__head(data-aos="fade-up")
-      h1.h1-title.h3-title-md Contacts
+      h1.h1-title.h3-title-md=t('contacts.title')
 
   .container.container--8
     // offices
     .page-title__offices.offices
       .offices__head(data-aos="fade-up")
-        .h3-title.h4-title-md Offices
+        .h3-title.h4-title-md=t('contacts.offices')
       .offices__wrapper
         .offices__col
           .offices__element(data-aos="fade-up")
             .offices__icon
               +svgMono('map-point')
             .offices__content
-              .h6-title Minsk, Belarus
-              .h6-title.c-primary Prushinsky 31A, office 109
+              .h6-title=t('contacts.minsk')
+              .h6-title.c-primary=t('contacts.minskAddress')
         .offices__col
           .offices__element(data-aos="fade-up")
             .offices__icon
               +svgMono('map-point-big')
             .offices__content
-              .h6-title Moscow, Russia
-              .h6-title.c-primary Sadovaya B., d. 5, building. 2, office 2012
+              .h6-title=t('contacts.moscow')
+              .h6-title.c-primary=t('contacts.moscowAddress')
         .offices__col
           .offices__element(data-aos="fade-up")
             .offices__icon
               +svgMono('map-point')
             .offices__content
-              .h6-title Hrodna, Belarus
-              .h6-title.c-primary Gorky street 49, of. 619
+              .h6-title=t('contacts.hrodna')
+              .h6-title.c-primary=t('contacts.hrodnaAddress')
 
   .page-title__waves.bg-waves.bg-waves--bottom.bg-waves--dark.bg-waves--h-small
     include ../../icons/svg-inline/waves-up.svg

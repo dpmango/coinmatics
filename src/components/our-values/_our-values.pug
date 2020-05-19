@@ -9,29 +9,29 @@ mixin listElement(icon, name)
     .our-values__wrapper
       .our-values__col.our-values__col--main(data-aos="fade-up")
         .our-values__head
-          .h3-title Our Values
-          .p-small.c-gray Our success is not only due to the quality of our work; it's down to attitude, our approach and the way we treat our users.
+          .h3-title=t('our-values.title')
+          .p-small.c-gray=t('our-values.subtitle')
       .our-values__col(data-aos="fade-up")
         .our-values__list-container
-          .h5-title What we do
+          .h5-title=t('our-values.whatWeDo.title')
           ul.our-values__list.our-values__list--green
-            +listElement('check', 'World-class digital')
-            +listElement('check', 'Expect creativity')
-            +listElement('check', 'Hustle')
-            +listElement('check', 'Obsess over details')
-            +listElement('check', 'Value relationships')
-            +listElement('check', 'High-five')
-            +listElement('check', 'Make things, break things')
-            +listElement('check', 'Obsess over details')
+            +listElement('check', t('our-values.whatWeDo.one'))
+            +listElement('check', t('our-values.whatWeDo.two'))
+            +listElement('check', t('our-values.whatWeDo.three'))
+            +listElement('check', t('our-values.whatWeDo.four'))
+            +listElement('check', t('our-values.whatWeDo.five'))
+            +listElement('check', t('our-values.whatWeDo.six'))
+            +listElement('check', t('our-values.whatWeDo.seven'))
+            +listElement('check', t('our-values.whatWeDo.eight'))
       .our-values__col(data-aos="fade-up")
         .our-values__list-container
-          .h5-title What we don’t do
+          .h5-title=t('our-values.whatWeDontDo.title')
           ul.our-values__list
-            +listElement('close', 'Work late/weekends')
-            +listElement('close', 'Have a sales team')
-            +listElement('close', 'Resist cake')
-            +listElement('close', 'Sacrifice quality for profit')
-            +listElement('close', 'Fax')
-            +listElement('close', 'Lose at Mario Kart')
-            +listElement('close', 'Work for free')
-            +listElement('close', 'Imposible deadlines')
+            +listElement('close', t('our-values.whatWeDontDo.one'))
+            +listElement('close', t('our-values.whatWeDontDo.two'))
+            +listElement('close', t('our-values.whatWeDontDo.three'))
+            +listElement('close', t('our-values.whatWeDontDo.four'))
+            +listElement('close', t('our-values.whatWeDontDo.five'))
+            +listElement('close', t('our-values.whatWeDontDo.six'))
+            +listElement('close', t('our-values.whatWeDontDo.seven'))
+            +listElement('close', t('our-values.whatWeDontDo.eight'))

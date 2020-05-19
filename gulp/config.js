@@ -1,5 +1,5 @@
 import util from 'gulp-util';
-import errorHandler from './util/errors';
+// import errorHandler from './util/errors';
 
 const production =
   util.env.production || util.env.prod || util.env._.indexOf('build') !== -1 || false;
@@ -52,7 +52,7 @@ const config = {
     util.log('Environment:', util.colors.white.bgRed(' ' + process.env.NODE_ENV + ' '));
   },
 
-  errorHandler: errorHandler,
+  errorHandler: console.log,
 };
 
 config.setEnv(production ? 'production' : 'development');

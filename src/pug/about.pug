@@ -1,7 +1,12 @@
----
-title: 9. About
----
 extends shared/_layout
+block variables
+  - var title = t('titles.about')
+  - var metaDescription = t('meta.about.description')
+  - var metaKeywords = t('meta.common.keywords')
+  - var opGraphImage = 'https://coinmatics.com/img/opgraph/main.png'
+  - var opGraphTitle = t('meta.about.opgraph.title')
+  - var opGraphDescription = t('meta.about.opgraph.description')
+
 block content
 
   // header modifier

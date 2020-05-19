@@ -3,8 +3,8 @@
   .roadmap__holder
     .container
       .roadmap__head.section-head(data-aos="fade-up")
-        h4.h4-title.c-gray Roadmap
-        h3.h3-title We are just in the beginning
+        h4.h4-title.c-gray=t('roadmap.title')
+        h3.h3-title=t('roadmap.subtitle')
 
     .roadmap__timeline-scroller
       .roadmap__timeline-content
@@ -14,38 +14,38 @@
           .timeline__col
             .timeline__col-wrapper
               .timeline__heading
-                .h5-title 2020
-                p.p-small.c-gray 3rd quarter
+                .h5-title=t('roadmap.twoThousandTwenty.title')
+                p.p-small.c-gray=t('roadmap.twoThousandTwenty.thirdQuarter')
               .timeline__description
-                p.p-small New app interface
+                p.p-small=t('roadmap.twoThousandTwenty.thirdQuarterTitle')
           // timeline col
           .timeline__col
             .timeline__col-wrapper
               .timeline__heading
-                p.p-small.c-gray 4th quarter
+                p.p-small.c-gray=t('roadmap.twoThousandTwenty.fourthQuarter')
               .timeline__description
-                p.p-small Маржинальная торговля Binance, Фьючерсная торговля Binance
+                p.p-small=t('roadmap.twoThousandTwenty.fourthQuarterTitle')
           // timeline col
           .timeline__col
             .timeline__col-wrapper
               .timeline__heading
-                .h5-title 2021
-                p.p-small.c-gray 1st quarter
+                .h5-title=t('roadmap.twoThousandTwentyOne.title')
+                p.p-small.c-gray=t('roadmap.twoThousandTwentyOne.firstQuarter')
               .timeline__description
-                p.p-small Smart терминал
+                p.p-small=t('roadmap.twoThousandTwentyOne.firstQuarterTitle')
           // timeline col
           .timeline__col
             .timeline__col-wrapper
               .timeline__heading
-                p.p-small.c-gray 4th quarter
+                p.p-small.c-gray=t('roadmap.twoThousandTwentyOne.fourthQuarter')
               .timeline__description
-                p.p-small Маржинальная торговля Binance, Фьючерсная торговля Binance
+                p.p-small=t('roadmap.twoThousandTwentyOne.fourthQuarterTitle')
           // timeline col
           .timeline__col
             .timeline__col-wrapper
               .timeline__heading
-                .h5-title 2022
+                .h5-title=t('roadmap.twoThousandTwentyTwo.title')
               .timeline__description
-                p.p-small TBA
+                p.p-small=t('roadmap.twoThousandTwentyTwo.subtitle')
   .bg-waves.bg-waves--bottom.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg
