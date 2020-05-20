@@ -12,7 +12,7 @@
             h2.h2-title.h3-title-md=t('easy-start.title')
             p.p-main=t('easy-start.description')
             .js-teleport(data-teleport-condition="<1200" data-teleport-to="easy-start-cta")
-              a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary=t('easy-start.button')
+              a(href=baseUrl + `/signup?l=${locale}`).btn.btn-primary.analytics__getIncome-btn=t('easy-start.button')
       .easy-start__steps
         .easy-start__steps-wrapper
           .easy-start__steps-col(data-aos="fade-up")
