@@ -1,5 +1,5 @@
 .trader-card
-  .trader-card__slider.swiper-container.swiper-nav-bullets.js-swiper-traders(data-swiper-group-id="1")
+  .trader-card__slider.swiper-container.swiper-nav-bullets.js-swiper-traders(data-swiper-group-id=tradersSliderID)
     .swiper-wrapper
       -
         var list = data || []
@@ -75,7 +75,7 @@
 
   // nav
   .trader-card__nav
-    .swiper-container.js-swiper-traders-thumbs(data-swiper-group-id="1")
+    .swiper-container.js-swiper-traders-thumbs(data-swiper-group-id=tradersSliderID)
       .swiper-wrapper
         each slide, idx in list
           if idx === 0
