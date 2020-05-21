@@ -5,12 +5,8 @@
 .mobile-navi
   .mobile-navi__scroller
     .mobile-navi__head
-      a(href=`/${currentLocale}/`).header__logo.logo
-        .logo__icon
-          +svgColor('logo-sign')
-        .logo__name=t('mobile-navi.logoName')
-        .logo__tag
-          +svgColor('logo-beta')
+      a(href=`/${currentLocale}/`).header__logo
+        +svgColor('logo-dark')
       .header__hamburger.js-close-mobile-navi
         .hamburger.hamburger--squeeze.is-active
           .hamburger-box

@@ -9,13 +9,9 @@ header.header
             .hamburger-inner
 
       a(href=`/${currentLocale}/`).header__logo
-        .logo
-          .logo__icon
-            +svgColor('logo-sign')
-            +svgColor('logo-sign-white')
-          .logo__name=t('header.logoName')
-          .logo__tag
-            +svgColor('logo-beta')
+        .logo__icon
+          +svgColor('logo-dark')
+          +svgColor('logo-white')
       ul.header__menu.js-megamenu-trigger
         li
           a(href="#" data-for="1")

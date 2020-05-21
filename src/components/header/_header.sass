@@ -16,10 +16,11 @@
     padding: 20px 0 24px 0
 
   &__logo
-    flex: 0 0 auto
     padding-right: 24px
     .logo__icon
-      .ico-color-logo-sign-white
+      .ico
+        font-size: 28px
+      .ico-color-logo-white
         display: none
 
   &__menu
@@ -83,12 +84,10 @@
     background: transparent
     .header
       &__logo
-        .logo
-          color: white
         .logo__icon
-          .ico-color-logo-sign
+          .ico-color-logo-dark
             display: none
-          .ico-color-logo-sign-white
+          .ico-color-logo-white
             display: block
       &__menu
         li
@@ -103,12 +102,10 @@ body.is-megamenu-active, body.is-header-fixed
     background: white
     .header
       &__logo
-        .logo
-          color: #000
         .logo__icon
-          .ico-color-logo-sign
+          .ico-color-logo-dark
             display: block
-          .ico-color-logo-sign-white
+          .ico-color-logo-white
             display: none
       &__menu
         li
