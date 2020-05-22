@@ -30,6 +30,9 @@ import Rellax from 'rellax';
 import Parallax from 'parallax-js';
 import Chart from 'chart.js';
 import PerfectScrollbar from 'perfect-scrollbar';
+import tablesort from 'tablesort';
+import stacktable from 'stacktable.js';
+
 // import pluginDeferred from 'chartjs-plugin-deferred';
 // import lax from 'lax.js';
 
@@ -73,6 +76,8 @@ window.Rellax = Rellax;
 window.Parallax = Parallax;
 window.Chart = Chart;
 window.PerfectScrollbar = PerfectScrollbar;
+window.Tablesort = tablesort;
+window.stacktable = stacktable;
 // window.lax = lax;
 
 // window.sharer = sharer;
