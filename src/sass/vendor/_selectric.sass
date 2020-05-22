@@ -10,66 +10,62 @@
   width: 100%
 
 .selectric
-  border: 1px solid #DDD
+  display: flex
+  align-items: center
+  border: 0
   border-radius: 0px
-  background: #F8F8F8
+  background: transparent
   position: relative
   overflow: hidden
   .label
+    flex: 0 0 auto
     display: block
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-    margin: 0 38px 0 10px
-    font-size: 12px
-    line-height: 38px
-    color: #444
-    height: 38px
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
+    margin: 0 12px 0 12px
+    font-size: 14px
+    font-weight: 600
+    line-height: 48px
+    color: $colorPrimary
+    height: 48px
     user-select: none
+    transition: color .25s $ease
   .button
-    display: block
-    position: absolute
-    right: 0
-    top: 0
-    width: 38px
-    height: 38px
-    line-height: 38px
-    background-color: #F8f8f8
-    color: #BBB
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
     text-align: center
-    font: 0/0 a
-    *font: 20px/38px Lucida Sans Unicode, Arial Unicode MS, Arial
-    &:after
-      content: " "
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      margin: auto
-      width: 0
-      height: 0
-      border: 4px solid transparent
-      border-top-color: #BBB
-      border-bottom: none
+    padding-right: 12px
+    background-color: transparent
+    color: $colorPrimary
+    text-align: center
+    font-size: 0
+    transition: color .25s $ease
+    .ico
+      font-size: 6px
+      will-change: transform
+      backface-visibility: hidden
+      transition: transform .25s $ease
 
-.selectric-focus .selectric
-  border-color: #aaaaaa
-
-.selectric-hover .selectric
-  border-color: #c4c4c4
-  .button
-    color: #a2a2a2
-    &:after
-      border-top-color: #a2a2a2
+.selectric-focus, .selectric-hover
+  .selectric
+    .label
+      color: $colorPrimaryHover
+    .button
+      color: $colorPrimaryHover
 
 .selectric-open
   z-index: 9999
   .selectric
     border-color: #c4c4c4
+    .label
+      color: $colorPrimaryHover
+    .button
+      color: $colorPrimaryHover
+      .ico
+        transform: rotate(180deg)
   .selectric-items
     display: block
 
@@ -130,11 +126,13 @@
   display: none
   position: absolute
   top: 100%
-  left: 0
-  background: #F8F8F8
-  border: 1px solid #c4c4c4
+  left: -8px
+  right: -8px
+  width: calc(100% + 16px) !important
+  background: #FFFFFF
+  box-shadow: 0px 4px 20px rgba(14, 31, 80, 0.13)
+  border-radius: 11px
   z-index: -1
-  box-shadow: 0 0 10px -6px
   .selectric-scroll
     height: 100%
     overflow: auto
@@ -146,37 +144,31 @@
 .selectric-items
   ul
     list-style: none
-    padding: 0
+    padding: 14px 0
     margin: 0
-    font-size: 12px
-    line-height: 20px
-    min-height: 20px
   li
     list-style: none
     padding: 0
     margin: 0
-    font-size: 12px
-    line-height: 20px
-    min-height: 20px
+    font-weight: 600
+    font-size: 14px
+    line-height: (18 / 14)
     display: block
-    padding: 10px
-    color: #666
+    padding: 6px 20px
+    color: $colorLight
     cursor: pointer
+    transition: .1s $ease
     &.selected
-      background: #E0E0E0
-      color: #444
+      color: $colorPrimary
     &.highlighted
-      background: #D0D0D0
-      color: #444
+      color: $colorPrimary
     &:hover
-      background: #D5D5D5
-      color: #444
+      color: $colorPrimaryHover
   .disabled
-    filter: alpha(opacity = 50)
     opacity: 0.5
     cursor: default !important
     background: none !important
-    color: #666 !important
+    color: $colorLight !important
     user-select: none
   .selectric-group
     .selectric-group-label

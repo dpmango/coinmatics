@@ -12,8 +12,12 @@ PageList:
   - file: legal.html
     ready: 100
   - file: contacts.html
-    ready: 80
+    ready: 100
   - file: about.html
-    ready: 80
+    ready: 100
+  - file: traders-list.html
+    ready: 50
+  - file: trader.html
+    ready: 10
   - file: ui.html
     ready: 10

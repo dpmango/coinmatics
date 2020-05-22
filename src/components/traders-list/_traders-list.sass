@@ -1,0 +1,214 @@
+// TRADERS LIST
+.traders-list
+  margin: 76px 0 136px
+  &__head
+    display: flex
+    align-items: center
+  &__sorting
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: -6px
+  &__sorting-col
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    padding: 6px
+  &__sorting-label
+    flex: 0 0 auto
+    // h styling instance
+  &__sorting-select
+    flex: 0 0 auto
+    // selectric instance container
+
+  &__view
+    margin-left: auto
+    display: flex
+    align-items: center
+    a
+      display: inline-block
+      padding: 4px
+      color: #E7EBF4
+      font-size: 0
+      transition: color .25s $ease
+      .ico
+        font-size: 16px
+      &.is-active
+        color: $fontColor
+      &:hover:not(.is-active)
+        color: $colorPrimary
+
+  &__grid
+    display: flex
+    flex-wrap: wrap
+    margin: 38px -10px -10px
+  &__col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+    flex: 0 0 50%
+    max-width: 50%
+
+  &__cta
+    margin-top: 40px
+    text-align: center
+
+
+// trader-card-mini
+.trader-card-mini
+  position: relative
+  z-index: 1
+  overflow: hidden
+  background: #FAFBFD
+  border-radius: 32px
+  padding: 40px
+  min-width: 1px
+  display: flex
+  flex-wrap: wrap
+  &__avatar, &__head, &__content
+    position: relative
+    z-index: 2
+    width: 100%
+    min-width: 1px
+    min-height: 0
+  &__avatar
+    position: relative
+    z-index: 1
+    align-self: flex-start
+    flex: 0 0 96px
+    max-width: 96px
+    border-radius: 20px
+    overflow: hidden
+  &__head
+    flex: 0 0 calc(100% - 96px)
+    max-width: calc(100% - 96px)
+    padding-left: 24px
+  &__content
+    display: flex
+    flex-wrap: wrap
+    flex: 0 0 100%
+    max-width: 100%
+    margin-top: 24px
+  &__name
+    margin-bottom: 20px
+    margin-top: 8px
+  &__info-grid
+    flex: 0 0 50%
+    max-width: 50%
+    display: flex
+    flex-wrap: wrap
+    margin: -10px
+  &__info-col
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+    flex: 0 0 50%
+    max-width: 50%
+    &--full
+      flex-basis: 100%
+      max-width: 100%
+    .h4-title
+      margin-top: 8px
+
+  &__chart
+    flex: 0 0 50%
+    max-width: 50%
+    min-width: 1px
+    min-height: 0
+  &__chart-stats
+    display: flex
+    .h5-title
+      flex: 0 0 auto
+      margin-left: auto
+      text-align: right
+  &__chart-graph
+    position: relative
+    height: 80px
+    margin-top: 24px
+
+  &__waves
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 1
+    font-size: 0
+    .bg-waves
+      background: transparent
+      &::after
+        display: none
+// +r($xl)
+//   .trader-card-mini
+//     &__content
+//       flex-basis: calc(100% - 254px)
+//     &__chart
+//       flex: 0 0 100%
+//       padding-left: 0
+//       padding-top: 42px
+//     &__nav-element
+//       flex-basis: $col4
+//       max-width: $col4
+
+// +r($md)
+//   .trader-card-mini
+//     background: transparent
+//     border-radius: 0px
+//     &__avatar
+//       flex-basis: 80px
+//       max-width: 80px
+//       border-radius: 12px
+//     &__content
+//       padding-left: 16px
+//       flex-basis: calc(100% - 80px)
+//     &__name
+//       margin-bottom: 4px
+//       margin-top: 8px
+
+//     &__info-col
+//       .h4-title
+//         margin-top: 4px
+//     &__chart
+//       padding-top: 24px
+//     &__chart-graph
+//       margin-top: 12px
+//       height: 140px
+
+
+// +r($sm)
+//   .trader-card-mini
+//     &__chart-graph
+//       height: 78px
+//       margin-left: -10px
+//       margin-right: -10px
+
+
+// .is-ie
+//   .trader-card-mini
+//     &__avatar
+//       margin-left: 48px
+//     &__chart
+//       margin-right: 48px
+
+// +r($xl)
+//   .is-ie
+//     .trader-card-mini
+//       &__chart
+//         width: calc(100% - 96px)
+//         flex-basis: calc(100% - 96px)
+//         padding-left: 48px
+
+// +r($md)
+//   .is-ie
+//     .trader-card-mini
+//       &__avatar
+//         margin-left: 40px
+//       &__content
+//         padding-left: 40px
+//       &__chart
+//         width: calc(100% - 80px)
+//         flex-basis: calc(100% - 80px)
+//         margin-right: 40px
+//         margin-left: 0
+//         padding-left: 40px

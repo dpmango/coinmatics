@@ -1,0 +1,102 @@
+// TRADERS LIST
+.traders-list
+  .container
+    // head
+    .traders-list__head(data-aos="fade-up")
+      .traders-list__sorting
+        .traders-list__sorting-col
+          .traders-list__sorting-label.h6-title Show
+          .traders-list__sorting-select
+            select(js-select placeholder="Show")
+              option(value="25") 25
+              option(value="50" selected) 50
+              option(value="100") 100
+              option(value="200") 200
+
+        .traders-list__sorting-col
+          .traders-list__sorting-label.h6-title Sort by
+          .traders-list__sorting-select
+            select(js-select placeholder="Sort by")
+              option(value="1" selected) Total Profit
+              option(value="2") Rating
+              option(value="3") Avg. Signals
+              option(value="4") Avg. Profit
+              option(value="5") Risk Level
+              option(value="6") Weekly Profit
+
+      .traders-list__view
+        a(href="#").is-active
+          +svgMono('view-grid')
+        a(href="#")
+          +svgMono('view-list')
+
+    // list
+    .traders-list__grid
+      -
+        var list = [
+          {name: "GuRaM_GE", image: 'traderAvatar'},
+          {name: "Walter Bulls", image: 'traderAvatar_2'},
+          {name: "Cryptor Bot", image: 'traderAvatar_3'},
+          {name: "Gloria Warren", image: 'traderAvatar_4'},
+          {name: "VIP Trader Club", image: 'traderAvatar_5'},
+          {name: "crazyfrog418", image: 'traderAvatar_6'},
+          {name: "blackmouse399", image: 'traderAvatar_7'},
+          {name: "Theresa Cooper", image: 'traderAvatar_8'},
+        ]
+      -
+        var labels = [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      each slide, idx in list
+        .traders-list__col(data-aos="fade-up")
+          .trader-card-mini
+            // avatar
+            .trader-card-mini__avatar
+              .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/"+slide.image+".jpg)")
+                img(js-lazy data-src='img/'+slide.image+'.jpg' data-srcset='img/'+slide.image+'@2x.jpg 2x')
+            // head
+            .trader-card-mini__head
+              .trader-card-mini__name.h4-title.h5-title-md= slide.name
+              .p-small.c-gray Total Profit
+              .h4-title.h6-title-md.c-primary +40.1%
+            // content
+            .trader-card-mini__content
+              .trader-card-mini__info-grid
+                .trader-card-mini__info-col
+                  .p-small.c-gray Rating
+                  .h4-title.h6-title-md 9.0
+                .trader-card-mini__info-col
+                  .p-small.c-gray Avg. Signals
+                  .h4-title.h6-title-md 1136
+                .trader-card-mini__info-col
+                  .p-small.c-gray Avg. Profit
+                  .h4-title.h6-title-md +44.42%
+                .trader-card-mini__info-col
+                  .p-small.c-gray Risk Level
+                  .h4-title.h6-title-md Risky
+              // chart
+              .trader-card-mini__chart
+                .trader-card-mini__chart-stats
+                  .p-small.c-gray Weekly Profit
+                  .h5-title.c-primary +5.6%
+                .trader-card-mini__chart-graph
+                  canvas.js-chart-scroll.js-chart(
+                    data-type="simple"
+                    data-group-labels="3"
+                    data-values="seed"
+                    data-labels=labels
+                  )
+            // trader waves
+            .trader-card-mini__waves
+              .bg-waves.bg-waves--gray.bg-waves--tr-medium
+                include ../../icons/svg-inline/trader-waves.svg
+
+
+    .traders-list__cta
+      a(href="#").btn.btn-primary Load more

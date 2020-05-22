@@ -49,7 +49,10 @@
         labels: $chart.data('labels'),
         values: $chart.data('values'),
         groupLabels: $chart.data('group-labels'),
+        type: $chart.data('type'),
       };
+
+      var isSimpleChart = elData.type === 'simple';
 
       // seed (can be removed on prod)
       if (elData.values === 'seed') {
@@ -98,7 +101,7 @@
             backgroundColor: 'transparent',
             borderColor: '#18DCA6',
             fill: true,
-            borderWidth: 4,
+            borderWidth: isSimpleChart ? 2 : 4,
             data: elData.values,
             // doesnt work
             // borderColor: function(context) {
@@ -132,7 +135,7 @@
         scales: {
           xAxes: [
             {
-              display: true,
+              display: isSimpleChart ? false : true,
               ticks: {
                 fontColor: '#75809F',
                 fontFamily: "'Montserrat Alternates', sans-serif",
@@ -164,7 +167,7 @@
 
       // initialize
       new Chart(chartCtx, {
-        type: 'RedNegativeLine',
+        type: isSimpleChart ? 'line' : 'RedNegativeLine',
         data: data,
         options: options,
       });
