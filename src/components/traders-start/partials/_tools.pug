@@ -10,7 +10,7 @@
             +svgMono('arrow-down')
         .accardeon__content(style="display: block")
           .trstart__tools-image.trstart__tools-image--mobile(data-teleport-target="trstart-image-1")
-          p.p-small.c-gray=t('tools.firstDsc')
+          p.p-main.c-gray=t('tools.firstDsc')
       -
         var list = [
           {title: t('tools.secondTitle'), image: "trstart-image-2", description: t('tools.secondDsc')},
@@ -27,7 +27,7 @@
           .accardeon__content
             .trstart__tools-image.trstart__tools-image--mobile(data-teleport-target=element.image)
               // teleport
-            p.p-small.c-gray=element.description
+            p.p-main.c-gray=element.description
 
   .trstart__tools-images(data-aos="fade-up")
     .trstart__tools-image.js-teleport(style="display: block" data-accardeon-tab="1" data-teleport-condition="<1200" data-teleport-to="trstart-image-1")

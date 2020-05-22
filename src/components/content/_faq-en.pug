@@ -3,11 +3,11 @@ mixin accardeonElement(element)
   .accardeon__element
     .accardeon__toggler
       .accardeon__title
-        .p-small= element.title
+        .p-main= element.title
         +svgMono('arrow-down')
     .accardeon__content.accardeon__content--no-img
       each paragraph in element.text
-        p.p-small.c-gray=paragraph
+        p.p-main.c-gray=paragraph
 
 // CONTENT (legal)
 .content
@@ -31,17 +31,17 @@ mixin accardeonElement(element)
           .js-tab-content(data-tab="tab-1" style="display: block")
             // section (1)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Безопасность
+              .content__section-title.h5-title Безопасность
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Рискую ли я потерять свои средства, подключившись к вашей платформе?", 
+                      title: "Рискую ли я потерять свои средства, подключившись к вашей платформе?",
                       text: ["Нет, ваши деньги остаются на вашем биржевом кошельке, ни трейдеры, ни наша платформа не имеют доступа к вашим средствам, вывод средств технически невозможен. После подключения auto-trading вы предоставляете доступ по API-ключам второго уровня — только повтор сделок, без возможности вывода."]
                     },
                     {
-                      title: "Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?", 
+                      title: "Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?",
                       text: ["Мы позаботились о том, чтобы в копитрейдинге на нашей платформе оставались только чистые трейдерские риски. В отличие от доверительного управления, в нашей системе трейдер настолько же рискует деньгами подписчика, насколько и своими."]
                     },
                   ]
@@ -50,21 +50,21 @@ mixin accardeonElement(element)
 
             // section (2)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Подключение, выбор трейдера
+              .content__section-title.h5-title Подключение, выбор трейдера
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Какие биржи вы поддерживаете?", 
+                      title: "Какие биржи вы поддерживаете?",
                       text: ["Для копитрейдинга доступна возможность подключения аккаунтов Binance. В ближайших планах добавление Bittrex, BitMEX, Poloniex и других криптовалютных бирж."]
                     },
                     {
-                      title: "Кто такие трейдеры?", 
+                      title: "Кто такие трейдеры?",
                       text: ["Трейдеры на платформе Coinmatics — это трейдеры с положительной динамикой доходности, которые предоставляют возможность другим людям подписываться на повтор их сигналов и зарабатывать на том же уровне."]
                     },
                     {
-                      title: "Какие варианты копитрейдинга у вас есть?", 
+                      title: "Какие варианты копитрейдинга у вас есть?",
                       text: [
                         "Мы предоставляем два вида подписки: автотрейдинг и сигналы о сделках.",
                         "При подписке на автотрейдинг происходит привязка вашего биржевого кошелька к кошельку трейдера, и далее все сделки трейдера автоматически дублируются на вашем кошельке.",
@@ -77,11 +77,11 @@ mixin accardeonElement(element)
                     {
                       title: "Как мне выбрать трейдера для копирования?",
                       text: [
-                        "Выбирая трейдера для копирования, посмотрите на продолжительность его истории. Чем дольше торгует трейдер, тем проще оценить его стратегию и общую эффективность.", 
-                        "Далее:", 
+                        "Выбирая трейдера для копирования, посмотрите на продолжительность его истории. Чем дольше торгует трейдер, тем проще оценить его стратегию и общую эффективность.",
+                        "Далее:",
                         "-	Проанализируйте общую доходность публичного трейдера и прибыль за прошедший месяц. Трейдер должен быть в плюсе большую часть времени.",
                         "-	Оцените на графике максимальную просадку и прибыль на счетах, выраженную в % от депозита. Торгующие агрессивно имеют большие просадки, чем торгующие более осторожно. Но, как правило, риски увеличивают и уровень дохода.",
-                        "-	Изучите поведение кривой депозита в моменты пика волатильности основной валюты трейдера (см.вкладку “Распределение активов”).", 
+                        "-	Изучите поведение кривой депозита в моменты пика волатильности основной валюты трейдера (см.вкладку “Распределение активов”).",
                         "-	При выборе трейдера стоит ориентироваться как на заявленную в описании стратегию, так и на реальные показатели доходности."]
                     },
                   ]
@@ -90,7 +90,7 @@ mixin accardeonElement(element)
 
             // section (3)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Вопросы по оплате
+              .content__section-title.h5-title Вопросы по оплате
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
@@ -133,7 +133,7 @@ mixin accardeonElement(element)
 
             // section (4)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Технические и прочие вопросы
+              .content__section-title.h5-title Технические и прочие вопросы
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
@@ -161,7 +161,7 @@ mixin accardeonElement(element)
 
             // section (5)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Остались вопросы? Напишите нам, и мы ответим в ближайшее время.
+              .content__section-title.h5-title Остались вопросы? Напишите нам, и мы ответим в ближайшее время.
 
       // accardeon element
       .accardeon__element
@@ -175,7 +175,7 @@ mixin accardeonElement(element)
           .js-tab-content(data-tab="tab-2")
             // section (1)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Безопасность
+              .content__section-title.h5-title Безопасность
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
@@ -190,7 +190,7 @@ mixin accardeonElement(element)
 
             // section (2)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Подключение и добавление в рейтинг
+              .content__section-title.h5-title Подключение и добавление в рейтинг
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
@@ -229,7 +229,7 @@ mixin accardeonElement(element)
 
             // section (3)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Цена и оплата
+              .content__section-title.h5-title Цена и оплата
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
@@ -259,7 +259,7 @@ mixin accardeonElement(element)
 
             // section (4)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Технические и прочие вопросы
+              .content__section-title.h5-title Технические и прочие вопросы
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
@@ -282,4 +282,4 @@ mixin accardeonElement(element)
 
             // section (5)
             .content__section(data-aos="fade-up")
-              .content__section-title.h6-title Остались вопросы? Напишите нам, и мы ответим в ближайшее время.
+              .content__section-title.h5-title Остались вопросы? Напишите нам, и мы ответим в ближайшее время.
