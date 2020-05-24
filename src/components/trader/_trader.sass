@@ -131,3 +131,78 @@
     .ico-mono-star
       margin-right: 8px
       font-size: 24px
+
+
+// trader content
+.trader-content
+  padding: 120px 0
+  &__wrapper
+    margin-left: $col2
+    padding-left: 270px
+  &__section
+    margin-bottom: 120px
+    max-width: 504px
+    &:last-child
+      margin-bottom: 0
+  &__chart
+    margin-top: 32px
+  &__chart-head
+    display: flex
+    align-items: center
+  &__chart-filter
+    display: flex
+    align-items: center
+  &__chart-total
+    margin-left: auto
+    text-align: right
+  &__chart-canvas
+    height: 214px
+    margin-top: 24px
+
+// asset chart
+.asset-chart
+  margin-top: 48px
+  &__line
+    display: flex
+    align-items: center
+    margin-top: 32px
+  &__left, &__center, &__right
+    width: 100%
+    min-width: 1px
+    min-height: 0
+  &__left
+    flex: 0 0 60px
+    max-width: 60px
+    padding-right: 10px
+  &__right
+    flex: 0 0 74px
+    max-width: 74px
+    padding-left: 10px
+    text-align: right
+  &__center
+    flex: 1 1 auto
+    max-width: 100%
+    position: relative
+    z-index: 1
+    min-height: 8px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 0
+      right: 0
+      z-index: 1
+      top: 50%
+      transform: translateY(-50%)
+      background: #FAFBFD
+      border-radius: 5px
+      height: 2px
+  &__fill
+    position: absolute
+    right: 0
+    z-index: 2
+    height: 8px
+    top: 50%
+    transform: translateY(-50%)
+    background: $colorPrimary
+    border-radius: 5px

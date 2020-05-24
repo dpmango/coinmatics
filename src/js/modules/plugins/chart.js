@@ -53,6 +53,7 @@
       };
 
       var isSimpleChart = elData.type === 'simple';
+      var isMonoColorChart = elData.type === 'monocolor';
 
       // seed (can be removed on prod)
       if (elData.values === 'seed') {
@@ -151,8 +152,8 @@
                 // },
               },
               gridLines: {
-                color: 'rgba(117, 128, 159, 0.1)',
-                zeroLineColor: 'rgba(117, 128, 159, 0.1)',
+                color: isMonoColorChart ? '#FAFBFD' : 'rgba(117, 128, 159, 0.1)',
+                zeroLineColor: isMonoColorChart ? 'rgba(0,0,0,0)' : 'rgba(117, 128, 159, 0.1)',
                 drawBorder: false,
               },
             },
@@ -167,7 +168,7 @@
 
       // initialize
       new Chart(chartCtx, {
-        type: isSimpleChart ? 'line' : 'RedNegativeLine',
+        type: isSimpleChart || isMonoColorChart ? 'line' : 'RedNegativeLine',
         data: data,
         options: options,
       });
