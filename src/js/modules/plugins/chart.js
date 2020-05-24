@@ -3,9 +3,18 @@
 //////////
 (function($, APP) {
   APP.Plugins.Chart = {
+    data: {
+      charts: [],
+    },
     init: function(fromPjax) {
+      this.resetData();
       this.extendControllers();
-      this.listenScroll();
+      if (!fromPjax) {
+        this.listenScroll();
+      }
+    },
+    resetData: function() {
+      this.data.charts = [];
     },
     renderAllCharts: function() {
       // var _this = this;
@@ -39,6 +48,7 @@
     },
     // manual initialization
     renderChart: function($chart) {
+      var _this = this;
       if ($chart.length === 0) return;
       if ($chart.is('.is-rendered')) return;
 
@@ -57,29 +67,7 @@
 
       // seed (can be removed on prod)
       if (elData.values === 'seed') {
-        elData.values = [
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-        ];
+        elData.values = _this.seedValues();
       }
 
       // groupping labels
@@ -167,10 +155,15 @@
       };
 
       // initialize
-      new Chart(chartCtx, {
+      var chartinstance = new Chart(chartCtx, {
         type: isSimpleChart || isMonoColorChart ? 'line' : 'RedNegativeLine',
         data: data,
         options: options,
+      });
+
+      this.data.charts.push({
+        element: $chart,
+        instance: chartinstance,
       });
 
       $chart.addClass('is-rendered');
@@ -219,6 +212,31 @@
           return Chart.controllers.line.prototype.update.apply(this, arguments);
         },
       });
+    },
+    seedValues: function() {
+      return [
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+      ];
     },
   };
 })(jQuery, window.APP);

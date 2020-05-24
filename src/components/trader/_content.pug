@@ -22,17 +22,16 @@
           .trader-content__chart-head(data-aos="fade-up")
             .trader-content__chart-filter
               .h6-title Period
-              select(js-select)
+              select(js-select js-trader-period-select)
                 option(value="1") Weekly
                 option(value="2") Monthly
                 option(value="3") Yearly
             .trader-content__chart-total
               .h6-title.c-primary +5.6%
           .trader-content__chart-canvas
-            canvas.js-chart-scroll.js-chart(
+            canvas.js-chart-scroll.js-chart.js-trader-period-chart(
               data-group-labels="3"
               data-values="seed"
-              data-type="monocolor"
               data-labels=labels
             )
 
