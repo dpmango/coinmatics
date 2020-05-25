@@ -107,6 +107,7 @@
 
   &__content-grid
     display: flex
+    flex-wrap: wrap
     margin: -16px
     max-width: 534px
     + .trader-head__content-grid
@@ -117,6 +118,8 @@
     min-width: 1px
     min-height: 0
     padding: 16px
+    &--md-only
+      display: none
   &__content-label
     color: $colorLight
   &__content-wrapper
@@ -132,6 +135,59 @@
       margin-right: 8px
       font-size: 24px
 
++r($lg)
+  .trader-head
+    &__wrapper
+      padding: 144px 0 44px
+    &__col-left, &__col-right
+      flex-basis: 100%
+      max-width: 100%
+    &__content
+      margin-top: 36px
+    &__content-right
+      padding-left: 32px
+
++r($md)
+  .trader-head
+    &__wrapper
+      padding: 80px 0 48px
+    &__content
+      margin-top: 12px
+    &__content-left
+      flex-basis: 100%
+      max-width: 100%
+    &__content-right
+      margin-top: 32px
+      flex-basis: 100%
+      max-width: 100%
+      padding-left: 0
+    &__avatar
+      padding-left: 0
+      padding-right: 0
+      max-width: 280px
+    &__main
+      display: none
+    &__name
+      margin-bottom: 24px
+    &__content-grid
+      + .trader-head__content-grid
+        margin-top: 8px
+    &__content-col--md-only
+      display: block
+
++r($sm)
+  .trader-head
+    &__content-grid
+      margin: -12px
+      + .trader-head__content-grid
+        margin-top: 12px
+    &__content-col
+      max-width: 50%
+      flex: 0 0 50%
+      padding: 12px
+      &--full-sm
+        max-width: 100%
+        flex-basis: 100%
 
 // trader content
 .trader-content
@@ -158,6 +214,33 @@
   &__chart-canvas
     height: 214px
     margin-top: 24px
+
++r($lg)
+  .trader-content
+    &__wrapper
+      margin-left: 0
+      padding-left: 254px
+    &__chart-canvas
+      height: 180px
+
++r($md)
+  .trader-content
+    padding: 80px 0
+    &__wrapper
+      padding-left: 0px
+    &__section
+      margin-bottom: 80px
+      &:last-child
+        margin-bottom: 0
+    &__chart
+      margin-top: 24px
+    &__chart-canvas
+      margin-top: 8px
+
++r($sm)
+  .trader-content
+    &__chart-canvas
+      height: 120px
 
 // asset chart
 .asset-chart
