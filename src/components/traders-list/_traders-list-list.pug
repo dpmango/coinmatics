@@ -68,7 +68,7 @@
                 .traders-table__sortable-col
                   span Name
                     +svgMono("arrow-down")
-              td(data-sort-method='number')
+              td(data-sort-method='number' data-sort-default)
                 .traders-table__sortable-col
                   span Total Profit
                     +svgMono("arrow-down")
@@ -123,4 +123,4 @@
                       )
 
     .traders-list__cta(data-aos="fade-up")
-      a(href="#").btn.btn-primary Load more
+      a(href="#" onclick="APP.Plugins.Tablesort.update()").btn.btn-primary Load more
