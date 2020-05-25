@@ -10,10 +10,21 @@
     padding: 120px 0
     min-height: calc(100vh - 132px)
   &__image
+    position: relative
+    z-index: 1
     svg, img
       max-width: 100%
       overflow: visible
+    img
+      position: absolute 0
+      animation-name: spin404
+      animation-duration: 6s
+      animation-timing-function: linear
+      animation-iteration-count: infinite
+      transform-origin: center center
   &__content
+    position: relative
+    z-index: 2
     margin-top: -44px
     text-align: center
     max-width: 280px
@@ -28,3 +39,19 @@
   .notfound
     &__wrapper
       height: calc(100vh - 132px)
+
++r($md)
+  .notfound
+    &__wrapper
+      padding: 80px 0
+
++r($sm)
+  .notfound
+    &__content
+      margin-top: 0
+
+@keyframes spin404
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
