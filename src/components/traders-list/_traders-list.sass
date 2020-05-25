@@ -56,6 +56,12 @@
     display: flex
     justify-content: center
 
+  &__table
+    padding: 10px
+    width: 100%
+    flex: 0 0 100%
+    margin-top: -38px
+
 +r($lg)
   .traders-list
     margin-bottom: 80px
@@ -63,6 +69,14 @@
       display: none
     &__cta
       margin-top: 56px
+    &__table
+      overflow-x: auto
+      flex-basis: calc(100% + 96px)
+      max-width: calc(100% + 96px)
+      margin-left: -48px
+      margin-right: -48px
+      padding-left: 58px
+      padding-right: 58px
 
 +r($md)
   .traders-list
@@ -81,7 +95,14 @@
       max-width: 100%
     &__cta
       margin-top: 44px
-
+    &__table
+      overflow-x: auto
+      flex-basis: calc(100% + 40px)
+      max-width: calc(100% + 40px)
+      margin-left: -30px
+      margin-right: -30px
+      padding-left: 40px
+      padding-right: 40px
 // trader-card-mini
 .trader-card-mini
   position: relative

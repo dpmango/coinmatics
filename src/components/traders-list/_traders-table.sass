@@ -9,18 +9,21 @@
       line-height: (14 / 10)
       color: $colorLight
       text-align: left
-      padding: 16px 8px
+      padding: 32px 8px
       &:first-child
         padding-left: 16px
       &:lasth-child
         padding-right: 16px
   tbody
     tr
-      // tr
-        margin-bottom: 5px
+      cursor: pointer
+      &:hover
+        .traders-table__main
+          .h6-title
+            color: $colorPrimary
     td
       background: #FAFBFD
-      padding: 16px 8px 14px
+      padding: 16px 8px 16px
       border-bottom: 2px solid white
       &:first-child
         padding-left: 16px
@@ -37,6 +40,7 @@
     align-items: center
     .h6-title
       flex: 0 0 auto
+      transition: .25s $ease
   &__avatar
     position: relative
     z-index: 1
@@ -70,6 +74,10 @@
         transition: .25s $ease
         &-mono-arrow-down
           right: 0px
+
++r($lg)
+  .traders-table
+    width: 970px
 
 // sorting
 td, th

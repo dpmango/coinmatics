@@ -53,74 +53,74 @@
 
 
       .traders-list__view
-        a(href="#").is-active
+        a(href="traders-grid.html")
           +svgMono('view-grid')
-        a(href="#")
+        a(href="#").is-active
           +svgMono('view-list')
 
     // list
     .traders-list__grid
-      table.traders-list__table.traders-table(js-stacktable js-sortable-table)
-        thead
-          tr
-            td
-              .traders-table__sortable-col
-                span Name
-                  +svgMono("arrow-down")
-            td(data-sort-method='number')
-              .traders-table__sortable-col
-                span Total Profit
-                  +svgMono("arrow-down")
-            td(data-sort-method='number')
-              .traders-table__sortable-col
-                span Rating
-                  +svgMono("arrow-down")
-            td(data-sort-method='number')
-              .traders-table__sortable-col
-                span Avg. Signals
-                  +svgMono("arrow-down")
-            td(data-sort-method='number')
-              .traders-table__sortable-col
-                span Avg. Profit
-                  +svgMono("arrow-down")
-            td
-              .traders-table__sortable-col
-                span Risk Level
-                  +svgMono("arrow-down")
-            td(data-sort-method='number')
-              .traders-table__sortable-col
-                span Weekly Profit
-                  +svgMono("arrow-down")
-        tbody
-          each slide, idx in list
-            tr(js-link data-href="trader.html")
+      .traders-list__table(data-aos="fade-up")
+        table.traders-table(js-sortable-table)
+          thead
+            tr
               td
-                .traders-table__main
-                  .traders-table__avatar
-                    .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/"+slide.image+".jpg)")
-                      img(js-lazy data-src='img/'+slide.image+'.jpg' data-srcset='img/'+slide.image+'@2x.jpg 2x')
-                  .h6-title= slide.name
+                .traders-table__sortable-col
+                  span Name
+                    +svgMono("arrow-down")
+              td(data-sort-method='number')
+                .traders-table__sortable-col
+                  span Total Profit
+                    +svgMono("arrow-down")
+              td(data-sort-method='number')
+                .traders-table__sortable-col
+                  span Rating
+                    +svgMono("arrow-down")
+              td(data-sort-method='number')
+                .traders-table__sortable-col
+                  span Avg. Signals
+                    +svgMono("arrow-down")
+              td(data-sort-method='number')
+                .traders-table__sortable-col
+                  span Avg. Profit
+                    +svgMono("arrow-down")
               td
-                .h6-title= slide.col2
-              td
-                .h6-title= slide.col3
-              td
-                .h6-title= slide.col4
-              td
-                .h6-title= slide.col5
-              td
-                .h6-title= slide.col6
-              td
-                .traders-table__profit
-                  .h6-title= slide.col7
-                  .traders-table__chart
-                    canvas.js-chart-scroll.js-chart(
-                      data-type="simple"
-                      data-group-labels="3"
-                      data-values="seed"
-                      data-labels=labels
-                    )
-
+                .traders-table__sortable-col
+                  span Risk Level
+                    +svgMono("arrow-down")
+              td(data-sort-method='number')
+                .traders-table__sortable-col
+                  span Weekly Profit
+                    +svgMono("arrow-down")
+          tbody
+            each slide, idx in list
+              tr(js-link data-href="trader.html")
+                td
+                  .traders-table__main
+                    .traders-table__avatar
+                      .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/"+slide.image+".jpg)")
+                        img(js-lazy data-src='img/'+slide.image+'.jpg' data-srcset='img/'+slide.image+'@2x.jpg 2x')
+                    .h6-title= slide.name
+                td
+                  .h6-title= slide.col2
+                td
+                  .h6-title= slide.col3
+                td
+                  .h6-title= slide.col4
+                td
+                  .h6-title= slide.col5
+                td
+                  .h6-title= slide.col6
+                td
+                  .traders-table__profit
+                    .h6-title= slide.col7
+                    .traders-table__chart
+                      canvas.js-chart-scroll.js-chart(
+                        data-type="simple"
+                        data-group-labels="3"
+                        data-values="seed"
+                        data-labels=labels
+                      )
 
     .traders-list__cta(data-aos="fade-up")
       a(href="#").btn.btn-primary Load more
