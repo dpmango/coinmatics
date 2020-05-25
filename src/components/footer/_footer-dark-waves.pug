@@ -1,0 +1,102 @@
+// FOOTER :: START
+footer.footer
+  .footer__waves.bg-waves.bg-waves--dark.bg-null
+    include ../../icons/svg-inline/waves-up.svg
+
+  .container
+    // top
+    .footer__top(data-aos="fade")
+      .footer__top-wrapper
+        .footer__subscribe-labels
+          .h3-title Stay in touch!
+          .p-small.c-gray Subscribe to our newsletter and stay updated on the latest changes and trading insights. No spam, we promise.
+        .footer__subscribe-cta
+          a(href="#modalSubscribe").btn.btn-primary.js-popup Yes, Sign Me Up!
+
+    // middle
+    .footer__middle(data-aos="fade")
+      .footer__middle-wrapper
+        .footer__contacts
+          .footer__contacts-main
+            .p-small.c-gray Feel free to contact us
+            a(href="mailto:hello@coinmatics.com").footer__contacts-email hello@coinmatics.com
+          ul.footer__socials
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-instagram')
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-facebook')
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-twitter')
+            li
+              a(href="#" target="_blank")
+                +svgMono('social-medium')
+        .footer__menus
+          .footer__menus-wrapper
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray For Investors
+              ul.footer__menu
+                li
+                  a(href="#") Copy Trading
+                li
+                  a(href="#") Top Traders
+                li
+                  a(href="#") Trading Signals
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray For Traders
+              ul.footer__menu
+                li
+                  a(href="#") Copy Trading
+                li
+                  a(href="#") Trading Tools
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray Company
+              ul.footer__menu
+                li
+                  a(href="#") About Us
+                li
+                  a(href="#") Blog
+                li
+                  a(href="#") Careers
+                li
+                  a(href="legal.html") Legal Documents
+                li
+                  a(href="#") Contacts
+            // menu-col
+            .footer__menu-col
+              .p-small.c-gray Support
+              ul.footer__menu
+                li
+                  a(href="#") FAQ
+                li
+                  a(href="#") Live Chat
+                li
+                  a(href="#") Uptime & Status
+                li
+                  a(href="#") Suggest a Feature
+    // bottom
+    .footer__bottom
+      .footer__bottom-wrapper
+        .footer__bottom-left
+          .footer__logo.logo.logo--white
+            .logo__icon
+              +svgColor('logo-sign-white')
+            .logo__name Coinmatics
+            .logo__tag
+              +svgColor('logo-beta')
+          .p-small.c-gray ©2020, All Rights Reserved
+
+        .footer__bottom-right
+          .footer__lang
+            .footer__lang-label.p-small.c-gray Change language to
+            a(href="#").footer__lang-selector
+              .footer__lang-icon
+                +svgColor('lang-rus')
+              .p-small Рус
+
+// FOOTER :: END

@@ -21,5 +21,7 @@ PageList:
     ready: 50
   - file: trader.html
     ready: 80
+  - file: 404.html
+    ready: 80
   - file: ui.html
     ready: 10

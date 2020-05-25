@@ -1,0 +1,30 @@
+// notfound
+.notfound
+  color: white
+  background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%)
+  &__wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 120px 0
+    min-height: calc(100vh - 132px)
+  &__image
+    svg, img
+      max-width: 100%
+      overflow: visible
+  &__content
+    margin-top: -44px
+    text-align: center
+    max-width: 280px
+    margin-left: auto
+    margin-right: auto
+    .p-main
+      margin-top: 16px
+    .btn
+      margin-top: 24px
+
+.is-ie
+  .notfound
+    &__wrapper
+      height: calc(100vh - 132px)
