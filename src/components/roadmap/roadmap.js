@@ -35,7 +35,7 @@
       var container = document.querySelector('.js-scroll-x');
       var isWebkit = 'webkitRequestAnimationFrame' in window;
       // firefox & IE fix
-      if (!isWebkit && !APP.Browser().data.isMobile) {
+      if (!isWebkit && !APP.Browser().data.isMobile && container) {
         var ps = new PerfectScrollbar(container, {
           handlers: [],
           wheelPropagation: true,
