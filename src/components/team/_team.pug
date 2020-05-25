@@ -8,6 +8,11 @@ mixin teamCard(card)
     .team-card__content
       .h5-title!= card.name
       .p-small.c-gray= card.position
+      .team-card__socials
+        a(href="#" target="_blank")
+          +svgMono('social-linked-in')
+        a(href="#" target="_blank")
+          +svgMono('social-github')
 
 // Team
 .team

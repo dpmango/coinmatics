@@ -49,6 +49,28 @@
         .on('click', '[js-clear-localstorage]', function() {
           localStorage.removeItem('cookieAccepted');
           APP.Components.Cookie.showCookie();
+        })
+
+        // trader waves animation
+        .on('mouseenter', '.trader-card-mini', function() {
+          var $card = $(this);
+          var $animation1 = $card.find('.trader-waves-anim-1');
+          var $animation2 = $card.find('.trader-waves-anim-2');
+          var $animation3 = $card.find('.trader-waves-anim-3');
+
+          if ($animation1.length) $animation1[0].beginElement();
+          if ($animation2.length) $animation2[0].beginElement();
+          if ($animation3.length) $animation3[0].beginElement();
+        })
+        .on('mouseleave', '.trader-card-mini', function() {
+          var $card = $(this);
+          var $animation1 = $card.find('.trader-waves-anim-1');
+          var $animation2 = $card.find('.trader-waves-anim-2');
+          var $animation3 = $card.find('.trader-waves-anim-3');
+
+          if ($animation1.length) $animation1[0].endElement();
+          if ($animation2.length) $animation2[0].endElement();
+          if ($animation3.length) $animation3[0].endElement();
         });
 
       // accardeon

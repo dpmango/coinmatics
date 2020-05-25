@@ -10,19 +10,20 @@
         .trader-head__content
           // content left
           .trader-head__content-left
-            .trader-head__avatar
-              .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar.jpg)")
-                img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderAvatar@2x.jpg 2x')
-            .trader-head__main
-              .trader-head__main-wrapper(data-aos="fade")
-                .trader-head__main-row
-                  .trader-head__main-label Telegram Signals
-                  .trader-head__main-value.h3-title <span>$</span> 10
-                .trader-head__main-row
-                  .trader-head__main-label Auto-trading
-                  .trader-head__main-value.h3-title 10<span>%</span>
-                .trader-head__main-cta
-                  a(href="#").btn.btn-primary.btn--block Follow
+            .trader-head__content-sticky(data-stop=".trader-content")
+              .trader-head__avatar
+                .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar.jpg)")
+                  img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderAvatar@2x.jpg 2x')
+              .trader-head__main
+                .trader-head__main-wrapper(data-aos="fade")
+                  .trader-head__main-row
+                    .trader-head__main-label Telegram Signals
+                    .trader-head__main-value.h3-title <span>$</span> 10
+                  .trader-head__main-row
+                    .trader-head__main-label Auto-trading
+                    .trader-head__main-value.h3-title 10<span>%</span>
+                  .trader-head__main-cta
+                    a(href="#").btn.btn-primary.btn--block Follow
           // content right
           .trader-head__content-right
             .trader-head__name.h2-title.h3-title-md(data-aos="fade-up") GuRaM_GE
@@ -69,6 +70,9 @@
                 .trader-head__content-wrapper.mt-8
                   .h4-title 10%
 
-
   .trader-head__waves.bg-waves.bg-waves--bottom.bg-waves--dark.bg-waves--h-small
     include ../../icons/svg-inline/waves-up.svg
+
+  // mobile cta
+  .trader-head__mobile-cta
+    a(href="#").btn.btn-primary.btn--block Follow
