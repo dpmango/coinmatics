@@ -56,6 +56,31 @@
     display: flex
     justify-content: center
 
++r($lg)
+  .traders-list
+    margin-bottom: 80px
+    &__view
+      display: none
+    &__cta
+      margin-top: 56px
+
++r($md)
+  .traders-list
+    margin-top: 24px
+    margin-bottom: 64px
+    &__sorting
+      margin-left: 0
+      margin-right: 0
+    &__sorting-col
+      padding-left: 0
+      padding-right: 0
+    &__grid
+      margin-top: 20px
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+    &__cta
+      margin-top: 44px
 
 // trader-card-mini
 .trader-card-mini
@@ -144,6 +169,69 @@
       background: transparent
       &::after
         display: none
+
++r($lg)
+  .trader-card-mini
+    padding-bottom: 48px
+    &__avatar
+      flex-basis: 48px
+      max-width: 48px
+      border-radius: 12px
+    &__head
+      flex-basis: calc(100% - 48px)
+      max-width: calc(100% - 48px)
+      padding-left: 12px
+      .p-small
+        display: inline-block
+        margin-right: 8px
+      .h4-title
+        margin-top: 0
+        display: inline-block
+    &__name
+      display: block !important
+      margin-bottom: 4px
+    &__content
+      margin-top: 32px
+    &__info-grid
+      flex-basis: 100%
+      max-width: 100%
+    &__chart
+      margin-top: 32px
+      flex-basis: 100%
+      max-width: 100%
+      transform: none
+      display: flex
+      flex-wrap: wrap
+    &__chart-stats, &__chart-graph
+      flex: 0 0 50%
+      max-width: 50%
+    &__chart-stats
+      display: block
+      .h5-title
+        text-align: left
+        margin-top: 8px
+    &__chart-graph
+      height: 44px
+      margin-top: 0
+    &__waves
+      .bg-waves
+        svg
+          height: 52px
+
++r($md)
+  .trader-card-mini
+    &__head
+      margin-top: 24px
+      flex-basis: 100%
+      max-width: 100%
+      padding-left: 0
+    &__content
+      margin-top: 24px
+    &__waves
+      .bg-waves
+        svg
+          height: 44px
+
 // +r($xl)
 //   .trader-card-mini
 //     &__content

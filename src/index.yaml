@@ -16,9 +16,9 @@ PageList:
   - file: about.html
     ready: 100
   - file: traders-grid.html
-    ready: 50
+    ready: 80
   - file: traders-list.html
-    ready: 50
+    ready: 80
   - file: trader.html
     ready: 80
   - file: 404.html

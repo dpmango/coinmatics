@@ -62,24 +62,24 @@
                 img(js-lazy data-src='img/'+slide.image+'.jpg' data-srcset='img/'+slide.image+'@2x.jpg 2x')
             // head
             .trader-card-mini__head
-              .trader-card-mini__name.h4-title.h5-title-md= slide.name
+              .trader-card-mini__name.h4-title= slide.name
               .p-small.c-gray Total Profit
-              .h4-title.h6-title-md.c-primary +40.1%
+              .h4-title.h5-title-md.c-primary +40.1%
             // content
             .trader-card-mini__content
               .trader-card-mini__info-grid
                 .trader-card-mini__info-col
                   .p-small.c-gray Rating
-                  .h5-title.h6-title-md 9.0
+                  .h5-title 9.0
                 .trader-card-mini__info-col
                   .p-small.c-gray Avg. Signals
-                  .h5-title.h6-title-md 1136
+                  .h5-title 1136
                 .trader-card-mini__info-col
                   .p-small.c-gray Avg. Profit
-                  .h5-title.h6-title-md +44.42%
+                  .h5-title +44.42%
                 .trader-card-mini__info-col
                   .p-small.c-gray Risk Level
-                  .h5-title.h6-title-md Risky
+                  .h5-title Risky
               // chart
               .trader-card-mini__chart
                 .trader-card-mini__chart-stats
@@ -98,7 +98,7 @@
                 include ../../icons/svg-inline/trader-waves.svg
 
 
-    .traders-list__cta
+    .traders-list__cta(data-aos="fade-up")
       //- a(href="#").btn.btn-primary Load more
       .pagination
         ul.pagination__list
