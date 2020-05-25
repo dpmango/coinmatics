@@ -26,7 +26,7 @@
       });
     },
     listenScroll: function() {
-      _window.on('scroll', throttle(this.scrollX.bind(this), 100));
+      _window.on('scroll', throttle(this.scrollX.bind(this), 25));
       // prevent manual scroll
       $('.js-scroll-x').on('mousewheel', this.scrollXManual.bind(this));
     },
@@ -72,7 +72,7 @@
           var percentScrolled =
             (scroll.y + window.innerHeight - elTop) / (elHeight + window.innerHeight);
           // $el.scrollLeft(percentScrolled * (scrollWidth - window.innerWidth));
-          $el.animate({ scrollLeft: percentScrolled * (scrollWidth - window.innerWidth) }, 100);
+          $el.animate({ scrollLeft: percentScrolled * (scrollWidth - window.innerWidth) }, 25);
         }
       });
     },
