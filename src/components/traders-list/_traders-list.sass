@@ -51,10 +51,10 @@
     max-width: 50%
 
   &__cta
-    margin-top: 40px
+    margin-top: 72px
     text-align: center
-
-
+    display: flex
+    justify-content: center
 
 
 // trader-card-mini
@@ -86,6 +86,8 @@
     flex: 0 0 calc(100% - 96px)
     max-width: calc(100% - 96px)
     padding-left: 24px
+    .h4-title
+      margin-top: 8px
   &__content
     display: flex
     flex-wrap: wrap
@@ -93,7 +95,7 @@
     max-width: 100%
     margin-top: 24px
   &__name
-    margin-bottom: 20px
+    margin-bottom: 8px
     margin-top: 8px
   &__info-grid
     flex: 0 0 50%
@@ -111,7 +113,7 @@
     &--full
       flex-basis: 100%
       max-width: 100%
-    .h4-title
+    .h5-title
       margin-top: 8px
 
   &__chart
@@ -119,6 +121,7 @@
     max-width: 50%
     min-width: 1px
     min-height: 0
+    transform: translateX(20px)
   &__chart-stats
     display: flex
     .h5-title

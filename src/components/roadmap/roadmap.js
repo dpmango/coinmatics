@@ -26,7 +26,8 @@
       });
     },
     listenScroll: function() {
-      _window.on('scroll', throttle(this.scrollX.bind(this), 25));
+      // _window.on('scroll', throttle(this.scrollX.bind(this), 25));
+      _window.on('scroll', this.scrollX.bind(this));
       // prevent manual scroll
       $('.js-scroll-x').on('mousewheel', this.scrollXManual.bind(this));
     },
@@ -71,8 +72,8 @@
         if (isInViewportStart && !isInViewportEnd) {
           var percentScrolled =
             (scroll.y + window.innerHeight - elTop) / (elHeight + window.innerHeight);
-          // $el.scrollLeft(percentScrolled * (scrollWidth - window.innerWidth));
-          $el.animate({ scrollLeft: percentScrolled * (scrollWidth - window.innerWidth) }, 25);
+          $el.scrollLeft(percentScrolled * (scrollWidth - window.innerWidth));
+          // $el.animate({ scrollLeft: percentScrolled * (scrollWidth - window.innerWidth) }, 25);
         }
       });
     },

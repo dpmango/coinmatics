@@ -1,6 +1,6 @@
 // TRADERS LIST
 .traders-list
-  .container
+  .container.container--10
     // head
     .traders-list__head(data-aos="fade-up")
       .traders-list__sorting
@@ -70,16 +70,16 @@
               .trader-card-mini__info-grid
                 .trader-card-mini__info-col
                   .p-small.c-gray Rating
-                  .h4-title.h6-title-md 9.0
+                  .h5-title.h6-title-md 9.0
                 .trader-card-mini__info-col
                   .p-small.c-gray Avg. Signals
-                  .h4-title.h6-title-md 1136
+                  .h5-title.h6-title-md 1136
                 .trader-card-mini__info-col
                   .p-small.c-gray Avg. Profit
-                  .h4-title.h6-title-md +44.42%
+                  .h5-title.h6-title-md +44.42%
                 .trader-card-mini__info-col
                   .p-small.c-gray Risk Level
-                  .h4-title.h6-title-md Risky
+                  .h5-title.h6-title-md Risky
               // chart
               .trader-card-mini__chart
                 .trader-card-mini__chart-stats
@@ -99,4 +99,27 @@
 
 
     .traders-list__cta
-      a(href="#").btn.btn-primary Load more
+      //- a(href="#").btn.btn-primary Load more
+      .pagination
+        ul.pagination__list
+          li.pagination__first
+            a(href="#")
+              +svgMono('arrow-right')
+          li
+            a(href="#")
+              span 1
+          li
+            a(href="#")
+              span 2
+          li
+            a(href="#")
+              span 3
+          li
+            a(href="#")
+              span 4
+          li
+            a(href="#")
+              span 5
+          li.pagination__last
+            a(href="#")
+              +svgMono('arrow-right')
