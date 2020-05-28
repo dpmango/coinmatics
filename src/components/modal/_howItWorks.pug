@@ -1,0 +1,18 @@
+- var currentLocale = locale || '';
+- var videoSrc = currentLocale === 'ru' ? 'https://www.youtube.com/embed/rvBtjjyILI0?&origin=ru' : 'https://www.youtube.com/embed/tYiq1d9yfFQ?&origin=en'
+#modalHowItWorks.modal
+  .popup-dialog
+    .popup-dialog__close.js-close-popup
+      +svgMono('close')
+
+    .popup-dialog__wrapper.popup-dialog__flexCenter
+      iframe(
+        width="560"
+        height="315"
+        src=videoSrc
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      )
+
+
