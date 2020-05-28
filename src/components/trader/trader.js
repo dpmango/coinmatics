@@ -45,17 +45,21 @@
     listenResize: function() {
       _window.on('resize', debounce(this.buildStickyParams.bind(this), 100));
     },
-    buildStickyParams: function() {
+    buildStickyParams: function(withoutContainerHeight) {
       var $card = $('.trader-head__content-sticky');
       if ($card.length === 0) return;
 
       var $container = $card.parent();
-      var position = $container[0].getBoundingClientRect();
+      // prevent page jumps when fixed
+      if (withoutContainerHeight !== true) {
+        $container.css('height', $card.height());
+      }
 
       this.data.sticky.$element = $card;
       this.data.sticky.$container = $container;
 
       var isMobileWidth = window.innerWidth <= 767;
+      var position = $container[0].getBoundingClientRect();
 
       // define start position
       this.data.sticky.startPoint = $container.offset().top;
@@ -65,7 +69,11 @@
       if ($stop.length > 0) {
         var endPoint = $stop.offset().top + $stop.outerHeight() - window.innerHeight;
         if (!isMobileWidth) {
-          endPoint = endPoint + $card.height() - parseInt($stop.css('padding-bottom'));
+          endPoint =
+            endPoint +
+            window.innerHeight -
+            $container.height() -
+            parseInt($stop.css('padding-bottom'));
         }
         this.data.sticky.endPoint = endPoint;
       }
@@ -74,8 +82,6 @@
         $card.attr('style', '');
         this.data.sticky.$mobileCta = $('.trader-head__mobile-cta');
       } else {
-        // set container height to prevent any jumps
-        $container.css('height', $card.height());
         $card.css({ left: position.left, width: position.width });
         if ($stop.length > 0) {
           if (APP.Plugins.ScrollBlock.getData().y > endPoint) {
@@ -111,7 +117,7 @@
           });
         } else {
           $mobileCta.attr('style', '');
-          this.buildStickyParams();
+          this.buildStickyParams(true);
         }
 
         return;
@@ -125,6 +131,7 @@
         $card.removeClass('is-sticky');
       }
 
+      console.log(scroll.y, endPoint);
       if (scroll.y > endPoint) {
         $card.css({
           position: 'relative',
@@ -133,7 +140,7 @@
         });
       } else {
         $card.attr('style', '');
-        this.buildStickyParams();
+        this.buildStickyParams(true);
       }
     },
   };
