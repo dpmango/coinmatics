@@ -131,7 +131,6 @@
         $card.removeClass('is-sticky');
       }
 
-      console.log(scroll.y, endPoint);
       if (scroll.y > endPoint) {
         $card.css({
           position: 'relative',
