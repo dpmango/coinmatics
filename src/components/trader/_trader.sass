@@ -1,0 +1,350 @@
+// trader head
+.trader-head
+  color: white
+  background: linear-gradient(180deg, #0E1F50 0%, #0E1F50 20%, #041133 80%, #041133 100%)
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    padding: 148px 0 36px
+    margin: -10px
+  &__col-left, &__col-right
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 10px
+  &__col-left
+    flex: 0 0 $col2
+    max-width: $col2
+  &__col-right
+    flex: 0 0 $col10
+    max-width: $col10
+  &__back-link
+    display: flex
+    align-items: center
+    color: $colorPrimary
+    transition: color .25s $ease
+    &:hover
+      color: $colorPrimaryHover
+    .ico
+      font-size: 10px
+      transform: rotate(180deg)
+    span
+      display: inline-block
+      margin-left: 8px
+      font-size: 14px
+      line-height: (19 / 14)
+  &__content
+    display: flex
+    flex-wrap: wrap
+  &__content-left, &__content-right
+    width: 100%
+    min-width: 1px
+    min-height: 0
+  &__content-left
+    flex: 0 0 222px
+    max-width: 222px
+  &__content-right
+    flex: 0 0 calc(100% - 222px)
+    max-width: calc(100% - 222px)
+    padding-left: 48px
+  &__content-sticky
+    // content sticky
+    transition: transform .25s $ease
+    will-change: transform
+    &.is-sticky
+      position: fixed
+      top: 20px
+      z-index: 5
+      .trader-head
+        &__main
+          min-height: 398px
+          margin-top: -132px
+          &::after
+            background-image: svg-load('../icons/svg-inline/trader-head__avatar-bg-white.svg')
+        &__main-title
+          height: auto
+          padding-bottom: 8px
+        &__main-label, &__main-value
+          color: $fontColor
+  &__avatar
+    position: relative
+    z-index: 2
+    padding-left: 12px
+    padding-right: 12px
+    .scaler
+      border-radius: 20px
+  &__main
+    position: relative
+    display: flex
+    flex-direction: column
+    z-index: 1
+    overflow: hidden
+    // background: #13265C
+    border-radius: 24px
+    padding: 32px
+    min-height: 333px
+    margin-top: -124px
+    transition: .25s $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      z-index: 1
+      background: svg-load('../icons/svg-inline/trader-head__avatar-bg.svg') no-repeat left bottom
+      background-size: cover
+      transition: .25s $ease
+  &__main-wrapper
+    position: relative
+    z-index: 2
+    margin-top: auto
+  &__main-title
+    height: 0
+    color: $fontColor
+    overflow: hidden
+    padding-left: 8px
+    transition: .25s $ease
+
+  &__main-row
+    display: flex
+    align-items: flex-end
+    margin: 10px -6px -6px
+    padding-left: 8px
+    padding-right: 8px
+  &__main-label, &__main-value
+    width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 6px
+    transition: color .25s $ease
+  &__main-label
+    font-size: 14px
+    line-height: (17 / 14)
+    color: $colorLight
+  &__main-value
+    text-align: right
+    color: $colorLight
+    span
+      font-weight: 600
+      font-size: 14px
+      line-height: (18 / 14)
+  &__main-cta
+    margin-top: 24px
+
+  &__name
+    margin-bottom: 32px
+
+  &__content-grid
+    display: flex
+    flex-wrap: wrap
+    margin: -16px
+    max-width: 534px
+    + .trader-head__content-grid
+      margin-top: 24px
+  &__content-col
+    max-width: 100%
+    flex: 0 0 auto
+    min-width: 1px
+    min-height: 0
+    padding: 16px
+    &--md-only
+      display: none
+  &__content-label
+    color: $colorLight
+  &__content-wrapper
+    display: flex
+    align-items: center
+    &.mt-12
+      margin-top: 12px
+    &.mt-16
+      margin-top: 16px
+    &.mt-8
+      margin-top: 8px
+    .ico-mono-star
+      margin-right: 8px
+      font-size: 24px
+  &__mobile-cta
+    display: none
+
+body.is-header-fixed-visible
+  .trader-head
+    &__content-sticky
+      &.is-sticky
+        transform: translateY(64px)
+
+.is-ie
+  .trader-head
+    &__main
+      height: 333px
+    &__content-sticky.is-sticky
+      .trader-head
+        &__main
+          height: 398px
+
++r($lg)
+  .trader-head
+    &__wrapper
+      padding: 144px 0 44px
+    &__col-left, &__col-right
+      flex-basis: 100%
+      max-width: 100%
+    &__content
+      margin-top: 36px
+    &__content-right
+      padding-left: 32px
+
++r($md)
+  .trader-head
+    &__wrapper
+      padding: 80px 0 48px
+    &__content
+      margin-top: 12px
+    &__content-left
+      flex-basis: 100%
+      max-width: 100%
+    &__content-right
+      margin-top: 32px
+      flex-basis: 100%
+      max-width: 100%
+      padding-left: 0
+    &__avatar
+      padding-left: 0
+      padding-right: 0
+      max-width: 280px
+    &__main
+      display: none
+    &__name
+      margin-bottom: 24px
+    &__content-grid
+      + .trader-head__content-grid
+        margin-top: 8px
+    &__content-col--md-only
+      display: block
+    &__mobile-cta
+      display: block
+      position: fixed
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 5
+      background: $colorBgLight
+      padding: 4px
+      transform: translateY(100%)
+      transition: transform .25s $ease
+      will-change: transform
+      &.is-visible
+        transform: translateY(0)
+
++r($sm)
+  .trader-head
+    &__content-grid
+      margin: -12px
+      + .trader-head__content-grid
+        margin-top: 12px
+    &__content-col
+      max-width: 50%
+      flex: 0 0 50%
+      padding: 12px
+      &--full-sm
+        max-width: 100%
+        flex-basis: 100%
+
+// trader content
+.trader-content
+  padding: 120px 0
+  &__wrapper
+    margin-left: $col2
+    padding-left: 270px
+  &__section
+    margin-bottom: 120px
+    max-width: 504px
+    &:last-child
+      margin-bottom: 0
+  &__chart
+    margin-top: 32px
+  &__chart-head
+    display: flex
+    align-items: center
+  &__chart-filter
+    display: flex
+    align-items: center
+  &__chart-total
+    margin-left: auto
+    text-align: right
+  &__chart-canvas
+    height: 214px
+    margin-top: 24px
+
++r($lg)
+  .trader-content
+    &__wrapper
+      margin-left: 0
+      padding-left: 254px
+    &__chart-canvas
+      height: 180px
+
++r($md)
+  .trader-content
+    padding: 80px 0
+    &__wrapper
+      padding-left: 0px
+    &__section
+      margin-bottom: 80px
+      &:last-child
+        margin-bottom: 0
+    &__chart
+      margin-top: 24px
+    &__chart-canvas
+      margin-top: 8px
+
++r($sm)
+  .trader-content
+    &__chart-canvas
+      height: 120px
+
+// asset chart
+.asset-chart
+  margin-top: 48px
+  &__line
+    display: flex
+    align-items: center
+    margin-top: 32px
+  &__left, &__center, &__right
+    width: 100%
+    min-width: 1px
+    min-height: 0
+  &__left
+    flex: 0 0 60px
+    max-width: 60px
+    padding-right: 10px
+  &__right
+    flex: 0 0 74px
+    max-width: 74px
+    padding-left: 10px
+    text-align: right
+  &__center
+    flex: 1 1 auto
+    max-width: 100%
+    position: relative
+    z-index: 1
+    min-height: 8px
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      left: 0
+      right: 0
+      z-index: 1
+      top: 50%
+      transform: translateY(-50%)
+      background: #FAFBFD
+      border-radius: 5px
+      height: 2px
+  &__fill
+    position: absolute
+    right: 0
+    z-index: 2
+    height: 8px
+    top: 50%
+    transform: translateY(-50%)
+    background: $colorPrimary
+    border-radius: 5px

@@ -8,7 +8,7 @@ import Swiper from 'swiper/js/swiper.esm.bundle';
 import AOS from 'aos/dist/aos.js';
 import validate from 'jquery-validation';
 // import mask from 'jquery-mask-plugin';
-// import selectric from 'jquery-selectric';
+import selectric from 'jquery-selectric';
 import Barba from 'barba.js';
 import Lazy from 'jquery-lazy';
 import LazyAV from 'jquery-lazy/plugins/jquery.lazy.av.min.js';
@@ -29,6 +29,10 @@ import { CountUp } from 'countup.js';
 import Rellax from 'rellax';
 import Parallax from 'parallax-js';
 import Chart from 'chart.js';
+import PerfectScrollbar from 'perfect-scrollbar';
+import tablesort from 'tablesort';
+import stacktable from 'stacktable.js';
+
 // import pluginDeferred from 'chartjs-plugin-deferred';
 // import lax from 'lax.js';
 
@@ -55,7 +59,7 @@ window.Swiper = Swiper;
 window.AOS = AOS;
 window.validate = validate;
 // window.mask = mask;
-// window.selectric = selectric;
+window.selectric = selectric;
 window.Barba = Barba;
 window.Lazy = Lazy;
 window.ScrollToPlugin = ScrollToPlugin;
@@ -71,6 +75,9 @@ window.CountUp = CountUp;
 window.Rellax = Rellax;
 window.Parallax = Parallax;
 window.Chart = Chart;
+window.PerfectScrollbar = PerfectScrollbar;
+window.Tablesort = tablesort;
+window.stacktable = stacktable;
 // window.lax = lax;
 
 // window.sharer = sharer;

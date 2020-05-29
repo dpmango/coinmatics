@@ -11,30 +11,31 @@
         maxHeight: 300,
         disableOnMobile: false,
         nativeOnMobile: true,
+        // inheritOriginalWidth: true,
         arrowButtonMarkup:
-          '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
+          '<b class="button"><svg class="ico ico-mono-arrow-down"><use xlink:href="img/sprite-mono.svg#ico-mono-arrow-down"></use></svg></b>',
 
-        onInit: function(element, data) {
-          var $elm = $(element),
-            $wrapper = $elm.closest('.' + data.classes.wrapper);
+        // onInit: function(element, data) {
+        //   var $elm = $(element),
+        //     $wrapper = $elm.closest('.' + data.classes.wrapper);
 
-          $wrapper.find('.label').html($elm.attr('placeholder'));
-        },
-        onBeforeOpen: function(element, data) {
-          var $elm = $(element),
-            $wrapper = $elm.closest('.' + data.classes.wrapper);
+        //   $wrapper.find('.label').html($elm.attr('placeholder'));
+        // },
+        // onBeforeOpen: function(element, data) {
+        //   var $elm = $(element),
+        //     $wrapper = $elm.closest('.' + data.classes.wrapper);
 
-          $wrapper
-            .find('.label')
-            .data('value', $wrapper.find('.label').html())
-            .html($elm.attr('placeholder'));
-        },
-        onBeforeClose: function(element, data) {
-          var $elm = $(element),
-            $wrapper = $elm.closest('.' + data.classes.wrapper);
+        //   $wrapper
+        //     .find('.label')
+        //     .data('value', $wrapper.find('.label').html())
+        //     .html($elm.attr('placeholder'));
+        // },
+        // onBeforeClose: function(element, data) {
+        //   var $elm = $(element),
+        //     $wrapper = $elm.closest('.' + data.classes.wrapper);
 
-          $wrapper.find('.label').html($wrapper.find('.label').data('value'));
-        },
+        //   $wrapper.find('.label').html($wrapper.find('.label').data('value'));
+        // },
       });
     },
   };

@@ -1,0 +1,13 @@
+---
+title: 12. 404 Page
+---
+extends shared/_layout
+block content
+
+  // header modifier
+  div(js-header-class data-class="dark-background")
+
+  include ../components/notfound/_notfound
+
+block footer
+  include ../components/footer/_footer-dark-waves

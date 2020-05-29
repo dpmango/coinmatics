@@ -1,0 +1,138 @@
+.traders-table
+  border-collapse: collapse
+  width: 100%
+  thead
+    // head with th
+    td
+      font-weight: 600
+      font-size: 10px
+      line-height: (14 / 10)
+      color: $colorLight
+      text-align: left
+      padding: 32px 8px
+      &:first-child
+        padding-left: 16px
+      &:lasth-child
+        padding-right: 16px
+  tbody
+    tr
+      cursor: pointer
+      &:hover
+        .traders-table__main
+          .h6-title
+            color: $colorPrimary
+
+        // z-index: 2
+        // box-shadow: 0px 0px 20px rgba(207, 213, 228, 0.39);
+    td
+      background: #FAFBFD
+      padding: 16px 8px 16px
+      border-bottom: 2px solid white
+      &:first-child
+        padding-left: 16px
+        border-top-left-radius: 11px
+        border-bottom-left-radius: 11px
+      &:last-child
+        width: 156px
+        padding-right: 16px
+        border-top-right-radius: 11px
+        border-bottom-right-radius: 11px
+
+  &__main
+    display: flex
+    align-items: center
+    .h6-title
+      flex: 0 0 auto
+      transition: .25s $ease
+  &__avatar
+    position: relative
+    z-index: 1
+    overflow: hidden
+    flex: 0 0 48px
+    max-width: 48px
+    margin-right: 16px
+    border-radius: 12px
+  &__profit
+    display: flex
+    align-items: center
+    .h6-title
+      margin-right: 16px
+  &__chart
+    flex: 0 0 64px
+    size: 64px 32px
+  &__sortable-col
+    span
+      position: relative
+      padding-right: 16px
+      transition: color .25s $ease
+      .ico
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        user-select: none
+        font-size: 7px
+        color: $colorPrimary
+        opacity: 0
+        transform-origin: top center
+        transition: .25s $ease
+        &-mono-arrow-down
+          right: 0px
+
++r($lg)
+  .traders-table
+    width: 970px
+
+// sorting
+td, th
+  // front classes
+  &[role=columnheader]:not(.no-sort)
+    cursor: pointer
+    .ico-mono-arrow-down
+      transition: .25s $ease
+      will-change: transform
+
+  &[aria-sort=ascending], &[aria-sort=descending]
+    span
+      color: $colorPrimary
+
+  &[aria-sort=ascending]:not(.no-sort)
+    .ico-mono-arrow-down
+      opacity: 1
+
+  &[aria-sort=descending]:not(.no-sort)
+    .ico-mono-arrow-down
+      transform: rotate(180deg) translateY(-50%)
+      opacity: 1
+
+  &[role=columnheader]:not(.no-sort)
+    &:hover
+      span
+        color: $colorPrimaryHover
+      .ico-mono-arrow-down
+        opacity: .5
+
+  // // back classes
+  // &[js-link]
+  //   cursor: pointer
+  //   &:hover
+  //     .ico-mono-arrow-down
+  //       opacity: .5
+  //   &.is-ascending
+  //     .ico-mono-arrow-down
+  //       opacity: 1
+
+  //   &.is-descending
+  //     .ico-mono-arrow-up
+  //       opacity: 1
+
+// stacktable styles
+.stacktable
+  &.small-only
+    display: none
+
++r($md)
+  .stacktable
+    &.large-only
+      display: none
+    &.small-only
+      display: block

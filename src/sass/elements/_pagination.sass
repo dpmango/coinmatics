@@ -1,0 +1,42 @@
+// pagination
+.pagination
+  &__list
+    display: flex
+    align-items: center
+    margin: 0
+    padding: 0
+    li
+      display: inline-block
+      margin-right: 8px
+      &:last-child
+        margin-right: 0
+    a
+      position: relative
+      z-index: 1
+      display: flex
+      align-items: center
+      justify-content: center
+      min-size: 28px 30px
+      color: $colorLight
+      border-radius: 8px
+      font-size: 0
+      transition: background .25s $ease, color .25s $ease
+      .ico
+        font-size: 10px
+      &:hover
+        background: #FAFBFD
+        color: $fontColor
+    span
+      font-weight: bold
+      font-size: 18px
+      line-height: (22 / 18)
+      text-align: center
+  &__first
+    .ico
+      transform: rotate(180deg)
+  &__first, &__last
+    a
+      min-width: 12px
+      padding-top: 1px
+      &:hover
+        background: transparent

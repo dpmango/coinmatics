@@ -3,9 +3,18 @@
 //////////
 (function($, APP) {
   APP.Plugins.Chart = {
+    data: {
+      charts: [],
+    },
     init: function(fromPjax) {
+      this.resetData();
       this.extendControllers();
-      this.listenScroll();
+      if (!fromPjax) {
+        this.listenScroll();
+      }
+    },
+    resetData: function() {
+      this.data.charts = [];
     },
     renderAllCharts: function() {
       // var _this = this;
@@ -39,6 +48,7 @@
     },
     // manual initialization
     renderChart: function($chart) {
+      var _this = this;
       if ($chart.length === 0) return;
       if ($chart.is('.is-rendered')) return;
 
@@ -49,33 +59,15 @@
         labels: $chart.data('labels'),
         values: $chart.data('values'),
         groupLabels: $chart.data('group-labels'),
+        type: $chart.data('type'),
       };
+
+      var isSimpleChart = elData.type === 'simple';
+      var isMonoColorChart = elData.type === 'monocolor';
 
       // seed (can be removed on prod)
       if (elData.values === 'seed') {
-        elData.values = [
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-          seedRandom(),
-        ];
+        elData.values = _this.seedValues();
       }
 
       // groupping labels
@@ -98,7 +90,7 @@
             backgroundColor: 'transparent',
             borderColor: '#18DCA6',
             fill: true,
-            borderWidth: 4,
+            borderWidth: isSimpleChart ? 2 : 4,
             data: elData.values,
             // doesnt work
             // borderColor: function(context) {
@@ -132,7 +124,7 @@
         scales: {
           xAxes: [
             {
-              display: true,
+              display: isSimpleChart ? false : true,
               ticks: {
                 fontColor: '#75809F',
                 fontFamily: "'Montserrat Alternates', sans-serif",
@@ -148,8 +140,8 @@
                 // },
               },
               gridLines: {
-                color: 'rgba(117, 128, 159, 0.1)',
-                zeroLineColor: 'rgba(117, 128, 159, 0.1)',
+                color: isMonoColorChart ? '#FAFBFD' : 'rgba(117, 128, 159, 0.1)',
+                zeroLineColor: isMonoColorChart ? 'rgba(0,0,0,0)' : 'rgba(117, 128, 159, 0.1)',
                 drawBorder: false,
               },
             },
@@ -163,10 +155,15 @@
       };
 
       // initialize
-      new Chart(chartCtx, {
-        type: 'RedNegativeLine',
+      var chartinstance = new Chart(chartCtx, {
+        type: isSimpleChart || isMonoColorChart ? 'line' : 'RedNegativeLine',
         data: data,
         options: options,
+      });
+
+      this.data.charts.push({
+        element: $chart,
+        instance: chartinstance,
       });
 
       $chart.addClass('is-rendered');
@@ -215,6 +212,31 @@
           return Chart.controllers.line.prototype.update.apply(this, arguments);
         },
       });
+    },
+    seedValues: function() {
+      return [
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+        seedRandom(),
+      ];
     },
   };
 })(jQuery, window.APP);
