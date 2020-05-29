@@ -24,25 +24,38 @@ mixin accardeonElement(element)
       .accardeon__element.is-active
         .accardeon__toggler
           .accardeon__title.c-primary
-            .h4-title Для подписчиков
+            .h4-title For Subscribers
             +svgMono('arrow-down')
         .accardeon__content.accardeon__content--main(style="display: block")
           // tab content
           .js-tab-content(data-tab="tab-1" style="display: block")
-            // section (1)
+            // section (0)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Безопасность
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Рискую ли я потерять свои средства, подключившись к вашей платформе?",
-                      text: ["Нет, ваши деньги остаются на вашем биржевом кошельке, ни трейдеры, ни наша платформа не имеют доступа к вашим средствам, вывод средств технически невозможен. После подключения auto-trading вы предоставляете доступ по API-ключам второго уровня — только повтор сделок, без возможности вывода."]
+                      title: "What does your platform do?",
+                      text: ["Coinmatics provides transparency in traders’ results and a platform for the automation of following copy trading strategies. You can connect your Binance account to any trader who has passed our audit and start turning a profit."]
+                    }
+                  ]
+                each element in list
+                  +accardeonElement(element)
+            // section (1)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h5-title Security
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                -
+                  var list = [
+                    {
+                      title: "Is is safe to connect my account to your platform?",
+                      text: ["When you connect your account to your exchange wallet, neither traders nor our platform have access to your funds. Withdrawals are technically impossible. After connecting to the platform, you provide access via second-level API keys – only repeat trades take place, with zero possibility of unauthorised withdrawal."]
                     },
                     {
-                      title: "Насколько я рискую, подписываясь на трейдера? Могу ли я всё потерять?",
-                      text: ["Мы позаботились о том, чтобы в копитрейдинге на нашей платформе оставались только чистые трейдерские риски. В отличие от доверительного управления, в нашей системе трейдер настолько же рискует деньгами подписчика, насколько и своими."]
+                      title: "How much risk do I take on by subscribing to a trader?",
+                      text: ["Naturally, any investment is a risk, especially so in such a volatile asset class, but the higher the risk, the greater the potential reward. We try to minimise your risk by carefully selecting the traders you can subscribe to on our platform. We profile users by risk level, allowing you to choose the one that suits you best. Unlike asset management, in our system a trader risks his own money when making transactions – we call it the principle of “skin in the game”."]
                     },
                   ]
                 each element in list
@@ -50,39 +63,39 @@ mixin accardeonElement(element)
 
             // section (2)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Подключение, выбор трейдера
+              .content__section-title.h5-title Linking Account & Trader Selection
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Какие биржи вы поддерживаете?",
-                      text: ["Для копитрейдинга доступна возможность подключения аккаунтов Binance. В ближайших планах добавление Bittrex, BitMEX, Poloniex и других криптовалютных бирж."]
+                      title: "Which exchanges do you support?",
+                      text: ["For copy trading, you can connect your Binance account. We plan to add Bittrex, BitMEX, Poloniex, and other exchanges to our platform in the near future."]
                     },
                     {
-                      title: "Кто такие трейдеры?",
-                      text: ["Трейдеры на платформе Coinmatics — это трейдеры с положительной динамикой доходности, которые предоставляют возможность другим людям подписываться на повтор их сигналов и зарабатывать на том же уровне."]
+                      title: "Who are the traders and what do they do?",
+                      text: ["Only traders with a verified record of successful trading are listed on Coinmatics. Our platform provides you with the opportunity to subscribe to these experienced traders. When your subscription has been set-up, the next trade made by the trader you subscribed to will be automatically duplicated on your account."]
                     },
                     {
-                      title: "Какие варианты копитрейдинга у вас есть?",
+                      title: "What copy trading services do you offer?",
                       text: [
-                        "Мы предоставляем два вида подписки: автотрейдинг и сигналы о сделках.",
-                        "При подписке на автотрейдинг происходит привязка вашего биржевого кошелька к кошельку трейдера, и далее все сделки трейдера автоматически дублируются на вашем кошельке.",
-                        "При подписке на сигналы вы получаете уведомления . Они содержат следующую информацию: имя трейдера, валютная пара, тип сделки (купля/продажа), цена, обмен. Далее, вы можете использовать эту информацию для самостоятельного трейдинга."]
+                        "We offer two types of subscription: autotrading and trading signals.",
+                        "When you subscribe to autotrading, your exchange wallet is linked to your chosen trader’s exchange wallet. Then, as soon as the trader makes their next trade, our service automatically executes a duplicate trade on your exchange wallet.",
+                        "With a trading signals subscription, you receive instant notifications containing the following information: trader name, currency pair, transaction type (buy / sell), price, exchange. This information can then be used for independent trading."]
                     },
                     {
-                      title: "Как формируется рейтинг трейдерской эффективности",
-                      text: ["Статистика формируется из соотношения количества совершённых операций за единицу времени, и суммой полученной прибыли. Трейдеры с наибольшим количеством успешных сделок находятся на более высоких позициях рейтинга и имеют больше шансов для привлечения подписчиков и увеличения дохода."]
+                      title: "How is the trader performance rating calculated?",
+                      text: ["Trader ratings are calculated by using the ratio of the number of trades made in a given time to the amount of profit earned. Traders with the highest number successful trades are ranked higher in the rating, thus more likely to attract new subscribers and increase their revenue."]
                     },
                     {
-                      title: "Как мне выбрать трейдера для копирования?",
+                      title: "How do I choose a suitable trader to copy?",
                       text: [
-                        "Выбирая трейдера для копирования, посмотрите на продолжительность его истории. Чем дольше торгует трейдер, тем проще оценить его стратегию и общую эффективность.",
-                        "Далее:",
-                        "-	Проанализируйте общую доходность публичного трейдера и прибыль за прошедший месяц. Трейдер должен быть в плюсе большую часть времени.",
-                        "-	Оцените на графике максимальную просадку и прибыль на счетах, выраженную в % от депозита. Торгующие агрессивно имеют большие просадки, чем торгующие более осторожно. Но, как правило, риски увеличивают и уровень дохода.",
-                        "-	Изучите поведение кривой депозита в моменты пика волатильности основной валюты трейдера (см.вкладку “Распределение активов”).",
-                        "-	При выборе трейдера стоит ориентироваться как на заявленную в описании стратегию, так и на реальные показатели доходности."]
+                        "When choosing a trader to copy, just take a look at their trading history. The longer a trader has been trading, the easier it is to evaluate their strategy and overall performance.",
+                        "A few more tips:",
+                        "-	Analyse a trader’s available public data indicating total revenue and profit for the past month. The trader should be operating in the black most of the time.",
+                        "-	On the chart, estimate the maximum drawdown and profit on the account, expressed as a percentage of the deposit. Aggressive traders have greater drawdowns than more conservative traders. But, as usual, the greater the risk, the bigger the reward.",
+                        "-	Examine the behaviour of the deposit curve at moments of peak volatility in the trader’s main currency (found under the “Asset allocation” tab).",
+                        "-	When choosing a trader to copy, carefully study their copy trading strategy and evaluate their verified profitability indicators."]
                     },
                   ]
                 each element in list
@@ -90,42 +103,42 @@ mixin accardeonElement(element)
 
             // section (3)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Вопросы по оплате
+              .content__section-title.h5-title Payment Issues
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Какую сумму нужно иметь на биржевом кошельке для начала копитрейдинга?",
-                      text: ["Мы предлагаем иметь на биржевом кошельке около 300-500 долларов в BTC для корректного повтора сделок."]
+                      title: "How much money do I need in an exchange wallet to start copy trading?",
+                      text: ["We suggest maintaining a balance of $300-500 USD worth of BTC in your exchange wallet to keep your copy trading operations running smoothly."]
                     },
                     {
-                      title: "Как рассчитывается комиссия?",
-                      text: ["Пользовательской комиссией является процент от полученной прибыли за расчётный период. В случае, если общий показатель копирования за расчётный период оказывается убыточным, комиссия не взимается."]
+                      title: "How is commission calculated?",
+                      text: ["Commission is calculated as a percentage of the total profits for the billing period. If no profit was earned from trades made within the billing period, then no commission is charged."]
                     },
                     {
-                      title: "Как происходит оплата за подписки?",
-                      text: ["Для оплаты подписок мы сделали внутренний кошелёк. При подписке на получение уведомлений с информацией о транзакциях подписчик соглашается на оплату абонентской платы. Доступные периоды подписок: 1 месяц, 3 месяца, 6 месяцев. Абонентский период выбирается подписчиком. Оплата за подписку происходит сразу. Цена за подписку устанавливается трейдером."]
+                      title: "How do I pay for subscriptions?",
+                      text: ["We created an internal wallet especially for this purpose. A monthly subscription fee is charged for the trading signal notification service. We offer the following subscription packages: 1 month, 3 months, 6 months. The length of the subscription is decided on by the subscriber. Payments for subscriptions are carried out instantly. The prices of subscriptions are determined by the individual traders."]
                     },
                     {
-                      title: "С какой регулярностью происходит оплата?",
-                      text: ["При подписке на ручное следование снятие денежных средств происходит в соответствии с выбранным абонентским периодом, при подписке на автотрейдинг — раз в 7, 30 или 90 дней, на усмотрение трейдера."]
+                      title: "How often do I need to make payments?",
+                      text: ["When subscribing to the trading signal service, funds are debited in accordance with your chosen subscription period. Payments for auto trading subscriptions are taken once every 7, 30 or 90 days, at the discretion of the trader."]
                     },
                     {
-                      title: "Может ли измениться цена уже существующей подписки?",
-                      text: ["В случае, если трейдер меняет цену за подписку, для уже подписавшихся цена останется прежней. Вы всегда платите столько, сколько было установлено на момент вашего подключения."]
+                      title: "Can the price of an existing subscription change?",
+                      text: ["If a trader changes the price of a subscription, the price paid by current subscribers remains the same. The amount paid for your initial subscription is the price you will always pay."]
                     },
                     {
-                      title: "Есть ли какая-то дополнительная (абонентская) плата за копитрейдинг?",
-                      text: ["Нет, на нашей платформе существует только периодическая оплата за положительные результаты копирования."]
+                      title: "Is there any additional (subscription) fee for copy trading?",
+                      text: ["No, not on our platform. We only charge a recurring payment for commission due from profitable copy trades."]
                     },
                     {
-                      title: "Как я могу отменить подписку? Что для этого нужно сделать?",
-                      text: ["Вы можете отменить подписку в любой момент. Для этого пройдите в раздел “Провайдеры сигналов”, найдите трейдера, на которого вы подписались, и переведите флажок подписки в неактивное состояние."]
+                      title: "How can I cancel my subscription? What do I need to do?",
+                      text: ["You can unsubscribe at any time. To do this, go to the “Signal Providers” section, find the trader you are currently subscribed to, and uncheck the box to deactivate your subscription."]
                     },
                     {
-                      title: "Может ли трейдер закрыть доступ к повторению его сделок?",
-                      text: ["Да, трейдер может закрыть доступ к API-ключам на своём биржевом аккаунте. В этом случае повтор сделок прекратится и вы получите уведомление на свою почту."]
+                      title: "Can a trader block access to the duplication of his trades?",
+                      text: ["Yes, a trader can block access to API keys via his exchange account. In this case, the duplication of their trades will stop. A notification of such an event will be sent to the email address you used to register for your Coinmatics account."]
                     },
                   ]
                 each element in list
@@ -133,27 +146,26 @@ mixin accardeonElement(element)
 
             // section (4)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Технические и прочие вопросы
+              .content__section-title.h5-title Technical Questions
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Что такое автовыравнивание? Зачем оно нужно и как работает?",
-                      text: ["Автовыравнивание происходит сразу после подключения на повтор сделок. Автовыравнивание — это синхронизация распределения активов на вашем биржевом кошельке и кошельке трейдера. Это процедура позволяет максимизировать процент успешно скопированных сделок и таким образом увеличить точность повтора стратегии трейдера. При необходимости синхронизация может быть повторена. "]
+                      title: "What is auto levelling? Why is it needed and how does it work? ",
+                      text: ["Auto levelling is activated immediately after a connection to the repeat transactions is made. Auto levelling is responsible for the synchronisation of asset allocation on your exchange wallet and the trader’s wallet. This process allows you to maximise the percentage of successfully copied trades, thus increasing the accuracy of the trader’s repetition strategy. If necessary, the synchronisation process can be repeated."]
                     },
                     {
-                      title: "С какой скоростью совершается повтор сделок?",
-                      text: ["Повтор сделок совершается без задержек, с технически минимальной скоростью (не более 0,1 секунды)."]
+                      title: "How quickly are trades copied?",
+                      text: ["Execution of trades is carried out without delay, as fast as technically possible (no more than 0.1 seconds)."]
                     },
                     {
-                      title: "Я научился торговать и сам хочу стать трейдером. Что для этого нужно сделать?",
-                      text: ["Если вы начали торговать и у вас доходная торговая стратегия, вы также можете добавиться в наш рейтинг, пройдя процедуру регистрации."]
+                      title: "I learned how to trade and would like to become a trader myself. What do I need to do?",
+                      text: ["If you are trading and have evidence of a profitable strategy, you can apply to be added into our rating by completing the registration procedure."]
                     },
                     {
-                      title: "Могу ли я сначала подписаться на трейдера, а потом сам зарегистрироваться как трейдер и раздавать сигналы этого трейдера?",
-                      text: [
-                        "Нет, такие действия на нашей платформе запрещены. Дублирующие аккаунты определяются системой и блокируются."]
+                      title: "If I subscribe to a trader, then register as a trader myself, am I allowed to share the trading signals I receive from the trader I initially subscribed to?",
+                      text: ["No, this type of behaviour is strictly prohibited on our platform. Our system is capable of detecting the use of duplicate accounts and acts to block them immediately."]
                     },
                   ]
                 each element in list
@@ -161,28 +173,42 @@ mixin accardeonElement(element)
 
             // section (5)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Остались вопросы? Напишите нам, и мы ответим в ближайшее время.
+              .content__section-title.h5-title Haven't found what you're looking for? Contact us and we will respond as soon as possible.
 
       // accardeon element
       .accardeon__element
         .accardeon__toggler
           .accardeon__title.c-primary
-            .h4-title Для трейдеров
+            .h4-title For Traders
             +svgMono('arrow-down')
         .accardeon__content.accardeon__content--main
 
           // tab content
           .js-tab-content(data-tab="tab-2")
-            // section (1)
+            // section (0)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Безопасность
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Могу ли я каким-то образом потерять свои деньги, подключившись к вашей платформе?",
-                      text: ["Нет, ваши деньги остаются на вашем биржевом кошельке, наша платформа не имеет доступа к вашим средствам. Добавление трейдера в систему происходит по API-ключам второго уровня — только повтор сделок, без возможности вывода."]
+                      title: "What does your platform do?",
+                      text: ["We connect traders and investors and facilitate the automatic execution of copy trading strategies. If you are a trader, you can use our secure platform for the trust management of your own, or our investors' funds. Our convenient interface boasts automated copy trading capabilities, and also provides you with detailed performance and in-platform billing – everything you need is right there!"]
+                    }
+                  ]
+                each element in list
+                  +accardeonElement(element)
+
+            // section (1)
+            .content__section(data-aos="fade-up")
+              .content__section-title.h5-title Security
+              // accardeon
+              .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
+                -
+                  var list = [
+                    {
+                      title: "Is is safe to connect my account to your platform?",
+                      text: ["When you connect your account to your exchange wallet, our platform will never be able to access to your funds. Since you provide access via second-level API keys, unauthorised withdrawals are technically impossible to be made by anyone but you. We will only ever have the right to view the transactions you make."]
                     }
                   ]
                 each element in list
@@ -190,38 +216,41 @@ mixin accardeonElement(element)
 
             // section (2)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Подключение и добавление в рейтинг
+              .content__section-title.h5-title Linking Account & Joining Rating
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Какие биржи вы поддерживаете?",
-                      text: ["Для копитрейдинга доступна возможность подключения аккаунтов с биржи Binance. В ближайших планах добавление Bittrex, BitMEX, Poloniex и других криптовалютных бирж."]
+                      title: "Which exchanges do you support?",
+                      text: ["For copy trading, you can connect your Binance account. We plan to add Bittrex, BitMEX, Poloniex, and other exchanges to our platform in the near future."]
                     },
                     {
-                      title: "Я опытный трейдер. Моя история торгов на бирже будет учитываться?",
-                      text: ["Да, после подключения к нашей системы мы подгрузим вашу текущую трейдерскую историю, вам не придётся создавать свой рейтинг с нуля."]
+                      title: "I am an experienced trader. Will my previous trading history be taken into account when calculating my ranking?",
+                      text: ["Yes, after linking your account to our platform, we will first need to verify and your current trading history. Once your trading history has been verified by our team, it will be displayed in your account – don’t worry, you won’t have to build your rating up from scratch!"]
                     },
                     {
-                      title: "Как мне узнать, насколько хорошо я торгую? Можно ли узнать это до публикации в рейтинге?",
-                      text: ["После добавления биржевого аккаунта будет сформирована статистика вашей трейдерской эффективности. После этого вы сами решаете, добавляться ли вам в открытый рейтинг, или оставить ваше портфолио доступным только для личного пользования."]
+                      title: "How can I evaluate my level of trading ability? Is it possible to check my rating before I am added to the ranking?",
+                      text: ["Your trading performance statistics are generated as part of the process which connects your exchange account to our platform. Firstly, we provide you with your statistics and then you have the choice: to join the public ranking, or keep your portfolio out of the rating and for personal use only."]
                     },
                     {
-                      title: "Какие варианты подписок у вас есть?",
+                      title: "What subscription options do you offer?",
                       text: [
-                        "Мы предоставляем два вида подписки: телеграм-сигналы и автотрейдинг.",
-                        "При подписке на сигналы подписчик получает уведомления о сделках трейдера. Они содержат следующую информацию: имя трейдера, валютная пара, тип сделки (купля/продажа), цена, результат. Далее, подписчик может использовать эту информацию для самостоятельного трейдинга.",
-                        "При подписке на автотрейдинг происходит привязка биржевого кошелька подписчика к кошельку трейдера, далее все сделки дублируются."
+                        "We provide two types of subscription: trading signals notifications (via Telegram) and autotrading.",
+                        "With a trading signals subscription, you receive instant notifications containing the following information: trader name, currency pair, transaction type (buy / sell), price, exchange. This information can then be used for independent trading by your subscribers.",
+                        "With an autotrading subscription, the subscribers exchange wallet is linked to the trader’s wallet. Then, as soon as the trader makes their next trade, our service automatically executes a duplicate trade on the subscriber’s exchange wallet."
                       ]
                     },
                     {
-                      title: "Я решил добавиться в ваш рейтинг. Что дальше?",
-                      text: ["После оформления заявки и прохождения модерации, ваша трейдерская история попадает в общий рейтинг трейдеров и занимает в нём место, соответствующее вашей текущей эффективности относительно других трейдеров рейтинга. Далее, вы продолжаете торговать, приобретая подписчиков, число которых зависит от вашего места в рейтинге."]
+                      title: "I decided I want to take part in the rating. What's next?",
+                      text: [
+                        "After you have registered with our platform and passed through our verification process, you can choose to be added to the public trader rankings. Continue to trade and we will take care of the rest.",
+                        "If you have already built up a loyal following outside of our platform, please write to us and let us know in advance. You will have to go through a separate process in order to allow us to connect your current followers to your Coinmatics trader account from the offset. We will send you instructions on how to proceed further."
+                      ]
                     },
                     {
-                      title: "Как формируется рейтинг трейдерской эффективности?",
-                      text: ["Статистика основана на корреляции между количеством завершенных операций и суммой прибыли, полученной за единицу времени, результаты которой отображены на графиках в разделе “Провайдеры сигналов”. Трейдеры с наибольшим количеством успешных сделок находятся на более высоких позициях и имеют больше шансов для привлечения подписчиков."]
+                      title: "How is the trader performance rating calculated?",
+                      text: ["Trader ratings are calculated by using the ratio of the number of trades made in a given time to the amount of profit earned. Traders with the highest number successful trades are ranked higher in the rating, thus more likely to attract new subscribers and increase their revenue."]
                     }
                   ]
                 each element in list
@@ -229,29 +258,32 @@ mixin accardeonElement(element)
 
             // section (3)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Цена и оплата
+              .content__section-title.h5-title Price and payment
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Как рассчитывается комиссия?",
+                      title: "How is commission calculated?",
                       text: [
-                        "Рассчитывается результат скопированных сделок за торговый период. Процент от сформированного дохода платится трейдеру. В случае отрицательного результата по периоду комиссия не взимается.",
-                        "Размер платы за ручное следование и комиссия за автотрейдинг устанавливается трейдером."
+                        "Commission is calculated as a percentage of the total profits accrued from the copied trades completed within the billing period. A percentage of the generated income is then paid to the trader. If no profit was earned, then no commission is charged.",
+                        "The fee for both types of subscription are determined by the individual traders."
                       ]
                     },
                     {
-                      title: "Как происходит оплата за подписки?",
-                      text: ["Для оплаты подписок мы сделали внутренний кошелёк. Поступление средств за ручное следование происходит раз в месяц, зачисление комиссионных за автотрейдинг — раз в 7, 30 или 90 дней, на усмотрение трейдера. Далее, трейдер может вывести заработанные деньги на свой счёт."]
+                      title: "How does the subscription payment process work?",
+                      text: ["We created an internal wallet especially for this purpose. You will be paid out in connection with your trading signal subscribers once per month. The commission earned from your autotrading subscribers is able to be credited to your account once every 7, 30 or 90 days – this is something for each trader to decide. Furthermore, traders can withdraw money they have earned from their platform wallet."]
                     },
                     {
-                      title: "Могу ли я менять цену подписки?",
-                      text: ["Да, вы можете в любой момент изменить как цену за ручное следование, так и комиссионный процент по автотрейдингу. Важно: цена для текущих подписчиков остаётся прежней."]
+                      title: "Can I change the price of a subscription?",
+                      text: ["Yes, you can change the price for either type of subscription you offer, at any time. Please note: the fee paid by your current subscribers will remain the same."]
                     },
                     {
-                      title: "Насколько выгодно быть тредйером на вашей платформе?",
-                      text: ["Если вы торгуете в плюс и ваша стратегия приносит вам стабильный доход, после подключения вы будете увеличивать свою доходность с каждым новым подписчиком. Копитрейдинг осуществляется на пропорциональном принципе, что потенциально позволяет иметь доход с подписок, многократно превышающий доход непосредственно от трейдинга. И главное, всё это происходит без каких-либо дополнительных действий с вашей стороны, ваш доход возрастает без роста усилий."]
+                      title: "How profitable is being a trader on your platform?",
+                      text: [
+                        "If you currently turn a profit from your trading activities and your strategy is providing you with a stable income, then there is no doubt that you will increase your profitability with each new subscriber – immediately after you link your account.",
+                        "Since copy trading is carried out on a proportional basis, this potentially allows you to derive a much larger chunk of your income from new subscriptions than the income directly from trading. Most importantly, all this happens without any additional action on your part, you will start to make more money without any increase in effort."
+                      ]
                     },
                   ]
                 each element in list
@@ -259,22 +291,22 @@ mixin accardeonElement(element)
 
             // section (4)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Технические и прочие вопросы
+              .content__section-title.h5-title Technical and other issues
               // accardeon
               .content__accardeon.accardeon.accardeon--bg-white.js-accardeon
                 -
                   var list = [
                     {
-                      title: "Что такое автовыравнивание? Зачем оно нужно и как работает?",
-                      text: ["Автовыравнивание происходит сразу после подключения на повтор сделок. Автовыравнивание — это синхронизация распределения активов на вашем биржевом кошельке и кошельке трейдера. Эта процедура позволяет максимизировать процент успешно скопированных сделок и таким образом увеличить точность повтора стратегии трейдера. При необходимости синхронизация может быть повторена."]
+                      title: "What is auto levelling? Why is it needed and how does it work?",
+                      text: ["Auto levelling occurs immediately after connecting to repeat transactions. Auto levelling entails the synchronisation of asset allocation on your exchange wallet and the trader’s wallet. This process allows you to maximise the percentage of successfully copied trades, thus increasing the accuracy of the trader’s repetition strategy. If necessary, the synchronisation process can be repeated."]
                     },
                     {
-                      title: "С какой скоростью совершается повтор сделок?",
-                      text: ["Скорость повтора сделок технически минимальная и составляет не более 0,1 секунды."]
+                      title: "How quickly are trades copied?",
+                      text: ["Execution of trades is carried out without delay, as fast as technically possible (no more than 0.1 seconds)."]
                     },
                     {
-                      title: "Может ли мой аккаунт быть удалён с платформы?",
-                      text: ["Ваш аккаунт может быть заблокирован в случае нарушения Правил пользования нашей платформой."]
+                      title: "Can my account be deleted from the platform?",
+                      text: ["Your account could be permanently blocked if you have committed a violation of the Coinmatics Terms of Use, as detailed upon initial registration with our platform."]
                     },
                   ]
                 each element in list
@@ -282,4 +314,4 @@ mixin accardeonElement(element)
 
             // section (5)
             .content__section(data-aos="fade-up")
-              .content__section-title.h5-title Остались вопросы? Напишите нам, и мы ответим в ближайшее время.
+              .content__section-title.h5-title Haven't found what you're looking for? Contact us and we will respond as soon as possible.

@@ -18,7 +18,9 @@
                 //- h4.h4-title.c-light About
                 h2.h2-title.h3-title-md=t('traders-w-about.title')
                 p.p-small.p-main-xl.p-small-md.c-gray=t('traders-w-about.description')
-                a(href="#modalHowItWorks").btn.btn-ghost.js-popup=t('traders-w-about.watchVideo')
+                a(href="#modalHowItWorks").btn.btn-ghost.btn-watch.js-popup
+                  +svgMono('play')
+                  span=t('traders-w-about.watchVideo')
           .traders-about__bg-coins
             include ../../icons/svg-inline/illustration_traders-about-coins.svg
 

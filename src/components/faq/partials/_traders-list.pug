@@ -1,0 +1,19 @@
+// accardeon
+.faq__accardeon.accardeon.accardeon--bg-white.js-accardeon(data-aos="fade-up")
+  -
+    var list = [
+      {title: t('faq.forTradersList.firstTitle') , description: t('faq.forTradersList.firstDescription')},
+      {title: t('faq.forTradersList.secondTitle'), description: t('faq.forTradersList.secondDescription')},
+      {title: t('faq.forTradersList.thirdTitle'), description: t('faq.forTradersList.thirdDescription')},
+      {title: t('faq.forTradersList.fourthTitle'), description: t('faq.forTradersList.fourthDescription')},
+      {title: t('faq.forTradersList.fifthTitle'), description: t('faq.forTradersList.fifthDescription')},
+    ]
+  each element in list
+    // accardeon__element
+    .accardeon__element
+      .accardeon__toggler
+        .accardeon__title
+          .p-main= element.title
+          +svgMono('arrow-down')
+      .accardeon__content.accardeon__content--no-img
+        p.p-main.c-gray= element.description
