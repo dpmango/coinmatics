@@ -15,12 +15,13 @@
           .traders-about__content(data-aos="fade-up")
             .traders-about__content-wrapper
               .section-head.section-head--left
-                //- h4.h4-title.c-light About
+                h4.h4-title.c-light=t('traders-w-about.subtitle')
                 h2.h2-title.h3-title-md=t('traders-w-about.title')
-                p.p-small.p-main-xl.p-small-md.c-gray=t('traders-w-about.description')
+                p.p-small.p-main-xl.p-small-md.c-light=t('traders-w-about.description')
                 a(href="#modalHowItWorks").btn.btn-ghost.btn-watch.js-popup
                   +svgMono('play')
                   span=t('traders-w-about.watchVideo')
+
           .traders-about__bg-coins
             include ../../icons/svg-inline/illustration_traders-about-coins.svg
 

@@ -7,9 +7,33 @@
   .gallery__slider(data-aos="fade-up")
     .swiper-container.swiper-nav-bullets.swiper-nav-bullets--large.js-swiper-gallery
       .swiper-wrapper
-        each slide in [1,2,3,4,5]
+        -
+          var sliders = [
+            {
+              src: 'img/gallery/1.jpg',
+              alt: 'First Photo'
+            },
+            {
+              src: 'img/gallery/2.jpg',
+              alt: 'Second Photo'
+            },
+            {
+              src: 'img/gallery/3.jpg',
+              alt: 'Third Photo'
+            },
+            {
+              src: 'img/gallery/4.jpg',
+              alt: 'Fourth Photo'
+            },
+            {
+              src: 'img/gallery/5.jpg',
+              alt: 'Fifth Photo'
+            }
+          ]
+
+        each slide in sliders
           .swiper-slide
             .gallery__image
-              img(src='img/galleryImage.jpg' srcset='img/galleryImage@2x.jpg 2x')
+              img(src=slide.src srcset=`${slide.src} 2x` alt=slide.alt)
 
       .swiper-pagination
