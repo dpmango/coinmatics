@@ -98,7 +98,7 @@ var easingSwing = [0.02, 0.01, 0.47, 1]; // default jQuery easing
       APP.Components.Header.init(fromPjax);
       APP.Components.Cookie.init(fromPjax);
       APP.Components.Roadmap.init(fromPjax);
-      APP.Components.Trader.init(fromPjax);
+      // APP.Components.Trader.init(fromPjax);
     };
 
     return app;
