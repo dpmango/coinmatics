@@ -1,13 +1,6 @@
--
-  var labels = [
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17
-  ]
+- var trader = data || {}
+- var labels = trader.profitHistoryData.labels || []
+- var values = trader.profitHistoryData.values || []
 
 // Trader content
 .trader-content
@@ -16,29 +9,29 @@
       // section
       .trader-content__section
         .trader-content__section-title(data-aos="fade-up")
-          .h3-title.h4-title-md.c-gray Trader Profit Graph
+          .h3-title.h4-title-md.c-gray=t('trader-content.title')
 
         .trader-content__chart
           .trader-content__chart-head(data-aos="fade-up")
             .trader-content__chart-filter
-              .h6-title Period
+              .h6-title=t('trader-content.period')
               select(js-select js-trader-period-select)
-                option(value="1") Weekly
-                option(value="2") Monthly
-                option(value="3") Yearly
+                option(value="1")=t('trader-content.weekly')
+                option(value="2")=t('trader-content.monthly')
+                option(value="3")=t('trader-content.yearly')
             .trader-content__chart-total
-              .h6-title.c-primary +5.6%
+              .h6-title.c-primary #{trader.profiHistoryChanges}
           .trader-content__chart-canvas
             canvas.js-chart-scroll.js-chart.js-trader-period-chart(
-              data-group-labels="3"
-              data-values="seed"
+              data-group-labels="1"
+              data-values=values
               data-labels=labels
             )
 
       // section
       .trader-content__section
         .trader-content__section-title(data-aos="fade-up")
-          .h3-title.h4-title-md.c-gray Asset Allocation
+          .h3-title.h4-title-md.c-gray=t('trader-content.assetAllocation')
           // asset chart
           .asset-chart(data-aos="fade-up")
             mixin line(name, width)
@@ -50,9 +43,8 @@
                   .asset-chart__fill(style="width: "+width+";")
                 .asset-chart__right
                   .h5-title= width
-            +line("ETH", "46.53%")
-            +line("LTC", "23.05%")
-            +line("BNB", "15.09%")
-            +line("XRP", "5.32%")
-            +line("LINK", "3.58%")
-            +line("BTC", "1.69%")
+            -
+              var assets = trader.assets || []
+            each asset, idx in assets
+              +line(`${asset.asset}`, `${asset.value}%`)
+

@@ -14,68 +14,68 @@
           .trader-head__content-left
             .trader-head__content-sticky(data-stop=".trader-content")
               .trader-head__avatar
-                .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/traderAvatar.jpg)")
-                  img(js-lazy data-src='img/traderAvatar.jpg' data-srcset='img/traderAvatar@2x.jpg 2x')
+                .scaler(data-ar="1:1" style=`background-image: url('/img/avatars/${trader.avatar}-blur.jpg')`)
+                  img(js-lazy data-src=`/img/avatars/${trader.avatar}.jpg` data-srcset=`/img/avatars/${trader.avatar}@2x.jpg`)
               .trader-head__main
                 .trader-head__main-wrapper(data-aos="fade")
                   .trader-head__main-title.h4-title #{trader.name}
                   .trader-head__main-row
-                    .trader-head__main-label Telegram Signals
-                    .trader-head__main-value.h3-title 10
+                    .trader-head__main-label=t('trader-head.telegramSignals')
+                    .trader-head__main-value.h3-title <span>$</span> #{trader.telegramSignals}
                   .trader-head__main-row
-                    .trader-head__main-label Auto-trading
-                    .trader-head__main-value.h3-title 10
+                    .trader-head__main-label=t('trader-head.autotrading')
+                    .trader-head__main-value.h3-title #{trader.autotradingComission}<span>%</span>
                   .trader-head__main-cta
-                    a(href="#").btn.btn-primary.btn--block Follow
+                    a(href="#").btn.btn-primary.btn--block=t('trader-head.follow')
           // content right
           .trader-head__content-right
-            .trader-head__name.h2-title.h3-title-md(data-aos="fade-up") GuRaM_GE
+            .trader-head__name.h2-title.h3-title-md(data-aos="fade-up") #{trader.name}
             .trader-head__content-grid
               .trader-head__content-col(data-aos="fade-up")
-                .trader-head__content-label.p-small Rating
+                .trader-head__content-label.p-small=t('trader-head.rating')
                 .trader-head__content-wrapper.mt-12.c-primary
                   +svgMono('star')
-                  .h2-title 7.91
+                  .h2-title #{trader.rating}
               .trader-head__content-col(data-aos="fade-up")
-                .trader-head__content-label.p-small Total Profit
+                .trader-head__content-label.p-small=t('trader-head.totalProfit')
                 .trader-head__content-wrapper.mt-12.c-primary
-                  .h2-title +40.1%
+                  .h2-title #{trader.totalProfit}
 
             .trader-head__content-grid
               .trader-head__content-col.trader-head__content-col--full-sm(data-aos="fade-up")
-                .trader-head__content-label.p-small Strategy
+                .trader-head__content-label.p-small=t('trader-head.strategy')
                 .trader-head__content-wrapper.mt-16
-                  .h5-title Orders open according to the results of technical analysis in compliance with risk management and money management rules. Goals are achieved from 1 to 30 days
+                  .h5-title #{trader.strategy}
 
             .trader-head__content-grid
               .trader-head__content-col(data-aos="fade-up")
-                .trader-head__content-label.p-small Avg. Profit
+                .trader-head__content-label.p-small=t('trader-head.avgProfit')
                 .trader-head__content-wrapper.mt-8
-                  .h4-title +44.42%
+                  .h4-title #{trader.avgProfit}
               .trader-head__content-col(data-aos="fade-up")
-                .trader-head__content-label.p-small Total Signals
+                .trader-head__content-label.p-small=t('trader-head.totalSignals')
                 .trader-head__content-wrapper.mt-8
-                  .h4-title 1141
+                  .h4-title #{trader.totalSignals}
               .trader-head__content-col(data-aos="fade-up")
-                .trader-head__content-label.p-small Signals/day
+                .trader-head__content-label.p-small=t('trader-head.signalsPerDay')
                 .trader-head__content-wrapper.mt-8
-                  .h4-title 6.03
+                  .h4-title #{trader.signalPerDay}
               .trader-head__content-col(data-aos="fade-up")
-                .trader-head__content-label.p-small Biling Period
+                .trader-head__content-label.p-small=t('trader-head.billingPeriod')
                 .trader-head__content-wrapper.mt-8
-                  .h4-title 7
+                  .h4-title #{trader.billingPeriod} #{t('trader-head.days')}
               .trader-head__content-col.trader-head__content-col--md-only(data-aos="fade-up")
-                .trader-head__content-label.p-small Telegram Signals
+                .trader-head__content-label.p-small=t('trader-head.telegramSignals')
                 .trader-head__content-wrapper.mt-8
-                  .h4-title $ 10
+                  .h4-title $ #{trader.telegramSignals}
               .trader-head__content-col.trader-head__content-col--md-only(data-aos="fade-up")
-                .trader-head__content-label.p-small Auto-trading
+                .trader-head__content-label.p-small=t('trader-head.autotrading')
                 .trader-head__content-wrapper.mt-8
-                  .h4-title 10%
+                  .h4-title #{trader.autotradingComission}%
 
   .trader-head__waves.bg-waves.bg-waves--bottom.bg-waves--dark.bg-waves--h-small
     include ../../icons/svg-inline/waves-up.svg
 
   // mobile cta
   .trader-head__mobile-cta
-    a(href="#").btn.btn-primary.btn--block Follow
+    a(href="#").btn.btn-primary.btn--block=t('trader-head.follow')
