@@ -1,7 +1,12 @@
----
-title: 10. Traders (grid view)
----
 extends shared/_layout
+block variables
+  - var title = t('titles.traders-grid')
+  - var metaDescription = t('meta.traders-grid.description')
+  - var metaKeywords = t('meta.common.keywords')
+  - var opGraphImage = 'https://coinmatics.com/img/opgraph/traders.png'
+  - var opGraphTitle = t('meta.traders-grid.opgraph.title')
+  - var opGraphDescription = t('meta.traders-grid.opgraph.description')
+
 block content
 
   // header modifier

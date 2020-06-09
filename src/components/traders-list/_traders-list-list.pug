@@ -1,59 +1,25 @@
+- var currentLocale = locale || '';
 -
-  var list = [
-    {
-      name: "GuRaM_GE",
-      image: 'traderAvatar', col2: '+40.1%', col3: '7.91', col4: '1136', col5: '+44.42%', col6: 'Risky', col7: '+6.6%'},
-    {
-      name: "Walter Bulls",
-      image: 'traderAvatar_2', col2: '+23.5%', col3: '6.29', col4: '812', col5: '+29.59%', col6: 'Risky', col7: '+5.6%'},
-    {
-      name: "Cryptor Bot",
-      image: 'traderAvatar_3', col2: '+23.4%', col3: '4.85', col4: '1136', col5: '+39.42%', col6: 'Non-Risky', col7: '+9.6%'},
-    {
-      name: "Gloria Warren",
-      image: 'traderAvatar_4', col2: '+23.1%', col3: '5.99', col4: '1100', col5: '+34.42%', col6: 'Risky', col7: '+12.6%'},
-    {
-      name: "VIP Trader Club",
-      image: 'traderAvatar_5', col2: '+22.8%', col3: '5.77', col4: '1136', col5: '+44.42%', col6: 'Risky', col7: '+5.0%'},
-    {
-      name: "crazyfrog418",
-      image: 'traderAvatar_6', col2: '+21.6%', col3: '7.12', col4: '500', col5: '+55.95%', col6: 'Super Risky', col7: '+7.3%'},
-    {
-      name: "blackmouse399",
-      image: 'traderAvatar_7', col2: '+16.6%', col3: '0.95', col4: '1136', col5: '+44.42%', col6: 'Risky', col7: '+3.1%'},
-    {
-      name: "Theresa Cooper",
-      image: 'traderAvatar_8', col2: '+12.2%', col3: '4.74', col4: '300', col5: '+23.20%', col6: 'Risky', col7: '+5.6%'},
-  ]
--
-  var labels = [
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17
-  ]
+  var list = data || []
 
 // TRADERS LIST (list)
 .traders-list
   .container.container--10
     // head
     .traders-list__head(data-aos="fade-up")
-      .traders-list__sorting
-        .traders-list__sorting-col
-          .traders-list__sorting-label.h6-title Show
-          .traders-list__sorting-select
-            select(js-select placeholder="Show")
-              option(value="25") 25
-              option(value="50" selected) 50
-              option(value="100") 100
-              option(value="200") 200
+      //- .traders-list__sorting
+      //-   .traders-list__sorting-col
+      //-     .traders-list__sorting-label.h6-title Show
+      //-     .traders-list__sorting-select
+      //-       select(js-select placeholder="Show")
+      //-         option(value="25") 25
+      //-         option(value="50" selected) 50
+      //-         option(value="100") 100
+      //-         option(value="200") 200
 
 
       .traders-list__view
-        a(href="traders-grid.html")
+        a(href=`/${currentLocale}/traders-grid`)
           +svgMono('view-grid')
         a(href="#").is-active
           +svgMono('view-list')
@@ -66,31 +32,31 @@
             tr
               td
                 .traders-table__sortable-col
-                  span Name
+                  span=t('traders-list.name')
                     +svgMono("arrow-down")
               td(data-sort-method='number' data-sort-default)
                 .traders-table__sortable-col
-                  span Total Profit
+                  span=t('traders-list.totalProfit')
                     +svgMono("arrow-down")
               td(data-sort-method='number')
                 .traders-table__sortable-col
-                  span Rating
+                  span=t('traders-list.rating')
                     +svgMono("arrow-down")
               td(data-sort-method='number')
                 .traders-table__sortable-col
-                  span Avg. Signals
+                  span=t('traders-list.avgSignals')
                     +svgMono("arrow-down")
               td(data-sort-method='number')
                 .traders-table__sortable-col
-                  span Avg. Profit
+                  span=t('traders-list.trackRecord')
                     +svgMono("arrow-down")
               td
                 .traders-table__sortable-col
-                  span Risk Level
+                  span=t('traders-list.riskLevel')
                     +svgMono("arrow-down")
               td(data-sort-method='number')
                 .traders-table__sortable-col
-                  span Weekly Profit
+                  span=t('traders-list.lastWeekProfitGraph')
                     +svgMono("arrow-down")
           tbody
             each slide, idx in list
@@ -98,29 +64,38 @@
                 td
                   .traders-table__main
                     .traders-table__avatar
-                      .scaler(data-ar="1:1" style="background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1586458069/Coinmatics/"+slide.image+".jpg)")
-                        img(js-lazy data-src='img/'+slide.image+'.jpg' data-srcset='img/'+slide.image+'@2x.jpg 2x')
+                      .scaler(data-ar="1:1" style=`background-image: url('/img/avatars/${slide.avatarCode}-blur.jpg')`)
+                        img(js-lazy data-src=`/img/avatars/${slide.avatarCode}.jpg` data-srcset=`/img/avatars/${slide.avatarCode}@2x.jpg`)
                     .h6-title= slide.name
                 td
-                  .h6-title= slide.col2
+                  .h6-title #{slide.totalProfit > 0 ? '+' : ''}#{slide.totalProfit}%
                 td
-                  .h6-title= slide.col3
+                  .h6-title #{slide.rating}
                 td
-                  .h6-title= slide.col4
+                  .h6-title #{slide.avgSignals}
                 td
-                  .h6-title= slide.col5
+                  .h6-title #{slide.trackRecord + t('trader-card.months')}
                 td
-                  .h6-title= slide.col6
+                  .h6-title #{t('traders-list.riskLevelList.' + slide.riskLevel)}
                 td
                   .traders-table__profit
-                    .h6-title= slide.col7
-                    .traders-table__chart
-                      canvas.js-chart-scroll.js-chart(
-                        data-type="simple"
-                        data-group-labels="3"
-                        data-values="seed"
-                        data-labels=labels
-                      )
+                    - var lastProfit = slide.lastWeekProfit
+                    if lastProfit > 0
+                      .h6-title +#{lastProfit}%
+                    else
+                      .h6-title #{lastProfit}%
 
-    .traders-list__cta(data-aos="fade-up")
-      a(href="#" onclick="APP.Plugins.Tablesort.update()").btn.btn-primary Load more
+                      .traders-table__chart
+                        -
+                          var valattr =slide.data.values
+                        -
+                          var labels = slide.data.labels
+                        canvas.js-chart-scroll.js-chart(
+                          data-type="simple"
+                          data-group-labels="3"
+                          data-values=valattr
+                          data-labels=labels
+                        )
+
+    //- .traders-list__cta(data-aos="fade-up")
+    //-   a(href="#" onclick="APP.Plugins.Tablesort.update()").btn.btn-primary Load more
