@@ -1,12 +1,12 @@
 // RECENT NEWS
 mixin newsCard(card)
   // news card
-  a(href="#").news-card
+  a(href=card.link target="_blank").news-card
     .news-card__image
-      .scaler(style="padding-bottom: "+(157/247) * 100 +"%; background-image: url(https://res.cloudinary.com/dqruxbmfq/image/upload/w_64,c_fill,e_blur:400/v1589449167/Coinmatics/"+card.image+".jpg)")
-        img(js-lazy data-src='img/'+card.image+'.jpg' data-srcset='img/'+card.image+'@2x.jpg 2x')
+      .scaler(style="padding-bottom: "+(157/247) * 100 +"%; background-image: url(https://res.cloudinary.com/denjcproduct/image/upload/c_fill,e_blur:400,w_64/v1591990333/Coinmatics/"+card.image+".jpg)")
+        img(js-lazy data-src='img/news/'+card.image+'.jpg' data-srcset='img/news/'+card.image+'@2x.jpg 2x')
     .news-card__content
-      .h6-title= card.title
+      .h6-title=card.title
 
 .news
   .container.container--8
@@ -15,18 +15,18 @@ mixin newsCard(card)
 
     .news__wrapper
       .news__col(data-aos="fade-up")
-        +newsCard({image: 'news-1', title: 'Top 5 altcoins to make profits on in 2020'})
+        +newsCard({image: 'news-1', title: 'How to increase profit from trading using Coinmatics platform?', link: 'https://medium.com/coinmatics/how-to-increase-profit-from-trading-using-coinmatics-platform-ada8034b6c6a'})
       .news__col(data-aos="fade-up")
-        +newsCard({image: 'news-2', title: 'How to increase profit from trading using Coinmatics platform?'})
+        +newsCard({image: 'news-2', title: 'Top 5 altcoins to make profits on in 2020', link: 'https://medium.com/coinmatics/top-5-altcoins-to-make-profits-on-in-2020-72487c75d376'})
       .news__col(data-aos="fade-up")
-        +newsCard({image: 'news-3', title: '5 Ways to Make Money on Crypto in 2020 With and Without Investments'})
+        +newsCard({image: 'news-3', title: 'Coronavirus: Threat to the World and Stepping Stone for Bitcoin',link: 'https://medium.com/the-capital/coronavirus-threat-to-the-world-and-stepping-stone-for-bitcoin-d49388c67586'})
 
       .news__col(data-aos="fade-up")
-        +newsCard({image: 'news-4', title: 'Ticker Alerts, a notification system by Coinmatics. Try it for free!'})
+        +newsCard({image: 'news-4', title: 'How to automate trading on Poloniex and increase its profitability?',link: 'https://medium.com/@coinmatics/how-to-automate-trading-on-poloniex-and-increase-its-profitability-3217ae7c6f81'})
       .news__col(data-aos="fade-up")
-        +newsCard({image: 'news-5', title: 'A review of the strategy of Сoinmatic’s top trader. New features on Coinmatics site.'})
+        +newsCard({image: 'news-5', title: 'The Bitfinex Exchange: Opportunities, Advantages, and Features',link: 'https://medium.com/the-capital/the-bitfinex-exchange-opportunities-advantages-features-b91af92a5f38'})
       .news__col(data-aos="fade-up")
-        +newsCard({image: 'news-6', title: 'Coinmatics an instrument of audit and scam-connected risks protection'})
+        +newsCard({image: 'news-6', title: 'Bitcoin ETFs: Pros, Cons, and Alternatives for Investors',link: 'https://medium.com/the-capital/bitcoin-etfs-pros-cons-and-alternatives-for-investors-5ecf3a6a6c75'})
 
     .news__cta
-      a(href="#").btn.btn-ghost.btn-ghost--b0=t('news.viewAllNews')
+      a(href="https://medium.com/@coinmatics" target="_blank").btn.btn-ghost.btn-ghost--b0=t('news.viewAllNews')

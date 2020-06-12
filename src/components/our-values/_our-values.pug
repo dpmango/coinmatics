@@ -1,7 +1,7 @@
 mixin listElement(icon, name)
   li
     +svgMono(icon)
-    span.h6-title= name
+    span.h6-title=name
 
 // Our values
 .our-values
@@ -20,9 +20,7 @@ mixin listElement(icon, name)
             +listElement('check', t('our-values.whatWeDo.three'))
             +listElement('check', t('our-values.whatWeDo.four'))
             +listElement('check', t('our-values.whatWeDo.five'))
-            +listElement('check', t('our-values.whatWeDo.six'))
-            +listElement('check', t('our-values.whatWeDo.seven'))
-            +listElement('check', t('our-values.whatWeDo.eight'))
+
       .our-values__col(data-aos="fade-up")
         .our-values__list-container
           .h5-title=t('our-values.whatWeDontDo.title')
@@ -32,6 +30,3 @@ mixin listElement(icon, name)
             +listElement('close', t('our-values.whatWeDontDo.three'))
             +listElement('close', t('our-values.whatWeDontDo.four'))
             +listElement('close', t('our-values.whatWeDontDo.five'))
-            +listElement('close', t('our-values.whatWeDontDo.six'))
-            +listElement('close', t('our-values.whatWeDontDo.seven'))
-            +listElement('close', t('our-values.whatWeDontDo.eight'))
