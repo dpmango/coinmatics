@@ -2,7 +2,7 @@
 - var currentLocale = locale || '';
 - var instagramHref = currentLocale === 'ru' ? 'https://www.instagram.com/coinmatics_rus/' : 'https://www.instagram.com/coinmatics/';
 - var twitterHref = currentLocale === 'ru' ? 'https://twitter.com/coinmatics_rus' : 'https://twitter.com/coinmatics';
-- var tradingToolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
+- var tradingToolsHref = path === '/' || path === '/for-traders' ? '#tools' : `/${currentLocale}/for-traders#tools`;
 - var blogHref = currentLocale === 'ru' ? 'https://zen.yandex.ru/id/5d8885cf05fd9800ad37b63a' : 'https://medium.com/coinmatics';
 footer.footer
   .footer__waves.bg-waves.bg-waves--dark
@@ -55,7 +55,7 @@ footer.footer
               .p-small.c-gray=t('footer.forTraders')
               ul.footer__menu
                 li
-                  a(href=`/${currentLocale}/traders`)=t('footer.copyTrading')
+                  a(href=`/${currentLocale}/for-traders`)=t('footer.copyTrading')
                 li
                   a(href=tradingToolsHref)=t('footer.tradingTools')
             // menu-col

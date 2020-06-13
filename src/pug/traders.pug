@@ -1,20 +1,23 @@
 extends shared/_layout
 block variables
-  - var title = t('titles.traders')
-  - var metaDescription = t('meta.traders.description')
+  - var title = t('titles.traders-grid')
+  - var metaDescription = t('meta.traders-grid.description')
   - var metaKeywords = t('meta.common.keywords')
   - var opGraphImage = 'https://coinmatics.com/img/opgraph/traders.png'
-  - var opGraphTitle = t('meta.traders.opgraph.title')
-  - var opGraphDescription = t('meta.traders.opgraph.description')
+  - var opGraphTitle = t('meta.traders-grid.opgraph.title')
+  - var opGraphDescription = t('meta.traders-grid.opgraph.description')
 
 block content
+  // header modifier
+  div(js-header-class data-class="dark-background")
 
-  include ../components/page-title/_traders
-  include ../components/traders/_traders-only-about
-  include ../components/features/_features--traders
-  include ../components/b-story/_b-story
-  include ../components/easy-start/_easy-start-2
-  include ../components/traders-start/_traders-tools-only
-  include ../components/integrations/_integrations
-  include ../components/faq/_faq-no-cta-traders
-  include ../components/reg-cta/_reg-cta
+  include ../components/page-title/_traders-list
+
+  if view === 'grid'
+    include ../components/traders-list/_traders-list
+  else
+    include ../components/traders-list/_traders-list-list
+
+
+
+

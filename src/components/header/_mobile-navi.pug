@@ -1,7 +1,7 @@
 
 // MOBILE NAVI
 - var currentLocale = locale || '';
-- var toolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
+- var toolsHref = path === '/' || path === '/for-traders' ? '#tools' : `/${currentLocale}/for-traders#tools`;
 .mobile-navi
   .mobile-navi__scroller
     .mobile-navi__head
@@ -42,7 +42,7 @@
     .mobile-navi__section
       .h6-title.p-mini-md.c-gray=t('mobile-navi.forTraders')
       .mobile-navi__list
-        a(href=`/${currentLocale}/traders`).menu-nav
+        a(href=`/${currentLocale}/for-traders`).menu-nav
           .menu-nav__icon
             +svgColor('nav-traders')
             +svgMono('nav-traders')

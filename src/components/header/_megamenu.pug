@@ -1,7 +1,7 @@
 
 // megamenu
 - var currentLocale = locale || '';
-- var toolsHref = path === '/' || path === '/traders' ? '#tools' : `/${currentLocale}/traders#tools`;
+- var toolsHref = path === '/' || path === '/for-traders' ? '#tools' : `/${currentLocale}/for-traders#tools`;
 .megamenu.js-megamenu(data-id="1")
   .megamenu__scroller
     .container
@@ -37,7 +37,7 @@
     .container
       .megamenu__grid
         .megamenu__col
-          a(href=`/${currentLocale}/traders`).menu-nav
+          a(href=`/${currentLocale}/for-traders`).menu-nav
             .menu-nav__icon
               +svgColor('nav-traders')
               +svgMono('nav-traders')
