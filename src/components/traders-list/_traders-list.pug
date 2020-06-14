@@ -38,7 +38,7 @@
         var list = data || []
       each slide, idx in list
         .traders-list__col(data-aos="fade-up")
-          .trader-card-mini
+          .trader-card-mini(js-link data-href=`/${currentLocale}/trader/${slide.id}`)
             // avatar
             .trader-card-mini__avatar
               .scaler(data-ar="1:1" style=`background-image: url('/img/avatars/${slide.avatarCode}-blur.jpg')`)

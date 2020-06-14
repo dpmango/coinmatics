@@ -115,8 +115,12 @@
   display: flex
   flex-wrap: wrap
   transition: box-shadow .25s $ease
+  cursor: pointer
   &:hover
     box-shadow: 0px 0px 20px rgba(207, 213, 228, 0.39);
+    .trader-card-mini__head
+      .trader-card-mini__name
+        color: $colorPrimary
   &__avatar, &__head, &__content
     position: relative
     z-index: 2
@@ -146,6 +150,7 @@
   &__name
     margin-bottom: 8px
     margin-top: 8px
+    transition: color .25s $ease
   &__info-grid
     flex: 0 0 50%
     max-width: 50%

@@ -4,7 +4,7 @@ mixin teamCard(card)
     .team-card__image
       .team-card__image-wrapper
         .scaler(style="padding-bottom: "+(199/157) * 100 +"%; background-image: url(https://res.cloudinary.com/denjcproduct/image/upload/c_fill,e_blur:400,w_64/v1591990333/Coinmatics/"+card.image+".jpg)")
-          img(js-lazy data-src='img/team/'+card.image+'.jpg' data-srcset='img/team/'+card.image+'@2x.jpg 2x')
+          img(js-lazy data-src='img/team/'+card.image+'@2x.jpg' data-srcset='img/team/'+card.image+'@2x.jpg 2x')
     .team-card__content
       .h5-title
         span=t(`employees.${card.employee}.name`)

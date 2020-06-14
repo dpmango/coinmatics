@@ -60,7 +60,7 @@
                     +svgMono("arrow-down")
           tbody
             each slide, idx in list
-              tr(js-link data-href="trader.html")
+              tr(js-link data-href=`/${currentLocale}/trader/${slide.id}`)
                 td
                   .traders-table__main
                     .traders-table__avatar

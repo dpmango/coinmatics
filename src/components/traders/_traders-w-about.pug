@@ -1,4 +1,5 @@
 // TRADERS with about
+- var currentLocale = locale || '';
 .traders
   .traders__waves.bg-waves.bg-waves--blue
     include ../../icons/svg-inline/waves-up.svg
@@ -37,7 +38,7 @@
         include partials/_trader-card
 
       .traders__cta(data-aos="fade-up")
-        a(href=baseUrl + `/signup?l=${locale}`).btn.btn-ghost.btn-ghost--b0=t('traders-w-about.viewAll')
+        a(href=`/${currentLocale}/traders`).btn.btn-ghost.btn-ghost--b0=t('traders-w-about.viewAll')
 
   .traders__waves.bg-waves.bg-waves--bottom.bg-waves--dark
     include ../../icons/svg-inline/waves-up.svg
