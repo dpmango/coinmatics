@@ -10,31 +10,31 @@
         -
           var sliders = [
             {
-              src: '1',
+              src: 'image',
               alt: 'First Photo'
             },
             {
-              src: '2',
+              src: 'image-1',
               alt: 'Second Photo'
             },
             {
-              src: '3',
+              src: 'image-2',
               alt: 'Third Photo'
             },
             {
-              src: '4',
+              src: 'image-3',
               alt: 'Fourth Photo'
             },
             {
-              src: '5',
+              src: 'image-4',
               alt: 'Fifth Photo'
             },
             {
-              src: '6',
+              src: 'image-5',
               alt: 'Sixth Photo'
             },
             {
-              src: '7',
+              src: 'image-6',
               alt: 'Seventh Photo'
             }
           ]
@@ -42,6 +42,6 @@
         each slide in sliders
           .swiper-slide
             .gallery__image
-              img(src=`/img/office/${slide.src}.jpg` srcset=`/img/office/${slide.src}.jpg 2x` alt=slide.alt)
+              img(src=`/img/office/${slide.src}.png` srcset=`/img/office/${slide.src}.png 2x` alt=slide.alt)
 
       .swiper-pagination
