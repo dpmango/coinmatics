@@ -10,7 +10,7 @@ mixin teamCard(card)
         span=t(`employees.${card.employee}.name`)
         br
         span=t(`employees.${card.employee}.surname`)
-      .p-small.c-gray= card.position
+      .p-small.c-gray !{card.position}
       .team-card__socials
         if (card.linkedin)
           a(href=card.linkedin target="_blank")
@@ -67,9 +67,7 @@ mixin teamCard(card)
           {
             image: 'mazanik',
             employee: 'mazanik',
-            position: 'COO',
-            linkedin: '#',
-            github: '#'
+            position: 'COO'
           },
           {
             image: 'meshalkin',
@@ -131,7 +129,7 @@ mixin teamCard(card)
           {
             image: 'lubovskaya',
             employee: 'lubovskaya',
-            position: 'Assistant to Founder',
+            position: 'Assistant<br />to Founder',
             linkedin: 'https://www.linkedin.com/in/rita-loida/'
           },
           {
