@@ -4,7 +4,7 @@ mixin newsCard(card)
   a(href=card.link target="_blank").news-card
     .news-card__image
       .scaler(style="padding-bottom: "+(157/247) * 100 +"%; background-image: url(https://res.cloudinary.com/denjcproduct/image/upload/c_fill,e_blur:400,w_64/v1591990333/Coinmatics/"+card.image+".jpg)")
-        img(js-lazy data-src='img/news/'+card.image+'.jpg' data-srcset='img/news/'+card.image+'@2x.jpg 2x')
+        img(js-lazy data-src='/img/news/'+card.image+'.jpg' data-srcset='/img/news/'+card.image+'@2x.jpg 2x')
     .news-card__content
       .h6-title=card.title
 
