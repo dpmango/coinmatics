@@ -185,15 +185,14 @@
       // change locale
       _document.on('click', '.change-locale', function(e) {
         e.preventDefault();
+
         var $link = $(this);
         var $locale = $link.data('locale');
         var $path = $link.data('path');
-        var newLocale = `/${($locale === 'ru' ? 'en' : 'ru')}`;
+        var newLocale = `/${$locale === 'ru' ? 'en' : 'ru'}`;
+        var urlWithNewLocaleAndPage = newLocale + $path.replace(/^\/(ru|en|cn)/, '');
 
-        const regexp = /^[/](ru|en|cn)/
-        var urlWithNewLocaleAndPage = $path === "/" ? newLocale : $path.replace(regexp, newLocale)
         history.pushState(null, null, urlWithNewLocaleAndPage);
-        // перезагружаем страницу
         history.go(0);
       });
     },
