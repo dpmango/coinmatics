@@ -1,6 +1,6 @@
 - var trader = data || {}
-- var labels = trader.profitHistoryData.labels || []
-- var values = trader.profitHistoryData.values || []
+- var labels = trader.profitHistory.labels || []
+- var values = trader.profitHistory.values || []
 
 // Trader content
 .trader-content
@@ -44,7 +44,7 @@
                 .asset-chart__right
                   .h5-title= width
             -
-              var assets = trader.assets || []
+              var assets = trader.assetAllocation || []
             each asset, idx in assets
-              +line(`${asset.asset}`, `${asset.value}%`)
+              +line(`${asset.asset}`, `${asset.percentage}%`)
 
