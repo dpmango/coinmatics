@@ -47,7 +47,7 @@ footer.footer
                 li
                   a(href=`/${currentLocale}/investors`)=t('footer.copyTrading')
                 li
-                  a(href=baseUrl + `/signin?l=${locale}`)=t('footer.topTraders')
+                  a(js-change-traders-view data-locale=locale data-needed-view="grid" href="#")=t('footer.topTraders')
                 li
                   a(href="https://t.me/coinmatics_signals" target="_blank")=t('footer.tradingSignals')
             // menu-col

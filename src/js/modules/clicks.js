@@ -16,6 +16,33 @@
             Barba.Pjax.goTo(dataHref);
           }
         })
+        // TODO: подумать и найти решение по поводу проблемы подгрузки данных после перехода на другую страницу, сейчас меняем ссылку и насильно дополнительно перезагружаем страницу
+        .on('click', '[js-trader-link]', function(e) {
+          e.preventDefault();
+          var traderId = $(this).data('trader-id');
+          var locale = $(this).data('locale');
+          var traderPath = `/${locale}/trader/${traderId}`;
+          history.pushState(null, null, traderPath);
+          // перезагружаем страницу
+          history.go(0);
+        })
+        .on('click', '[js-traders-back-link]', function(e) {
+          e.preventDefault();
+          var locale = $(this).data('locale');
+          var tradersPage = `/${locale}/traders?view=grid`
+          history.pushState(null, null, tradersPage);
+          // перезагружаем страницу
+          history.go(0);
+        })
+        .on('click', '[js-change-traders-view]', function(e) {
+          e.preventDefault();
+          var locale = $(this).data('locale');
+          var neededView = $(this).data('needed-view')
+          var tradersPageWithNewView = `/${locale}/traders?view=${neededView}`
+          history.pushState(null, null, tradersPageWithNewView);
+          // перезагружаем страницу
+          history.go(0);
+        })
         // prevent going the same link (if barba is connected)
         .on('click', 'a, [js-link]', function(e) {
           var href = $(this).data('href') || $(this).attr('href');
@@ -165,7 +192,6 @@
 
         const regexp = /^[/](ru|en|cn)/
         var urlWithNewLocaleAndPage = $path === "/" ? newLocale : $path.replace(regexp, newLocale)
-        console.log('urlWithNewLocaleAndPage',urlWithNewLocaleAndPage)
         history.pushState(null, null, urlWithNewLocaleAndPage);
         // перезагружаем страницу
         history.go(0);

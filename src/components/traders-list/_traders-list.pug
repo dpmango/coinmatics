@@ -29,7 +29,7 @@
       .traders-list__view
         a(href="#").is-active
           +svgMono('view-grid')
-        a(href=`/${currentLocale}/traders?view=list`)
+        a(js-change-traders-view data-locale=currentLocale data-needed-view="list" href="#")
           +svgMono('view-list')
 
     // list
@@ -38,7 +38,7 @@
         var list = data || []
       each slide, idx in list
         .traders-list__col(data-aos="fade-up")
-          .trader-card-mini(js-link data-href=`/${currentLocale}/trader/${slide.id}`)
+          .trader-card-mini(data-trader-id=slide.id data-locale=currentLocale js-trader-link)
             // avatar
             .trader-card-mini__avatar
               .scaler(data-ar="1:1" style=`background-image: url('/img/avatars/${slide.avatarCode}-blur.jpg')`)
@@ -73,15 +73,10 @@
                   else
                     .h5-title.c-primary #{lastProfit}%
                 .trader-card-mini__chart-graph
-                  -
-                    var valattr =slide.data.values
-                  -
-                    var labels = slide.data.labels
                   canvas.js-chart-scroll.js-chart(
                     data-type="simple"
-                    data-group-labels="3"
-                    data-values=valattr
-                    data-labels=labels
+                    data-values=slide.data.values
+                    data-labels=slide.data.labels
                   )
             // trader waves
             .trader-card-mini__waves

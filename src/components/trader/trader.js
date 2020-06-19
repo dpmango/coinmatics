@@ -99,7 +99,7 @@
       var scroll = APP.Plugins.ScrollBlock.getData();
       if (scroll.blocked) return;
 
-      if ($card.length === 0) return;
+      if (!$card) return;
 
       if (window.innerWidth <= 767) {
         if (scroll.y > 100) {

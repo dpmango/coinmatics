@@ -19,7 +19,7 @@
 
 
       .traders-list__view
-        a(href=`/${currentLocale}/traders?view=grid`)
+        a(js-change-traders-view data-locale=currentLocale data-needed-view="grid" href="#")
           +svgMono('view-grid')
         a(href="#").is-active
           +svgMono('view-list')
@@ -60,7 +60,7 @@
                     +svgMono("arrow-down")
           tbody
             each slide, idx in list
-              tr(js-link data-href=`/${currentLocale}/trader/${slide.id}`)
+              tr(data-trader-id=slide.id data-locale=currentLocale js-trader-link)
                 td
                   .traders-table__main
                     .traders-table__avatar
@@ -86,15 +86,10 @@
                       .h6-title #{lastProfit}%
 
                       .traders-table__chart
-                        -
-                          var valattr =slide.data.values
-                        -
-                          var labels = slide.data.labels
                         canvas.js-chart-scroll.js-chart(
                           data-type="simple"
-                          data-group-labels="3"
-                          data-values=valattr
-                          data-labels=labels
+                          data-values=slide.data.values
+                          data-labels=slide.data.labels
                         )
 
     //- .traders-list__cta(data-aos="fade-up")

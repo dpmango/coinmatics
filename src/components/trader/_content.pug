@@ -1,7 +1,6 @@
 - var trader = data || {}
-- var labels = trader.profitHistory.labels || []
-- var values = trader.profitHistory.values || []
-
+- var labels = trader.profitHistory.labels
+- var values = trader.profitHistory.values
 // Trader content
 .trader-content
   .container
@@ -13,17 +12,17 @@
 
         .trader-content__chart
           .trader-content__chart-head(data-aos="fade-up")
-            .trader-content__chart-filter
-              .h6-title=t('trader-content.period')
-              select(js-select js-trader-period-select)
-                option(value="1")=t('trader-content.weekly')
-                option(value="2")=t('trader-content.monthly')
-                option(value="3")=t('trader-content.yearly')
+            //- .trader-content__chart-filter
+            //-   .h6-title=t('trader-content.period')
+            //-   select(js-select js-trader-period-select)
+            //-     option(value="1")=t('trader-content.weekly')
+            //-     option(value="2")=t('trader-content.monthly')
+            //-     option(value="3")=t('trader-content.yearly')
             .trader-content__chart-total
               .h6-title.c-primary #{trader.profiHistoryChanges}
           .trader-content__chart-canvas
             canvas.js-chart-scroll.js-chart.js-trader-period-chart(
-              data-group-labels="1"
+              data-group-labels="0"
               data-values=values
               data-labels=labels
             )
