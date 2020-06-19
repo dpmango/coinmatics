@@ -23,7 +23,7 @@
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.copyTradingForInvestorsTitle')
             .p-mini=t('mobile-navi.copyTradingForInvestorsDsc')
-        a(href=baseUrl + `/signup?l=${locale}`).menu-nav
+        a(js-change-traders-view data-locale=locale data-needed-view="grid" href="#").menu-nav
           .menu-nav__icon
             +svgColor('nav-top-traders')
             +svgMono('nav-top-traders')

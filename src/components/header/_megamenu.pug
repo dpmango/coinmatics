@@ -15,7 +15,7 @@
               .h5-title=t('megamenu.copyTradingForInvestorsTitle')
               .p-mini=t('megamenu.copyTradingForInvestorsDsc')
         .megamenu__col
-          a(href=baseUrl + `/signup?l=${locale}`).menu-nav
+          a(js-change-traders-view data-locale=locale data-needed-view="grid" href="#").menu-nav
             .menu-nav__icon
               +svgColor('nav-top-traders')
               +svgMono('nav-top-traders')
