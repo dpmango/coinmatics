@@ -22,14 +22,14 @@
           var traderId = $(this).data('trader-id');
           var locale = $(this).data('locale');
           var host = location.port ? `${location.hostname}:${location.port}` : `${location.hostname}`
-          var traderPath = `${location.protocol}//${host}/${locale}/trader/${traderId}`;
+          var traderPath = `${location.protocol}//${host}/${locale}/trader/${traderId}/`;
           location.href = traderPath
         })
         .on('click', '[js-traders-back-link]', function(e) {
           e.preventDefault();
           var locale = $(this).data('locale');
           var host = location.port ? `${location.hostname}:${location.port}` : `${location.hostname}`
-          var tradersPage = `${location.protocol}//${host}/${locale}/traders?view=grid`;
+          var tradersPage = `${location.protocol}//${host}/${locale}/traders/?view=grid`;
           location.href = tradersPage
         })
         .on('click', '[js-change-traders-view]', function(e) {
@@ -37,7 +37,7 @@
           var locale = $(this).data('locale');
           var neededView = $(this).data('needed-view')
           var host = location.port ? `${location.hostname}:${location.port}` : `${location.hostname}`
-          var tradersPageWithNewView = `${location.protocol}//${host}/${locale}/traders?view=${neededView}`;
+          var tradersPageWithNewView = `${location.protocol}//${host}/${locale}/traders/?view=${neededView}`;
           location.href = tradersPageWithNewView
         })
         // prevent going the same link (if barba is connected)
