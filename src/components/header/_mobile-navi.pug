@@ -2,6 +2,7 @@
 // MOBILE NAVI
 - var currentLocale = locale || '';
 - var toolsHref = path === '/' || path === '/for-traders' ? '#tools' : `/${currentLocale}/for-traders#tools`;
+- var blogHref = currentLocale === 'ru' ? 'https://zen.yandex.ru/id/5d8885cf05fd9800ad37b63a' : 'https://medium.com/coinmatics';
 .mobile-navi
   .mobile-navi__scroller
     .mobile-navi__head
@@ -75,6 +76,32 @@
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.askQuestionTitle')
             .p-mini=t('mobile-navi.askQuestionDsc')
+
+    // section
+    .mobile-navi__section
+      .h6-title.p-mini-md.c-gray=t('mobile-navi.company')
+      .mobile-navi__list
+        a(href=`/${currentLocale}/about/`).menu-nav
+          .menu-nav__icon
+            +svgColor('nav-about')
+            +svgMono('nav-about')
+          .menu-nav__content
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.aboutUsTitle')
+            .p-mini=t('mobile-navi.aboutUsDsc')
+        a(href=`/${currentLocale}/contacts/`).menu-nav
+          .menu-nav__icon
+            +svgColor('nav-contacts')
+            +svgMono('nav-contacts')
+          .menu-nav__content
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.contactsTitle')
+            .p-mini=t('mobile-navi.contactsDsc')
+        a(href=blogHref target="_blank").menu-nav
+          .menu-nav__icon
+            +svgColor('nav-blog')
+            +svgMono('nav-blog')
+          .menu-nav__content
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.blogTitle')
+            .p-mini=t('mobile-navi.blogDsc')
 
     // section
     .mobile-navi__cta-mobile

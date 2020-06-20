@@ -25,6 +25,10 @@ header.header
           a(href="#" data-for="3")
             span=t('header.support')
             +svgMono('arrow-down')
+        li
+          a(href="#" data-for="4")
+            span=t('header.company')
+            +svgMono('arrow-down')
 
       .header__cta
         a(href=baseUrl + `/signin?l=${locale}`).btn.btn-ghost.btn--small=t('header.logIn')
