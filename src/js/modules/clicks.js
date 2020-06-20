@@ -21,27 +21,24 @@
           e.preventDefault();
           var traderId = $(this).data('trader-id');
           var locale = $(this).data('locale');
-          var traderPath = `/${locale}/trader/${traderId}`;
-          history.pushState(null, null, traderPath);
-          // перезагружаем страницу
-          history.go(0);
+          var host = location.port ? `${location.hostname}:${location.port}` : `${location.hostname}`
+          var traderPath = `${location.protocol}//${host}/${locale}/trader/${traderId}`;
+          location.href = traderPath
         })
         .on('click', '[js-traders-back-link]', function(e) {
           e.preventDefault();
           var locale = $(this).data('locale');
-          var tradersPage = `/${locale}/traders?view=grid`
-          history.pushState(null, null, tradersPage);
-          // перезагружаем страницу
-          history.go(0);
+          var host = location.port ? `${location.hostname}:${location.port}` : `${location.hostname}`
+          var tradersPage = `${location.protocol}//${host}/${locale}/traders?view=grid`;
+          location.href = tradersPage
         })
         .on('click', '[js-change-traders-view]', function(e) {
           e.preventDefault();
           var locale = $(this).data('locale');
           var neededView = $(this).data('needed-view')
-          var tradersPageWithNewView = `/${locale}/traders?view=${neededView}`
-          history.pushState(null, null, tradersPageWithNewView);
-          // перезагружаем страницу
-          history.go(0);
+          var host = location.port ? `${location.hostname}:${location.port}` : `${location.hostname}`
+          var tradersPageWithNewView = `${location.protocol}//${host}/${locale}/traders?view=${neededView}`;
+          location.href = tradersPageWithNewView
         })
         // prevent going the same link (if barba is connected)
         .on('click', 'a, [js-link]', function(e) {
