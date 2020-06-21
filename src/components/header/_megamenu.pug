@@ -60,29 +60,6 @@
     .container
       .megamenu__grid
         .megamenu__col
-          a(href=`/${currentLocale}/faq`).menu-nav
-            .menu-nav__icon
-              +svgColor('nav-faq')
-              +svgMono('nav-faq')
-            .menu-nav__content
-              .h5-title=t('megamenu.faqTitle')
-              .p-mini=t('megamenu.faqDsc')
-        .megamenu__col
-          a(href="#").show-intercom.menu-nav
-            .menu-nav__icon
-              +svgColor('nav-ask-a-question')
-              +svgMono('nav-ask-a-question')
-            .menu-nav__content
-              .h5-title=t('megamenu.askQuestionTitle')
-              .p-mini=t('megamenu.askQuestionDsc')
-
-
-// megamenu
-.megamenu.js-megamenu(data-id="4")
-  .megamenu__scroller
-    .container
-      .megamenu__grid
-        .megamenu__col
           a(href=`/${currentLocale}/about/`).menu-nav
             .menu-nav__icon
               +svgColor('nav-about')
@@ -106,3 +83,29 @@
             .menu-nav__content
               .h5-title=t('megamenu.blogTitle')
               .p-mini=t('megamenu.blogDsc')
+
+
+// megamenu
+.megamenu.js-megamenu(data-id="4")
+  .megamenu__scroller
+    .container
+      .megamenu__grid
+        .megamenu__col
+          a(href=`/${currentLocale}/faq`).menu-nav
+            .menu-nav__icon
+              +svgColor('nav-faq')
+              +svgMono('nav-faq')
+            .menu-nav__content
+              .h5-title=t('megamenu.faqTitle')
+              .p-mini=t('megamenu.faqDsc')
+        .megamenu__col
+          a(href="#").show-intercom.menu-nav
+            .menu-nav__icon
+              +svgColor('nav-ask-a-question')
+              +svgMono('nav-ask-a-question')
+            .menu-nav__content
+              .h5-title=t('megamenu.askQuestionTitle')
+              .p-mini=t('megamenu.askQuestionDsc')
+
+
+

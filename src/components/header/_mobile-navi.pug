@@ -60,25 +60,6 @@
 
     // section
     .mobile-navi__section
-      .h6-title.p-mini-md.c-gray=t('mobile-navi.support')
-      .mobile-navi__list
-        a(href=`/${currentLocale}/faq`).menu-nav
-          .menu-nav__icon
-            +svgColor('nav-faq')
-            +svgMono('nav-faq')
-          .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.faqTitle')
-            .p-mini=t('mobile-navi.faqDsc')
-        a(href="#").show-intercom.menu-nav
-          .menu-nav__icon
-            +svgColor('nav-ask-a-question')
-            +svgMono('nav-ask-a-question')
-          .menu-nav__content
-            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.askQuestionTitle')
-            .p-mini=t('mobile-navi.askQuestionDsc')
-
-    // section
-    .mobile-navi__section
       .h6-title.p-mini-md.c-gray=t('mobile-navi.company')
       .mobile-navi__list
         a(href=`/${currentLocale}/about/`).menu-nav
@@ -102,6 +83,27 @@
           .menu-nav__content
             .h5-title.h6-title.p-mini-md-md=t('mobile-navi.blogTitle')
             .p-mini=t('mobile-navi.blogDsc')
+
+    // section
+    .mobile-navi__section
+      .h6-title.p-mini-md.c-gray=t('mobile-navi.support')
+      .mobile-navi__list
+        a(href=`/${currentLocale}/faq`).menu-nav
+          .menu-nav__icon
+            +svgColor('nav-faq')
+            +svgMono('nav-faq')
+          .menu-nav__content
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.faqTitle')
+            .p-mini=t('mobile-navi.faqDsc')
+        a(href="#").show-intercom.menu-nav
+          .menu-nav__icon
+            +svgColor('nav-ask-a-question')
+            +svgMono('nav-ask-a-question')
+          .menu-nav__content
+            .h5-title.h6-title.p-mini-md-md=t('mobile-navi.askQuestionTitle')
+            .p-mini=t('mobile-navi.askQuestionDsc')
+
+
 
     // section
     .mobile-navi__cta-mobile
