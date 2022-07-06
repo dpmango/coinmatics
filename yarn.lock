@@ -5906,9 +5906,9 @@ jquery-selectric@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/jquery-selectric/-/jquery-selectric-0.1.3.tgz#e877c04a59574efda15d77c48dafed7a4cac2966"
 
-jquery-validation@^1.19.1:
-  version "1.19.1"
-  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.1.tgz#a85043467dc2b70d9fff05778646d150e747742f"
+jquery-validation@^1.19.5:
+  version "1.19.5"
+  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.5.tgz#557495b7cad79716897057c4447ad3cd76fda811"
 
 jquery@>=1.7.2:
   version "3.3.1"
